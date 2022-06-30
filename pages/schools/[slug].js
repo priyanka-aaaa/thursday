@@ -318,7 +318,7 @@ const MyschoolDetails = () => {
         completeUniveristyPage();
 
 
-    }, [router.isReady])
+    }, [router.isReady,router.query.slug])
     function openforgot() {
         setshowModalforgot(true)
     }
