@@ -1,0 +1,163 @@
+trix-editor:empty:not(:focus)::before {
+    content: "•" !important
+}
+
+ul {
+    list-style: initial !important;
+    margin: 0;
+    padding: 0
+}
+
+.tab-pane li::before {
+    content: " a";
+    padding-left: 12px;
+    background-image: url(/circle-check-solid.svg) !important;
+    margin-right: 7px;
+    color: #38a769
+}
+nav.right_menu_togle {
+    background: rgba(0, 0, 0, .9);
+    display: block;
+    height: 100%;
+    overflow: auto;
+    position: fixed;
+    right: -520px;
+    font-size: 15px;
+    top: 0;
+    width: 100%;
+    max-width: 520px;
+    z-index: 2000;
+    transition: right .3s ease-in-out 0s;
+    -webkit-transition: right .3s ease-in-out 0s
+}
+
+button.slick-arrow.slick-prev {
+    background-color: #38a769;
+    height: 35px;
+    width: 35px;
+    border-radius: 100px
+}
+
+button.slick-arrow.slick-next {
+    background-color: #38a769;
+    height: 35px;
+    width: 35px;
+    border-radius: 100px
+}
+
+.Show_success_bookmark {
+    color: #fff;
+    background-color: #1abc9c !important;
+    border-color: #e64844 !important;
+    width: 23%;
+    position: fixed;
+    top: 7%;
+    right: 3%;
+    border-radius: 4px;
+    z-index: 1;
+    font-weight: 700;
+    padding: 14px 0;
+    text-align: center
+}
+
+section#filterSection a.card-header.card-link.collapsed:after {
+    content: url(/chevron-down-solid.svg) !important;
+    color: #000;
+    position: absolute;
+    font-family: font awesome;
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    right: 20px;
+    font-size: 10px;
+    top: 14px;
+    width: 13px
+}
+
+section#filterSection a.card-header.card-link.collapsed:before {
+    content: none
+}
+
+a.card-header.card-link:before {
+    content: url(/chevron-up-solid.svg);
+    color: #000;
+    position: absolute;
+    font-family: font awesome;
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    right: 20px;
+    width: 13px
+}
+
+span.suggession-type {
+    float: right !important;
+    color: #000
+}
+
+.search-suggestion {
+    display: block
+}
+
+input[type=range] {
+    width: 100%
+}
+
+.error-msg {
+    color: red
+}
+span.abc {
+    font-weight: bold !important;
+}
+
+
+@media screen and (max-width: 768px) {
+    .main-menu.desktop {
+        display: none !important;
+    }
+  }
+  @media screen and (min-width: 769px) {
+    .main-menu.mobile {
+        display: none !important;
+    }
+  }
+  .dataResult:hover{
+    cursor:pointer;
+  }
+  a.appAttachment {
+    font-size: 16px;
+    padding: 0px;
+    font-weight: bold;
+}
+a.appAttachment:hover {
+    color: #818181;
+  }
+  .dropzoneMsg {
+    border: 1px dotted #1a5599;
+    padding: 10px 0;
+    text-align: center;
+    width: 100%;
+    margin-left: 0px;
+    margin-top: 10px;
+}
+.msgRefresh{
+    cursor:pointer
+}
+.msgRefreshRight{
+    cursor:pointer;
+    float: right;
+}
+
+
+a.btn.btn-bachler.active{
+    background-color: #38a769;
+    color: #fff!important;
+}
+.container.footer {
+    max-width: 1440px;
+    width: 100%;
+}

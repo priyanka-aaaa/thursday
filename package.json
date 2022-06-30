@@ -1,0 +1,31 @@
+{
+  "name": "nextcoursemenaa",
+  "homepage": "https://beta.coursementor.com/",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "export": "npm run build && next export"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.1.1",
+    "@fortawesome/free-brands-svg-icons": "^6.1.1",
+    "@fortawesome/free-solid-svg-icons": "^6.1.1",
+    "@fortawesome/react-fontawesome": "^0.1.18",
+    "axios": "^0.27.2",
+    "html-react-parser": "^2.0.0",
+    "next": "12.2.0",
+    "react": "18.2.0",
+    "react-bootstrap": "^2.4.0",
+    "react-bootstrap-sweetalert": "^5.2.0",
+    "react-dom": "18.2.0",
+    "react-google-login": "^5.2.2",
+    "react-slick": "^0.29.0"
+  },
+  "devDependencies": {
+    "eslint": "8.18.0",
+    "eslint-config-next": "12.2.0"
+  }
+}
