@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import Link from "next/Link"
+
 import axios from 'axios'
 import SweetAlert from 'react-bootstrap-sweetalert';
 import { Modal, Button } from 'react-bootstrap';

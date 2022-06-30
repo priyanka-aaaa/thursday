@@ -6,7 +6,7 @@ import {
 
 } from '@fortawesome/free-solid-svg-icons';
 import { Modal, Button } from 'react-bootstrap';
-import Link from "next/Link"
+
 export const Header = (props) => {
 
     const [textflag, settextflag] = useState("-500px");
