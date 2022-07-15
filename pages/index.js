@@ -15,6 +15,8 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 // import { Header } from '../components/Header';
 import Header from '../components/Header';
+import EnquiryModal from '../components/EnquiryModal';
+
 import { Footer } from '../components/Footer';
 import { StudentloginForm } from '../components/StudentloginForm';
 
@@ -113,7 +115,7 @@ export default function Home() {
                   </p>
                   <ul className="banner-btn">
                     <li>
-                      {/* <EnquiryModal /> */}
+                      <EnquiryModal />
                     </li>
 
                   </ul>
@@ -246,7 +248,7 @@ export default function Home() {
                 <div className="rs-skillbar style1 home4">
                   <div className="cl-skill-bar">
                     <div className="btn-part mt-45">
-                      {/* <EnquiryModal /> */}
+                      <EnquiryModal />
                     </div>
                   </div>
                 </div>
@@ -495,7 +497,7 @@ export default function Home() {
             </div>
             <div className="col-lg-12 text-center">
               <div className="btn-part mt-30">
-                {/* <EnquiryModal /> */}
+                <EnquiryModal />
               </div>
             </div>
           </div>
