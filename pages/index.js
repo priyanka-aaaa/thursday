@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import Head from 'next/head'
 import Image from 'next/image'
-import Link  from 'next/link'
-import styles from '../styles/Home.module.css'
+import Link from 'next/link'
+
 // import "slick-carousel/slick/slick.css";
 import Slider from "react-slick";
 // import "slick-carousel/slick/slick-theme.css";
@@ -16,10 +16,10 @@ import {
 // import { Header } from '../components/Header';
 import Header from '../components/Header';
 import { Footer } from '../components/Footer';
-import {StudentloginForm} from '../components/StudentloginForm';
+import { StudentloginForm } from '../components/StudentloginForm';
 
 export default function Home() {
- 
+
 
 
 
@@ -33,7 +33,7 @@ export default function Home() {
 
   //u
   const handleFailure = (result) => {
-};
+  };
 
   const settings = {
     // dots: true,
@@ -65,7 +65,7 @@ export default function Home() {
 
         <div className="full-width-header">
 
-    <Header/>
+          <Header />
 
         </div>
 
@@ -123,10 +123,9 @@ export default function Home() {
             </div>
           </div>
           <div className="rs-animation">
-            <Image  layout="fill" className="dance3" src=
-              "/b4-dot-6.webp"
-              unoptimized={true}
-              alt="images" loading="lazy" />
+          <img src="/images/b4-dot-6.webp" alt="dev logo" />
+
+          
           </div>
         </div>
 
@@ -146,9 +145,9 @@ export default function Home() {
                       <div className="front-content-part purple-bg">
                         <div className="front-icon-part">
                           <div className="icon-part">
-                            <Image  layout="fill" src=
-                              "/home-style6-6.webp"
-                              alt="" unoptimized={true} loading="lazy" />
+                          <img src="/images/home-style6-6.webp" alt="dev logo" />
+
+                   
                           </div>
                         </div>
                         <div className="front-title-part">
@@ -175,9 +174,9 @@ export default function Home() {
                       <div className="front-content-part gold-bg">
                         <div className="front-icon-part">
                           <div className="icon-part">
-                            <Image  layout="fill" src=
-                              "/home-icons-8.webp"
-                              alt="" unoptimized={true} loading="lazy" />
+                          <img src="/images/home-icons-8.webp" alt="dev logo" />
+
+                  
                           </div>
                         </div>
                         <div className="front-title-part">
@@ -205,10 +204,8 @@ export default function Home() {
                       <div className="front-content-part blue-bg">
                         <div className="front-icon-part">
                           <div className="icon-part">
-                            <Image  layout="fill" src=
+                          <img src="/images/home-icons-9.webp" alt="dev logo" />
 
-                              "/home-icons-9.webp"
-                              alt="" unoptimized={true} loading="lazy" />
                           </div>
                         </div>
                         <div className="front-title-part">
@@ -257,10 +254,7 @@ export default function Home() {
               </div>
               <div className="col-lg-6 pl-65 md-pl-15">
                 <div className="about-img">
-                  <Image  layout="fill" src=
-
-                    "/Expert.webp"
-                    alt="" unoptimized={true} loading="lazy" />
+                  <img src="/images/Expert.webp" alt="dev logo" />
                 </div>
               </div>
             </div>
@@ -438,10 +432,9 @@ export default function Home() {
                 <div className="technology-item">
                   <a href="#">
                     <div className="logo-img">
-                      <Image  layout="fill" src=
+                      
+                        <img src="/pt-1.webp" alt="dev logo" />
 
-                        "/pt-1.webp"
-                        alt="" unoptimized={true} loading="lazy" />
                     </div>
                   </a>
                 </div>
@@ -450,11 +443,9 @@ export default function Home() {
                 <div className="technology-item">
                   <a href="#">
                     <div className="logo-img">
-                      <Image  layout="fill" src=
+                  
+                        <img src="/images/pt-2.webp" alt="dev logo" />
 
-                        "/pt-2.webp"
-
-                        alt="" unoptimized={true} loading="lazy" />
                     </div>
                   </a>
                 </div>
@@ -463,10 +454,9 @@ export default function Home() {
                 <div className="technology-item">
                   <a href="#">
                     <div className="logo-img">
-                      <Image  layout="fill" src=
+                    <img src="/images/pt-3.webp" alt="dev logo" />
 
-                        "/pt-3.webp"
-                        alt="" unoptimized={true} loading="lazy" />
+                    
                     </div>
                   </a>
                 </div>
@@ -475,10 +465,9 @@ export default function Home() {
                 <div className="technology-item">
                   <a href="#">
                     <div className="logo-img">
-                      <Image  layout="fill" src=
-                        "/pt-4.webp"
+                    <img src="/images/pt-4.webp" alt="dev logo" />
 
-                        alt="" unoptimized={true} loading="lazy" />
+               
                     </div>
                   </a>
                 </div>
@@ -487,10 +476,8 @@ export default function Home() {
                 <div className="technology-item">
                   <a href="#">
                     <div className="logo-img">
-                      <Image  layout="fill" src=
+                    <img src="/images/pt-5.webp" alt="dev logo" />
 
-                        "/pt-5.webp"
-                        alt="" unoptimized={true} loading="lazy" />
                     </div>
                   </a>
                 </div>
@@ -499,10 +486,8 @@ export default function Home() {
                 <div className="technology-item">
                   <a href="#">
                     <div className="logo-img">
-                      <Image  layout="fill" src=
+                    <img src="/images/pt-6.webp" alt="dev logo" />
 
-                        "/pt-6.webp"
-                        alt="" unoptimized={true} loading="lazy" />
                     </div>
                   </a>
                 </div>
@@ -522,10 +507,9 @@ export default function Home() {
             <div className="row">
               <div className="col-lg-6">
                 <div className="testi-img">
-                  <Image  layout="fill" src=
+                <img src="/images/testimonial.webp" alt="dev logo" />
 
-                    "/testimonial.webp"
-                    alt="" unoptimized={true} loading="lazy" />
+               
                 </div>
               </div>
               <div className="col-lg-6 md-pt-50 ">
@@ -540,14 +524,20 @@ export default function Home() {
                   <div>
                     <div className="testi-item">
                       <div className="author-desc">
-                        <div className="desc"><Image  layout="fill" className="quote" src="/quote2.webp" alt="" unoptimized={true} loading="lazy" />"I
+                        <div className="desc">
+                       
+                          <img src="/images/quote2.webp" alt="dev logo" />
+
+                          "I
                           had an excellent time learning about many topics. I had a little bit
                           of knowledge but never had the chance to study them deeply. Thank
                           You so much for valuable information. "</div>
                       </div>
                       <div className="testimonial-content">
                         <div className="author-img">
-                          <Image  layout="fill" src="/tmh4.webp" alt="" unoptimized={true} loading="lazy" />
+                        <img src="/images/tmh4.webp" alt="dev logo" />
+
+                       
                         </div>
                         <div className="author-part">
                           <a className="name" href="#">Parteek sharma</a>
@@ -559,14 +549,20 @@ export default function Home() {
                   <div>
                     <div className="testi-item">
                       <div className="author-desc">
-                        <div className="desc"><Image  layout="fill" className="quote" src="/quote2.webp" alt="" unoptimized={true} loading="lazy" />"
+                        <div className="desc">
+                         
+                          <img src="/images/quote2.webp" alt="dev logo" />
+
+                          "
                           It's a great course. The starting can be a bit tough if you're not
                           from a programming background, but later, you start to understand
                           everything because they will explain everything step by step."</div>
                       </div>
                       <div className="testimonial-content">
                         <div className="author-img">
-                          <Image  layout="fill" src="/tmh2.webp" alt="" unoptimized={true} loading="lazy" />
+                        <img src="/images/tmh2.webp" alt="dev logo" />
+
+                  
                         </div>
                         <div className="author-part">
                           <a className="name" href="#">Somya Saini</a>
@@ -578,13 +574,19 @@ export default function Home() {
                   <div>
                     <div className="testi-item">
                       <div className="author-desc">
-                        <div className="desc"><Image  layout="fill" className="quote" src="/quote2.webp" alt="" unoptimized={true} loading="lazy" />"Based on such knowledge, we may understand several other
+                        <div className="desc">
+                        <img src="/images/quote2.webp" alt="dev logo" />
+
+                        
+                        "Based on such knowledge, we may understand several other
                           programming languages in a more in-depth way. They have such an easy
                           way of teaching. 5/5 rating great work keep it up"</div>
                       </div>
                       <div className="testimonial-content">
                         <div className="author-img">
-                          <Image  layout="fill" src="/tmh3.webp" alt="" unoptimized={true} loading="lazy" />
+                        <img src="/images/tmh3.webp" alt="dev logo" />
+
+                        
                         </div>
                         <div className="author-part">
                           <a className="name" href="#">Imran Khan</a>
@@ -596,14 +598,21 @@ export default function Home() {
                   <div>
                     <div className="testi-item">
                       <div className="author-desc">
-                        <div className="desc"><Image  layout="fill" className="quote" src="/quote2.webp" alt="" unoptimized={true} loading="lazy" />"I
+                        <div className="desc">
+                        <img src="/images/quote2.webp" alt="dev logo" />
+
+                   
+                          
+                          "I
                           had an excellent time learning about many topics. I had a little bit
                           of knowledge but never had the chance to study them deeply. Thank
                           You so much for valuable information. "</div>
                       </div>
                       <div className="testimonial-content">
                         <div className="author-img">
-                          <Image  layout="fill" src="/tmh4.webp" alt="" unoptimized={true} loading="lazy" />
+                        <img src="/images/tmh4.webp" alt="dev logo" />
+
+                
                         </div>
                         <div className="author-part">
                           <a className="name" href="#">Parteek sharma</a>
@@ -618,14 +627,20 @@ export default function Home() {
                   <div>
                     <div className="testi-item">
                       <div className="author-desc">
-                        <div className="desc"><Image  layout="fill" className="quote" src="/quote2.webp" alt="" unoptimized={true} loading="lazy" />"
+                        <div className="desc">
+                      
+                          <img src="/images/quote2.webp" alt="dev logo" />
+
+                          "
                           It's a great course. The starting can be a bit tough if you're not
                           from a programming background, but later, you start to understand
                           everything because they will explain everything step by step."</div>
                       </div>
                       <div className="testimonial-content">
                         <div className="author-img">
-                          <Image  layout="fill" src="/tmh2.webp" alt="" unoptimized={true} loading="lazy" />
+                        <img src="/images/tmh2.webp" alt="dev logo" />
+
+                       
                         </div>
                         <div className="author-part">
                           <a className="name" href="#">Somya Saini</a>
@@ -654,7 +669,9 @@ export default function Home() {
             <div className="col-md-3 blog-item">
               <div className="image-wrap">
                 <a href="/study-in-canada">
-                  <Image  layout="fill" src="/canda.webp" alt="" unoptimized={true} loading="lazy" />
+                <img src="/images/canda.webp" alt="dev logo" />
+
+                
 
                 </a>
                 <ul className="post-categories">
@@ -670,7 +687,9 @@ export default function Home() {
             <div className="col-md-3 blog-item">
               <div className="image-wrap">
                 <a href="/study-in-uk">
-                  <Image  layout="fill" src="/united-kingdom.webp" alt="" unoptimized={true} loading="lazy" />
+                <img src="/images/united-kingdom.webp" alt="dev logo" />
+
+                  
 
                 </a>
                 <ul className="post-categories">
@@ -686,7 +705,9 @@ export default function Home() {
             <div className="col-md-3 blog-item">
               <div className="image-wrap">
                 <a href="/study-in-usa">
-                  <Image  layout="fill" src="/united-state.webp" alt="" unoptimized={true} loading="lazy" />
+                <img src="/images/united-state.webp" alt="dev logo" />
+
+         
                 </a>
                 <ul className="post-categories">
                   <li><a href="/study-in-usa"> United States</a></li>
@@ -701,7 +722,9 @@ export default function Home() {
             <div className="col-md-3 blog-item">
               <div className="image-wrap">
                 <a href="/study-in-australia">
-                  <Image  layout="fill" src="/austrila.webp" alt="" unoptimized={true} loading="lazy" />
+                <img src="/images/austrila.webp" alt="dev logo" />
+
+            
 
                 </a>
                 <ul className="post-categories">
@@ -717,7 +740,7 @@ export default function Home() {
           </div>
         </div>
       </div>
-    <Footer/>
+      <Footer />
     </div>
   )
 }

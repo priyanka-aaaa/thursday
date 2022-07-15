@@ -5,7 +5,7 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
 
-:root {
+ :root {
     --blue: #4e73df;
     --indigo: #6610f2;
     --purple: #6f42c1;
@@ -2120,7 +2120,8 @@ textarea.form-control {
 .form-group span {
     display: inline-block;
     float: none !important;
-    color: red
+    color: red;
+    margin-left: 5px;
 }
 
 span.req-star {
@@ -4075,6 +4076,15 @@ input[type=submit].btn-block {
     background-color: #b7b9cc;
     border-radius: .5rem;
     transition: transform .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out
+}
+p.extension {
+    font-size: 14px;
+    color: #787373;
+}
+.upload_doc p {
+    color: #535456;
+    font-size: 15px;
+    font-weight: 700;
 }
 
 @media (prefers-reduced-motion:reduce) {
@@ -13327,4 +13337,7 @@ span.msgRefresh {
 span.msgRefresh svg {
     margin-right: 9px;
     color: #1cc88a;
+}
+.repreated-value {
+    border: 1px dotted black;
 }

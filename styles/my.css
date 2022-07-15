@@ -11,7 +11,7 @@ ul {
 .tab-pane li::before {
     content: " a";
     padding-left: 12px;
-    background-image: url(/circle-check-solid.svg) !important;
+    background-image: url(/images/circle-check-solid.svg) !important;
     margin-right: 7px;
     color: #38a769
 }
@@ -61,7 +61,7 @@ button.slick-arrow.slick-next {
 }
 
 section#filterSection a.card-header.card-link.collapsed:after {
-    content: url(/chevron-down-solid.svg) !important;
+    content: url(/images/chevron-down-solid.svg) !important;
     color: #000;
     position: absolute;
     font-family: font awesome;
@@ -81,7 +81,7 @@ section#filterSection a.card-header.card-link.collapsed:before {
 }
 
 a.card-header.card-link:before {
-    content: url(/chevron-up-solid.svg);
+    content: url(/images/chevron-up-solid.svg);
     color: #000;
     position: absolute;
     font-family: font awesome;
