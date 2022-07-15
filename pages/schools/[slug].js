@@ -541,7 +541,7 @@ const MyschoolDetails = (pageProps) => {
                 {/*Full width header Start*/}
                 <div className="full-width-header">
                     {/*Header Start*/}
-                    <Header />
+                    {/* <Header /> */}
                 </div>
             </div>
             <div className="defult-home">
