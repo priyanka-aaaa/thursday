@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-
+import Link from 'next/link'
 import axios from 'axios'
 import SweetAlert from 'react-bootstrap-sweetalert';
 import { Modal, Button } from 'react-bootstrap';
@@ -140,6 +140,108 @@ export const StudentloginForm = () => {
     };
 
     return (
-       <>dfsdfdsf</>
+        <div className="form-centerblock">
+        {loader === "true" ?
+            <LoaderFrontend />
+            : null}
+        {showSweetAlert === "1" ?
+
+            <SweetAlert
+                success
+                title="Send Link For Reset Password!"
+                onConfirm={(value) => {
+                    setshowSweetAlert("0")
+                }}
+            >
+                New password has been sent to your email. Please do not share this password with anyone.
+            </SweetAlert>
+            : null
+        }
+
+        <h2>Student Login</h2>
+
+        <div className="from-start">
+            <form onSubmit={handleSubmit}>
+                <div className="mb-3 mt-3">
+                    <label className="form-label">Email<span className="req-star">*</span></label>
+                    <input type="email" className="form-control" id="email"
+                        placeholder="Enter email" name="email"
+                        value={email} required
+                        onChange={(e) => setEmail(e.target.value)}
+                    />
+                    <div className="error-msg"> {wrongUsername}</div>
+                </div>
+                <span className="error-msg">{emailError}</span>
+                <div className="mb-3 mt-3">
+                    <label className="form-label">Password<span className="req-star">*</span></label>
+                    <input type="password" className="form-control " id="uname"
+                        placeholder="Password" name="name"
+                        value={password || ""} required
+                        onChange={(e) => setPassword(e.target.value)}
+                    />
+                    <div className="error-msg"> {wrongPassword}</div>
+                </div>
+                <span className="error-msg"> {passwordError}</span>
+                <button type="submit" className="btn btn-website" title="Login">Login</button>
+            </form>
+            <div className="spacer"><span>OR</span></div>
+            <div className="google-signin">
+                <GoogleLogin
+
+                    clientId={process.env.REACT_APP_GOOGLE_CLIENT_ID}
+                    buttonText="Log in with Google"
+                    plugin_name='abc'
+                    onSuccess={handleLogin}
+                    onFailure={handleFailure}
+                    cookiePolicy={'single_host_origin'}
+                ></GoogleLogin>
+                {/* end google login */}
+            </div>
+
+            <div className="footer-login">
+                <a title="Forgot Password" onClick={() => open()} >     Forgot your Password?</a>
+
+                <p>Don't have an account? Click here to
+                    <Link to={'/Studentregister'} className="" href="#" title="Register">
+                        Register</Link></p>
+            </div>
+            {/* start google login */}
+
+
+
+        </div>
+        <Modal className="modal-container"
+            show={showModal}
+            onHide={() => close()}
+
+            animation={true}
+        >
+
+            <Modal.Header closeButton>
+                <Modal.Title>Forgot Password</Modal.Title>
+            </Modal.Header>
+
+
+            <div className="modal-body">
+                <form onSubmit={handleforgotPasswordSubmit}>
+
+                    <div className="mb-3 mt-3">
+                        <label htmlFor="email">Email Address:</label>
+                        <input type="email" className="form-control" id="email" placeholder="Enter email" name="email"
+                            value={resetEmail}
+                            onChange={(e) => onChangeresetEmail(e.target.value)}
+                            required
+                        />
+
+                        <div className="error-msg"> {EmailExistError}</div>
+
+                    </div>
+
+
+                    <button type="submit" className="btn btn-primary" >Send Password </button>
+                </form>
+            </div>
+        </Modal>
+    </div>
     )
 }
