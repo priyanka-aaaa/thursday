@@ -3,9 +3,9 @@ import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
 
-// import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick.css";
 import Slider from "react-slick";
-// import "slick-carousel/slick/slick-theme.css";
+import "slick-carousel/slick/slick-theme.css";
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
@@ -435,7 +435,7 @@ export default function Home() {
                   <a href="#">
                     <div className="logo-img">
                       
-                        <img src="/pt-1.webp" alt="dev logo" />
+                        <img src="/images/pt-1.webp" alt="dev logo" />
 
                     </div>
                   </a>
