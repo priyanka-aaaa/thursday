@@ -21,6 +21,14 @@ import {
 // import LoaderFrontend from './LoaderFrontend';
 import SweetAlert from 'react-bootstrap-sweetalert';
 import { Modal, Button } from 'react-bootstrap';
+export async function getServerSideProps(context) {
+    const res = await axios.get(process.env.REACT_APP_SERVER_URL + 'completeUniDetail/' + context.params.slug)
+    return {
+        props: {
+            mydata: res.data.universities[0].universityPrimaryInformation
+        },
+    }
+}
 
 const MyschoolDetails = (pageProps) => {
     const router = useRouter();
@@ -548,7 +556,7 @@ const MyschoolDetails = (pageProps) => {
                 <div className="main-content">
                     <div className="rs-breadcrumbs img4 cover-pict" style={divStyle} >
                         <div className="breadcrumbs-inner text-center">
-                            <h1 className="page-title">{pageProps.mydata.description}fgfgfg</h1>
+                            <h1 className="page-title">{FormPrimaryInformationValues.name}</h1>
                             <ul>
                                 <li title="Braintech - IT Solutions and Technology Startup HTML Template">
                                     <a className="active" >Home</a>
@@ -1216,14 +1224,6 @@ const MyschoolDetails = (pageProps) => {
     )
 }
 
-export async function getServerSideProps(context) {
-    const res = await axios.get(process.env.REACT_APP_SERVER_URL + 'completeUniDetail/' + context.params.slug)
-    return {
-        props: {
-            mydata: res.data.universities[0].universityPrimaryInformation
-        },
-    }
-}
 
 
 
