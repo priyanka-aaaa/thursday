@@ -141,9 +141,9 @@ export const StudentloginForm = () => {
 
     return (
         <div className="form-centerblock">
-        {loader === "true" ?
+        {/* {loader === "true" ?
             <LoaderFrontend />
-            : null}
+            : null} */}
         {showSweetAlert === "1" ?
 
             <SweetAlert
