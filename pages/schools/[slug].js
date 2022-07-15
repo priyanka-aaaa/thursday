@@ -1,5 +1,5 @@
 import { useRouter } from "next/router";
-
+import axios from 'axios';
 import Image from 'next/image'
 import React, { useState, useEffect } from "react";
 import Head from 'next/head'
@@ -21,8 +21,8 @@ import {
 // import LoaderFrontend from './LoaderFrontend';
 import SweetAlert from 'react-bootstrap-sweetalert';
 import { Modal, Button } from 'react-bootstrap';
-import axios from 'axios';
-const MyschoolDetails = () => {
+
+const MyschoolDetails = (pageProps) => {
     const router = useRouter();
 
 
@@ -139,11 +139,11 @@ const MyschoolDetails = () => {
 
 
 
-   
+
     useEffect(() => {
-        if(!router.isReady) return;
-      
-        const schoolDetails=router.query.slug;
+        if (!router.isReady) return;
+
+        const schoolDetails = router.query.slug;
 
         window.scrollTo(0, 0)
         function completeUniveristyPage() {
@@ -318,7 +318,7 @@ const MyschoolDetails = () => {
         completeUniveristyPage();
 
 
-    }, [router.isReady,router.query.slug])
+    }, [router.isReady, router.query.slug])
     function openforgot() {
         setshowModalforgot(true)
     }
@@ -461,19 +461,12 @@ const MyschoolDetails = () => {
             <Head>
                 <meta charSet="utf-8" />
 
-                <title>{FormPrimaryInformationValues.name + "-" +
-                    " Admission Process"
-                    +
-                    "- CourseMentor™"}
+                <title>
+                    {pageProps.mydata.name}
                 </title>
-                <meta name="description" content={FormPrimaryInformationValues.name + FormPrimaryInformationValues.state + ", " + FormPrimaryInformationValues.country
-
-                    + "-" +
-                    "admissions process"
-                    +
-                    "- CourseMentor™"
-
-                } />
+                <meta name="description" content=
+                    {pageProps.mydata.description}
+                />
                 <meta property="og:title" content={FormPrimaryInformationValues.name + "- admission process"}></meta>
                 <meta property="og:description"
                     content={FormPrimaryInformationValues.name + FormPrimaryInformationValues.state + ", " + FormPrimaryInformationValues.country
@@ -1222,4 +1215,17 @@ const MyschoolDetails = () => {
         </div >
     )
 }
+
+export async function getServerSideProps(context) {
+    const res = await axios.get(process.env.REACT_APP_SERVER_URL + 'completeUniDetail/' + context.params.slug)
+    return {
+        props: {
+            mydata: res.data.universities[0].universityPrimaryInformation
+        },
+    }
+}
+
+
+
+
 export default MyschoolDetails
