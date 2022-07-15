@@ -3,7 +3,7 @@ import Link from 'next/link'
 import axios from 'axios'
 import SweetAlert from 'react-bootstrap-sweetalert';
 import { Modal, Button } from 'react-bootstrap';
-// import LoaderFrontend from './components/LoaderFrontend';
+
 import GoogleLogin from 'react-google-login';
 export const StudentloginForm = () => {
     const [email, setEmail] = useState("");
@@ -141,9 +141,7 @@ export const StudentloginForm = () => {
 
     return (
         <div className="form-centerblock">
-        {/* {loader === "true" ?
-            <LoaderFrontend />
-            : null} */}
+       
         {showSweetAlert === "1" ?
 
             <SweetAlert
