@@ -12,7 +12,8 @@ import {
   faCheck, faPaperPlane, faGraduationCap
 
 } from '@fortawesome/free-solid-svg-icons';
-import { Header } from '../components/Header';
+// import { Header } from '../components/Header';
+import Header from '../components/Header';
 import { Footer } from '../components/Footer';
 import {StudentloginForm} from '../components/StudentloginForm';
 

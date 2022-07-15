@@ -548,7 +548,7 @@ const MyschoolDetails = (pageProps) => {
                 <div className="main-content">
                     <div className="rs-breadcrumbs img4 cover-pict" style={divStyle} >
                         <div className="breadcrumbs-inner text-center">
-                            <h1 className="page-title">{FormPrimaryInformationValues.name}</h1>
+                            <h1 className="page-title">{pageProps.mydata.description}fgfgfg</h1>
                             <ul>
                                 <li title="Braintech - IT Solutions and Technology Startup HTML Template">
                                     <a className="active" >Home</a>
