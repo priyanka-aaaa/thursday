@@ -10,6 +10,10 @@
     "export": "npm run build && next export"
   },
   "dependencies": {
+    "@fontsource/roboto": "^4.5.7",
+    "@fontsource/rubik": "^4.5.10",
+    "@fontsource/source-sans-pro": "^4.5.10",
+    "@fontsource/titillium-web": "^4.5.8",
     "@fortawesome/fontawesome-svg-core": "^6.1.1",
     "@fortawesome/free-brands-svg-icons": "^6.1.1",
     "@fortawesome/free-solid-svg-icons": "^6.1.1",
