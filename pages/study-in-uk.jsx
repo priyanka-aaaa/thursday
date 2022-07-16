@@ -1,6 +1,6 @@
 import React, { useState, useEffect, Suspense } from "react";
 import { isValidPhoneNumber } from 'react-phone-number-input'
-
+import Link from 'next/link'
 import Head from 'next/head'
 import { Footer } from '../components/Footer';
 import "slick-carousel/slick/slick.css";
@@ -378,9 +378,9 @@ const study = () => {
         <title>Australia Study Visa | CourseMentor</title>
         <title>CourseMentor - Study Abroad - Course Finder study austrial</title>
         <meta name="description" content="CourseMentor - Study Abroad - Course Finder study austrial" />
-        <meta property="og:title" content="Australia Study Visa | CourseMentor"/>
-        <meta property="og:description" content="CourseMentor - Study Abroad - Course Finder study austrial"/>
-        <meta property="og:image" content="og image"/>
+        <meta property="og:title" content="Australia Study Visa | CourseMentor" />
+        <meta property="og:description" content="CourseMentor - Study Abroad - Course Finder study austrial" />
+        <meta property="og:image" content="og image" />
         <script type="application/ld+json">
           {JSON.stringify(articleStructuredData)}
         </script>
@@ -438,35 +438,35 @@ const study = () => {
         {/* Breadcrumbs End */}
         <div id="secondaryNavBar" className="menu-area menu-sticky">
           <div className="fastFacts">
-            <ul className="fastFactList">
-              {activeValue === "fast" ?
-                <li className="active" onClick={() => handlesecondNavbar("fast")} ><a href="#fast-facts"> FAST FACTS</a></li> :
-                <li Click={() => handlesecondNavbar("fast")}><a href="#fast-facts"> FAST FACTS</a></li>}
-              {activeValue === "topUniversity" ?
-                <li className="active" onClick={() => handlesecondNavbar("topUniversity")} ><a href="#top-universities"> TOP UNIVERSITIES</a></li> :
-                <li onClick={() => handlesecondNavbar("topUniversity")} ><a href="#top-universities"> TOP UNIVERSITIES</a></li>
-              }
-              {activeValue === "admission" ?
-                <li className="active" onClick={() => handlesecondNavbar("admission")}><a href="#admissions"> ADMISSIONS</a></li> :
-                <li onClick={() => handlesecondNavbar("admission")}><a href="#admissions"> ADMISSIONS</a></li>
-              }
-              {activeValue === "visa" ?
-                <li className="active" onClick={() => handlesecondNavbar("visa")}><a href="#visa"> VISA</a></li> :
-                <li onClick={() => handlesecondNavbar("visa")}><a href="#visa"> VISA</a></li>
-              }
-              {activeValue === "COST" ?
-                <li className="active" onClick={() => handlesecondNavbar("COST")}><a href="#cost-of-living"> COST OF LIVING</a></li> :
-                <li onClick={() => handlesecondNavbar("COST")}><a href="#cost-of-living"> COST OF LIVING</a></li>
-              }
-              {activeValue === "work" ?
-                <li className="active" onClick={() => handlesecondNavbar("work")}><a href="#work-opportunities"> WORK OPPORTUNITIES</a></li> :
-                <li onClick={() => handlesecondNavbar("work")}><a href="#work-opportunities"> WORK OPPORTUNITIES</a></li>
-              }
-              {activeValue === "FAQs" ?
-                <li className="active" onClick={() => handlesecondNavbar("FAQs")}><a href="#faqs"> FAQs</a></li> :
-                <li onClick={() => handlesecondNavbar("FAQs")}><a href="#faqs"> FAQs</a></li>
-              }
-            </ul>
+          <ul className="fastFactList">
+{activeValue === "fast" ?
+  <li className="active" onClick={() => handlesecondNavbar("fast")} ><Link href="#fast-facts"><a>FAST FACTS</a></Link></li> :
+  <li Click={() => handlesecondNavbar("fast")}><Link href="#fast-facts"> FAST FACTS</Link></li>}
+{activeValue === "topUniversity" ?
+  <li className="active" onClick={() => handlesecondNavbar("topUniversity")} ><Link href="#top-universities"> TOP UNIVERSITIES</Link></li> :
+  <li onClick={() => handlesecondNavbar("topUniversity")} ><Link href="#top-universities"> TOP UNIVERSITIES</Link></li>
+}
+{activeValue === "admission" ?
+  <li className="active" onClick={() => handlesecondNavbar("admission")}><Link href="#admissions"> ADMISSIONS</Link></li> :
+  <li onClick={() => handlesecondNavbar("admission")}><Link href="#admissions"> ADMISSIONS</Link></li>
+}
+{activeValue === "visa" ?
+  <li className="active" onClick={() => handlesecondNavbar("visa")}><Link href="#visa"> VISA</Link></li> :
+  <li onClick={() => handlesecondNavbar("visa")}><Link href="#visa"> VISA</Link></li>
+}
+{activeValue === "COST" ?
+  <li className="active" onClick={() => handlesecondNavbar("COST")}><Link href="#cost-of-living"> COST OF LIVING</Link></li> :
+  <li onClick={() => handlesecondNavbar("COST")}><Link href="#cost-of-living"> COST OF LIVING</Link></li>
+}
+{activeValue === "work" ?
+  <li className="active" onClick={() => handlesecondNavbar("work")}><Link href="#work-opportunities"> WORK OPPORTUNITIES</Link></li> :
+  <li onClick={() => handlesecondNavbar("work")}><Link href="#work-opportunities"> WORK OPPORTUNITIES</Link></li>
+}
+{activeValue === "FAQs" ?
+  <li className="active" onClick={() => handlesecondNavbar("FAQs")}><Link href="#faqs"> FAQs</Link></li> :
+  <li onClick={() => handlesecondNavbar("FAQs")}><Link href="#faqs"> FAQs</Link></li>
+}
+</ul>
 
             <div className="container">
               <div className="row  mt-5 mb-5">
@@ -475,9 +475,9 @@ const study = () => {
                     <div className="col-sm-4 mb-3">
                       <div className="study-location-facts_capital__1MYWF">
                         <div className="study-location-facts_imgBox__3psUR">
-                        <img src="/washington-monument.webp" alt="dev logo" />
-                        
-                          </div>
+                          <img src="/washington-monument.webp" alt="dev logo" />
+
+                        </div>
                         <div className="study-location-facts_imgDetails__3qjdN">
                           <p>Capital<br /><strong>Canberra</strong></p>
                         </div>
@@ -486,8 +486,8 @@ const study = () => {
                     <div className="col-sm-4 mb-3">
                       <div className="study-location-facts_capital__1MYWF">
                         <div className="study-location-facts_imgBox__3psUR">
-                        <img src="/images/population.webp" alt="dev logo" />
-                        
+                          <img src="/images/population.webp" alt="dev logo" />
+
                         </div>
                         <div className="study-location-facts_imgDetails__3qjdN">
                           <p>Population<br /><strong>26 Mn</strong></p>
@@ -497,8 +497,8 @@ const study = () => {
                     <div className="col-sm-4 mb-3">
                       <div className="study-location-facts_capital__1MYWF">
                         <div className="study-location-facts_imgBox__3psUR">
-                        <img src="/images/language.webp" alt="dev logo" />
-                        
+                          <img src="/images/language.webp" alt="dev logo" />
+
                         </div>
                         <div className="study-location-facts_imgDetails__3qjdN">
                           <p>Language<br /><strong>English</strong></p>
@@ -508,8 +508,8 @@ const study = () => {
                     <div className="col-sm-4 mb-3">
                       <div className="study-location-facts_capital__1MYWF">
                         <div className="study-location-facts_imgBox__3psUR">
-                        <img src="/images/int-student.webp" alt="dev logo" />
-                       
+                          <img src="/images/int-student.webp" alt="dev logo" />
+
                         </div>
                         <div className="study-location-facts_imgDetails__3qjdN">
                           <p>International Students<br /><strong>869,709</strong></p>
@@ -519,8 +519,8 @@ const study = () => {
                     <div className="col-sm-4 mb-3">
                       <div className="study-location-facts_capital__1MYWF">
                         <div className="study-location-facts_imgBox__3psUR">
-                        <img src="/images/economic.webp" alt="dev logo" />
-                      
+                          <img src="/images/economic.webp" alt="dev logo" />
+
                         </div>
                         <div className="study-location-facts_imgDetails__3qjdN">
                           <p>GDP<br /><strong>$1.37 Trillion</strong></p>
@@ -530,8 +530,8 @@ const study = () => {
                     <div className="col-sm-4 mb-3">
                       <div className="study-location-facts_capital__1MYWF">
                         <div className="study-location-facts_imgBox__3psUR">
-                        <img src="/images/keypad.webp" alt="dev logo" />
-                        
+                          <img src="/images/keypad.webp" alt="dev logo" />
+
                         </div>
                         <div className="study-location-facts_imgDetails__3qjdN">
                           <p>Dialing Code<br /><strong>+61</strong></p>
@@ -541,8 +541,8 @@ const study = () => {
                     <div className="col-sm-4 mb-3">
                       <div className="study-location-facts_capital__1MYWF">
                         <div className="study-location-facts_imgBox__3psUR">
-                        <img src="/images/money.webp" alt="dev logo" />
-                       
+                          <img src="/images/money.webp" alt="dev logo" />
+
                         </div>
                         <div className="study-location-facts_imgDetails__3qjdN">
                           <p>Currency<br /><strong>Australian Dollar</strong></p>
@@ -552,8 +552,8 @@ const study = () => {
                     <div className="col-sm-4 mb-3">
                       <div className="study-location-facts_capital__1MYWF">
                         <div className="study-location-facts_imgBox__3psUR">
-                        <img src="/images/graduation-hat.webp" alt="dev logo" />
-                      
+                          <img src="/images/graduation-hat.webp" alt="dev logo" />
+
                         </div>
                         <div className="study-location-facts_imgDetails__3qjdN">
                           <p>Universities<br /><strong>43</strong></p>
@@ -564,8 +564,8 @@ const study = () => {
                 </div>
                 <div className="col-sm-2">
                   <div className="study-location-facts_rankingBox__2pQ44 mobile-hide">
-                  <img src="/images/7.webp" alt="dev logo" />
-                 
+                    <img src="/images/7.webp" alt="dev logo" />
+
                   </div>
                   <div className="study-location-facts_studyGuide__isgq9 mobile-hide">
                     <div className="textC ">
@@ -587,29 +587,18 @@ const study = () => {
                     <div className="uniBlock" key={index}>
                       {/* start for bookmark */}
                       {/* end for bookmark */}
-                      <div className="headerBlock"><a href="#" target="_blank">
-                        {/* <Link to={'/schools/' + element.universityPrimaryInformation.slug} target="_blank" className="name">
-                          <img className="logo"
-                            src=
-                            {element.universityImage.logo}
-
-                            loading="lazy"
-                          />
-                        </Link> */}
-                      </a>
+                      <div className="headerBlock">
                         <div className="nameBlock">
 
                           <div className="name">
-                            {/* <Link to={'/schools/' + element.universityPrimaryInformation.slug} target="_blank" className="name">
-                              {element.universityPrimaryInformation.name}
-                            </Link> */}
+                        
                           </div>
                           <div className="address">{element.universityPrimaryInformation.state}, {element.universityPrimaryInformation.country}</div>
 
                           {element.following === true ?
                             <img onClick={() => handleStarClick("active", element._id, element.universityPrimaryInformation.name, element.universityImage.logo, element.universityPrimaryInformation.slug)} src=
-                           "/images/starActive.webp"
-                             alt=""
+                              "/images/starActive.webp"
+                              alt=""
                               style={{
                                 width: "33px",
                                 height: "33px",
@@ -618,7 +607,7 @@ const study = () => {
                             />
                             :
                             <img onClick={() => handleStarClick("inactive", element._id, element.universityPrimaryInformation.name, element.universityImage.logo, element.universityPrimaryInformation.slug)} alt=""
-                              src=  "/images/starInactive.webp"
+                              src="/images/starInactive.webp"
                               style={{
                                 width: "33px",
                                 height: "33px",
@@ -638,17 +627,15 @@ const study = () => {
                           </div>
                         </div>
                         <div className="detail">
-                        <img src="/images/ranking.webp" alt="dev logo" />
-                      
+                          <img src="/images/ranking.webp" alt="dev logo" />
+
                           <div className="content">
                             <div className="value">{element.universityOverview.ranking}</div>
                             <div className="description">Ranking</div>
                           </div>
                         </div>
                       </div>
-                      {/* <Link to={'/schools/' + element.universityPrimaryInformation.slug} target="_blank" className="redirector" >
-                        Apply Now
-                      </Link> */}
+                  
 
                     </div>
 
@@ -657,10 +644,7 @@ const study = () => {
                   ))}
 
                 </Slider>
-                {/* <a href="#" className="consult-btn seeAll">Find Your Dream University<span>
-                    <FontAwesomeIcon icon={faAngleRight} />
 
-                  </span></a> */}
 
 
               </div>
@@ -692,13 +676,15 @@ const study = () => {
                           </div>
 
                           <div className="blog-content">
-                            <h4 className="blog-title mt-3"><a href="#">{element.title.rendered}</a></h4>
+                            <h4 className="blog-title mt-3">
+                              <Link href="#"><a>{element.title.rendered}nj</a></Link>
+                              </h4>
                             {element.content.rendered != null ?
                               <p className="desc">
                                 {parse(element.content.rendered.substring(0, 250))}</p> : <p></p>
                             }
 
-                            <a href={element.link} tabindex="0" target="_blank">Learn More..</a>
+                            <Link href={element.link} tabIndex="0" target="_blank"><a>Learn More..</a></Link>
 
                           </div>
                         </div>
@@ -804,30 +790,30 @@ const study = () => {
                             <div className="un-logo">
                               <div className="row">
                                 <div className="col-md-4">
-                                <img src="/images/aus-logo1.webp" alt="dev logo" />
-                         
-                                </div>
-                                <div className="col-md-4">
-                                <img src="/images/aus-logo2.webp" alt="dev logo" />
+                                  <img src="/images/aus-logo1.webp" alt="dev logo" />
 
                                 </div>
                                 <div className="col-md-4">
-                                <img src="/images/aus-logo3.webp" alt="dev logo" />
+                                  <img src="/images/aus-logo2.webp" alt="dev logo" />
 
-                             
+                                </div>
+                                <div className="col-md-4">
+                                  <img src="/images/aus-logo3.webp" alt="dev logo" />
+
+
                                 </div>
                               </div>
                               <div className="row">
                                 <div className="col-md-4">
-                                <img src="/images/aus-logo4.webp" alt="dev logo" />
-                                 
+                                  <img src="/images/aus-logo4.webp" alt="dev logo" />
+
                                 </div>
                                 <div className="col-md-4">
-                                <img src="/images/aus-logo5.webp" alt="dev logo" />
-                                 
+                                  <img src="/images/aus-logo5.webp" alt="dev logo" />
+
                                 </div>
                                 <div className="col-md-4">
-                                <img src="/images/aus-logo6.webp" alt="dev logo" />
+                                  <img src="/images/aus-logo6.webp" alt="dev logo" />
 
                                 </div>
                               </div>
@@ -872,30 +858,30 @@ const study = () => {
                             <div className="un-logo">
                               <div className="row">
                                 <div className="col-md-4">
-                                <img src="/images/us-logo1.webp" alt="dev logo" />
-                                
+                                  <img src="/images/us-logo1.webp" alt="dev logo" />
+
                                 </div>
                                 <div className="col-md-4">
-                                <img src="/images/aus-logo2.webp" alt="dev logo" />
-                                 
+                                  <img src="/images/aus-logo2.webp" alt="dev logo" />
+
                                 </div>
                                 <div className="col-md-4">
-                                <img src="/images/aus-logo3.webp" alt="dev logo" />
-                                  
+                                  <img src="/images/aus-logo3.webp" alt="dev logo" />
+
                                 </div>
                               </div>
                               <div className="row">
                                 <div className="col-md-4">
-                                <img src="/images/aus-logo4.webp" alt="dev logo" />
-                               
+                                  <img src="/images/aus-logo4.webp" alt="dev logo" />
+
                                 </div>
                                 <div className="col-md-4">
-                                <img src="/images/aus-logo1.webp" alt="dev logo" />
-                                
+                                  <img src="/images/aus-logo1.webp" alt="dev logo" />
+
                                 </div>
                                 <div className="col-md-4">
-                                <img src="/images/aus-logo6.webp" alt="dev logo" />
-                               
+                                  <img src="/images/aus-logo6.webp" alt="dev logo" />
+
                                 </div>
                               </div>
                             </div>
@@ -940,30 +926,30 @@ const study = () => {
                             <div className="un-logo">
                               <div className="row">
                                 <div className="col-md-4">
-                                <img src="/images/aus-logo1.webp" alt="dev logo" />
-                              
+                                  <img src="/images/aus-logo1.webp" alt="dev logo" />
+
                                 </div>
                                 <div className="col-md-4">
-                                <img src="/images/aus-logo2.webp" alt="dev logo" />
-                               
+                                  <img src="/images/aus-logo2.webp" alt="dev logo" />
+
                                 </div>
                                 <div className="col-md-4">
-                                <img src="/images/aus-logo3.webp" alt="dev logo" />
-                              
+                                  <img src="/images/aus-logo3.webp" alt="dev logo" />
+
                                 </div>
                               </div>
                               <div className="row">
                                 <div className="col-md-4">
-                                <img src="/images/aus-logo4.webp" alt="dev logo" />
-                               
+                                  <img src="/images/aus-logo4.webp" alt="dev logo" />
+
                                 </div>
                                 <div className="col-md-4">
-                                <img src="/images/aus-logo5.webp" alt="dev logo" />
-                            
+                                  <img src="/images/aus-logo5.webp" alt="dev logo" />
+
                                 </div>
                                 <div className="col-md-4">
-                                <img src="/images/aus-logo6.webp" alt="dev logo" />
-                             
+                                  <img src="/images/aus-logo6.webp" alt="dev logo" />
+
                                 </div>
                               </div>
                             </div>
@@ -1061,8 +1047,8 @@ const study = () => {
                   <div className="col-md-6">
                     <h5>Cost Of Living</h5>
                     <div className="cost-pict">
-                    <img src="/images/Ellipse.webp" alt="dev logo" />
-                    
+                      <img src="/images/Ellipse.webp" alt="dev logo" />
+
                       <span className="needle low" />
                     </div>
                     <div className="row">
@@ -1081,32 +1067,32 @@ const study = () => {
                     <div className="row mt-3">
                       <div className="col-6">
                         <div className="livingBox text-center">
-                        <img src="/images/rent.svg" alt="dev logo" />
-                       
+                          <img src="/images/rent.svg" alt="dev logo" />
+
                           <h5 className="name">Rent</h5>
                           <p className="cost">AU$201 - AU$583</p>
                         </div>
                       </div>
                       <div className="col-6">
                         <div className="livingBox text-center">
-                        <img src="/images/food.svg" alt="dev logo" />
-                    
+                          <img src="/images/food.svg" alt="dev logo" />
+
                           <h5 className="name">Food</h5>
                           <p className="cost">AU$243 - AU$341</p>
                         </div>
                       </div>
                       <div className="col-6">
                         <div className="livingBox text-center">
-                        <img src="/images/transport.svg" alt="dev logo" />
-                         
+                          <img src="/images/transport.svg" alt="dev logo" />
+
                           <h5 className="name">Transport</h5>
                           <p className="cost">AU$96 - AU$583</p>
                         </div>
                       </div>
                       <div className="col-6">
                         <div className="livingBox text-center">
-                        <img src="/images/dice.svg" alt="dev logo" />
-                         
+                          <img src="/images/dice.svg" alt="dev logo" />
+
                           <h5 className="name">Miscellaneous</h5>
                           <p className="cost">AU$243 - AU$487</p>
                         </div>
@@ -1139,36 +1125,36 @@ const study = () => {
                     <div className="care-list">
                       <ul>
                         <li><span>
-                        <img src="/images/arts.webp" alt="dev logo" />
-                         </span>Arts and Humanities</li>
+                          <img src="/images/arts.webp" alt="dev logo" />
+                        </span>Arts and Humanities</li>
                         <li><span>
-                        <img src="/images/Consulting.webp" alt="dev logo" />
+                          <img src="/images/Consulting.webp" alt="dev logo" />
                         </span>Law and Legal Studies</li>
                         <li><span>
-                        <img src="/images/engineering.webp" alt="dev logo" />
-                         </span>Architecture</li>
+                          <img src="/images/engineering.webp" alt="dev logo" />
+                        </span>Architecture</li>
                         <li><span>
-                        <img src="/images/healthCare.webp" alt="dev logo" />
-                         </span>Medicine and Life Sciences</li>
+                          <img src="/images/healthCare.webp" alt="dev logo" />
+                        </span>Medicine and Life Sciences</li>
                         <li><span>
-                        <img src="/images/Business.webp" alt="dev logo" />
-                         </span>Social Sciences</li>
+                          <img src="/images/Business.webp" alt="dev logo" />
+                        </span>Social Sciences</li>
                         <li><span>
-                        <img src="/images/infoTech.webp" alt="dev logo" />
-                         </span>Engineering and Technology</li>
+                          <img src="/images/infoTech.webp" alt="dev logo" />
+                        </span>Engineering and Technology</li>
                         <li><span>
-                        <img src="/images/arts.webp" alt="dev logo" />
-                          </span>Design</li>
+                          <img src="/images/arts.webp" alt="dev logo" />
+                        </span>Design</li>
                         <li><span>
-                        <img src="/images/Consulting.webp" alt="dev logo" />
-                         </span>Natural Sciences</li>
+                          <img src="/images/Consulting.webp" alt="dev logo" />
+                        </span>Natural Sciences</li>
                       </ul>
                     </div>
                   </div>
                   <div className="col-md-6">
                     <div className="car-pict">
-                    <img src="/images/careerswork.webp" alt="dev logo" />
-                     </div>
+                      <img src="/images/careerswork.webp" alt="dev logo" />
+                    </div>
                   </div>
                 </div>
               </div>
@@ -1281,8 +1267,8 @@ const study = () => {
                   </div>
                   <div className="col-md-6">
                     <div className="faq-pict">
-                    <img src="/images/faq.webp" alt="dev logo" />
-                 </div>
+                      <img src="/images/faq.webp" alt="dev logo" />
+                    </div>
                   </div>
                 </div>
               </div>
@@ -1335,7 +1321,7 @@ const study = () => {
           {/* <a onClick={() => open()} >     Forgot your Password?</a> */}
           {/* <StudentForgotPass /> */}
           <p>Don't have an account? Click here to
-        </p>
+          </p>
 
         </div>
 
@@ -1456,8 +1442,8 @@ const study = () => {
 
                 </div>
                 <div className="col-md-6">
-                <img src="/images/enquiry-girl.webp" alt="dev logo" />
-                 
+                  <img src="/images/enquiry-girl.webp" alt="dev logo" />
+
 
                 </div>
               </div>

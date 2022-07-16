@@ -1,6 +1,6 @@
 import React, { useState, useEffect, Suspense } from "react";
 import { isValidPhoneNumber } from 'react-phone-number-input'
-
+import Link from 'next/link'
 import Head from 'next/head'
 import { Footer } from '../components/Footer';
 import "slick-carousel/slick/slick.css";
@@ -438,35 +438,35 @@ const study = () => {
         {/* Breadcrumbs End */}
         <div id="secondaryNavBar" className="menu-area menu-sticky">
           <div className="fastFacts">
-            <ul className="fastFactList">
-              {activeValue === "fast" ?
-                <li className="active" onClick={() => handlesecondNavbar("fast")} ><a href="#fast-facts"> FAST FACTS</a></li> :
-                <li Click={() => handlesecondNavbar("fast")}><a href="#fast-facts"> FAST FACTS</a></li>}
-              {activeValue === "topUniversity" ?
-                <li className="active" onClick={() => handlesecondNavbar("topUniversity")} ><a href="#top-universities"> TOP UNIVERSITIES</a></li> :
-                <li onClick={() => handlesecondNavbar("topUniversity")} ><a href="#top-universities"> TOP UNIVERSITIES</a></li>
-              }
-              {activeValue === "admission" ?
-                <li className="active" onClick={() => handlesecondNavbar("admission")}><a href="#admissions"> ADMISSIONS</a></li> :
-                <li onClick={() => handlesecondNavbar("admission")}><a href="#admissions"> ADMISSIONS</a></li>
-              }
-              {activeValue === "visa" ?
-                <li className="active" onClick={() => handlesecondNavbar("visa")}><a href="#visa"> VISA</a></li> :
-                <li onClick={() => handlesecondNavbar("visa")}><a href="#visa"> VISA</a></li>
-              }
-              {activeValue === "COST" ?
-                <li className="active" onClick={() => handlesecondNavbar("COST")}><a href="#cost-of-living"> COST OF LIVING</a></li> :
-                <li onClick={() => handlesecondNavbar("COST")}><a href="#cost-of-living"> COST OF LIVING</a></li>
-              }
-              {activeValue === "work" ?
-                <li className="active" onClick={() => handlesecondNavbar("work")}><a href="#work-opportunities"> WORK OPPORTUNITIES</a></li> :
-                <li onClick={() => handlesecondNavbar("work")}><a href="#work-opportunities"> WORK OPPORTUNITIES</a></li>
-              }
-              {activeValue === "FAQs" ?
-                <li className="active" onClick={() => handlesecondNavbar("FAQs")}><a href="#faqs"> FAQs</a></li> :
-                <li onClick={() => handlesecondNavbar("FAQs")}><a href="#faqs"> FAQs</a></li>
-              }
-            </ul>
+          <ul className="fastFactList">
+{activeValue === "fast" ?
+  <li className="active" onClick={() => handlesecondNavbar("fast")} ><Link href="#fast-facts"><a>FAST FACTS</a></Link></li> :
+  <li Click={() => handlesecondNavbar("fast")}><Link href="#fast-facts"> FAST FACTS</Link></li>}
+{activeValue === "topUniversity" ?
+  <li className="active" onClick={() => handlesecondNavbar("topUniversity")} ><Link href="#top-universities"> TOP UNIVERSITIES</Link></li> :
+  <li onClick={() => handlesecondNavbar("topUniversity")} ><Link href="#top-universities"> TOP UNIVERSITIES</Link></li>
+}
+{activeValue === "admission" ?
+  <li className="active" onClick={() => handlesecondNavbar("admission")}><Link href="#admissions"> ADMISSIONS</Link></li> :
+  <li onClick={() => handlesecondNavbar("admission")}><Link href="#admissions"> ADMISSIONS</Link></li>
+}
+{activeValue === "visa" ?
+  <li className="active" onClick={() => handlesecondNavbar("visa")}><Link href="#visa"> VISA</Link></li> :
+  <li onClick={() => handlesecondNavbar("visa")}><Link href="#visa"> VISA</Link></li>
+}
+{activeValue === "COST" ?
+  <li className="active" onClick={() => handlesecondNavbar("COST")}><Link href="#cost-of-living"> COST OF LIVING</Link></li> :
+  <li onClick={() => handlesecondNavbar("COST")}><Link href="#cost-of-living"> COST OF LIVING</Link></li>
+}
+{activeValue === "work" ?
+  <li className="active" onClick={() => handlesecondNavbar("work")}><Link href="#work-opportunities"> WORK OPPORTUNITIES</Link></li> :
+  <li onClick={() => handlesecondNavbar("work")}><Link href="#work-opportunities"> WORK OPPORTUNITIES</Link></li>
+}
+{activeValue === "FAQs" ?
+  <li className="active" onClick={() => handlesecondNavbar("FAQs")}><Link href="#faqs"> FAQs</Link></li> :
+  <li onClick={() => handlesecondNavbar("FAQs")}><Link href="#faqs"> FAQs</Link></li>
+}
+</ul>
 
             <div className="container">
               <div className="row  mt-5 mb-5">
@@ -587,22 +587,11 @@ const study = () => {
                     <div className="uniBlock" key={index}>
                       {/* start for bookmark */}
                       {/* end for bookmark */}
-                      <div className="headerBlock"><a href="#" target="_blank">
-                        {/* <Link to={'/schools/' + element.universityPrimaryInformation.slug} target="_blank" className="name">
-                          <img className="logo"
-                            src=
-                            {element.universityImage.logo}
-
-                            loading="lazy"
-                          />
-                        </Link> */}
-                      </a>
+                      <div className="headerBlock">
                         <div className="nameBlock">
 
                           <div className="name">
-                            {/* <Link to={'/schools/' + element.universityPrimaryInformation.slug} target="_blank" className="name">
-                              {element.universityPrimaryInformation.name}
-                            </Link> */}
+                        
                           </div>
                           <div className="address">{element.universityPrimaryInformation.state}, {element.universityPrimaryInformation.country}</div>
 
@@ -646,9 +635,7 @@ const study = () => {
                           </div>
                         </div>
                       </div>
-                      {/* <Link to={'/schools/' + element.universityPrimaryInformation.slug} target="_blank" className="redirector" >
-                        Apply Now
-                      </Link> */}
+                  
 
                     </div>
 
@@ -657,10 +644,7 @@ const study = () => {
                   ))}
 
                 </Slider>
-                {/* <a href="#" className="consult-btn seeAll">Find Your Dream University<span>
-                    <FontAwesomeIcon icon={faAngleRight} />
 
-                  </span></a> */}
 
 
               </div>
@@ -692,13 +676,15 @@ const study = () => {
                           </div>
 
                           <div className="blog-content">
-                            <h4 className="blog-title mt-3"><a href="#">{element.title.rendered}</a></h4>
+                            <h4 className="blog-title mt-3">
+                              <Link href="#"><a>{element.title.rendered}nj</a></Link>
+                              </h4>
                             {element.content.rendered != null ?
                               <p className="desc">
                                 {parse(element.content.rendered.substring(0, 250))}</p> : <p></p>
                             }
 
-                            <a href={element.link} tabindex="0" target="_blank">Learn More..</a>
+                            <Link href={element.link} tabIndex="0" target="_blank"><a>Learn More..</a></Link>
 
                           </div>
                         </div>
