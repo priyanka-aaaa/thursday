@@ -3276,10 +3276,10 @@ ul.nav-menu {
     align-items: center
 }
 
-.full-width-header .rs-header.style3 .expand-btn-inner ul .sidebarmenu-search>a {
+/* .full-width-header .rs-header.style3 .expand-btn-inner ul .sidebarmenu-search>a {
     border: unset;
     padding-right: unset
-}
+} */
 
 .full-width-header .rs-header.style3 .expand-btn-inner ul li .humburger {
     max-width: 45px;

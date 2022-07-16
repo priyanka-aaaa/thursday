@@ -1,16 +1,9 @@
-
 import '../styles/style.css'
 import '../styles/dashboard.css'
 import '../styles/frontend.css'
-
 import '../styles/my.css'
 import '../styles/inquiry.css'
 import '../styles/responsive.css'
-
-
-
-
-
 import "@fontsource/roboto/100.css" 
 import "@fontsource/roboto/300.css" 
 import "@fontsource/roboto/400.css" 
