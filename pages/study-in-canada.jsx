@@ -28,7 +28,7 @@ import {
   faFacebookF, faGoogle, faTwitter, faFacebook,
   faPinterest, faInstagram
 } from "@fortawesome/free-brands-svg-icons";
-const study = () => {
+const Study = () => {
   const [UniveristyValues, setUniveristyValues] = useState([{
     universityPrimaryInformation: "", universityOverview: "", universityImage: "", _id: "", slug: ""
   }])
@@ -1461,4 +1461,4 @@ const study = () => {
     </div >
   )
 }
-export default study
+export default Study
