@@ -1,5 +1,7 @@
 import React from "react";
 import PersonalInfoProfile from '../../components/ApplicationProfile/PersonalInfoProfile';
+import Studentsidebar from '../../components/Studentsidebar';
+import Topsidebar from '../../components/Topsidebar';
 import AddressProfile from '../../components/ApplicationProfile/AddressProfile';
 import FamilyProfile from '../../components/ApplicationProfile/FamilyProfile';
 import EducationProfile from '../../components/ApplicationProfile/EducationProfile';
@@ -10,23 +12,28 @@ import RecommendationProfile from '../../components/ApplicationProfile/Recommend
 // import '../../scss/studentApplicationProfile.scss';
 export default function ApplicationProfile() {
     return (
-        <div className="container">
-            <div className="d-sm-flex align-items-center justify-content-between mb-4">
-                <h1 className="h3 mb-0 text-gray-800">Application Profile </h1>
-            </div>
-            <div className="row">
-                <div className="col-xl-12 col-lg-7">
-                    <div id="accordion">
-                        <PersonalInfoProfile />
-                        <AddressProfile />
-                        <FamilyProfile />
-                        <EducationProfile />
-                        <TestScoreProfile />
-                        <WorkExperienceProfile />
-                        <ExtraCurricultarActivityProfile />
-                        <RecommendationProfile />
+        <div id="page-top">
+            <div id="wrapper">
+
+                <Studentsidebar />
+                <Topsidebar />
+
+                <div className="row">
+                    <div className="col-xl-12 col-lg-7">
+                        <div id="accordion">
+
+                            <PersonalInfoProfile />
+                            <AddressProfile />
+                            <FamilyProfile />
+                            <EducationProfile />
+                            <TestScoreProfile />
+                            <WorkExperienceProfile />
+                            <ExtraCurricultarActivityProfile />
+                            <RecommendationProfile />
+                        </div>
                     </div>
                 </div>
+                {/* </div> */}
             </div>
         </div>
     );

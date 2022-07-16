@@ -1,5 +1,10 @@
 import React, { useState, useEffect } from "react";
 import axios from 'axios';
+import StudentTopbar from '../../components/StudentTopbar';
+import StudentSidebar from '../../components/StudentSidebar';
+
+
+import Header from '../components/Header';
 // import Loader from '../Home/Loader';
 export default function Setting() {
     const [mounted, setMounted] = useState();
@@ -62,50 +67,60 @@ export default function Setting() {
         }
     }
     return (
-        <div className="container">
-            {submitSuccess === 1 ? <div className="Show_success_message">
-                <strong>Success!</strong> {successMessage}
-            </div> : null}
-            <div className="d-sm-flex align-items-center justify-content-between mb-4">
-                <h1 className="h3 mb-0 text-gray-800">Settings</h1>
-            </div>
-            <div className="row">
-                <div className="col-xl-12 col-lg-7">
-                    <div className="card shadow mb-4">
-                        <div className="card-body">
-                            {/* {loader === "true" ?
+        <div id="page-top">
+            <div id="wrapper">
+                <StudentSidebar />
+                <div id="content-wrapper" className="d-flex flex-column">
+                    <div id="content">
+                       <StudentTopbar/> 
+                        <div className="container">
+                            {submitSuccess === 1 ? <div className="Show_success_message">
+                                <strong>Success!</strong> {successMessage}
+                            </div> : null}
+                            <div className="d-sm-flex align-items-center justify-content-between mb-4">
+                                <h1 className="h3 mb-0 text-gray-800">Settings</h1>
+                            </div>
+                            <div className="row">
+                                <div className="col-xl-12 col-lg-7">
+                                    <div className="card shadow mb-4">
+                                        <div className="card-body">
+                                            {/* {loader === "true" ?
                                 <Loader />
                                 : null} */}
-                            <div className="form-block">
-                                <div className="card-body">
-                                    <h3>Change Password</h3>
-                                    <div className="col-sm-12">
-                                        <div className="row">
-                                            <div className="col-sm-12">
-                                                <form onSubmit={setting}>
-                                                    <div className="form-group">
-                                                        <label htmlFor="password">Enter New Password<span className="req-star">*</span></label>
-                                                        <input required="" name="password" type="password" id="password" className="form-control"
-                                                            value={password || ""}
-                                                            onChange={(e) => setpassword(e.target.value)}
-                                                            placeholder="Password"
-                                                        />
-                                                        <div className="error-msg"> {cpasswordError}</div>
+                                            <div className="form-block">
+                                                <div className="card-body">
+                                                    <h3>Change Password</h3>
+                                                    <div className="col-sm-12">
+                                                        <div className="row">
+                                                            <div className="col-sm-12">
+                                                                <form onSubmit={setting}>
+                                                                    <div className="form-group">
+                                                                        <label htmlFor="password">Enter New Password<span className="req-star">*</span></label>
+                                                                        <input required="" name="password" type="password" id="password" className="form-control"
+                                                                            value={password || ""}
+                                                                            onChange={(e) => setpassword(e.target.value)}
+                                                                            placeholder="Password"
+                                                                        />
+                                                                        <div className="error-msg"> {cpasswordError}</div>
+                                                                    </div>
+                                                                    <div className="form-group">
+                                                                        <label htmlFor="c_password">Confirm Password<span className="req-star">*</span></label>
+                                                                        <input required="" name="c_password" type="password" id="c_password" className="form-control"
+                                                                            value={conformPassword || ""}
+                                                                            onChange={(e) => setconformPassword(e.target.value)}
+                                                                            placeholder="Confirm Password"
+                                                                        />
+                                                                    </div>
+                                                                    <div className="error-msg"> {confirmpasswordError}</div>
+                                                                    <div className="col-sm-12 text-danger"></div>
+                                                                    <button type="submit" className="btn btn-success"
+                                                                        title="Save" data-toggle="tooltip" data-placement="right"
+                                                                    >Save</button>
+                                                                </form>
+                                                            </div>
+                                                        </div>
                                                     </div>
-                                                    <div className="form-group">
-                                                        <label htmlFor="c_password">Confirm Password<span className="req-star">*</span></label>
-                                                        <input required="" name="c_password" type="password" id="c_password" className="form-control"
-                                                            value={conformPassword || ""}
-                                                            onChange={(e) => setconformPassword(e.target.value)}
-                                                            placeholder="Confirm Password"
-                                                        />
-                                                    </div>
-                                                    <div className="error-msg"> {confirmpasswordError}</div>
-                                                    <div className="col-sm-12 text-danger"></div>
-                                                    <button type="submit" className="btn btn-success"
-                                                        title="Save" data-toggle="tooltip" data-placement="right"
-                                                    >Save</button>
-                                                </form>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>

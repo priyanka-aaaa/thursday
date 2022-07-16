@@ -6,11 +6,19 @@ import ExtraCurricularDocument from '../../components/Mydocument/ExtraCurricular
 import OtherDocument from '../../components/Mydocument/OtherDocument';
 import EnglishProficiencyDocument from '../../components/Mydocument/EnglishProficiencyDocument';
 import IdentityDocument from '../../components/Mydocument/IdentityDocument';
+import StudentTopbar from '../../components/StudentTopbar';
+import StudentSidebar from '../../components/StudentSidebar';
 // import Header from '../components/Header';
 // import '../../scss/studentdocument.scss';
 export default function Document() {
 
     return (
+        <div id="page-top">
+        <div id="wrapper">
+            <StudentSidebar />
+            <div id="content-wrapper" className="d-flex flex-column">
+                <div id="content">
+                   <StudentTopbar/>
         <div className="container">
             <div className=" align-items-center justify-content-between mb-4">
                 <h1 className="h3 mb-0 text-gray-800">Application Documents</h1>
@@ -27,6 +35,10 @@ export default function Document() {
                             <OtherDocument /> */}
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+        </div>
                 </div>
             </div>
         </div>
