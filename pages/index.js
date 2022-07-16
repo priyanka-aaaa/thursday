@@ -670,20 +670,20 @@ export default function Home() {
           <div className="row rs-carousel owl-carousel" data-loop="true" data-items={3} data-margin={30} data-autoplay="true" data-hoverpause="true" data-autoplay-timeout={5000} data-smart-speed={800} data-dots="false" data-nav="false" data-nav-speed="false" data-center-mode="false" data-mobile-device={1} data-mobile-device-nav="false" data-mobile-device-dots="false" data-ipad-device={2} data-ipad-device-nav="false" data-ipad-device-dots="false" data-ipad-device2={2} data-ipad-device-nav2="false" data-ipad-device-dots2="false" data-md-device={3} data-md-device-nav="false" data-md-device-dots="false">
             <div className="col-md-3 blog-item">
               <div className="image-wrap">
-                <a href="/study-in-canada">
+                <Link href="/study-in-canada">
                 <img src="/images/canda.webp" alt="dev logo" />
 
                 
 
-                </a>
+                </Link>
                 <ul className="post-categories">
-                  <li><a href="/study-in-canada">Canada</a></li>
+                  <li><Link href="/study-in-canada">Canada</Link></li>
                 </ul>
               </div>
               <div className="blog-content">
                 <h3 className="blog-title"><a href="#">Explore Canada</a></h3>
                 <p className="desc">Quality education at low cost. Work during study, post-study work permits, and pro-immigration policies. Diverse, safe, and inclusive.</p>
-                <div className="blog-button"><a href="/study-in-canada">Learn More</a></div>
+                <div className="blog-button"><Link href="/study-in-canada">Learn More</Link></div>
               </div>
             </div>
             <div className="col-md-3 blog-item">
