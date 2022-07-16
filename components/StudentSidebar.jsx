@@ -9,7 +9,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faSignOutAlt, faFile, faDashboard, faUserCircle, faAngleLeft, faAddressBook, faBookmark, faCog, faEnvelope, faAward
 } from '@fortawesome/free-solid-svg-icons';
-const studentsidebar = () => {
+const StudentSidebar = () => {
   const [width, setwidth] = useState("navbar-nav bg-gradient-primary sidebar sidebar-dark accordion");
   const [redirectToReferrer, setredirectToReferrer] = useState("false");
   const [mounted, setMounted] = useState();
@@ -242,4 +242,4 @@ const studentsidebar = () => {
 
   )
 }
-export default studentsidebar
+export default StudentSidebar
