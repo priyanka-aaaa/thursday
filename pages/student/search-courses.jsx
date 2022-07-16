@@ -4,8 +4,9 @@ import Link from 'next/link'
 // import Loader from '../Home/Loader';
 import PhoneInput from 'react-phone-number-input'
 //start for pagination
-import { Pagination, Search } from "./DataTable";
-import { PaginationCourse, SearchCourse } from "./DataTableCourse";
+
+import { Pagination, Search } from "../../components/student/DataTable";
+import { PaginationCourse, SearchCourse } from "../../components/student/DataTableCourse";
 
 // end for Pagination
 
