@@ -4,7 +4,7 @@ import StudentTopbar from '../../components/StudentTopbar';
 import StudentSidebar from '../../components/StudentSidebar';
 
 
-import Header from '../components/Header';
+
 // import Loader from '../Home/Loader';
 export default function Setting() {
     const [mounted, setMounted] = useState();
