@@ -4,6 +4,7 @@ import StudentTopbar from '../../components/StudentTopbar';
 import StudentSidebar from '../../components/StudentSidebar';
 import Image from 'next/image'
 import SweetAlert from 'react-bootstrap-sweetalert';
+import Link from 'next/link'
 // import Loader from '../Home/Loader';
 // import Link from 'next/link'
 // import '../../scss/bookmark.scss';
