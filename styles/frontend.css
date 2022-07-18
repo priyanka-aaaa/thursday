@@ -3278,7 +3278,7 @@ ul.nav-menu {
 
 .full-width-header .rs-header.style3 .expand-btn-inner ul .sidebarmenu-search>a {
     border: unset;
-    padding-right: unset
+    /* padding-right: unset */
 }
 
 .full-width-header .rs-header.style3 .expand-btn-inner ul li .humburger {
@@ -4873,7 +4873,14 @@ span.sub-text.contact {
     font-size: 14px;
     font-weight: 400
 }
-
+/* svg{
+    height: 34px;
+    width: 40px;
+} */
+.top-fa{
+    height: 34px;
+    width: 40px;
+}
 ul.navbar-nav li.mr-0 a svg {
     margin-right: 0px;
 }

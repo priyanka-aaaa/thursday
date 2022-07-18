@@ -1,10 +1,11 @@
 import { useRouter } from "next/router";
 import axios from 'axios';
+import Header from '../../components/Header';
 import Image from 'next/image'
 import React, { useState, useEffect } from "react";
 import Head from 'next/head'
-// import EnquiryModal from './EnquiryModal'
-import { Header } from '../../components/Header';
+
+import EnquiryModal from '../../components/EnquiryModal';
 import { Footer } from '../../components/Footer';
 import Slider from "react-slick";
 import parse from 'html-react-parser'
@@ -552,7 +553,7 @@ const MyschoolDetails = (pageProps) => {
                 {/*Full width header Start*/}
                 <div className="full-width-header">
                     {/*Header Start*/}
-                    {/* <Header /> */}
+                    <Header />
                 </div>
             </div>
             <div className="defult-home">
@@ -575,13 +576,13 @@ const MyschoolDetails = (pageProps) => {
                                     <div className="widget-area">
                                         <div className="university-widget mb-50">
                                             <div className="cover">
-                                                {/* <Image    unoptimized={true} src={universityImageValues.coverPic} loading="lazy" /> */}
+                                                <img    unoptimized={true} src={universityImageValues.coverPic} loading="lazy" />
                                             </div>
-                                            {/* <div className="univer-logo"><Image    unoptimized={true} src={universityImageValues.logo} loading="lazy" /></div> */}
+                                            <div className="univer-logo"><img    unoptimized={true} src={universityImageValues.logo} loading="lazy" /></div>
                                             <h4>{FormPrimaryInformationValues.name}</h4>
                                             <p>{FormPrimaryInformationValues.state + ", " + FormPrimaryInformationValues.country}</p>
                                             <h6> {FormPrimaryInformationValues.type} | Estd. {FormOverviewValues.foundedYear}</h6>
-                                            {/* <EnquiryModal /> */}
+                                            <EnquiryModal />
                                         </div>
                                         <div className="recent-posts mb-50">
                                             <div className="widget-title">
@@ -666,26 +667,28 @@ const MyschoolDetails = (pageProps) => {
                                                 <div className="overviewblock">
                                                     <div className="overview-box blue-light">
                                                         <span className="icon">
-                                                            <FontAwesomeIcon icon={faGraduationCap} />
+                                                        {/* <i class="fa fa-graduation-cap" aria-hidden="true"></i> */}
+                                                            <FontAwesomeIcon icon={faGraduationCap}  
+                                                            className="top-fa" />
                                                         </span>
                                                         <h3>{FormOverviewValues.courseNo} +<br /><span>Courses</span></h3>
                                                     </div>
                                                     <div className="overview-box green-light">
                                                         <span className="icon">
-                                                            <FontAwesomeIcon icon={faCalendarCheck} /></span>
+                                                            <FontAwesomeIcon icon={faCalendarCheck} className="top-fa"/></span>
                                                         <h3>{FormOverviewValues.foundedYear}<br /><span>Founded year </span></h3>
                                                     </div>
 
                                                     <div className="overview-box ornage-light">
                                                         <span className="icon">
-                                                            <FontAwesomeIcon icon={faStar} />
+                                                            <FontAwesomeIcon icon={faStar} className="top-fa"/>
 
                                                         </span>
                                                         <h3>{FormOverviewValues.ranking}<br /><span>Global Rankings</span></h3>
                                                     </div>
                                                     <div className="overview-box yellow-light">
                                                         <span className="icon">
-                                                            <FontAwesomeIcon icon={faAward} />
+                                                            <FontAwesomeIcon icon={faAward} className="top-fa"/>
                                                             {/* fas fa-award */}
                                                         </span>
                                                         <h3>  {elementsToRender}<br /><span>English Proficiency</span></h3>
@@ -737,9 +740,9 @@ const MyschoolDetails = (pageProps) => {
                                                         <h2 className="cta_subtext__1eM4M">See personalized recommendations basis your
                                                             profile and preferences from RMIT University & similar universities.
                                                         </h2>
-                                                        {/* <EnquiryModal /> */}
+                                                        <EnquiryModal />
                                                     </div>
-                                                    {/* <div className="col-3"><Image    unoptimized={true} className="cta_image__3Oih8" src="Group1169.webp" loading="lazy" alt="" /></div> */}
+                                                    <div className="col-3"><img    unoptimized={true} className="cta_image__3Oih8" src="/images/Group1169.webp" loading="lazy" alt="" /></div>
                                                 </div>
                                             </div>
 
@@ -841,7 +844,7 @@ const MyschoolDetails = (pageProps) => {
                                                                 {rankingValues.map((element, index) => (
                                                                     <div className="col-md-3" key={index}>
                                                                         <div className="ranking-img">
-                                                                            {/* <a href="#" ><Image    unoptimized={true} src={element.certificate} loading="lazy" alt="" /></a> */}
+                                                                         <img    unoptimized={true} src={element.certificate} loading="lazy" alt="" />
                                                                         </div>
                                                                     </div>
                                                                 ))}
@@ -859,7 +862,7 @@ const MyschoolDetails = (pageProps) => {
                                                     <div className="col-9 p-0">
                                                         <h1 className="cta_text__1LaHh">Start your journey</h1>
                                                         <h2 className="cta_subtext__1eM4M">Realise your study abroad dream</h2>
-                                                        {/* <EnquiryModal /> */}
+                                                        <EnquiryModal />
                                                     </div>
                                                     {/* <div className="col-3"><Image    unoptimized={true} className="cta_image__3Oih8" src="Group1169.webp" loading="lazy" alt="" /></div> */}
                                                 </div>

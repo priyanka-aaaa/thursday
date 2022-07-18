@@ -185,6 +185,10 @@ const Header = () => {
                 <div className="main-menu desktop" style={{ display: display }}>
                   <nav className="rs-menu pr-86 lg-pr-50 md-pr-0">
                     <ul className="nav-menu">
+                      
+                    <li><Link href='/evaluation' title="evaluation">
+                    Free Profile Assessment</Link>
+                      </li>
                       <li><a className="menu-item-has-children current-menu-item" href="https://study.coursementor.com/dashboard/" title="Learn" target="_blank" rel="noreferrer">
                         <span className='icon'><i className="fal fa-university fa-fw" ></i></span>Learn
                       </a>
@@ -196,7 +200,7 @@ const Header = () => {
                       </li>
 
                       <li><Link href='/Recruitment' className="nav-link" title="Recruitment Partners">
-                        Recruitment Partners  ook</Link>
+                        Recruitment Partners </Link>
                       </li>
                       <li><Link href='/' title="Students">
                         Students</Link>
@@ -209,7 +213,7 @@ const Header = () => {
                   </nav>
                 </div>
 
-                <div className="homedropdown dropdown dropdown-menu-end my-account"><a className="" href="https://abroad.coursementor.com/StudentRegister" data-bs-toggle="dropdown" title="Login or signup to access your dashboard"> <img layout="fill" src="/user-profile.png" alt="" unoptimized={true} loading="lazy" /></a>
+                <div className="homedropdown dropdown dropdown-menu-end my-account"><a className="" href="https://abroad.coursementor.com/StudentRegister" data-bs-toggle="dropdown" title="Login or signup to access your dashboard"> <img layout="fill" src="/images/user-profile.png" alt="" unoptimized={true} loading="lazy" /></a>
                   <div className="dropdown-menu ">
                     <h5>Dashboard</h5>
                     <p>Login or signup to access your dashboard</p>
