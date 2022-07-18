@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link'
 import axios from 'axios';
-
+import StudentTopbar from '../../components/StudentTopbar';
+import StudentSidebar from '../../components/StudentSidebar';
 import { Modal, Button } from 'react-bootstrap';
 
 

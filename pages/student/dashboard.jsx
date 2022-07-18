@@ -1125,11 +1125,11 @@ export default function Dashboard(location) {
                                             <h6 className="m-0 font-weight-bold text-primary">List To Follow</h6>
                                         </div>
                                         <div className="card-body">
-                                            <h4 className="small ">1 Visit our Facebook Profile <a href="https://www.facebook.com/coursementors/" target="_blank"
+                                            <h4 className="small ">1 Visit our Facebook Profile <a href="https://www.facebook.com/coursementors/" target="_blank" rel="noreferrer"
                                                 className="float-right">Visit</a></h4>
-                                            <h4 className="small">3 Link your Pinterest profile <a href="https://in.pinterest.com/Thecoursementor/_created/" target="_blank"
+                                            <h4 className="small">3 Link your Pinterest profile <a href="https://in.pinterest.com/Thecoursementor/_created/" target="_blank" rel="noreferrer"
                                                 className="float-right">Visit</a></h4>
-                                            <h4 className="small">4 Link your Instagram profile <a href="https://www.instagram.com/course_mentor/" target="_blank"
+                                            <h4 className="small">4 Link your Instagram profile <a href="https://www.instagram.com/course_mentor/" target="_blank" rel="noreferrer"
                                                 className="float-right">Visit</a></h4>
                                         </div>
                                     </div>
