@@ -28,6 +28,7 @@
     "react-dropzone": "^14.2.2",
     "react-google-login": "^5.2.2",
     "react-phone-number-input": "^3.2.4",
+    "react-razorpay": "^1.1.5",
     "react-slick": "^0.29.0",
     "slick-carousel": "^1.8.1"
   },

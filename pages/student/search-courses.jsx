@@ -1,5 +1,7 @@
 import React, { useState, useEffect, useMemo } from "react";
 import { isValidPhoneNumber } from 'react-phone-number-input'
+import StudentTopbar from '../../components/StudentTopbar';
+import StudentSidebar from '../../components/StudentSidebar';
 import Link from 'next/link'
 // import Loader from '../Home/Loader';
 import PhoneInput from 'react-phone-number-input'
@@ -2525,6 +2527,12 @@ function FinalFilter() {
     }
   }
   return (
+    <div id="page-top">
+    <div id="wrapper">
+      <StudentSidebar />
+      <div id="content-wrapper" className="d-flex flex-column">
+        <div id="content">
+          <StudentTopbar />
     <div className="main-content">
 {/* 
       {loader === "true" ?
@@ -3024,7 +3032,7 @@ function FinalFilter() {
 
       </Modal>
       {/* end modal */}
-
+      </div>  </div>  </div>  </div>
 
     </div>
   );

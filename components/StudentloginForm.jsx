@@ -3,7 +3,7 @@ import Link from 'next/link'
 import axios from 'axios'
 import SweetAlert from 'react-bootstrap-sweetalert';
 import { Modal, Button } from 'react-bootstrap';
-
+import Router from "next/router";
 import GoogleLogin from 'react-google-login';
 export const StudentloginForm = () => {
     const [email, setEmail] = useState("");
@@ -20,9 +20,13 @@ export const StudentloginForm = () => {
     const [showModal, setshowModal] = useState(false);
     const [EmailExistError, setEmailExistError] = useState(false);
     useEffect(() => {
-  
+        const { pathname } = Router;
+        // if (pathname === "/") {
+        //     Router.push("/student/dashboard");
+        //   }
         if (localStorage.getItem('studentId')) {
             setredirectToReferrer(true)
+            Router.push("/student/dashboard");
         }
     }, [])
     function open() {
@@ -64,6 +68,7 @@ export const StudentloginForm = () => {
                         localStorage.setItem('studentEmail', responseJson.data.student.email);
                         localStorage.setItem('studentPhone', responseJson.data.student.phone);
                         setredirectToReferrer(true)
+                        Router.push("/student/dashboard");
 
                     }
                     else {
