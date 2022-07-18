@@ -4,7 +4,7 @@ import Header from '../../components/Header';
 import Image from 'next/image'
 import React, { useState, useEffect } from "react";
 import Head from 'next/head'
-
+import Link from 'next/link'
 import EnquiryModal from '../../components/EnquiryModal';
 import { Footer } from '../../components/Footer';
 import Slider from "react-slick";
@@ -26,9 +26,9 @@ export async function getServerSideProps(context) {
     console.log(process.env.REACT_APP_SERVER_URL + 'completeUniDetail/' + context.params.slug);
     const res = await axios.get(process.env.REACT_APP_SERVER_URL + 'completeUniDetail/' + context.params.slug)
     return {
-       
+
         props: {
-            
+
             mydata: res.data.universities[0].universityPrimaryInformation
         },
     }
@@ -150,9 +150,18 @@ const MyschoolDetails = (pageProps) => {
     };
 
 
-
+    useEffect(()=>{
+        import("bootstrap/dist/js/bootstrap");
+},[])
 
     useEffect(() => {
+        if (typeof window !== "undefined") {
+            // your code with access to window or document object here 
+            console.log("our code with access to window or document object here ")
+        }
+        else {
+            console.log("bye bye")
+        }
         if (!router.isReady) return;
 
         const schoolDetails = router.query.slug;
@@ -576,9 +585,9 @@ const MyschoolDetails = (pageProps) => {
                                     <div className="widget-area">
                                         <div className="university-widget mb-50">
                                             <div className="cover">
-                                                <img    unoptimized={true} src={universityImageValues.coverPic} loading="lazy" />
+                                                <img unoptimized={true} src={universityImageValues.coverPic} loading="lazy" />
                                             </div>
-                                            <div className="univer-logo"><img    unoptimized={true} src={universityImageValues.logo} loading="lazy" /></div>
+                                            <div className="univer-logo"><img unoptimized={true} src={universityImageValues.logo} loading="lazy" /></div>
                                             <h4>{FormPrimaryInformationValues.name}</h4>
                                             <p>{FormPrimaryInformationValues.state + ", " + FormPrimaryInformationValues.country}</p>
                                             <h6> {FormPrimaryInformationValues.type} | Estd. {FormOverviewValues.foundedYear}</h6>
@@ -667,28 +676,28 @@ const MyschoolDetails = (pageProps) => {
                                                 <div className="overviewblock">
                                                     <div className="overview-box blue-light">
                                                         <span className="icon">
-                                                        {/* <i class="fa fa-graduation-cap" aria-hidden="true"></i> */}
-                                                            <FontAwesomeIcon icon={faGraduationCap}  
-                                                            className="top-fa" />
+                                                            {/* <i class="fa fa-graduation-cap" aria-hidden="true"></i> */}
+                                                            <FontAwesomeIcon icon={faGraduationCap}
+                                                                className="top-fa" />
                                                         </span>
                                                         <h3>{FormOverviewValues.courseNo} +<br /><span>Courses</span></h3>
                                                     </div>
                                                     <div className="overview-box green-light">
                                                         <span className="icon">
-                                                            <FontAwesomeIcon icon={faCalendarCheck} className="top-fa"/></span>
+                                                            <FontAwesomeIcon icon={faCalendarCheck} className="top-fa" /></span>
                                                         <h3>{FormOverviewValues.foundedYear}<br /><span>Founded year </span></h3>
                                                     </div>
 
                                                     <div className="overview-box ornage-light">
                                                         <span className="icon">
-                                                            <FontAwesomeIcon icon={faStar} className="top-fa"/>
+                                                            <FontAwesomeIcon icon={faStar} className="top-fa" />
 
                                                         </span>
                                                         <h3>{FormOverviewValues.ranking}<br /><span>Global Rankings</span></h3>
                                                     </div>
                                                     <div className="overview-box yellow-light">
                                                         <span className="icon">
-                                                            <FontAwesomeIcon icon={faAward} className="top-fa"/>
+                                                            <FontAwesomeIcon icon={faAward} className="top-fa" />
                                                             {/* fas fa-award */}
                                                         </span>
                                                         <h3>  {elementsToRender}<br /><span>English Proficiency</span></h3>
@@ -742,7 +751,7 @@ const MyschoolDetails = (pageProps) => {
                                                         </h2>
                                                         <EnquiryModal />
                                                     </div>
-                                                    <div className="col-3"><img    unoptimized={true} className="cta_image__3Oih8" src="/images/Group1169.webp" loading="lazy" alt="" /></div>
+                                                    <div className="col-3"><img unoptimized={true} className="cta_image__3Oih8" src="/images/Group1169.webp" loading="lazy" alt="" /></div>
                                                 </div>
                                             </div>
 
@@ -844,7 +853,7 @@ const MyschoolDetails = (pageProps) => {
                                                                 {rankingValues.map((element, index) => (
                                                                     <div className="col-md-3" key={index}>
                                                                         <div className="ranking-img">
-                                                                         <img    unoptimized={true} src={element.certificate} loading="lazy" alt="" />
+                                                                            <img unoptimized={true} src={element.certificate} loading="lazy" alt="" />
                                                                         </div>
                                                                     </div>
                                                                 ))}
@@ -931,7 +940,7 @@ const MyschoolDetails = (pageProps) => {
                                                                         <div className="blog-img mb-3">
                                                                             {element.type === "image" ?
                                                                                 <a >
-                                                                                    {/* <Image    unoptimized={true} src={element.link} alt="image" loading="lazy" /> */}
+                                                                                    <img unoptimized={true} src={element.link} alt="image" loading="lazy" />
                                                                                 </a>
                                                                                 :
                                                                                 <a >
@@ -967,7 +976,7 @@ const MyschoolDetails = (pageProps) => {
                                                                         <div>
                                                                             <div className="subcourses_courseBox__3deGG">
                                                                                 <div className="subcourses_program__3pkFj col-sm-12 p-0">
-                                                                                    {/* <Image    unoptimized={true} src="project-management.webp" alt="" loading="lazy" /> */}
+                                                                                    <img unoptimized={true} src="/images/project-management.webp" alt="" loading="lazy" />
 
                                                                                     <div><span className="subcourses_h-title__sLV10">{element.courseName}</span><span
                                                                                         className="subcourses_subHeading__zdEIg">{element.areaOfInterest}</span>
