@@ -22,9 +22,12 @@ import {
 import SweetAlert from 'react-bootstrap-sweetalert';
 import { Modal, Button } from 'react-bootstrap';
 export async function getServerSideProps(context) {
+    console.log(process.env.REACT_APP_SERVER_URL + 'completeUniDetail/' + context.params.slug);
     const res = await axios.get(process.env.REACT_APP_SERVER_URL + 'completeUniDetail/' + context.params.slug)
     return {
+       
         props: {
+            
             mydata: res.data.universities[0].universityPrimaryInformation
         },
     }
