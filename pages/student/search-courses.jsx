@@ -3,6 +3,7 @@ import { isValidPhoneNumber } from 'react-phone-number-input'
 import StudentTopbar from '../../components/StudentTopbar';
 import StudentSidebar from '../../components/StudentSidebar';
 import Link from 'next/link'
+import Image from 'next/image'
 // import Loader from '../Home/Loader';
 import PhoneInput from 'react-phone-number-input'
 //start for pagination

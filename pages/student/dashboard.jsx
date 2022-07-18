@@ -8,6 +8,7 @@ import PhoneInput from 'react-phone-number-input'
 import Dropzone from "react-dropzone";
 import useRazorpay from "react-razorpay";
 import axios from 'axios';
+import Image from 'next/image'
 // import '../../scss/studentDashboard.scss';
 // import Loader from '../Home/Loader';
 // import { BrowserRouter as Router, Switch, Route, Link, useParams, useLocation } from 'react-router-dom';

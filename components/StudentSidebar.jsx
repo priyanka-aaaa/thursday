@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from 'axios';
 import Link from 'next/link'
-
+import Image from 'next/image'
 import { Dropdown } from 'react-bootstrap';
 // import '../scss/dashboardSidebar.scss';
 

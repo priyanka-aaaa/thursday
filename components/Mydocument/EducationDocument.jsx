@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import SecondaryEducation from './SecondaryEducation';
+import Image from 'next/image'
 import Ug from './Ug';
 import Pg from './Pg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';

@@ -3,6 +3,7 @@ import StudentTopbar from '../../components/StudentTopbar';
 import StudentSidebar from '../../components/StudentSidebar';
 import Dropzone from "react-dropzone";
 import axios from 'axios';
+import Image from 'next/image'
 // import Loader from '../Home/Loader';
 // import '../../scss/studentMessage.scss';
 export default function Message() {

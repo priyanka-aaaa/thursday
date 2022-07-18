@@ -10,7 +10,13 @@ module.exports = {
     REACT_APP_KEY_ID: 'rzp_test_P63PCFNjePx2xF',
     REACT_APP_GOOGLE_CLIENT_ID: '66848945093-dodujok6k18qdlldghlce727ua4ttfql.apps.googleusercontent.com'
   },
-  images: {
-    loader: "custom"
-  }
+
+    images: {
+        loader: 'cloudinary',
+        path: 'https://your-site.com/assets/images/'
+    }
+
+  // images: {
+  //   loader: "custom"
+  // }
 }

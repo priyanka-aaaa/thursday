@@ -2,6 +2,7 @@
 import React, { useState, useEffect, Suspense } from "react";
 import { isValidPhoneNumber } from 'react-phone-number-input'
 import axios from 'axios';
+import Image from 'next/image'
 // import LoaderFrontend from './LoaderFrontend';
 import { Modal, Button } from 'react-bootstrap';
 import PhoneInput from 'react-phone-number-input'

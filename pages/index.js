@@ -125,8 +125,9 @@ export default function Home() {
             </div>
           </div>
           <div className="rs-animation">
-          {/* <Image src="/images/b4-dot-6.webp" alt="dev logo" /> */}
-          <Image src="/images/b4-dot-6.webp" alt="dev logo" />
+       
+          <img src="/images/b4-dot-6.webp" alt="dev logo" layout="fill"
+    loading="lazy" />
           
           </div>
         </div>
@@ -147,7 +148,7 @@ export default function Home() {
                       <div className="front-content-part purple-bg">
                         <div className="front-icon-part">
                           <div className="icon-part">
-                          <Image src="/images/home-style6-6.webp" alt="dev logo" />
+                          <img src="/images/home-style6-6.webp" alt="dev logo" />
 
                    
                           </div>
@@ -176,7 +177,7 @@ export default function Home() {
                       <div className="front-content-part gold-bg">
                         <div className="front-icon-part">
                           <div className="icon-part">
-                          <Image src="/images/home-icons-8.webp" alt="dev logo" />
+                          <img src="/images/home-icons-8.webp" alt="dev logo" />
 
                   
                           </div>
@@ -206,7 +207,7 @@ export default function Home() {
                       <div className="front-content-part blue-bg">
                         <div className="front-icon-part">
                           <div className="icon-part">
-                          <Image src="/images/home-icons-9.webp" alt="dev logo" />
+                          <img src="/images/home-icons-9.webp" alt="dev logo" />
 
                           </div>
                         </div>
@@ -256,7 +257,7 @@ export default function Home() {
               </div>
               <div className="col-lg-6 pl-65 md-pl-15">
                 <div className="about-img">
-                  <Image src="/images/Expert.webp" alt="dev logo" />
+                  <img src="/images/Expert.webp" alt="dev logo" />
                 </div>
               </div>
             </div>
@@ -435,7 +436,7 @@ export default function Home() {
                   <a href="#">
                     <div className="logo-img">
                       
-                        <Image src="/images/pt-1.webp" alt="dev logo" />
+                        <img src="/images/pt-1.webp" alt="dev logo" />
 
                     </div>
                   </a>
@@ -446,7 +447,7 @@ export default function Home() {
                   <a href="#">
                     <div className="logo-img">
                   
-                        <Image src="/images/pt-2.webp" alt="dev logo" />
+                        <img src="/images/pt-2.webp" alt="dev logo" />
 
                     </div>
                   </a>
@@ -456,7 +457,7 @@ export default function Home() {
                 <div className="technology-item">
                   <a href="#">
                     <div className="logo-img">
-                    <Image src="/images/pt-3.webp" alt="dev logo" />
+                    <img src="/images/pt-3.webp" alt="dev logo" />
 
                     
                     </div>
@@ -467,7 +468,7 @@ export default function Home() {
                 <div className="technology-item">
                   <a href="#">
                     <div className="logo-img">
-                    <Image src="/images/pt-4.webp" alt="dev logo" />
+                    <img src="/images/pt-4.webp" alt="dev logo" />
 
                
                     </div>
@@ -478,7 +479,7 @@ export default function Home() {
                 <div className="technology-item">
                   <a href="#">
                     <div className="logo-img">
-                    <Image src="/images/pt-5.webp" alt="dev logo" />
+                    <img src="/images/pt-5.webp" alt="dev logo" />
 
                     </div>
                   </a>
@@ -488,7 +489,7 @@ export default function Home() {
                 <div className="technology-item">
                   <a href="#">
                     <div className="logo-img">
-                    <Image src="/images/pt-6.webp" alt="dev logo" />
+                    <img src="/images/pt-6.webp" alt="dev logo" />
 
                     </div>
                   </a>
@@ -509,7 +510,7 @@ export default function Home() {
             <div className="row">
               <div className="col-lg-6">
                 <div className="testi-img">
-                <Image src="/images/testimonial.webp" alt="dev logo" />
+                <img src="/images/testimonial.webp" alt="dev logo" />
 
                
                 </div>
@@ -528,7 +529,7 @@ export default function Home() {
                       <div className="author-desc">
                         <div className="desc">
                        
-                          <Image src="/images/quote2.webp" alt="dev logo" />
+                          <img src="/images/quote2.webp" alt="dev logo" />
 
                           "I
                           had an excellent time learning about many topics. I had a little bit
@@ -537,7 +538,7 @@ export default function Home() {
                       </div>
                       <div className="testimonial-content">
                         <div className="author-img">
-                        <Image src="/images/tmh4.webp" alt="dev logo" />
+                        <img src="/images/tmh4.webp" alt="dev logo" />
 
                        
                         </div>
@@ -553,7 +554,7 @@ export default function Home() {
                       <div className="author-desc">
                         <div className="desc">
                          
-                          <Image src="/images/quote2.webp" alt="dev logo" />
+                          <img src="/images/quote2.webp" alt="dev logo" />
 
                           "
                           It's a great course. The starting can be a bit tough if you're not
@@ -562,7 +563,7 @@ export default function Home() {
                       </div>
                       <div className="testimonial-content">
                         <div className="author-img">
-                        <Image src="/images/tmh2.webp" alt="dev logo" />
+                        <img src="/images/tmh2.webp" alt="dev logo" />
 
                   
                         </div>
@@ -577,7 +578,7 @@ export default function Home() {
                     <div className="testi-item">
                       <div className="author-desc">
                         <div className="desc">
-                        <Image src="/images/quote2.webp" alt="dev logo" />
+                        <img src="/images/quote2.webp" alt="dev logo" />
 
                         
                         "Based on such knowledge, we may understand several other
@@ -586,7 +587,7 @@ export default function Home() {
                       </div>
                       <div className="testimonial-content">
                         <div className="author-img">
-                        <Image src="/images/tmh3.webp" alt="dev logo" />
+                        <img src="/images/tmh3.webp" alt="dev logo" />
 
                         
                         </div>
@@ -601,7 +602,7 @@ export default function Home() {
                     <div className="testi-item">
                       <div className="author-desc">
                         <div className="desc">
-                        <Image src="/images/quote2.webp" alt="dev logo" />
+                        <img src="/images/quote2.webp" alt="dev logo" />
 
                    
                           
@@ -612,7 +613,7 @@ export default function Home() {
                       </div>
                       <div className="testimonial-content">
                         <div className="author-img">
-                        <Image src="/images/tmh4.webp" alt="dev logo" />
+                        <img src="/images/tmh4.webp" alt="dev logo" />
 
                 
                         </div>
@@ -631,7 +632,7 @@ export default function Home() {
                       <div className="author-desc">
                         <div className="desc">
                       
-                          <Image src="/images/quote2.webp" alt="dev logo" />
+                          <img src="/images/quote2.webp" alt="dev logo" />
 
                           "
                           It's a great course. The starting can be a bit tough if you're not
@@ -640,7 +641,7 @@ export default function Home() {
                       </div>
                       <div className="testimonial-content">
                         <div className="author-img">
-                        <Image src="/images/tmh2.webp" alt="dev logo" />
+                        <img src="/images/tmh2.webp" alt="dev logo" />
 
                        
                         </div>
@@ -671,7 +672,7 @@ export default function Home() {
             <div className="col-md-3 blog-item">
               <div className="image-wrap">
                 <Link href="/study-in-canada">
-                <Image src="/images/canda.webp" alt="dev logo" />
+                <img src="/images/canda.webp" alt="dev logo" />
 
                 
 
@@ -689,7 +690,7 @@ export default function Home() {
             <div className="col-md-3 blog-item">
               <div className="image-wrap">
                 <a href="/study-in-uk">
-                <Image src="/images/united-kingdom.webp" alt="dev logo" />
+                <img src="/images/united-kingdom.webp" alt="dev logo" />
 
                   
 
@@ -707,7 +708,7 @@ export default function Home() {
             <div className="col-md-3 blog-item">
               <div className="image-wrap">
                 <a href="/study-in-usa">
-                <Image src="/images/united-state.webp" alt="dev logo" />
+                <img src="/images/united-state.webp" alt="dev logo" />
 
          
                 </a>
@@ -724,7 +725,7 @@ export default function Home() {
             <div className="col-md-3 blog-item">
               <div className="image-wrap">
                 <a href="/study-in-australia">
-                <Image src="/images/austrila.webp" alt="dev logo" />
+                <img src="/images/austrila.webp" alt="dev logo" />
 
             
 

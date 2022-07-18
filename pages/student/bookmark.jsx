@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from 'axios';
 import StudentTopbar from '../../components/StudentTopbar';
 import StudentSidebar from '../../components/StudentSidebar';
-
+import Image from 'next/image'
 import SweetAlert from 'react-bootstrap-sweetalert';
 // import Loader from '../Home/Loader';
 // import Link from 'next/link'

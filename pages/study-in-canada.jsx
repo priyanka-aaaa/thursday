@@ -1,5 +1,6 @@
 import React, { useState, useEffect, Suspense } from "react";
 import { isValidPhoneNumber } from 'react-phone-number-input'
+import Image from 'next/image'
 import Link from 'next/link'
 import Head from 'next/head'
 import { Footer } from '../components/Footer';

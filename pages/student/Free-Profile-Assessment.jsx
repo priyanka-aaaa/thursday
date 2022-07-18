@@ -4,7 +4,7 @@ import axios from 'axios';
 import StudentTopbar from '../../components/StudentTopbar';
 import StudentSidebar from '../../components/StudentSidebar';
 import { Modal, Button } from 'react-bootstrap';
-
+import Image from 'next/image'
 
 
 

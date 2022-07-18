@@ -4,7 +4,7 @@ import SweetAlert from 'react-bootstrap-sweetalert';
 // import Loader from '../../Home/Loader';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
-
+import Image from 'next/image'
 export default function Ug() {
 
 

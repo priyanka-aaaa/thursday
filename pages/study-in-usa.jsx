@@ -1,6 +1,7 @@
 import React, { useState, useEffect, Suspense } from "react";
 import { isValidPhoneNumber } from 'react-phone-number-input'
 import Link from 'next/link'
+import Image from 'next/image'
 import Head from 'next/head'
 import { Footer } from '../components/Footer';
 import "slick-carousel/slick/slick.css";
