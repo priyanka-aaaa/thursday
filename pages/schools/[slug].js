@@ -572,9 +572,9 @@ const MyschoolDetails = (pageProps) => {
                                     <div className="widget-area">
                                         <div className="university-widget mb-50">
                                             <div className="cover">
-                                                {/* <img    unoptimized={true} src={universityImageValues.coverPic} loading="lazy" /> */}
+                                                {/* <Image    unoptimized={true} src={universityImageValues.coverPic} loading="lazy" /> */}
                                             </div>
-                                            {/* <div className="univer-logo"><img    unoptimized={true} src={universityImageValues.logo} loading="lazy" /></div> */}
+                                            {/* <div className="univer-logo"><Image    unoptimized={true} src={universityImageValues.logo} loading="lazy" /></div> */}
                                             <h4>{FormPrimaryInformationValues.name}</h4>
                                             <p>{FormPrimaryInformationValues.state + ", " + FormPrimaryInformationValues.country}</p>
                                             <h6> {FormPrimaryInformationValues.type} | Estd. {FormOverviewValues.foundedYear}</h6>
@@ -736,7 +736,7 @@ const MyschoolDetails = (pageProps) => {
                                                         </h2>
                                                         {/* <EnquiryModal /> */}
                                                     </div>
-                                                    {/* <div className="col-3"><img    unoptimized={true} className="cta_image__3Oih8" src="Group1169.webp" loading="lazy" alt="" /></div> */}
+                                                    {/* <div className="col-3"><Image    unoptimized={true} className="cta_image__3Oih8" src="Group1169.webp" loading="lazy" alt="" /></div> */}
                                                 </div>
                                             </div>
 
@@ -838,7 +838,7 @@ const MyschoolDetails = (pageProps) => {
                                                                 {rankingValues.map((element, index) => (
                                                                     <div className="col-md-3" key={index}>
                                                                         <div className="ranking-img">
-                                                                            {/* <a href="#" ><img    unoptimized={true} src={element.certificate} loading="lazy" alt="" /></a> */}
+                                                                            {/* <a href="#" ><Image    unoptimized={true} src={element.certificate} loading="lazy" alt="" /></a> */}
                                                                         </div>
                                                                     </div>
                                                                 ))}
@@ -858,7 +858,7 @@ const MyschoolDetails = (pageProps) => {
                                                         <h2 className="cta_subtext__1eM4M">Realise your study abroad dream</h2>
                                                         {/* <EnquiryModal /> */}
                                                     </div>
-                                                    {/* <div className="col-3"><img    unoptimized={true} className="cta_image__3Oih8" src="Group1169.webp" loading="lazy" alt="" /></div> */}
+                                                    {/* <div className="col-3"><Image    unoptimized={true} className="cta_image__3Oih8" src="Group1169.webp" loading="lazy" alt="" /></div> */}
                                                 </div>
                                             </div>
 
@@ -925,7 +925,7 @@ const MyschoolDetails = (pageProps) => {
                                                                         <div className="blog-img mb-3">
                                                                             {element.type === "image" ?
                                                                                 <a >
-                                                                                    {/* <img    unoptimized={true} src={element.link} alt="image" loading="lazy" /> */}
+                                                                                    {/* <Image    unoptimized={true} src={element.link} alt="image" loading="lazy" /> */}
                                                                                 </a>
                                                                                 :
                                                                                 <a >
@@ -961,7 +961,7 @@ const MyschoolDetails = (pageProps) => {
                                                                         <div>
                                                                             <div className="subcourses_courseBox__3deGG">
                                                                                 <div className="subcourses_program__3pkFj col-sm-12 p-0">
-                                                                                    {/* <img    unoptimized={true} src="project-management.webp" alt="" loading="lazy" /> */}
+                                                                                    {/* <Image    unoptimized={true} src="project-management.webp" alt="" loading="lazy" /> */}
 
                                                                                     <div><span className="subcourses_h-title__sLV10">{element.courseName}</span><span
                                                                                         className="subcourses_subHeading__zdEIg">{element.areaOfInterest}</span>
@@ -1027,7 +1027,7 @@ const MyschoolDetails = (pageProps) => {
                                                                             <div className="text-right w-100">
 
                                                                                 <button className="btn btn-primary  w-100" onClick={() => handleApplyNow(universityId, element._id, element.month, "first", FormPrimaryInformationValues.country, FormPrimaryInformationValues.name, element.courseName)}>Apply Now
-                                                                                    {/* <img    unoptimized={true}
+                                                                                    {/* <Image    unoptimized={true}
                                                                                         src="https://images.leverageedu.com/university/whitearrow.svg" loading="lazy" />
                                                                                 */}
                                                                                 </button>
@@ -1096,7 +1096,7 @@ const MyschoolDetails = (pageProps) => {
 
                                                                                 <div tabIndex="-1">
                                                                                     <div className="similar_box__2Lq08">
-                                                                                        <img    unoptimized={true} src={element.universityImage.coverPic} alt="university coverPik" loading="lazy" />
+                                                                                        <Image    unoptimized={true} src={element.universityImage.coverPic} alt="university coverPik" loading="lazy" />
 
                                                                                         <div className="similar_footerText__2go-e w-100 row">
                                                                                             <h1 className="similar_unidata__1lxt7 col-10">
