@@ -23,15 +23,18 @@ import {
 import SweetAlert from 'react-bootstrap-sweetalert';
 import { Modal, Button } from 'react-bootstrap';
 export async function getServerSideProps(context) {
-    console.log(process.env.REACT_APP_SERVER_URL + 'completeUniDetail/' + context.params.slug);
+   
     const res = await axios.get(process.env.REACT_APP_SERVER_URL + 'completeUniDetail/' + context.params.slug)
+   
+
     return {
 
         props: {
 
-            mydata: res.data.universities[0].universityPrimaryInformation
+            mydata: res.data.universities[0]
         },
     }
+   
 }
 
 const MyschoolDetails = (pageProps) => {
@@ -150,18 +153,12 @@ const MyschoolDetails = (pageProps) => {
     };
 
 
-    useEffect(()=>{
+    useEffect(() => {
         import("bootstrap/dist/js/bootstrap");
-},[])
+    }, [])
 
     useEffect(() => {
-        if (typeof window !== "undefined") {
-            // your code with access to window or document object here 
-            console.log("our code with access to window or document object here ")
-        }
-        else {
-            console.log("bye bye")
-        }
+        
         if (!router.isReady) return;
 
         const schoolDetails = router.query.slug;
@@ -170,149 +167,7 @@ const MyschoolDetails = (pageProps) => {
         function completeUniveristyPage() {
             setmyloader("true")
             //start for complete university detial
-            const url1 = process.env.REACT_APP_SERVER_URL + 'completeUniDetail/' + schoolDetails;
-            fetch(url1, {
-                method: 'GET',
-            })
-                .then(response => response.json())
-                .then(data => {
-
-                    setmyloader("false")
-                    var finalResult = data.universities
-                    if (finalResult.email !== "undefined") {
-                        setuniversityEmail(finalResult.email)
-                    }
-                    setuniversityId(data.universities[0]._id)
-
-
-                    if (finalResult[0].universityAdmissions !== undefined) {
-                        setFormAdmissionValues(finalResult[0].universityAdmissions)
-                    }
-
-                    setFormDocumentValues(finalResult[0].universityDocuments)
-                    if (finalResult[0].universityOverview !== undefined) {
-                        setFormOverviewValues(finalResult[0].universityOverview)
-
-                        const elementsArr = finalResult[0].universityOverview.english
-                        let elementsToRender = [];
-                        elementsArr.forEach((element, index) => {
-                            let elementComponent = <span className="abc" key={element.id}>{element}</span>
-                            elementsToRender.push(elementComponent);
-                            if (index !== (elementsArr.length - 1)) {
-                                elementsToRender.push(", ");
-                            }
-                        });
-                        setelementsToRender(elementsToRender)
-                    }
-                    var primaryInformationResult = finalResult[0].universityPrimaryInformation
-                    setFormPrimaryInformationValues(finalResult[0].universityPrimaryInformation)
-
-                    if (finalResult[0].universityImage !== undefined) {
-                        setuniversityImageValues(finalResult[0].universityImage)
-                    }
-
-
-                    if (Object.keys(finalResult[0].universityCourses).length == 0) {
-                        setunusedCourseSchema(1)
-                    }
-                    else {
-                        setunusedCourseSchema(0)
-                    }
-                    setcoursesValues(finalResult[0].universityCourses)
-                    //start for course schema
-                    var courseResult = finalResult[0].universityCourses;
-                    var objhello = [];
-                    var i;
-                    if (courseResult.length >= 4) {
-                        for (i = 0; i < 4; i++) {
-                            const courseStructuredData = {
-                                "@context": "https://schema.org",
-                                "@type": "Course",
-                                "name": courseResult[i].courseName,
-                                "description": courseResult[i].description,
-                                "provider": {
-                                    "@type": "Organization",
-                                    "name": primaryInformationResult.name,
-                                    "sameAs": primaryInformationResult.website
-                                }
-                            };
-                            objhello.push(courseStructuredData);
-                        }
-                    }
-                    else {
-                        for (i = 0; i < courseResult.length; i++) {
-                            const courseStructuredData = {
-                                "@context": "https://schema.org",
-                                "@type": "Course",
-                                "name": courseResult[i].courseName,
-                                "description": courseResult[i].description,
-                                "provider": {
-                                    "@type": "Organization",
-                                    "name": primaryInformationResult.name,
-                                    "sameAs": primaryInformationResult.website
-                                }
-                            };
-                            objhello.push(courseStructuredData);
-                        }
-                    }
-                    setcompleteCourseStructuredData(objhello);
-                    //end for course schema
-
-                    if (Object.keys(finalResult[0].universityCourses).length > 4) {
-                        setcoursesNoValues(1)
-                    }
-
-                    if (finalResult[0].universityRankings !== undefined) {
-                        setrankingValues(finalResult[0].universityRankings)
-                    }
-
-                    if (finalResult[0].universityFaqs !== undefined) {
-                        setquestionValues(finalResult[0].universityFaqs)
-
-                        var questionResult = finalResult[0].universityFaqs
-
-                        if (Object.keys(finalResult[0].universityFaqs).length == 0) {
-                            setunusedFaqSchema(1)
-                        }
-                        else {
-                            setunusedFaqSchema(0)
-                        }
-
-                        setQuestionSecond(questionResult[1].question)
-
-                        // start for questuin
-                        const articleStructuredData = {
-                            "@context": "https://schema.org",
-                            "@type": "FAQPage",
-                        };
-
-                        let parseData = articleStructuredData;
-
-                        var heavy_fruits = [];
-                        questionResult.forEach(function (message) {
-                            var abc = {
-                                "@type": "Question",
-                                "name": message.question,
-                                "acceptedAnswer": {
-                                    "@type": "Answer",
-                                    "text": message.answer
-                                }
-
-                            }
-                            heavy_fruits.push(abc); // you push it to the array
-
-                        });
-
-                        parseData.mainEntity = heavy_fruits;
-                        setarticleStructuredData(parseData);
-                        //end for question
-
-
-
-
-                    }
-                    setimageVideoValues(finalResult[0].universityImageVideos)
-                })
+         
             //end for complete university detail
             //start for similar uiversity
 
@@ -347,7 +202,7 @@ const MyschoolDetails = (pageProps) => {
         setshowModalforgot(false)
     }
     var divStyle = {
-        backgroundImage: 'url(' + universityImageValues.coverPic + ')'
+        backgroundImage: 'url(' + pageProps.mydata.universityImage.coverPic + ')'
     }
     function open() {
         setshowModal(true)
@@ -483,14 +338,14 @@ const MyschoolDetails = (pageProps) => {
                 <meta charSet="utf-8" />
 
                 <title>
-                    {pageProps.mydata.name}
+                    {pageProps.mydata.universityPrimaryInformation.name}
                 </title>
                 <meta name="description" content=
-                    {pageProps.mydata.description}
+                    {pageProps.mydata.universityPrimaryInformation.description}
                 />
-                <meta property="og:title" content={FormPrimaryInformationValues.name + "- admission process"}></meta>
+                <meta property="og:title" content={pageProps.mydata.universityPrimaryInformation.name + "- admission process"}></meta>
                 <meta property="og:description"
-                    content={FormPrimaryInformationValues.name + FormPrimaryInformationValues.state + ", " + FormPrimaryInformationValues.country
+                    content={pageProps.mydata.universityPrimaryInformation.name + pageProps.mydata.universityPrimaryInformation.state + ", " + pageProps.mydata.universityPrimaryInformation.country
 
                         + "-" +
                         "admissions process"
@@ -498,7 +353,9 @@ const MyschoolDetails = (pageProps) => {
                         "- CourseMentor™"
 
                     }></meta>
-                <meta property="og:image" content={universityImageValues.coverPic}></meta>
+                <meta property="og:image" content=  {pageProps.mydata.universityImage.coverPic}
+                
+               ></meta>
                 <link rel="canonical" href="https://abroad.coursementor.com/" />
                 {unusedFaqSchema === 0 ?
                     <script type="application/ld+json">
@@ -569,7 +426,7 @@ const MyschoolDetails = (pageProps) => {
                 <div className="main-content">
                     <div className="rs-breadcrumbs img4 cover-pict" style={divStyle} >
                         <div className="breadcrumbs-inner text-center">
-                            <h1 className="page-title">{FormPrimaryInformationValues.name}</h1>
+                            <h1 className="page-title">{pageProps.mydata.universityPrimaryInformation.name}</h1>
                             <ul>
                                 <li title="Braintech - IT Solutions and Technology Startup HTML Template">
                                     <a className="active" >Home</a>
@@ -585,12 +442,17 @@ const MyschoolDetails = (pageProps) => {
                                     <div className="widget-area">
                                         <div className="university-widget mb-50">
                                             <div className="cover">
-                                                <img unoptimized={true} src={universityImageValues.coverPic} loading="lazy" />
+                                                <img unoptimized={true} src=
+                                                {pageProps.mydata.universityImage.coverPic}
+                                               loading="lazy" />
                                             </div>
                                             <div className="univer-logo"><img unoptimized={true} src={universityImageValues.logo} loading="lazy" /></div>
-                                            <h4>{FormPrimaryInformationValues.name}</h4>
-                                            <p>{FormPrimaryInformationValues.state + ", " + FormPrimaryInformationValues.country}</p>
-                                            <h6> {FormPrimaryInformationValues.type} | Estd. {FormOverviewValues.foundedYear}</h6>
+                                            <h4> {pageProps.mydata.universityPrimaryInformation.name}
+                                            
+                                            
+                                            </h4>
+                                            <p>{ pageProps.mydata.universityPrimaryInformation.state + ", " + pageProps.mydata.universityPrimaryInformation.country}</p>
+                                            <h6> {pageProps.mydata.universityPrimaryInformation.type} | Estd. {pageProps.mydata.universityOverview.foundedYear}</h6>
                                             <EnquiryModal />
                                         </div>
                                         <div className="recent-posts mb-50">
@@ -607,7 +469,7 @@ const MyschoolDetails = (pageProps) => {
                                                     <span className="date">
                                                         Call Now
                                                     </span>
-                                                    <a href="tel:4401915153000">{FormPrimaryInformationValues.phone}</a>
+                                                    <a href="tel:4401915153000">{pageProps.mydata.universityPrimaryInformation.phone}</a>
 
                                                 </div>
                                             </div>
@@ -639,7 +501,7 @@ const MyschoolDetails = (pageProps) => {
                                                         <i className="fa fa-calendar"></i>
                                                         Website
                                                     </span>
-                                                    <a href={FormPrimaryInformationValues.website} rel="nofollow">{FormPrimaryInformationValues.website}</a>
+                                                    <a href={pageProps.mydata.universityPrimaryInformation.website} rel="nofollow">{pageProps.mydata.universityPrimaryInformation.website}</a>
 
                                                 </div>
                                             </div>
@@ -680,12 +542,12 @@ const MyschoolDetails = (pageProps) => {
                                                             <FontAwesomeIcon icon={faGraduationCap}
                                                                 className="top-fa" />
                                                         </span>
-                                                        <h3>{FormOverviewValues.courseNo} +<br /><span>Courses</span></h3>
+                                                        <h3>{pageProps.mydata.universityOverview.courseNo}  +<br /><span>Courses</span></h3>
                                                     </div>
                                                     <div className="overview-box green-light">
                                                         <span className="icon">
                                                             <FontAwesomeIcon icon={faCalendarCheck} className="top-fa" /></span>
-                                                        <h3>{FormOverviewValues.foundedYear}<br /><span>Founded year </span></h3>
+                                                        <h3>{pageProps.mydata.universityOverview.foundedYear} <br /><span>Founded year </span></h3>
                                                     </div>
 
                                                     <div className="overview-box ornage-light">
@@ -693,7 +555,7 @@ const MyschoolDetails = (pageProps) => {
                                                             <FontAwesomeIcon icon={faStar} className="top-fa" />
 
                                                         </span>
-                                                        <h3>{FormOverviewValues.ranking}<br /><span>Global Rankings</span></h3>
+                                                        <h3>{pageProps.mydata.universityOverview.ranking} <br /><span>Global Rankings</span></h3>
                                                     </div>
                                                     <div className="overview-box yellow-light">
                                                         <span className="icon">
@@ -711,19 +573,19 @@ const MyschoolDetails = (pageProps) => {
                                                     <h3 className="blog-title"><a href="#">University Overview</a></h3>
                                                     <div className="blog-meta">
                                                         <h5>Founded year</h5>
-                                                        <p>{FormOverviewValues.foundedYear}</p>
+                                                        <p>{pageProps.mydata.universityOverview.foundedYear}  </p>
                                                     </div>
                                                     <div className="blog-meta">
                                                         <h5>International Student Rate</h5>
-                                                        <p>{FormOverviewValues.rate}</p>
+                                                        <p>{pageProps.mydata.universityOverview.rate} </p>
                                                     </div>
                                                     <div className="blog-meta">
                                                         <h5>Popular Courses</h5>
-                                                        <p>{FormOverviewValues.course}</p>
+                                                        <p>{pageProps.mydata.universityOverview.course}</p>
                                                     </div>
                                                     <div className="blog-meta">
                                                         <h5>No. of courses</h5>
-                                                        <p>{FormOverviewValues.courseNo}</p>
+                                                        <p>{pageProps.mydata.universityOverview.courseNo} </p>
                                                     </div>
                                                     <div className="blog-meta">
                                                         <h5>English Proficiency</h5>
@@ -731,11 +593,11 @@ const MyschoolDetails = (pageProps) => {
                                                     </div>
                                                     <div className="blog-meta">
                                                         <h5>CGPA</h5>
-                                                        <p>{FormOverviewValues.cgpa}</p>
+                                                        <p>{pageProps.mydata.universityOverview.cgpa} </p>
                                                     </div>
                                                     <div className="blog-meta">
                                                         <h5> Acceptance rate</h5>
-                                                        <p>{FormOverviewValues.acceptanceRate} %</p>
+                                                        <p>{pageProps.mydata.universityOverview.acceptanceRate}  %</p>
                                                     </div>
                                                 </div>
                                             </div>
@@ -816,7 +678,7 @@ const MyschoolDetails = (pageProps) => {
                                                         <h3 className="blog-title"><a >Ranking</a></h3>
                                                         <div className="blog-meta">
 
-                                                            {rankingValues.map((element, index) => (
+                                                            {pageProps.mydata.universityRankings.map((element, index) => (
                                                                 <ul className="btm-cate" key={index}>
 
                                                                     <li>
@@ -850,7 +712,7 @@ const MyschoolDetails = (pageProps) => {
                                                         <div className="raning-agency">
                                                             <h5>Ranking Agencies</h5>
                                                             <div className="row">
-                                                                {rankingValues.map((element, index) => (
+                                                                {pageProps.mydata.universityRankings.map((element, index) => (
                                                                     <div className="col-md-3" key={index}>
                                                                         <div className="ranking-img">
                                                                             <img unoptimized={true} src={element.certificate} loading="lazy" alt="" />
@@ -896,7 +758,7 @@ const MyschoolDetails = (pageProps) => {
                                                             <div className="tab-content">
                                                                 <div id="home" className="container tab-pane active"><br />
                                                                     <h5>Application</h5>
-                                                                    {FormAdmissionValues.map((element, index) => (
+                                                                    {pageProps.mydata.universityAdmissions.map((element, index) => (
                                                                         <div key={index}>
                                                                             <span>
 
@@ -910,7 +772,7 @@ const MyschoolDetails = (pageProps) => {
                                                                 </div>
                                                                 <div id="menu1" className="container tab-pane fade"><br />
                                                                     <h5>Documents</h5>
-                                                                    {FormDocumentValues.map((element, index) => (
+                                                                    {pageProps.mydata.universityDocuments.map((element, index) => (
                                                                         <div key={index}>
                                                                             <span>
 
@@ -931,7 +793,7 @@ const MyschoolDetails = (pageProps) => {
                                                     <div className="blog-content">
                                                         <h3 className="blog-title"><a href="#">Images/Video </a></h3>
                                                         <div className="row" >
-                                                            {imageVideoValues.map((element, index) => {
+                                                            {pageProps.mydata.universityImageVideos.map((element, index) => {
                                                                 var mylink = element.link
                                                                 const myArray = mylink.split("=");
                                                                 return (
@@ -968,7 +830,7 @@ const MyschoolDetails = (pageProps) => {
                                                 <div className="blog-content">
                                                     <h3 className="blog-title">Browse Courses</h3>
                                                     <div className="row mb-3" >
-                                                        {coursesValues.map((element, index) => (
+                                                        {pageProps.mydata.universityCourses.map((element, index) => (
                                                             <>
                                                                 {index < 4 ?
                                                                     <div className="col-sm-6 mb-4" key={index}>
@@ -1072,7 +934,7 @@ const MyschoolDetails = (pageProps) => {
                                                 <div id="faq" className="blog-item">
                                                     <div className=" blog-content">
                                                         <h3 className="blog-title">FAQ</h3>
-                                                        {questionValues.map((element, index) => (
+                                                        {pageProps.mydata.universityFaqs.map((element, index) => (
                                                             <div key={index}>
                                                                 <div className="card">
                                                                     <a className="card-header  card-link" onClick={() => handleClick()}
