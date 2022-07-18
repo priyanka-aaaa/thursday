@@ -125,8 +125,8 @@ export default function Home() {
             </div>
           </div>
           <div className="rs-animation">
-          <img src="/images/b4-dot-6.webp" alt="dev logo" />
-
+          {/* <img src="/images/b4-dot-6.webp" alt="dev logo" /> */}
+          <Image src="/images/b4-dot-6.webp" alt="dev logo" />
           
           </div>
         </div>
