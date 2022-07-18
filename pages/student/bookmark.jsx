@@ -5,7 +5,7 @@ import StudentSidebar from '../../components/StudentSidebar';
 
 import SweetAlert from 'react-bootstrap-sweetalert';
 // import Loader from '../Home/Loader';
-import Link from 'next/link'
+// import Link from 'next/link'
 // import '../../scss/bookmark.scss';
 export default function Bookmark() {
   const [deleteId, setdeleteId] = useState();
