@@ -7,7 +7,7 @@ import { Dropdown } from 'react-bootstrap';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
-  faSignOutAlt, faFile, faDashboard,faBars,faUserCircle, faAngleLeft, faAddressBook, faBookmark, faCog, faEnvelope, faAward
+  faSignOutAlt, faFile, faDashboard, faBars, faUserCircle, faAngleLeft, faAddressBook, faBookmark, faCog, faEnvelope, faAward
 } from '@fortawesome/free-solid-svg-icons';
 const StudentTopbar = () => {
   const [width, setwidth] = useState("navbar-nav bg-gradient-primary sidebar sidebar-dark accordion");
@@ -95,58 +95,70 @@ const StudentTopbar = () => {
   return (
 
     <div>
-    {redirectToReferrer === "true" ?
-   <>gg</>
-      : <div>
-        <nav className="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
-          <button id="sidebarToggleTop" className="btn btn-link d-md-none rounded-circle mr-3"
-            onClick={() => handletoogleClick()}
-          >
-            <FontAwesomeIcon icon={faBars} />
+      {redirectToReferrer === "true" ?
+        <>gg</>
+        : <div>
+          <nav className="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+            <button id="sidebarToggleTop" className="btn btn-link d-md-none rounded-circle mr-3"
+              onClick={() => handletoogleClick()}
+            >
+              <FontAwesomeIcon icon={faBars} />
 
-          </button>
+            </button>
 
-          <ul className="navbar-nav ml-auto">
-            <li className="nav-item dropdown no-arrow mr-0">
-              <a className="nav-link dropdown-toggle" href="#collapseEleven1" id="userDropdown2" role="button" data-bs-toggle="collapse" aria-haspopup="true" aria-expanded="false">
-                <i className="fas fa-envelope fa-fw"></i>
-                <FontAwesomeIcon icon={faEnvelope} />
-                {resultLength !== 0 ?
-                  <span className="badge badge-danger badge-counter">{resultLength}</span>
-                  : null}
-              </a>
-              <div className="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown2" id="collapseEleven1" data-bs-parent="#accordion" >
-                <p className="dropdown-item"></p>
-
-              </div>
-            </li>
-            <div className="topbar-divider d-none d-sm-block"></div>
-            <li className="nav-item dropdown no-arrow">
-
-              <a className="nav-link dropdown-toggle" href="#collapseEleven" id="userDropdown" role="button" data-bs-toggle="collapse" aria-haspopup="true" aria-expanded="false">
-                <span>{studentEmail}</span>
-                <span className="mr-2 d-none d-lg-inline text-gray-600 small">{email}</span>
-
-                hgh
-
-              </a>
-
-              <div className="dropdownlogout dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown" id="collapseEleven" data-bs-parent="#accordion" >
-                <a className="dropdown-item"
-                  onClick={(e) => logout()}
-
-                  href="" data-toggle="modal" data-target="#logoutModal">
-                  <FontAwesomeIcon icon={faSignOutAlt} />
-
-                  Logout
+            <ul className="navbar-nav ml-auto">
+              <li className="nav-item dropdown no-arrow mr-0">
+                <a className="nav-link dropdown-toggle" href="#collapseEleven1" id="userDropdown2" role="button" data-bs-toggle="collapse" aria-haspopup="true" aria-expanded="false">
+                  <i className="fas fa-envelope fa-fw"></i>
+                  <FontAwesomeIcon icon={faEnvelope} />
+                  {resultLength !== 0 ?
+                    <span className="badge badge-danger badge-counter">{resultLength}</span>
+                    : null}
                 </a>
-              </div>
+                <div className="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown2" id="collapseEleven1" data-bs-parent="#accordion" >
+                  <p className="dropdown-item"
 
-            </li>
-          </ul>
-        </nav>
-      </div>}
-  </div>
+                    onClick={(e) => logout()}
+
+                    href="" data-toggle="modal" data-target="#logoutModal">
+                    <FontAwesomeIcon icon={faSignOutAlt} />
+
+                    Logout
+
+                  </p>
+
+                </div>
+              </li>
+              <div className="topbar-divider d-none d-sm-block"></div>
+              <li className="nav-item dropdown no-arrow">
+
+                <a className="nav-link dropdown-toggle" href="#collapseEleven" id="userDropdown" role="button" data-bs-toggle="collapse" aria-haspopup="true" aria-expanded="false">
+                  <span>{studentEmail}</span>
+                  <span className="mr-2 d-none d-lg-inline text-gray-600 small">{email}</span>ddddd
+                  <img className="img-profile rounded-circle" src="/images/undraw_profile.svg" loading="lazy" />
+
+                  {/* <img src="undraw_profile" alt="dev logo" /> */}
+
+                </a>
+                <div className="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown" id="collapseEleven" data-bs-parent="#accordion" >
+                  <p className="dropdown-item"
+                    onClick={(e) => logout()}
+
+                    href="" data-toggle="modal" data-target="#logoutModal">
+                    <FontAwesomeIcon icon={faSignOutAlt} />
+
+                    Logout
+                  </p>
+                </div>
+
+
+               
+
+              </li>
+            </ul>
+          </nav>
+        </div>}
+    </div>
 
   )
 }

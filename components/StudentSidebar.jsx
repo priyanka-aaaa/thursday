@@ -96,149 +96,149 @@ const StudentSidebar = () => {
 
     <ul className={width} id="accordionSidebar">
 
-    {/* <div className="sidebar-brand-icon ">
+      {/* <div className="sidebar-brand-icon ">
                   CM
               </div> */}
-    <span className="sidebar-brand d-flex align-items-center justify-content-center" href="#">
-      {width === "navbar-nav bg-gradient-primary sidebar sidebar-dark accordion toggled" ?
-        <Link href='/student/dashboard'  >
+      <span className="sidebar-brand d-flex align-items-center justify-content-center" href="#">
+        {width === "navbar-nav bg-gradient-primary sidebar sidebar-dark accordion toggled" ?
+          <Link href='/student/dashboard'  >
+            <img src="/images/small-dash-logo.webp" alt="dev logo" />
 
-          jj
-        </Link>
+          </Link>
+          :
+          <Link href='/student/dashboard'  >
+
+            <img src="/images/footerlogo.webp" alt="dev logo" />
+          </Link>
+
+        }
+        <div className="sidebar-brand-text mx-3">
+        </div>
+      </span>
+      <hr className="sidebar-divider my-0" />
+      {currentMenu === "Explore" ?
+        <li className="nav-item " onClick={() => handleCurrentClick("Explore")}>
+          <Link href='/student/search-courses' className="nav-link current-tab" title="Explore" ><a>
+            <i className="fas fa-fw fa-tachometer-alt"></i>
+            <span> <FontAwesomeIcon icon={faDashboard} /><span className="text-mob-hide">Explore Courses</span>  </span></a></Link>
+        </li>
         :
-        <Link href='/student/dashboard'  >
-
-          jj
-        </Link>
-
+        <li className="nav-item " onClick={() => handleCurrentClick("Explore")}>
+          <Link href='/student/search-courses' className="nav-link" title="Explore" ><a>
+            <i className="fas fa-fw fa-tachometer-alt"></i>
+            <span> <FontAwesomeIcon icon={faDashboard} /><span className="text-mob-hide">Explore Courses</span>  </span></a></Link>
+        </li>
       }
-      <div className="sidebar-brand-text mx-3">
+      {currentMenu === "Free Profile Assessment" ?
+        <li className="nav-item " onClick={() => handleCurrentClick("Free Profile Assessment")}>
+          <Link href='/student/Free-Profile-Assessment' className="nav-link current-tab" title="Free Profile Assessment" ><a>
+            <i className="fas fa-fw fa-tachometer-alt"></i>
+            <span> <FontAwesomeIcon icon={faDashboard} /><span className="text-mob-hide">Free Profile Assessment</span>  </span></a></Link>
+        </li>
+        :
+        <li className="nav-item " onClick={() => handleCurrentClick("Free Profile Assessment")}>
+          <Link href='/student/Free-Profile-Assessment' className="nav-link" title="Free Profile Assessment" ><a>
+            <i className="fas fa-fw fa-tachometer-alt"></i>
+            <span> <FontAwesomeIcon icon={faDashboard} /><span className="text-mob-hide">Free Profile Assessment</span>  </span></a></Link>
+        </li>
+      }
+      {currentMenu === "dashboard" ?
+        <li className="nav-item " onClick={() => handleCurrentClick("dashboard")}>
+          <Link href='/student/dashboard' className="nav-link current-tab" title="Dashboard" ><a>
+            <i className="fas fa-fw fa-tachometer-alt"></i>
+            <span> <FontAwesomeIcon icon={faDashboard} /><span className="text-mob-hide">Applied Application</span>  </span></a></Link>
+        </li>
+        :
+        <li className="nav-item " onClick={() => handleCurrentClick("dashboard")}>
+          <Link href='/student/dashboard' className="nav-link" title="Dashboard" ><a>
+            <i className="fas fa-fw fa-tachometer-alt"></i>
+            <span> <FontAwesomeIcon icon={faDashboard} /><span className="text-mob-hide">Applied Application</span>  </span></a></Link>
+        </li>
+      }
+      {currentMenu === "applicationProfile" ?
+        <li className="nav-item" onClick={() => handleCurrentClick("applicationProfile")}>
+
+          <Link href='/student/applicationProfile' className="nav-link current-tab" title="Application Profile"><a>
+            <i className="fas fa-file-alt"></i>
+            <span><FontAwesomeIcon icon={faAddressBook} /><span className="text-mob-hide">Application Profile</span></span></a></Link>
+        </li>
+        :
+        <li className="nav-item" onClick={() => handleCurrentClick("applicationProfile")}>
+
+          <Link href='/student/applicationProfile' className="nav-link" title="Application Profile"><a>
+            <i className="fas fa-file-alt"></i>
+            <span><FontAwesomeIcon icon={faAddressBook} /><span className="text-mob-hide">Application Profile</span></span></a></Link>
+        </li>
+      }
+      {currentMenu === "document" ?
+        <li className="nav-item " onClick={() => handleCurrentClick("document")}>
+          <Link href='/student/document' className="nav-link current-tab" title="My Documents" ><a>
+            <i className="fas fa-file-upload"></i>
+            <span><FontAwesomeIcon icon={faFile} /><span className="text-mob-hide">My Documents</span></span></a></Link>
+        </li>
+        :
+        <li className="nav-item " onClick={() => handleCurrentClick("document")}>
+          <Link href='/student/document' className="nav-link" title="My Documents" ><a>
+            <i className="fas fa-file-upload"></i>
+            <span><FontAwesomeIcon icon={faFile} /><span className="text-mob-hide">My Documents</span></span></a></Link>
+        </li>
+      }
+      {currentMenu === "bookmark" ?
+        <li className="nav-item " onClick={() => handleCurrentClick("bookmark")}>
+          <Link href='/student/bookmark' className="nav-link current-tab" title="Bookmark"><a>
+            <i className="fas fa-bookmark"></i>
+            <span><FontAwesomeIcon icon={faBookmark} /><span className="text-mob-hide">Bookmark</span></span></a></Link>
+        </li>
+        :
+        <li className="nav-item " onClick={() => handleCurrentClick("bookmark")}>
+          <Link href='/student/bookmark' className="nav-link" title="Bookmark"><a>
+            <i className="fas fa-bookmark"></i>
+            <span><FontAwesomeIcon icon={faBookmark} /><span className="text-mob-hide">Bookmark</span></span></a></Link>
+        </li>
+      }
+      {currentMenu === "Message" ?
+        <li className="nav-item " onClick={() => handleCurrentClick("Message")}>
+          <Link href='/student/message' className="nav-link current-tab" title="Message"
+
+          ><a>
+              <i className="fas fa-bookmark"></i>
+              <span><FontAwesomeIcon icon={faEnvelope} /><span className="text-mob-hide">Messages</span></span></a></Link>
+        </li>
+        :
+        <li className="nav-item " onClick={() => handleCurrentClick("Message")}>
+          <Link href='/student/message' className="nav-link" title="Message"
+
+          ><a>
+              <i className="fas fa-bookmark"></i>
+              <span><FontAwesomeIcon icon={faEnvelope} /><span className="text-mob-hide">Message</span></span></a></Link>
+        </li>
+      }
+      {currentMenu === "Settings" ?
+        <li className="nav-item " onClick={() => handleCurrentClick("Settings")}>
+          <Link href='/student/setting' className="nav-link current-tab" title="Settings"><a>
+            <i className="fas fa-bookmark"></i>
+            <span><FontAwesomeIcon icon={faCog} /><span className="text-mob-hide">Settings</span></span></a></Link>
+        </li>
+        :
+        <li className="nav-item " onClick={() => handleCurrentClick("Settings")}>
+          <Link href='/student/setting' className="nav-link" title="Settings"><a>
+            <i className="fas fa-bookmark"></i>
+            <span><FontAwesomeIcon icon={faCog} /><span className="text-mob-hide"> Settings</span></span></a></Link>
+        </li>
+      }
+
+
+      <div className="text-center d-none d-md-inline">
+        <button title="Sidenar-toggle" className="rounded-circle border-0" id="sidebarToggle" onClick={() => handletoogleClick()}>
+          <i className="fa-solid fa-arrow-right"></i>
+          <FontAwesomeIcon icon={faAngleLeft} style={{
+            fontWeight: 900,
+            marginRight: "0.1rem",
+            color: "rgba(255, 255, 255, 0.5)"
+          }} />
+        </button>
       </div>
-    </span>
-    <hr className="sidebar-divider my-0" />
-    {currentMenu === "Explore" ?
-      <li className="nav-item " onClick={() => handleCurrentClick("Explore")}>
-        <Link href='/student/search-courses' className="nav-link current-tab" title="Explore" ><a>
-          <i className="fas fa-fw fa-tachometer-alt"></i>
-          <span> <FontAwesomeIcon icon={faDashboard} /><span className="text-mob-hide">Explore Courses</span>  </span></a></Link>
-      </li>
-      :
-      <li className="nav-item " onClick={() => handleCurrentClick("Explore")}>
-        <Link href='/student/search-courses' className="nav-link" title="Explore" ><a>
-          <i className="fas fa-fw fa-tachometer-alt"></i>
-          <span> <FontAwesomeIcon icon={faDashboard} /><span className="text-mob-hide">Explore Courses</span>  </span></a></Link>
-      </li>
-    }
-    {currentMenu === "Free Profile Assessment" ?
-      <li className="nav-item " onClick={() => handleCurrentClick("Free Profile Assessment")}>
-        <Link href='/student/Free-Profile-Assessment' className="nav-link current-tab" title="Free Profile Assessment" ><a>
-          <i className="fas fa-fw fa-tachometer-alt"></i>
-          <span> <FontAwesomeIcon icon={faDashboard} /><span className="text-mob-hide">Free Profile Assessment</span>  </span></a></Link>
-      </li>
-      :
-      <li className="nav-item " onClick={() => handleCurrentClick("Free Profile Assessment")}>
-        <Link href='/student/Free-Profile-Assessment' className="nav-link" title="Free Profile Assessment" ><a>
-          <i className="fas fa-fw fa-tachometer-alt"></i>
-          <span> <FontAwesomeIcon icon={faDashboard} /><span className="text-mob-hide">Free Profile Assessment</span>  </span></a></Link>
-      </li>
-    }
-    {currentMenu === "dashboard" ?
-      <li className="nav-item " onClick={() => handleCurrentClick("dashboard")}>
-        <Link href='/student/dashboard' className="nav-link current-tab" title="Dashboard" ><a>
-          <i className="fas fa-fw fa-tachometer-alt"></i>
-          <span> <FontAwesomeIcon icon={faDashboard} /><span className="text-mob-hide">Applied Application</span>  </span></a></Link>
-      </li>
-      :
-      <li className="nav-item " onClick={() => handleCurrentClick("dashboard")}>
-        <Link href='/student/dashboard' className="nav-link" title="Dashboard" ><a>
-          <i className="fas fa-fw fa-tachometer-alt"></i>
-          <span> <FontAwesomeIcon icon={faDashboard} /><span className="text-mob-hide">Applied Application</span>  </span></a></Link>
-      </li>
-    }
-    {currentMenu === "applicationProfile" ?
-      <li className="nav-item" onClick={() => handleCurrentClick("applicationProfile")}>
-
-        <Link href='/student/applicationProfile' className="nav-link current-tab" title="Application Profile"><a>
-          <i className="fas fa-file-alt"></i>
-          <span><FontAwesomeIcon icon={faAddressBook} /><span className="text-mob-hide">Application Profile</span></span></a></Link>
-      </li>
-      :
-      <li className="nav-item" onClick={() => handleCurrentClick("applicationProfile")}>
-
-        <Link href='/student/applicationProfile' className="nav-link" title="Application Profile"><a>
-          <i className="fas fa-file-alt"></i>
-          <span><FontAwesomeIcon icon={faAddressBook} /><span className="text-mob-hide">Application Profile</span></span></a></Link>
-      </li>
-    }
-    {currentMenu === "document" ?
-      <li className="nav-item " onClick={() => handleCurrentClick("document")}>
-        <Link href='/student/document' className="nav-link current-tab" title="My Documents" ><a>
-          <i className="fas fa-file-upload"></i>
-          <span><FontAwesomeIcon icon={faFile} /><span className="text-mob-hide">My Documents</span></span></a></Link>
-      </li>
-      :
-      <li className="nav-item " onClick={() => handleCurrentClick("document")}>
-        <Link href='/student/document' className="nav-link" title="My Documents" ><a>
-          <i className="fas fa-file-upload"></i>
-          <span><FontAwesomeIcon icon={faFile} /><span className="text-mob-hide">My Documents</span></span></a></Link>
-      </li>
-    }
-    {currentMenu === "bookmark" ?
-      <li className="nav-item " onClick={() => handleCurrentClick("bookmark")}>
-        <Link href='/student/bookmark' className="nav-link current-tab" title="Bookmark"><a>
-          <i className="fas fa-bookmark"></i>
-          <span><FontAwesomeIcon icon={faBookmark} /><span className="text-mob-hide">Bookmark</span></span></a></Link>
-      </li>
-      :
-      <li className="nav-item " onClick={() => handleCurrentClick("bookmark")}>
-        <Link href='/student/bookmark' className="nav-link" title="Bookmark"><a>
-          <i className="fas fa-bookmark"></i>
-          <span><FontAwesomeIcon icon={faBookmark} /><span className="text-mob-hide">Bookmark</span></span></a></Link>
-      </li>
-    }
-    {currentMenu === "Message" ?
-      <li className="nav-item " onClick={() => handleCurrentClick("Message")}>
-        <Link href='/student/message' className="nav-link current-tab" title="Message"
-
-        ><a>
-            <i className="fas fa-bookmark"></i>
-            <span><FontAwesomeIcon icon={faEnvelope} /><span className="text-mob-hide">Messages</span></span></a></Link>
-      </li>
-      :
-      <li className="nav-item " onClick={() => handleCurrentClick("Message")}>
-        <Link href='/student/message' className="nav-link" title="Message"
-
-        ><a>
-            <i className="fas fa-bookmark"></i>
-            <span><FontAwesomeIcon icon={faEnvelope} /><span className="text-mob-hide">Message</span></span></a></Link>
-      </li>
-    }
-    {currentMenu === "Settings" ?
-      <li className="nav-item " onClick={() => handleCurrentClick("Settings")}>
-        <Link href='/student/setting' className="nav-link current-tab" title="Settings"><a>
-          <i className="fas fa-bookmark"></i>
-          <span><FontAwesomeIcon icon={faCog} /><span className="text-mob-hide">Settings</span></span></a></Link>
-      </li>
-      :
-      <li className="nav-item " onClick={() => handleCurrentClick("Settings")}>
-        <Link href='/student/setting' className="nav-link" title="Settings"><a>
-          <i className="fas fa-bookmark"></i>
-          <span><FontAwesomeIcon icon={faCog} /><span className="text-mob-hide"> Settings</span></span></a></Link>
-      </li>
-    }
-
-
-    <div className="text-center d-none d-md-inline">
-      <button title="Sidenar-toggle" className="rounded-circle border-0" id="sidebarToggle" onClick={() => handletoogleClick()}>
-        <i className="fa-solid fa-arrow-right"></i>
-        <FontAwesomeIcon icon={faAngleLeft} style={{
-          fontWeight: 900,
-          marginRight: "0.1rem",
-          color: "rgba(255, 255, 255, 0.5)"
-        }} />
-      </button>
-    </div>
-  </ul>
+    </ul>
 
   )
 }
