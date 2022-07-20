@@ -288,7 +288,7 @@ const Header = () => {
         </ul>
         <div className="canvas-logo">
           <a href="index.html">
-            <img layout="fill" src="/logo.webp" unoptimized={true} alt="logo" loading="lazy" /></a>
+            <img layout="fill" src="/images/logo.webp" unoptimized={true} alt="logo" loading="lazy" /></a>
         </div>
         <div className="offcanvas-text">
           <p>Get the full-stack career guidance, study abroad with the best university match & live mentoring platform that matches students with the right courses, mentors and job opportunities.
@@ -461,7 +461,7 @@ const Header = () => {
                         <div className="process-wrap">
                           <div className="process-img">
                             <a >
-                              <img layout="fill" src="/process1.webp"
+                              <img layout="fill" src="/images/process1.webp"
                                 alt="" unoptimized={true} loading="lazy" />
                             </a>
                           </div>
@@ -477,7 +477,7 @@ const Header = () => {
                       <Link href='/study-in-canada' className="process-wrap" onClick={() => close()}>
                         <div className="process-wrap">
                           <div className="process-img">
-                            <a ><img layout="fill" src="/process2.webp" alt="" unoptimized={true} loading="lazy" /></a>
+                            <a ><img layout="fill" src="/images/process2.webp" alt="" unoptimized={true} loading="lazy" /></a>
                           </div>
                           <div className="process-text">
                             <h3 className="title">Canada</h3>
@@ -492,7 +492,7 @@ const Header = () => {
 
                         <div className="process-wrap">
                           <div className="process-img">
-                            <a ><img layout="fill" src="/process3.webp" alt="" unoptimized={true} loading="lazy" /></a>
+                            <a ><img layout="fill" src="/images/process3.webp" alt="" unoptimized={true} loading="lazy" /></a>
                           </div>
                           <div className="process-text">
                             <h3 className="title">United Kingdom</h3>
@@ -507,7 +507,7 @@ const Header = () => {
 
                         <div className="process-wrap">
                           <div className="process-img">
-                            <a ><img layout="fill" src="/process-4.webp" alt="" unoptimized={true} loading="lazy" /></a>
+                            <a ><img layout="fill" src="/images/process-4.webp" alt="" unoptimized={true} loading="lazy" /></a>
                           </div>
                           <div className="process-text">
                             <h3 className="title">United States</h3>
@@ -529,7 +529,7 @@ const Header = () => {
 
                             <a href="https://coursementor.com/ielts">
 
-                              <img layout="fill" src="/ielts.webp" alt="" unoptimized={true} loading="lazy" />
+                              <img layout="fill" src="/images/ielts.webp" alt="" unoptimized={true} loading="lazy" />
                             </a>
                           </div>
                           <div className="process-text">
@@ -546,7 +546,7 @@ const Header = () => {
                           <div className="process-img">
                             <a href="https://coursementor.com/gmat">
 
-                              <img layout="fill" src="/gmat.webp" alt="" unoptimized={true} loading="lazy" />
+                              <img layout="fill" src="/images/gmat.webp" alt="" unoptimized={true} loading="lazy" />
                             </a>
                           </div>
                           <div className="process-text">
@@ -563,7 +563,7 @@ const Header = () => {
                           <div className="process-img">
                             <a href="https://coursementor.com/gre">
 
-                              <img layout="fill" src="/gre.webp" alt="" unoptimized={true} loading="lazy" />
+                              <img layout="fill" src="/images/gre.webp" alt="" unoptimized={true} loading="lazy" />
                             </a>
                           </div>
                           <div className="process-text">
@@ -580,7 +580,7 @@ const Header = () => {
                           <div className="process-img">
                             <a href="https://coursementor.com/sat">
 
-                              <img layout="fill" src="/sat.webp" alt="" unoptimized={true} loading="lazy" />
+                              <img layout="fill" src="/images/sat.webp" alt="" unoptimized={true} loading="lazy" />
 
                             </a>
                           </div>
