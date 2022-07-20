@@ -9,15 +9,15 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faSignOutAlt, faFile, faDashboard, faBars, faUserCircle, faAngleLeft, faAddressBook, faBookmark, faCog, faEnvelope, faAward
 } from '@fortawesome/free-solid-svg-icons';
-const StudentTopbar = () => {
+const AdminTopbar = () => {
   const [width, setwidth] = useState("navbar-nav bg-gradient-primary sidebar sidebar-dark accordion");
   const [redirectToReferrer, setredirectToReferrer] = useState("false");
   const [mounted, setMounted] = useState();
   const [email, setemail] = useState();
   const [notification, setnotification] = useState([]);
   const [resultLength, setresultLength] = useState();
-  const [studentEmail, setstudentEmail] = useState();
-  const [studentId, setstudentId] = useState();
+  const [adminEmail, setadminEmail] = useState();
+  const [adminId, setadminId] = useState();
   const [currentMenu, setcurrentMenu] = useState("");
   function handletoogleClick() {
     if (width === "navbar-nav bg-gradient-primary sidebar sidebar-dark accordion") {
@@ -30,22 +30,22 @@ const StudentTopbar = () => {
 
   useEffect(() => {
     import("bootstrap/dist/js/bootstrap");
-    var mounted = localStorage.getItem("studentToken")
-    var studentEmail = localStorage.getItem("studentEmail")
-    var studentId = localStorage.getItem("studentId")
+    var mounted = localStorage.getItem("adminToken")
+    var adminEmail = localStorage.getItem("adminEmail")
+    var adminId = localStorage.getItem("adminId")
     setMounted(mounted)
-    setstudentEmail(studentEmail)
-    setstudentId(studentId)
+    setadminEmail(adminEmail)
+    setadminId(adminId)
 
-    if (localStorage.getItem("studentId")) {
-      var mounted = localStorage.getItem("studentToken")
-      var studentEmail = localStorage.getItem("studentEmail")
-      var studentId = localStorage.getItem("studentId")
+    if (localStorage.getItem("adminId")) {
+      var mounted = localStorage.getItem("adminToken")
+      var adminEmail = localStorage.getItem("adminEmail")
+      var adminId = localStorage.getItem("adminId")
       setMounted(mounted)
-      setstudentEmail(studentEmail)
-      setstudentId(studentId)
+      setadminEmail(adminEmail)
+      setadminId(adminId)
 
-      const url = process.env.REACT_APP_SERVER_URL + 'student/messagesUnread';
+      const url = process.env.REACT_APP_SERVER_URL + 'admin/messagesUnread';
       fetch(url, {
         method: 'GET',
         headers: { 'Authorization': mounted }
@@ -53,10 +53,10 @@ const StudentTopbar = () => {
         .then(response => response.json())
         .then(data => {
           if (data.notifications === undefined) {
-            localStorage.removeItem("studentId");
-            localStorage.removeItem("studentToken");
-            localStorage.removeItem("studentName");
-            localStorage.removeItem("studentEmail");
+            localStorage.removeItem("adminId");
+            localStorage.removeItem("adminToken");
+            localStorage.removeItem("adminName");
+            localStorage.removeItem("adminEmail");
             window.location.href = "/";
           }
           var myresults = data.notifications
@@ -71,13 +71,12 @@ const StudentTopbar = () => {
 
     }
     else {
-      
-      var studentEmail = "";
-      Router.push("/ ")
+      var adminEmail = "";
+      Router.push("/adminlogin")
       setredirectToReferrer("true")
     }
     var currentUrl = window.location.href;
-    var splitcurrentUrl = currentUrl.split("student/")
+    var splitcurrentUrl = currentUrl.split("admin/")
     setcurrentMenu(splitcurrentUrl[1])
   }, [])
 
@@ -85,11 +84,11 @@ const StudentTopbar = () => {
     setcurrentMenu(value)
   }
   function logout() {
-    localStorage.removeItem("studentId");
-    localStorage.removeItem("studentToken");
-    localStorage.removeItem("studentName");
-    localStorage.removeItem("studentEmail");
-    localStorage.removeItem("studentPhone");
+    localStorage.removeItem("adminId");
+    localStorage.removeItem("adminToken");
+    localStorage.removeItem("adminName");
+    localStorage.removeItem("adminEmail");
+    localStorage.removeItem("adminPhone");
     window.location.href = "/";
   }
 
@@ -99,7 +98,7 @@ const StudentTopbar = () => {
 
     <div>
       {redirectToReferrer === "true" ?
-        <>  </>
+        <></>
         : <div>
           <nav className="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
             <button id="sidebarToggleTop" className="btn btn-link d-md-none rounded-circle mr-3"
@@ -136,7 +135,7 @@ const StudentTopbar = () => {
               <li className="nav-item dropdown no-arrow">
 
                 <a className="nav-link dropdown-toggle" href="#collapseEleven" id="userDropdown" role="button" data-bs-toggle="collapse" aria-haspopup="true" aria-expanded="false">
-                  <span>{studentEmail}</span>
+                  <span>{adminEmail}</span>
                   <span className="mr-2 d-none d-lg-inline text-gray-600 small">{email}</span>
                   <img className="img-profile rounded-circle" src="/images/undraw_profile.svg" loading="lazy" />
 
@@ -165,4 +164,4 @@ const StudentTopbar = () => {
 
   )
 }
-export default StudentTopbar
+export default AdminTopbar

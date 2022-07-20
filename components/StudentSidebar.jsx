@@ -118,7 +118,7 @@ const StudentSidebar = () => {
       <hr className="sidebar-divider my-0" />
       {currentMenu === "Explore" ?
         <li className="nav-item " onClick={() => handleCurrentClick("Explore")}>
-          <Link href='/student/search-courses' className="nav-link current-tab" title="Explore" ><a>
+          <Link href='/student/search-courses' className="nav-link current-tab" title="Explore" ><a className="nav-link">
             <i className="fas fa-fw fa-tachometer-alt"></i>
             <span> <FontAwesomeIcon icon={faDashboard} className="sidebar-faicon"
            
@@ -127,33 +127,33 @@ const StudentSidebar = () => {
         </li>
         :
         <li className="nav-item " onClick={() => handleCurrentClick("Explore")}>
-          <Link href='/student/search-courses' className="nav-link" title="Explore" ><a>
+          <Link href='/student/search-courses' className="nav-link" title="Explore" ><a className="nav-link">
             <i className="fas fa-fw fa-tachometer-alt"></i>
             <span> <FontAwesomeIcon icon={faDashboard}  className="sidebar-faicon"/><span className="text-mob-hide">Explore Courses</span>  </span></a></Link>
         </li>
       }
       {currentMenu === "Free Profile Assessment" ?
         <li className="nav-item " onClick={() => handleCurrentClick("Free Profile Assessment")}>
-          <Link href='/student/Free-Profile-Assessment' className="nav-link current-tab" title="Free Profile Assessment" ><a>
+          <Link href='/student/Free-Profile-Assessment' className="nav-link current-tab" title="Free Profile Assessment" ><a className="nav-link">
             <i className="fas fa-fw fa-tachometer-alt"></i>
             <span> <FontAwesomeIcon icon={faDashboard}   className="sidebar-faicon"/><span className="text-mob-hide">Free Profile Assessment</span>  </span></a></Link>
         </li>
         :
         <li className="nav-item " onClick={() => handleCurrentClick("Free Profile Assessment")}>
-          <Link href='/student/Free-Profile-Assessment' className="nav-link" title="Free Profile Assessment" ><a>
+          <Link href='/student/Free-Profile-Assessment' className="nav-link" title="Free Profile Assessment" ><a className="nav-link">
             <i className="fas fa-fw fa-tachometer-alt"></i>
             <span> <FontAwesomeIcon icon={faDashboard}      className="sidebar-faicon"/><span className="text-mob-hide">Free Profile Assessment</span>  </span></a></Link>
         </li>
       }
       {currentMenu === "dashboard" ?
         <li className="nav-item " onClick={() => handleCurrentClick("dashboard")}>
-          <Link href='/student/dashboard' className="nav-link current-tab" title="Dashboard" ><a>
+          <Link href='/student/dashboard' className="nav-link current-tab" title="Dashboard" ><a className="nav-link">
             <i className="fas fa-fw fa-tachometer-alt"></i>
             <span> <FontAwesomeIcon icon={faDashboard} className="sidebar-faicon"/><span className="text-mob-hide">Applied Application</span>  </span></a></Link>
         </li>
         :
         <li className="nav-item " onClick={() => handleCurrentClick("dashboard")}>
-          <Link href='/student/dashboard' className="nav-link" title="Dashboard" ><a>
+          <Link href='/student/dashboard' className="nav-link" title="Dashboard" ><a className="nav-link">
             <i className="fas fa-fw fa-tachometer-alt"></i>
             <span> <FontAwesomeIcon icon={faDashboard} className="sidebar-faicon"/><span className="text-mob-hide">Applied Application</span>  </span></a></Link>
         </li>
@@ -161,40 +161,40 @@ const StudentSidebar = () => {
       {currentMenu === "applicationProfile" ?
         <li className="nav-item" onClick={() => handleCurrentClick("applicationProfile")}>
 
-          <Link href='/student/applicationProfile' className="nav-link current-tab" title="Application Profile"><a>
+          <Link href='/student/applicationProfile' className="nav-link current-tab" title="Application Profile"><a className="nav-link">
             <i className="fas fa-file-alt"></i>
             <span><FontAwesomeIcon icon={faAddressBook} className="sidebar-faicon"/><span className="text-mob-hide">Application Profile</span></span></a></Link>
         </li>
         :
         <li className="nav-item" onClick={() => handleCurrentClick("applicationProfile")}>
 
-          <Link href='/student/applicationProfile' className="nav-link" title="Application Profile"><a>
+          <Link href='/student/applicationProfile' className="nav-link" title="Application Profile"><a className="nav-link">
             <i className="fas fa-file-alt"></i>
             <span><FontAwesomeIcon icon={faAddressBook} className="sidebar-faicon"/><span className="text-mob-hide">Application Profile</span></span></a></Link>
         </li>
       }
       {currentMenu === "document" ?
         <li className="nav-item " onClick={() => handleCurrentClick("document")}>
-          <Link href='/student/document' className="nav-link current-tab" title="My Documents" ><a>
+          <Link href='/student/document' className="nav-link current-tab" title="My Documents" ><a className="nav-link">
             <i className="fas fa-file-upload"></i>
             <span><FontAwesomeIcon icon={faFile} className="sidebar-faicon"/><span className="text-mob-hide">My Documents</span></span></a></Link>
         </li>
         :
         <li className="nav-item " onClick={() => handleCurrentClick("document")}>
-          <Link href='/student/document' className="nav-link" title="My Documents" ><a>
+          <Link href='/student/document' className="nav-link" title="My Documents" ><a className="nav-link">
             <i className="fas fa-file-upload"></i>
             <span><FontAwesomeIcon icon={faFile} className="sidebar-faicon"/><span className="text-mob-hide">My Documents</span></span></a></Link>
         </li>
       }
       {currentMenu === "bookmark" ?
         <li className="nav-item " onClick={() => handleCurrentClick("bookmark")}>
-          <Link href='/student/bookmark' className="nav-link current-tab" title="Bookmark"><a>
+          <Link href='/student/bookmark' className="nav-link current-tab" title="Bookmark"><a className="nav-link">
             <i className="fas fa-bookmark"></i>
             <span><FontAwesomeIcon icon={faBookmark} className="sidebar-faicon"/><span className="text-mob-hide">Bookmark</span></span></a></Link>
         </li>
         :
         <li className="nav-item " onClick={() => handleCurrentClick("bookmark")}>
-          <Link href='/student/bookmark' className="nav-link" title="Bookmark"><a>
+          <Link href='/student/bookmark' className="nav-link" title="Bookmark"><a className="nav-link">
             <i className="fas fa-bookmark"></i>
             <span><FontAwesomeIcon icon={faBookmark} className="sidebar-faicon"/><span className="text-mob-hide">Bookmark</span></span></a></Link>
         </li>
@@ -203,7 +203,7 @@ const StudentSidebar = () => {
         <li className="nav-item " onClick={() => handleCurrentClick("Message")}>
           <Link href='/student/message' className="nav-link current-tab" title="Message"
 
-          ><a>
+          ><a className="nav-link">
               <i className="fas fa-bookmark"></i>
               <span><FontAwesomeIcon icon={faEnvelope} className="sidebar-faicon"/><span className="text-mob-hide">Messages</span></span></a></Link>
         </li>
@@ -211,20 +211,20 @@ const StudentSidebar = () => {
         <li className="nav-item " onClick={() => handleCurrentClick("Message")}>
           <Link href='/student/message' className="nav-link" title="Message"
 
-          ><a>
+          ><a className="nav-link">
               <i className="fas fa-bookmark"></i>
               <span><FontAwesomeIcon icon={faEnvelope} className="sidebar-faicon"/><span className="text-mob-hide">Message</span></span></a></Link>
         </li>
       }
       {currentMenu === "Settings" ?
         <li className="nav-item " onClick={() => handleCurrentClick("Settings")}>
-          <Link href='/student/setting' className="nav-link current-tab" title="Settings"><a>
+          <Link href='/student/setting' className="nav-link current-tab" title="Settings"><a className="nav-link">
             <i className="fas fa-bookmark"></i>
             <span><FontAwesomeIcon icon={faCog} className="sidebar-faicon"/><span className="text-mob-hide">Settings</span></span></a></Link>
         </li>
         :
         <li className="nav-item " onClick={() => handleCurrentClick("Settings")}>
-          <Link href='/student/setting' className="nav-link" title="Settings"><a>
+          <Link href='/student/setting' className="nav-link" title="Settings"><a className="nav-link">
             <i className="fas fa-bookmark"></i>
             <span><FontAwesomeIcon icon={faCog} className="sidebar-faicon"/><span className="text-mob-hide"> Settings</span></span></a></Link>
         </li>

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from 'axios';
 import { Footer } from '../components/Footer';
 import Header from '../components/Header';
-
+import Router from "next/router";
 import LoaderFrontend from '../components/Loader';
 import SweetAlert from 'react-bootstrap-sweetalert';
 
@@ -25,6 +25,7 @@ export default function AdminLogin() {
     useEffect(() => {
         if (localStorage.getItem('adminId')) {
             setredirectToReferrer(true)
+            Router.push("/admin/dashboard");
         }
     }, [])
     function handleSubmit(event) {

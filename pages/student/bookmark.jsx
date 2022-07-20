@@ -53,7 +53,7 @@ export default function Bookmark() {
           <div id="content">
             <StudentTopbar />
             <div className="container">
-              <studentsidebar />
+           
             
               <div className="d-sm-flex align-items-center justify-content-between mb-4">
                 {showBookmark === "1" ?
