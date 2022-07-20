@@ -126,10 +126,10 @@ export default function Home() {
             </div>
           </div>
           <div className="rs-animation">
-       
-          <img src="/images/b4-dot-6.webp" alt="dev logo" layout="fill"
-    loading="lazy" />
-          
+
+            <img src="/images/b4-dot-6.webp" alt="dev logo" layout="fill"
+              loading="lazy" />
+
           </div>
         </div>
 
@@ -149,9 +149,9 @@ export default function Home() {
                       <div className="front-content-part purple-bg">
                         <div className="front-icon-part">
                           <div className="icon-part">
-                          <img src="/images/home-style6-6.webp" alt="dev logo" />
+                            <img src="/images/home-style6-6.webp" alt="dev logo" />
 
-                   
+
                           </div>
                         </div>
                         <div className="front-title-part">
@@ -178,9 +178,9 @@ export default function Home() {
                       <div className="front-content-part gold-bg">
                         <div className="front-icon-part">
                           <div className="icon-part">
-                          <img src="/images/home-icons-8.webp" alt="dev logo" />
+                            <img src="/images/home-icons-8.webp" alt="dev logo" />
 
-                  
+
                           </div>
                         </div>
                         <div className="front-title-part">
@@ -208,7 +208,7 @@ export default function Home() {
                       <div className="front-content-part blue-bg">
                         <div className="front-icon-part">
                           <div className="icon-part">
-                          <img src="/images/home-icons-9.webp" alt="dev logo" />
+                            <img src="/images/home-icons-9.webp" alt="dev logo" />
 
                           </div>
                         </div>
@@ -280,7 +280,7 @@ export default function Home() {
                     <div className="image-part">
                       <span>
 
-                        <FontAwesomeIcon  className="frontend-faicon" icon={faUser} />
+                        <FontAwesomeIcon className="frontend-faicon" icon={faUser} />
 
                       </span>
                     </div>
@@ -303,7 +303,7 @@ export default function Home() {
                   <div className="services-icon">
                     <div className="image-part">
                       <span>
-                        <FontAwesomeIcon  className="frontend-faicon" icon={faFile} />
+                        <FontAwesomeIcon className="frontend-faicon" icon={faFile} />
 
 
                       </span>
@@ -328,7 +328,7 @@ export default function Home() {
                     <div className="image-part">
                       <span>
 
-                        <FontAwesomeIcon  className="frontend-faicon" icon={faCheck} />
+                        <FontAwesomeIcon className="frontend-faicon" icon={faCheck} />
 
 
                       </span>
@@ -352,7 +352,7 @@ export default function Home() {
                   <div className="services-icon">
                     <div className="image-part">
                       <span>
-                        <FontAwesomeIcon  className="frontend-faicon" icon={faFile} />
+                        <FontAwesomeIcon className="frontend-faicon" icon={faFile} />
 
 
                       </span>
@@ -377,7 +377,7 @@ export default function Home() {
                     <div className="image-part">
                       <span>
 
-                        <FontAwesomeIcon  className="frontend-faicon" icon={faPaperPlane} />
+                        <FontAwesomeIcon className="frontend-faicon" icon={faPaperPlane} />
 
                       </span>
                     </div>
@@ -401,7 +401,7 @@ export default function Home() {
                     <div className="image-part">
                       <span>
 
-                        <FontAwesomeIcon  className="frontend-faicon" icon={faGraduationCap} />
+                        <FontAwesomeIcon className="frontend-faicon" icon={faGraduationCap} />
 
                       </span>
                     </div>
@@ -436,8 +436,8 @@ export default function Home() {
                 <div className="technology-item">
                   <a href="#">
                     <div className="logo-img">
-                      
-                        <img src="/images/pt-1.webp" alt="dev logo" />
+
+                      <img src="/images/pt-1.webp" alt="dev logo" />
 
                     </div>
                   </a>
@@ -447,8 +447,8 @@ export default function Home() {
                 <div className="technology-item">
                   <a href="#">
                     <div className="logo-img">
-                  
-                        <img src="/images/pt-2.webp" alt="dev logo" />
+
+                      <img src="/images/pt-2.webp" alt="dev logo" />
 
                     </div>
                   </a>
@@ -458,29 +458,8 @@ export default function Home() {
                 <div className="technology-item">
                   <a href="#">
                     <div className="logo-img">
-                    <img src="/images/pt-3.webp" alt="dev logo" />
+                      <img src="/images/pt-3.webp" alt="dev logo" />
 
-                    
-                    </div>
-                  </a>
-                </div>
-              </div>
-              <div className="col-lg-2 col-md-4 col-sm-4 col-6">
-                <div className="technology-item">
-                  <a href="#">
-                    <div className="logo-img">
-                    <img src="/images/pt-4.webp" alt="dev logo" />
-
-               
-                    </div>
-                  </a>
-                </div>
-              </div>
-              <div className="col-lg-2 col-md-4 col-sm-4 col-6">
-                <div className="technology-item">
-                  <a href="#">
-                    <div className="logo-img">
-                    <img src="/images/pt-5.webp" alt="dev logo" />
 
                     </div>
                   </a>
@@ -490,7 +469,28 @@ export default function Home() {
                 <div className="technology-item">
                   <a href="#">
                     <div className="logo-img">
-                    <img src="/images/pt-6.webp" alt="dev logo" />
+                      <img src="/images/pt-4.webp" alt="dev logo" />
+
+
+                    </div>
+                  </a>
+                </div>
+              </div>
+              <div className="col-lg-2 col-md-4 col-sm-4 col-6">
+                <div className="technology-item">
+                  <a href="#">
+                    <div className="logo-img">
+                      <img src="/images/pt-5.webp" alt="dev logo" />
+
+                    </div>
+                  </a>
+                </div>
+              </div>
+              <div className="col-lg-2 col-md-4 col-sm-4 col-6">
+                <div className="technology-item">
+                  <a href="#">
+                    <div className="logo-img">
+                      <img src="/images/pt-6.webp" alt="dev logo" />
 
                     </div>
                   </a>
@@ -511,9 +511,9 @@ export default function Home() {
             <div className="row">
               <div className="col-lg-6">
                 <div className="testi-img">
-                <img src="/images/testimonial.webp" alt="dev logo" />
+                  <img src="/images/testimonial.webp" alt="dev logo" />
 
-               
+
                 </div>
               </div>
               <div className="col-lg-6 md-pt-50 ">
@@ -529,7 +529,7 @@ export default function Home() {
                     <div className="testi-item">
                       <div className="author-desc">
                         <div className="desc">
-                       
+
                           <img src="/images/quote2.webp" alt="dev logo" />
 
                           "I
@@ -539,9 +539,9 @@ export default function Home() {
                       </div>
                       <div className="testimonial-content">
                         <div className="author-img">
-                        <img src="/images/tmh4.webp" alt="dev logo" />
+                          <img src="/images/tmh4.webp" alt="dev logo" />
 
-                       
+
                         </div>
                         <div className="author-part">
                           <a className="name" href="#">Parteek sharma</a>
@@ -554,7 +554,7 @@ export default function Home() {
                     <div className="testi-item">
                       <div className="author-desc">
                         <div className="desc">
-                         
+
                           <img src="/images/quote2.webp" alt="dev logo" />
 
                           "
@@ -564,9 +564,9 @@ export default function Home() {
                       </div>
                       <div className="testimonial-content">
                         <div className="author-img">
-                        <img src="/images/tmh2.webp" alt="dev logo" />
+                          <img src="/images/tmh2.webp" alt="dev logo" />
 
-                  
+
                         </div>
                         <div className="author-part">
                           <a className="name" href="#">Somya Saini</a>
@@ -579,18 +579,18 @@ export default function Home() {
                     <div className="testi-item">
                       <div className="author-desc">
                         <div className="desc">
-                        <img src="/images/quote2.webp" alt="dev logo" />
+                          <img src="/images/quote2.webp" alt="dev logo" />
 
-                        
-                        "Based on such knowledge, we may understand several other
+
+                          "Based on such knowledge, we may understand several other
                           programming languages in a more in-depth way. They have such an easy
                           way of teaching. 5/5 rating great work keep it up"</div>
                       </div>
                       <div className="testimonial-content">
                         <div className="author-img">
-                        <img src="/images/tmh3.webp" alt="dev logo" />
+                          <img src="/images/tmh3.webp" alt="dev logo" />
 
-                        
+
                         </div>
                         <div className="author-part">
                           <a className="name" href="#">Imran Khan</a>
@@ -603,10 +603,10 @@ export default function Home() {
                     <div className="testi-item">
                       <div className="author-desc">
                         <div className="desc">
-                        <img src="/images/quote2.webp" alt="dev logo" />
+                          <img src="/images/quote2.webp" alt="dev logo" />
 
-                   
-                          
+
+
                           "I
                           had an excellent time learning about many topics. I had a little bit
                           of knowledge but never had the chance to study them deeply. Thank
@@ -614,9 +614,9 @@ export default function Home() {
                       </div>
                       <div className="testimonial-content">
                         <div className="author-img">
-                        <img src="/images/tmh4.webp" alt="dev logo" />
+                          <img src="/images/tmh4.webp" alt="dev logo" />
 
-                
+
                         </div>
                         <div className="author-part">
                           <a className="name" href="#">Parteek sharma</a>
@@ -632,7 +632,7 @@ export default function Home() {
                     <div className="testi-item">
                       <div className="author-desc">
                         <div className="desc">
-                      
+
                           <img src="/images/quote2.webp" alt="dev logo" />
 
                           "
@@ -642,9 +642,9 @@ export default function Home() {
                       </div>
                       <div className="testimonial-content">
                         <div className="author-img">
-                        <img src="/images/tmh2.webp" alt="dev logo" />
+                          <img src="/images/tmh2.webp" alt="dev logo" />
 
-                       
+
                         </div>
                         <div className="author-part">
                           <a className="name" href="#">Somya Saini</a>
@@ -673,9 +673,9 @@ export default function Home() {
             <div className="col-md-3 blog-item">
               <div className="image-wrap">
                 <Link href="/study-in-canada">
-                <img src="/images/canda.webp" alt="dev logo" />
+                  <img src="/images/canda.webp" alt="dev logo" />
 
-                
+
 
                 </Link>
                 <ul className="post-categories">
@@ -683,62 +683,62 @@ export default function Home() {
                 </ul>
               </div>
               <div className="blog-content">
-                <h3 className="blog-title"><a href="#">Explore Canada</a></h3>
+                <h3 className="blog-title"><Link href="#">Explore Canada</Link></h3>
                 <p className="desc">Quality education at low cost. Work during study, post-study work permits, and pro-immigration policies. Diverse, safe, and inclusive.</p>
                 <div className="blog-button"><Link href="/study-in-canada">Learn More</Link></div>
               </div>
             </div>
             <div className="col-md-3 blog-item">
               <div className="image-wrap">
-                <a href="/study-in-uk">
-                <img src="/images/united-kingdom.webp" alt="dev logo" />
+                <Link href="/study-in-uk">
+                  <img src="/images/united-kingdom.webp" alt="dev logo" />
 
-                  
 
-                </a>
+
+                </Link>
                 <ul className="post-categories">
-                  <li><a href="/study-in-uk"> United Kingdom</a></li>
+                  <li><Link href="/study-in-uk"> United Kingdom</Link></li>
                 </ul>
               </div>
               <div className="blog-content">
-                <h3 className="blog-title"><a href="/study-in-uk">Explore the United Kingdom</a></h3>
+                <h3 className="blog-title"><Link href="/study-in-uk">Explore the United Kingdom</Link></h3>
                 <p className="desc">World-class universities in the heart of Europe. Shorter study duration to fast-track your career and reduce costs. Options to work during study and after graduation.</p>
-                <div className="blog-button"><a href="/study-in-uk">Learn More</a></div>
+                <div className="blog-button"><Link href="/study-in-uk">Learn More</Link></div>
               </div>
             </div>
             <div className="col-md-3 blog-item">
               <div className="image-wrap">
-                <a href="/study-in-usa">
-                <img src="/images/united-state.webp" alt="dev logo" />
+                <Link href="/study-in-usa">
+                  <img src="/images/united-state.webp" alt="dev logo" />
 
-         
-                </a>
+
+                </Link>
                 <ul className="post-categories">
-                  <li><a href="/study-in-usa"> United States</a></li>
+                  <li><Link href="/study-in-usa"> United States</Link></li>
                 </ul>
               </div>
               <div className="blog-content">
-                <h3 className="blog-title"><a href="/study-in-usa">Explore the United States</a></h3>
+                <h3 className="blog-title"><Link href="/study-in-usa">Explore the United States</Link></h3>
                 <p className="desc">Globally renowned education from the highest-ranked universities and colleges. Chosen by over a million international students every year.</p>
-                <div className="blog-button"><a href="/study-in-usa">Learn More</a></div>
+                <div className="blog-button"><Link href="/study-in-usa">Learn More</Link></div>
               </div>
             </div>
             <div className="col-md-3 blog-item">
               <div className="image-wrap">
-                <a href="/study-in-australia">
-                <img src="/images/austrila.webp" alt="dev logo" />
+                <Link href="/study-in-australia">
+                  <img src="/images/austrila.webp" alt="dev logo" />
 
-            
 
-                </a>
+
+                </Link>
                 <ul className="post-categories">
-                  <li><a href="/study-in-australia">Australia</a></li>
+                  <li><Link href="/study-in-australia">Australia</Link></li>
                 </ul>
               </div>
               <div className="blog-content">
-                <h3 className="blog-title"><a href="/study-in-australia">Explore Australia</a></h3>
+                <h3 className="blog-title"><Link href="/study-in-australia">Explore Australia</Link></h3>
                 <p className="desc">Top-ranked education in a multicultural environment with breathtaking landscapes, beautiful beaches, and a growing economy.</p>
-                <div className="blog-button"><a href="/study-in-australia">Learn More</a></div>
+                <div className="blog-button"><Link href="/study-in-australia">Learn More</Link></div>
               </div>
             </div>
           </div>
