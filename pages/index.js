@@ -661,7 +661,7 @@ export default function Home() {
 
       </div>
 
-      {/* <div id="rs-blog" className="rs-blog pt-10 pb-50 md-pt-80 md-pb-20">
+      <div id="rs-blog" className="rs-blog pt-10 pb-50 md-pt-80 md-pb-20">
         <div className="container">
           <div className="sec-title2 text-center mb-30">
             <span className="sub-text">Student</span>
@@ -743,7 +743,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </div> */}
+      </div>
       <Footer />
     </div>
   )
