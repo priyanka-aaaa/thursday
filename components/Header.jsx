@@ -128,10 +128,10 @@ const Header = () => {
           <div className="row align-items-center">
             <div className="col-md-2 col-lg-2">
               <div className="logo-part">
-                <a href="https://coursementor.com/" title="Coursementor"
+                <Link href="/" title="Coursementor"
                 >
-                  <img layout="fill" unoptimized={true} src="/logo.webp" alt="" loading="lazy" />
-                </a>
+                  <img layout="fill" unoptimized={true} src="/images/logo.webp" alt="" loading="lazy" />
+                </Link>
 
 
               </div>

@@ -280,7 +280,7 @@ export default function Home() {
                     <div className="image-part">
                       <span>
 
-                        <FontAwesomeIcon icon={faUser} />
+                        <FontAwesomeIcon  className="frontend-faicon" icon={faUser} />
 
                       </span>
                     </div>
@@ -303,7 +303,7 @@ export default function Home() {
                   <div className="services-icon">
                     <div className="image-part">
                       <span>
-                        <FontAwesomeIcon icon={faFile} />
+                        <FontAwesomeIcon  className="frontend-faicon" icon={faFile} />
 
 
                       </span>
@@ -328,7 +328,7 @@ export default function Home() {
                     <div className="image-part">
                       <span>
 
-                        <FontAwesomeIcon icon={faCheck} />
+                        <FontAwesomeIcon  className="frontend-faicon" icon={faCheck} />
 
 
                       </span>
@@ -352,7 +352,7 @@ export default function Home() {
                   <div className="services-icon">
                     <div className="image-part">
                       <span>
-                        <FontAwesomeIcon icon={faFile} />
+                        <FontAwesomeIcon  className="frontend-faicon" icon={faFile} />
 
 
                       </span>
@@ -377,7 +377,7 @@ export default function Home() {
                     <div className="image-part">
                       <span>
 
-                        <FontAwesomeIcon icon={faPaperPlane} />
+                        <FontAwesomeIcon  className="frontend-faicon" icon={faPaperPlane} />
 
                       </span>
                     </div>
@@ -401,7 +401,7 @@ export default function Home() {
                     <div className="image-part">
                       <span>
 
-                        <FontAwesomeIcon icon={faGraduationCap} />
+                        <FontAwesomeIcon  className="frontend-faicon" icon={faGraduationCap} />
 
                       </span>
                     </div>

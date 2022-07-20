@@ -209,8 +209,8 @@ export default function ApplicationStep() {
                                                         <div className="row">
                                                             {universityApplication.map((object, i) => {
                                                                 return (
-                                                                    <div className="col-sm-4 ">
-                                                                        <div className="form-group" key={i}>
+                                                                    <div className="col-sm-4 " key={i}>
+                                                                        <div className="form-group">
                                                                             <label htmlFor="password"> Steps</label>
                                                                             <div className="row">
                                                                            <div className="col-md-10">

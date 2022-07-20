@@ -14507,3 +14507,7 @@ sup.green {
     border-radius: 4px !important;
     font-weight: 700 !important;
 }
+.frontend-faicon{
+    height: 20px;
+    width: 20px
+}

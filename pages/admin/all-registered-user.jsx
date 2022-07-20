@@ -1629,7 +1629,7 @@ export default function AdminUniversity() {
                                                                                                                                                                 </div>
                                                                                                                                                                 <div className="reply-content ">
                                                                                                                                                                     <p>{element.message}</p>
-                                                                                                                                                                    {element.file !== "" ? <a className="appAttachment" href={"https://coursementor.com/uploadApi/download.php?file=" + element.file} target="_blank">download Attachment</a>
+                                                                                                                                                                    {element.file !== "" ? <a className="appAttachment" href={"https://coursementor.com/uploadApi/download.php?file=" + element.file} target="_blank" rel="noreferrer" >download Attachment</a>
                                                                                                                                                                         : null}
                                                                                                                                                                 </div>
                                                                                                                                                             </div>
@@ -1650,7 +1650,7 @@ export default function AdminUniversity() {
                                                                                                                                                             </div>
                                                                                                                                                             <div className="reply-content ">
                                                                                                                                                                 <p>{element.message}</p>
-                                                                                                                                                                {element.file !== "" ? <a className="appAttachment" href={"https://coursementor.com/uploadApi/download.php?file=" + element.file} target="_blank">download Attachment</a>
+                                                                                                                                                                {element.file !== "" ? <a className="appAttachment" href={"https://coursementor.com/uploadApi/download.php?file=" + element.file} target="_blank" rel="noreferrer" >download Attachment</a>
                                                                                                                                                                     : null}
                                                                                                                                                             </div>
                                                                                                                                                         </div>
