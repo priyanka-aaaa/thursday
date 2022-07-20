@@ -4,7 +4,7 @@ import StudentSidebar from '../../components/StudentSidebar';
 import Dropzone from "react-dropzone";
 import axios from 'axios';
 import Image from 'next/image'
-// import Loader from '../Home/Loader';
+import Loader from '../../components/Loader';
 // import '../../scss/studentMessage.scss';
 export default function Message() {
     const [messageError, setmessageError] = useState("");
@@ -132,9 +132,9 @@ export default function Message() {
                 <div id="content">
                    <StudentTopbar/> 
         <div className="container-fluid">
-            {/* {loader === "true" ?
+            {loader === "true" ?
                 <Loader />
-                : null} */}
+                : null}
             {submitSuccess === 1 ? <div className="Show_success_message">
                 <strong>Success!</strong> {successMessage}
             </div> : null}

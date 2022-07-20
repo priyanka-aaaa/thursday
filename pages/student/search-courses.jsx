@@ -4,7 +4,7 @@ import StudentTopbar from '../../components/StudentTopbar';
 import StudentSidebar from '../../components/StudentSidebar';
 import Link from 'next/link'
 import Image from 'next/image'
-// import Loader from '../Home/Loader';
+import Loader from '../../components/Loader';
 import PhoneInput from 'react-phone-number-input'
 //start for pagination
 
@@ -2535,10 +2535,10 @@ function FinalFilter() {
         <div id="content">
           <StudentTopbar />
     <div className="main-content">
-{/* 
+
       {loader === "true" ?
         <Loader />
-        : null} */}
+        : null}
 
       {submitSuccess === 1 ? <div className="Show_success_bookmark">
         <strong>Success!</strong> {successMessage}

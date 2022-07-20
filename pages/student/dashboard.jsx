@@ -10,7 +10,7 @@ import useRazorpay from "react-razorpay";
 import axios from 'axios';
 import Image from 'next/image'
 // import '../../scss/studentDashboard.scss';
-// import Loader from '../Home/Loader';
+import Loader from '../../components/Loader';
 // import { BrowserRouter as Router, Switch, Route, Link, useParams, useLocation } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
@@ -771,11 +771,11 @@ export default function Dashboard(location) {
                                 </SweetAlert>
                                 : null
                             }
-                            {/* {
-        loader === "true" ?
-          <Loader />
-          : null
-      } */}
+                            {
+                                loader === "true" ?
+                                    <Loader />
+                                    : null
+                            }
                             <div className="d-sm-flex align-items-center justify-content-between mb-4">
                                 <h1 className="h3 mb-0 text-gray-800">My Application</h1>
                             </div>

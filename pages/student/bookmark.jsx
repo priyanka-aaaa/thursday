@@ -5,6 +5,7 @@ import StudentSidebar from '../../components/StudentSidebar';
 import Image from 'next/image'
 import SweetAlert from 'react-bootstrap-sweetalert';
 import Link from 'next/link'
+import Loader from '../../components/Loader';
 // import Loader from '../Home/Loader';
 // import Link from 'next/link'
 // import '../../scss/bookmark.scss';
@@ -18,7 +19,7 @@ export default function Bookmark() {
   const [submitSuccess, setsubmitSuccess] = useState("0");
   const [showSweetAlert, setshowSweetAlert] = useState("0");
   const [showBookmark, setshowBookmark] = useState("0");
-  // const [loader, setmyloader] = useState("false");
+  const [loader, setmyloader] = useState("false");
   useEffect(() => {
     var studentId = localStorage.getItem('studentId');
     var mounted = localStorage.getItem("studentToken")
@@ -45,6 +46,7 @@ export default function Bookmark() {
   }
   return (
     <div id="page-top">
+
       <div id="wrapper">
         <StudentSidebar />
         <div id="content-wrapper" className="d-flex flex-column">
@@ -60,9 +62,9 @@ export default function Bookmark() {
               {submitSuccess === 1 ? <div className="Show_success_message">
                 <strong>Success!</strong> {successMessage}
               </div> : null}
-              {/* {loader === "true" ?
+              {loader === "true" ?
                 <Loader />
-                : null} */}
+                : null}
               {showSweetAlert === "1" ? <SweetAlert
                 warning
                 showCancel
@@ -70,12 +72,12 @@ export default function Bookmark() {
                 confirmBtnBsStyle="danger"
                 title="Are you sure to Remove from Favourites?"
                 onConfirm={(value) => {
-                  // setmyloader("true")
+                  setmyloader("true")
                   setshowSweetAlert("0");
                   axios.delete(process.env.REACT_APP_SERVER_URL + 'student/bookmarks/' + deleteId, { headers: { 'Authorization': mounted } })
                     .then(function (res) {
                       if (res.data.success === true) {
-                        // setmyloader("false")
+                        setmyloader("false")
                         setsuccessMessage("Remove from Favourites")
                         setTimeout(() => setsubmitSuccess(""), 3000);
                         setsubmitSuccess(1)

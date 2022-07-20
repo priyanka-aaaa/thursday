@@ -5,7 +5,7 @@ import StudentSidebar from '../../components/StudentSidebar';
 
 
 
-// import Loader from '../Home/Loader';
+import Loader from '../../components/Loader';
 export default function Setting() {
     const [mounted, setMounted] = useState();
     const [studentEmail, setstudentEmail] = useState();
@@ -72,7 +72,7 @@ export default function Setting() {
                 <StudentSidebar />
                 <div id="content-wrapper" className="d-flex flex-column">
                     <div id="content">
-                       <StudentTopbar/> 
+                        <StudentTopbar />
                         <div className="container">
                             {submitSuccess === 1 ? <div className="Show_success_message">
                                 <strong>Success!</strong> {successMessage}
@@ -84,9 +84,9 @@ export default function Setting() {
                                 <div className="col-xl-12 col-lg-7">
                                     <div className="card shadow mb-4">
                                         <div className="card-body">
-                                            {/* {loader === "true" ?
-                                <Loader />
-                                : null} */}
+                                            {loader === "true" ?
+                                                <Loader />
+                                                : null}
                                             <div className="form-block">
                                                 <div className="card-body">
                                                     <h3>Change Password</h3>
