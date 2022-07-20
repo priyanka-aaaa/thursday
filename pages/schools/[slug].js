@@ -340,18 +340,20 @@ const MyschoolDetails = (pageProps) => {
                 <title>
                     {pageProps.mydata.universityPrimaryInformation.name}
                 </title>
-                <meta name="description" content=
-                    {pageProps.mydata.universityPrimaryInformation.description}
-                />
-                <meta property="og:title" content={pageProps.mydata.universityPrimaryInformation.name + "- admission process"}></meta>
-                <meta property="og:description"
-                    content={pageProps.mydata.universityPrimaryInformation.name + pageProps.mydata.universityPrimaryInformation.state + ", " + pageProps.mydata.universityPrimaryInformation.country
-
+                <meta name="description" content={pageProps.mydata.universityPrimaryInformation.name + pageProps.mydata.universityPrimaryInformation.state + ", " + pageProps.mydata.universityPrimaryInformation.country
                         + "-" +
                         "admissions process"
                         +
                         "- CourseMentor™"
-
+                    }
+                />
+                <meta property="og:title" content={pageProps.mydata.universityPrimaryInformation.name + "- Admission Process + CourseMentor™"}></meta>
+                <meta property="og:description"
+                    content={pageProps.mydata.universityPrimaryInformation.name + pageProps.mydata.universityPrimaryInformation.state + ", " + pageProps.mydata.universityPrimaryInformation.country
+                        + "-" +
+                        "admissions process"
+                        +
+                        "- CourseMentor™"
                     }></meta>
                 <meta property="og:image" content={pageProps.mydata.universityImage.coverPic}
 
@@ -449,7 +451,7 @@ const MyschoolDetails = (pageProps) => {
                                                     {pageProps.mydata.universityImage.coverPic}
                                                     loading="lazy" />
                                             </div>
-                                            <div className="univer-logo"><img unoptimized={true} src={universityImageValues.logo} loading="lazy" /></div>
+                                            <div className="univer-logo"><img unoptimized={true} src={pageProps.mydata.universityImage.logo} loading="lazy" /></div>
                                             <h4> {pageProps.mydata.universityPrimaryInformation.name}
 
 

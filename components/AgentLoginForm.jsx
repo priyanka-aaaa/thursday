@@ -6,7 +6,7 @@ import SweetAlert from 'react-bootstrap-sweetalert';
 import { Modal, Button } from 'react-bootstrap';
 import Loader from './Loader';
 import GoogleLogin from 'react-google-login';
-export const StudentloginForm = () => {
+export const AgentLoginForm  = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [mounted, setMounted] = useState();
@@ -23,11 +23,11 @@ export const StudentloginForm = () => {
     useEffect(() => {
         const { pathname } = Router;
         // if (pathname === "/") {
-        //     Router.push("/student/dashboard");
+        //     Router.push("/agent/dashboard");
         //   }
-        if (localStorage.getItem('studentId')) {
+        if (localStorage.getItem('agentId')) {
             setredirectToReferrer(true)
-            Router.push("/student/dashboard");
+            Router.push("/agent/dashboard");
         }
     }, [])
     function open() {
@@ -56,20 +56,20 @@ export const StudentloginForm = () => {
                 email: email,
                 password: password
             };
-            axios.post(process.env.REACT_APP_SERVER_URL + 'student/login', obj)
+            axios.post(process.env.REACT_APP_SERVER_URL + 'agent/login', obj)
                 .then(result => {
                     setmyloader("false")
 
                     let responseJson = result;
 
                     if (responseJson.data.success === true) {
-                        localStorage.setItem('studentId', responseJson.data.student._id);
-                        localStorage.setItem('studentToken', responseJson.data.token);
-                        localStorage.setItem('studentName', responseJson.data.student.name);
-                        localStorage.setItem('studentEmail', responseJson.data.student.email);
-                        localStorage.setItem('studentPhone', responseJson.data.student.phone);
+                        localStorage.setItem('agentId', responseJson.data.agent._id);
+                        localStorage.setItem('agentToken', responseJson.data.token);
+                        localStorage.setItem('agentName', responseJson.data.agent.name);
+                        localStorage.setItem('agentEmail', responseJson.data.agent.email);
+                        localStorage.setItem('agentPhone', responseJson.data.agent.phone);
                         setredirectToReferrer(true)
-                        Router.push("/student/dashboard");
+                        Router.push("/agent/dashboard");
 
                     }
                     else {
@@ -90,8 +90,8 @@ export const StudentloginForm = () => {
         }
     }
 
-    // if (localStorage.getItem('studentId') || redirectToReferrer === true) {
-    //     return (<Redirect to={'/student/dashboard'} />)
+    // if (localStorage.getItem('agentId') || redirectToReferrer === true) {
+    //     return (<Redirect to={'/agent/dashboard'} />)
     // }
     function onChangeresetEmail(e) {
         setresetEmail(e)
@@ -100,7 +100,7 @@ export const StudentloginForm = () => {
         event.preventDefault();
         const obj1 = new FormData();
         obj1.append("email", resetEmail);
-        const url4 = process.env.REACT_APP_SERVER_URL + 'student/forgotPassword';
+        const url4 = process.env.REACT_APP_SERVER_URL + 'agent/forgotPassword';
         fetch(url4, {
             method: 'POST',
             body: obj1
@@ -118,7 +118,7 @@ export const StudentloginForm = () => {
             })
     }
     const handleLogin = async (googleData) => {
-        const res = await fetch(process.env.REACT_APP_SERVER_URL + 'student/loginGoogle', {
+        const res = await fetch(process.env.REACT_APP_SERVER_URL + 'agent/loginGoogle', {
             method: 'POST',
             body: JSON.stringify({
                 token: googleData.tokenId,
@@ -130,11 +130,11 @@ export const StudentloginForm = () => {
 
         const data = await res.json();
         if (data.success === true) {
-            localStorage.setItem('studentId', data.student._id);
-            localStorage.setItem('studentToken', data.token);
-            localStorage.setItem('studentName', data.student.name);
-            localStorage.setItem('studentEmail', data.student.email);
-            localStorage.setItem('studentPhone', data.student.phone);
+            localStorage.setItem('agentId', data.agent._id);
+            localStorage.setItem('agentToken', data.token);
+            localStorage.setItem('agentName', data.agent.name);
+            localStorage.setItem('agentEmail', data.agent.email);
+            localStorage.setItem('agentPhone', data.agent.phone);
             setredirectToReferrer(true)
 
 
@@ -164,7 +164,7 @@ export const StudentloginForm = () => {
                 : null
             }
 
-            <h2>Student Login</h2>
+            <h2>Recruitment Partner Login</h2>
 
             <div className="from-start">
                 <form onSubmit={handleSubmit}>
