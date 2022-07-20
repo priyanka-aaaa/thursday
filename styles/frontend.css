@@ -14515,3 +14515,7 @@ sup.green {
     position: sticky;
     top: 0;
 }
+.touch-faicon{
+    width:16px;
+    height: 16px;;
+}

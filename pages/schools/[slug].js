@@ -1,5 +1,7 @@
 import { useRouter } from "next/router";
 import axios from 'axios';
+import 'react-phone-number-input/style.css'
+import BookFree from '../../components/BookFree';
 import Header from '../../components/Header';
 import Image from 'next/image'
 import React, { useState, useEffect } from "react";
@@ -338,7 +340,7 @@ const MyschoolDetails = (pageProps) => {
                 <meta charSet="utf-8" />
 
                 <title>
-                    {pageProps.mydata.universityPrimaryInformation.name}
+                    {pageProps.mydata.universityPrimaryInformation.name + pageProps.mydata.universityPrimaryInformation.state + ", " + pageProps.mydata.universityPrimaryInformation.country+ " Admission Process + CourseMentor™"}
                 </title>
                 <meta name="description" content={pageProps.mydata.universityPrimaryInformation.name + pageProps.mydata.universityPrimaryInformation.state + ", " + pageProps.mydata.universityPrimaryInformation.country
                         + "-" +
@@ -347,7 +349,7 @@ const MyschoolDetails = (pageProps) => {
                         "- CourseMentor™"
                     }
                 />
-                <meta property="og:title" content={pageProps.mydata.universityPrimaryInformation.name + "- Admission Process + CourseMentor™"}></meta>
+                <meta property="og:title" content={pageProps.mydata.universityPrimaryInformation.name + pageProps.mydata.universityPrimaryInformation.state + ", " + pageProps.mydata.universityPrimaryInformation.country+ " Admission Process + CourseMentor™"}></meta>
                 <meta property="og:description"
                     content={pageProps.mydata.universityPrimaryInformation.name + pageProps.mydata.universityPrimaryInformation.state + ", " + pageProps.mydata.universityPrimaryInformation.country
                         + "-" +
@@ -446,10 +448,25 @@ const MyschoolDetails = (pageProps) => {
                                 <div className="col-lg-4 col-md-12 ">
                                     <div className="widget-area">
                                         <div className="university-widget mb-50">
-                                            <div className="cover">
+                                            <div className="cover"
+                                            //  style={{
+                                            //     height: "160px", }}
+                                           >
+
+{/* <Image
+    alt='Mountains'
+    src= {pageProps.mydata.universityImage.coverPic}
+    layout='fill'
+    objectFit='contain'
+  /> */}
+
+
                                                 <img unoptimized={true} src=
                                                     {pageProps.mydata.universityImage.coverPic}
-                                                    loading="lazy" />
+                                                    loading="lazy" className="univeristyCoverImage"
+                                                    // style={{
+                                                    //     height: "160px", }}
+                                                        />
                                             </div>
                                             <div className="univer-logo"><img unoptimized={true} src={pageProps.mydata.universityImage.logo} loading="lazy" /></div>
                                             <h4> {pageProps.mydata.universityPrimaryInformation.name}
@@ -467,7 +484,7 @@ const MyschoolDetails = (pageProps) => {
                                             <div className="recent-post-widget">
                                                 <div className="post-img">
                                                     <span>
-                                                        <FontAwesomeIcon icon={faPhone} />
+                                                        <FontAwesomeIcon icon={faPhone} className="touch-faicon"/>
                                                     </span>
                                                 </div>
                                                 <div className="post-desc">
@@ -478,27 +495,11 @@ const MyschoolDetails = (pageProps) => {
 
                                                 </div>
                                             </div>
-                                            {/* <div className="recent-post-widget">
-                                                <div className="post-img">
-                                                    <span>
-                                                        <FontAwesomeIcon icon={faEnvelope} />
-                                                    </span>
-                                                </div>
-                                                <div className="post-desc">
-                                                    <span className="date">
-
-
-                                                        <i className="fa fa-calendar"></i>
-                                                        Email
-                                                    </span>
-                                                    <a
-                                                        href="mailto:student.helpline@sunderland.ac.uk">{universityEmail}</a>
-                                                </div>
-                                            </div> */}
+                                         
                                             <div className="recent-post-widget">
                                                 <div className="post-img">
                                                     <span>
-                                                        <FontAwesomeIcon icon={faGlobe} />
+                                                        <FontAwesomeIcon icon={faGlobe} className="touch-faicon" />
                                                     </span>
                                                 </div>
                                                 <div className="post-desc">
@@ -933,7 +934,7 @@ const MyschoolDetails = (pageProps) => {
                                                 </div>
                                             </div>
                                         </div>
-                                        {/* <BookFree /> */}
+                                        <BookFree />
                                         {FAQShow === "1" ?
                                             <div className="col-lg-12 mb-3 mt-5">
                                                 <div id="faq" className="blog-item">
