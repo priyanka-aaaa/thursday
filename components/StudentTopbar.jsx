@@ -78,7 +78,7 @@ const StudentTopbar = () => {
     var splitcurrentUrl = currentUrl.split("student/")
     setcurrentMenu(splitcurrentUrl[1])
   }, [])
-  var title = "ggggggg"
+
   function handleCurrentClick(value) {
     setcurrentMenu(value)
   }

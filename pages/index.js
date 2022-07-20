@@ -14,10 +14,11 @@ import {
 
 } from '@fortawesome/free-solid-svg-icons';
 // import { Header } from '../components/Header';
+import { Footer } from '../components/Footer';
 import Header from '../components/Header';
 import EnquiryModal from '../components/EnquiryModal';
 
-import { Footer } from '../components/Footer';
+
 import { StudentloginForm } from '../components/StudentloginForm';
 
 export default function Home() {
