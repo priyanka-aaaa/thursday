@@ -80,32 +80,7 @@ export default function ExtraCurricularDocument() {
         }
         DocumentAll();
         //end dummy
-        if (studentId !== null) {
-            const url = process.env.REACT_APP_SERVER_URL + 'student/experienceDocument';
-            fetch(url, {
-                method: 'GET',
-                headers: {
-                    'Authorization': mounted,
-                }
-            })
-                .then(response => response.json())
-                .then(data => {
-                    var myresults = data.studentExperiences;
-                    if (Object.keys(myresults).length === 0) {
-                        setformValues([{
-                            companyName: '', document: "", _id: "null"
-                        }])
-                        settoogleValues("false")
-                    }
-                    else {
-                        setcompletedHeading("none")
-                        settextflag("inline")
-                        setformValues(data.studentExperiences)
-                        setexperienceDocumentExist(1)
-                        settoogleValues("true")
-                    }
-                })
-        }
+
     }, [])
     function DocumentAll() {
         const url = process.env.REACT_APP_SERVER_URL + 'student/documents';
@@ -167,28 +142,7 @@ export default function ExtraCurricularDocument() {
 
         setdocumentValue(value)
     }
-    function workRexperienceAll() {
-        const url = process.env.REACT_APP_SERVER_URL + 'student/experienceDocument';
-        fetch(url, {
-            method: 'GET',
-            headers: {
-                'Authorization': mounted,
-            }
-        })
-            .then(response => response.json())
-            .then(data => {
-                var myresults = data.studentExperiences;
-                if (Object.keys(myresults).length === 0) {
-                    settoogleValues("false")
-                }
-                else {
-                    setformValues(data.studentExperiences)
-                    setexperienceDocumentExist(1)
-                    settoogleValues("true")
-                }
-            })
 
-    }
     function onDeletefileHandle(value) {
 
 
@@ -304,28 +258,7 @@ export default function ExtraCurricularDocument() {
                                 setsuccessMessage("Deleted Successfully")
                                 setTimeout(() => setsubmitSuccess(""), 3000);
                                 setsubmitSuccess(1)
-                                const url = process.env.REACT_APP_SERVER_URL + 'student/experienceDocument';
-                                fetch(url, {
-                                    method: 'GET',
-                                    headers: {
-                                        'Authorization': mounted,
-                                    }
-                                })
-                                    .then(response => response.json())
-                                    .then(data => {
-                                        var myresults = data.studentExperiences;
-                                        if (Object.keys(myresults).length === 0) {
-                                            setformValues([{
-                                                companyName: '', document: "", _id: "null"
-                                            }])
-                                            settoogleValues("false")
-                                        }
-                                        else {
-                                            setformValues(data.studentExperiences)
-                                            setexperienceDocumentExist(1)
-                                            settoogleValues("true")
-                                        }
-                                    })
+                            
                             })
                     }}
                     onCancel={() => {

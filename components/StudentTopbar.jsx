@@ -27,8 +27,9 @@ const StudentTopbar = () => {
       setwidth("navbar-nav bg-gradient-primary sidebar sidebar-dark accordion")
     }
   }
-  useEffect(() => {
 
+  useEffect(() => {
+    import("bootstrap/dist/js/bootstrap");
     var mounted = localStorage.getItem("studentToken")
     var studentEmail = localStorage.getItem("studentEmail")
     var studentId = localStorage.getItem("studentId")
@@ -134,7 +135,7 @@ const StudentTopbar = () => {
 
                 <a className="nav-link dropdown-toggle" href="#collapseEleven" id="userDropdown" role="button" data-bs-toggle="collapse" aria-haspopup="true" aria-expanded="false">
                   <span>{studentEmail}</span>
-                  <span className="mr-2 d-none d-lg-inline text-gray-600 small">{email}</span>ddddd
+                  <span className="mr-2 d-none d-lg-inline text-gray-600 small">{email}</span>
                   <img className="img-profile rounded-circle" src="/images/undraw_profile.svg" loading="lazy" />
 
                   {/* <img src="undraw_profile" alt="dev logo" /> */}
@@ -152,7 +153,7 @@ const StudentTopbar = () => {
                 </div>
 
 
-               
+
 
               </li>
             </ul>

@@ -23,9 +23,9 @@ import {
 import SweetAlert from 'react-bootstrap-sweetalert';
 import { Modal, Button } from 'react-bootstrap';
 export async function getServerSideProps(context) {
-   
+
     const res = await axios.get(process.env.REACT_APP_SERVER_URL + 'completeUniDetail/' + context.params.slug)
-   
+
 
     return {
 
@@ -34,7 +34,7 @@ export async function getServerSideProps(context) {
             mydata: res.data.universities[0]
         },
     }
-   
+
 }
 
 const MyschoolDetails = (pageProps) => {
@@ -158,7 +158,7 @@ const MyschoolDetails = (pageProps) => {
     }, [])
 
     useEffect(() => {
-        
+
         if (!router.isReady) return;
 
         const schoolDetails = router.query.slug;
@@ -167,7 +167,7 @@ const MyschoolDetails = (pageProps) => {
         function completeUniveristyPage() {
             setmyloader("true")
             //start for complete university detial
-         
+
             //end for complete university detail
             //start for similar uiversity
 
@@ -353,10 +353,13 @@ const MyschoolDetails = (pageProps) => {
                         "- CourseMentor™"
 
                     }></meta>
-                <meta property="og:image" content=  {pageProps.mydata.universityImage.coverPic}
-                
-               ></meta>
+                <meta property="og:image" content={pageProps.mydata.universityImage.coverPic}
+
+                ></meta>
                 <link rel="canonical" href="https://abroad.coursementor.com/" />
+                {/* start faq */}
+
+                {/* end faq */}
                 {unusedFaqSchema === 0 ?
                     <script type="application/ld+json">
                         {JSON.stringify(articleStructuredData)}
@@ -443,15 +446,15 @@ const MyschoolDetails = (pageProps) => {
                                         <div className="university-widget mb-50">
                                             <div className="cover">
                                                 <img unoptimized={true} src=
-                                                {pageProps.mydata.universityImage.coverPic}
-                                               loading="lazy" />
+                                                    {pageProps.mydata.universityImage.coverPic}
+                                                    loading="lazy" />
                                             </div>
                                             <div className="univer-logo"><img unoptimized={true} src={universityImageValues.logo} loading="lazy" /></div>
                                             <h4> {pageProps.mydata.universityPrimaryInformation.name}
-                                            
-                                            
+
+
                                             </h4>
-                                            <p>{ pageProps.mydata.universityPrimaryInformation.state + ", " + pageProps.mydata.universityPrimaryInformation.country}</p>
+                                            <p>{pageProps.mydata.universityPrimaryInformation.state + ", " + pageProps.mydata.universityPrimaryInformation.country}</p>
                                             <h6> {pageProps.mydata.universityPrimaryInformation.type} | Estd. {pageProps.mydata.universityOverview.foundedYear}</h6>
                                             <EnquiryModal />
                                         </div>

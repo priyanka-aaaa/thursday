@@ -14,31 +14,31 @@ export default function Document() {
 
     return (
         <div id="page-top">
-        <div id="wrapper">
-            <StudentSidebar />
-            <div id="content-wrapper" className="d-flex flex-column">
-                <div id="content">
-                   <StudentTopbar/>
-        <div className="container">
-            <div className=" align-items-center justify-content-between mb-4">
-                <h1 className="h3 mb-0 text-gray-800">Application Documents</h1>
-                <p className="extension">File extensions supported .pdf, .doc, .docx, .jpeg, .jpg, .png</p>
-                <div className="row">
-                    <div className="col-xl-12 col-lg-12">
-                        <div id="accordion">
-                            <IdentityDocument />
-                            {/* <EducationDocument /> */}
-                            {/* <WorkExperienceDocument />
-                            <EnglishProficiencyDocument />
-                            <ExtraCurricularDocument />
-                            <RecommendationDocument />
-                            <OtherDocument /> */}
+            <div id="wrapper">
+                <StudentSidebar />
+                <div id="content-wrapper" className="d-flex flex-column">
+                    <div id="content">
+                        <StudentTopbar />
+                        <div className="container">
+                            <div className=" align-items-center justify-content-between mb-4">
+                                <h1 className="h3 mb-0 text-gray-800">Application Documents</h1>
+                                <p className="extension">File extensions supported .pdf, .doc, .docx, .jpeg, .jpg, .png</p>
+                                <div className="row">
+                                    <div className="col-xl-12 col-lg-12">
+                                        <div id="accordion">
+                                            <IdentityDocument />
+                                            <EducationDocument />
+                                            <WorkExperienceDocument />
+                                            <EnglishProficiencyDocument />
+                                            <ExtraCurricularDocument />
+                                            <RecommendationDocument />
+                                            <OtherDocument />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </div>
-        </div>
-        </div>
                 </div>
             </div>
         </div>
