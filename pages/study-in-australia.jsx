@@ -581,83 +581,84 @@ const Study = () => {
                 <h2>Australia Universities</h2>
                 <Slider {...settings}>
 
-{allGroupsUserSpecific.map((element, index) => (
-
-
-  <div className="uniBlock" key={index}>
-    {/* start for bookmark */}
-    {/* end for bookmark */}
-    <div className="headerBlock"><a href="#" target="_blank">
-      <Link href={'/schools/' + element.universityPrimaryInformation.slug} target="_blank" className="name">
-        <img className="logo"
-          src=
-          {element.universityImage.logo}
-
-          loading="lazy"
-        />
-      </Link>
-    </a>
-      <div className="nameBlock">
-
-        <div className="name">
-          <Link href={'/schools/' + element.universityPrimaryInformation.slug} target="_blank" className="name">
-            {element.universityPrimaryInformation.name}
-          </Link>
-        </div>
-        <div className="address">{element.universityPrimaryInformation.state}, {element.universityPrimaryInformation.country}</div>
-
-        {element.following === true ?
-          <img onClick={() => handleStarClick("active", element._id, element.universityPrimaryInformation.name, element.universityImage.logo, element.universityPrimaryInformation.slug)} src=
-            "/images/starActive.webp" alt=""
-            style={{
-              width: "33px",
-              height: "33px",
-              display: displayPrpoerty
-            }} loading="lazy"
-          />
-          :
-          <img onClick={() => handleStarClick("inactive", element._id, element.universityPrimaryInformation.name, element.universityImage.logo, element.universityPrimaryInformation.slug)} alt=""
-            src="/images/starInactive.webp"
-            style={{
-              width: "33px",
-              height: "33px",
-              display: displayPrpoerty
-            }}
-          />
-        }
-      </div>
-    </div>
-    <div className="detailBlock">
-      <div className="detail"><img className="logo" src=""
-        loading="lazy"
-      />
-        <div className="content">
-          <div className="value">6</div>
-          <div className="description">Minimum IELTS Required</div>
-        </div>
-      </div>
-      <div className="detail"><img className="logo" src=
-        "/images/ranking.web"
-        loading="lazy"
-
-      />
-        <div className="content">
-          <div className="value">{element.universityOverview.ranking}</div>
-          <div className="description">Ranking</div>
-        </div>
-      </div>
-    </div>
-    <Link href={'/schools/' + element.universityPrimaryInformation.slug} target="_blank" className="redirector" >
-      Apply Now
-    </Link>
-
-  </div>
+                  {allGroupsUserSpecific.map((element, index) => (
 
 
 
-))}
+                    <div className="uniBlock" key={index}>
+                 
+                      {/* start for bookmark */}
+                      {/* end for bookmark */}
+                      <div className="headerBlock"><a href="#" target="_blank">
+                        <Link href={'/schools/' + element.universityPrimaryInformation.slug} target="_blank" className="name">
+                          <img className="logo"
+                            src=
+                            {element.universityImage.logo}
 
-</Slider>
+                            loading="lazy"
+                          />
+                        </Link>
+                      </a>
+                        <div className="nameBlock">
+
+                          <div className="name">
+                            <Link href={'/schools/' + element.universityPrimaryInformation.slug} target="_blank" className="name">
+                              {element.universityPrimaryInformation.name}
+                            </Link>
+                          </div>
+                          <div className="address">{element.universityPrimaryInformation.state}, {element.universityPrimaryInformation.country}</div>
+
+                          {element.following === true ?
+                            <img onClick={() => handleStarClick("active", element._id, element.universityPrimaryInformation.name, element.universityImage.logo, element.universityPrimaryInformation.slug)} src=
+                              "/images/starActive.webp" alt=""
+                              style={{
+                                width: "33px",
+                                height: "33px",
+                                display: displayPrpoerty
+                              }} loading="lazy"
+                            />
+                            :
+                            <img onClick={() => handleStarClick("inactive", element._id, element.universityPrimaryInformation.name, element.universityImage.logo, element.universityPrimaryInformation.slug)} alt=""
+                              src="/images/starInactive.webp"
+                              style={{
+                                width: "33px",
+                                height: "33px",
+                                display: displayPrpoerty
+                              }}
+                            />
+                          }
+                        </div>
+                      </div>
+                      <div className="detailBlock">
+                        <div className="detail"><img className="logo" src=""
+                          loading="lazy"
+                        />
+                          <div className="content">
+                            <div className="value">6</div>
+                            <div className="description">Minimum IELTS Required</div>
+                          </div>
+                        </div>
+                        <div className="detail">
+                        
+                          <div className="content">
+                            <div className="value">{element.universityOverview.ranking}</div>
+                            <div className="description">Ranking</div>
+                          </div>
+                        </div>
+                      </div>
+                      <Link  href={'/schools/' + element.universityPrimaryInformation.slug} target="_blank"  ><a className="redirector">
+                      Apply Now
+                      </a>
+     
+                      </Link>
+
+                    </div>
+
+
+
+                  ))}
+
+                </Slider>
 
 
 

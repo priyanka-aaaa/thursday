@@ -1,7 +1,7 @@
 import React, { useState, useEffect, Suspense } from "react";
 import { isValidPhoneNumber } from 'react-phone-number-input'
-import Image from 'next/image'
 import Link from 'next/link'
+import Image from 'next/image'
 import Head from 'next/head'
 import { Footer } from '../components/Footer';
 import "slick-carousel/slick/slick.css";
@@ -112,7 +112,7 @@ const Study = () => {
     window.scrollTo(0, 0)
     const articleStructuredData = {
       "@context": "https://schema.org", "@type": "FAQPage", "mainEntity":
-        [{ "@type": "Question", "name": "How much does it cost to study in Australia?", "acceptedAnswer": { "@type": "Answer", "text": "The total cost of studying in Austat level of country are you lookralia varies across courses and universities. The average tuition fees for UG courses is $15,000 to $33,000 (INR 11,15,332- 24,53,731 and PG courses is $20,000 to $37,000 (INR 14,87,150- 27,51,153)" } }, { "@type": "Question", "name": "How do you get PR in Australia?", "acceptedAnswer": { "@type": "Answer", "text": "Points determine one’s eligibility for a PR visa. You must score at least 65 points under the Point’s Grid. The categories to achieve points include age, skills, education, experience, language, and sponsorships." } }, { "@type": "Question", "name": "How much does a student earn in Australia?", "acceptedAnswer": { "@type": "Answer", "text": "Points determine one’s eligibility for a PR visa. You must score at least 65 points under the Point’s Grid. The categories to achieve points include age, skills, education, experience, language, and sponsorships." } }, { "@type": "Question", "name": "Which is the best course to study in Australia?", "acceptedAnswer": { "@type": "Answer", "text": "Being the biggest technology hub, Australia is known for courses like Engineering, Data Science, and Electronics. Apart from these, other popular courses include Business Management, Medicine, Architecture, and Accounting." } }, { "@type": "Question", "name": "Which is the best university to study in Australia?", "acceptedAnswer": { "@type": "Answer", "text": "The following are the top-ranked universities in Australia." } }]
+        [{ "@type": "Question", "name": "How much does it cost to study in Canada?", "acceptedAnswer": { "@type": "Answer", "text": "The total cost of studying in Austat level of country are you lookralia varies across courses and universities. The average tuition fees for UG courses is $15,000 to $33,000 (INR 11,15,332- 24,53,731 and PG courses is $20,000 to $37,000 (INR 14,87,150- 27,51,153)" } }, { "@type": "Question", "name": "How do you get PR in Canada?", "acceptedAnswer": { "@type": "Answer", "text": "Points determine one’s eligibility for a PR visa. You must score at least 65 points under the Point’s Grid. The categories to achieve points include age, skills, education, experience, language, and sponsorships." } }, { "@type": "Question", "name": "How much does a student earn in Canada?", "acceptedAnswer": { "@type": "Answer", "text": "Points determine one’s eligibility for a PR visa. You must score at least 65 points under the Point’s Grid. The categories to achieve points include age, skills, education, experience, language, and sponsorships." } }, { "@type": "Question", "name": "Which is the best course to study in Canada?", "acceptedAnswer": { "@type": "Answer", "text": "Being the biggest technology hub, Canada is known for courses like Engineering, Data Science, and Electronics. Apart from these, other popular courses include Business Management, Medicine, Architecture, and Accounting." } }, { "@type": "Question", "name": "Which is the best university to study in Canada?", "acceptedAnswer": { "@type": "Answer", "text": "The following are the top-ranked universities in Canada." } }]
     };
     setarticleStructuredData(articleStructuredData)
     const url2 = "https://www.coursementor.com/blog/wp-json/wp/v2/posts?per_page=3&_embed";
@@ -124,7 +124,7 @@ const Study = () => {
         setblogData(data2)
       })
 
-    const url1 = process.env.REACT_APP_SERVER_URL + 'universityCountry/Australia';
+    const url1 = process.env.REACT_APP_SERVER_URL + 'universityCountry/Canada';
     fetch(url1, {
       method: 'GET'
     })
@@ -376,10 +376,10 @@ const Study = () => {
   return (
     <div>
       <Head>
-        <title>Australia Study Visa | CourseMentor</title>
+        <title>Canada Study Visa | CourseMentor</title>
         <title>CourseMentor - Study Abroad - Course Finder study austrial</title>
         <meta name="description" content="CourseMentor - Study Abroad - Course Finder study austrial" />
-        <meta property="og:title" content="Australia Study Visa | CourseMentor" />
+        <meta property="og:title" content="Canada Study Visa | CourseMentor" />
         <meta property="og:description" content="CourseMentor - Study Abroad - Course Finder study austrial" />
         <meta property="og:image" content="og image" />
         <script type="application/ld+json">
@@ -430,7 +430,7 @@ const Study = () => {
         {/* Breadcrumbs Start */}
         <div className="rs-breadcrumbs img1">
           <div className="breadcrumbs-inner text-center">
-            <h1 className="page-title">Study in Australia
+            <h1 className="page-title">Study in Canada
             </h1>
             {/* <a className="readon started" onClick={() => openEnquiry()}> Get Started</a> */}
             <EnquiryModal />
@@ -439,35 +439,35 @@ const Study = () => {
         {/* Breadcrumbs End */}
         <div id="secondaryNavBar" className="menu-area menu-sticky">
           <div className="fastFacts">
-          <ul className="fastFactList">
-{activeValue === "fast" ?
-  <li className="active" onClick={() => handlesecondNavbar("fast")} ><Link href="#fast-facts"><a>FAST FACTS</a></Link></li> :
-  <li Click={() => handlesecondNavbar("fast")}><Link href="#fast-facts"> FAST FACTS</Link></li>}
-{activeValue === "topUniversity" ?
-  <li className="active" onClick={() => handlesecondNavbar("topUniversity")} ><Link href="#top-universities"> TOP UNIVERSITIES</Link></li> :
-  <li onClick={() => handlesecondNavbar("topUniversity")} ><Link href="#top-universities"> TOP UNIVERSITIES</Link></li>
-}
-{activeValue === "admission" ?
-  <li className="active" onClick={() => handlesecondNavbar("admission")}><Link href="#admissions"> ADMISSIONS</Link></li> :
-  <li onClick={() => handlesecondNavbar("admission")}><Link href="#admissions"> ADMISSIONS</Link></li>
-}
-{activeValue === "visa" ?
-  <li className="active" onClick={() => handlesecondNavbar("visa")}><Link href="#visa"> VISA</Link></li> :
-  <li onClick={() => handlesecondNavbar("visa")}><Link href="#visa"> VISA</Link></li>
-}
-{activeValue === "COST" ?
-  <li className="active" onClick={() => handlesecondNavbar("COST")}><Link href="#cost-of-living"> COST OF LIVING</Link></li> :
-  <li onClick={() => handlesecondNavbar("COST")}><Link href="#cost-of-living"> COST OF LIVING</Link></li>
-}
-{activeValue === "work" ?
-  <li className="active" onClick={() => handlesecondNavbar("work")}><Link href="#work-opportunities"> WORK OPPORTUNITIES</Link></li> :
-  <li onClick={() => handlesecondNavbar("work")}><Link href="#work-opportunities"> WORK OPPORTUNITIES</Link></li>
-}
-{activeValue === "FAQs" ?
-  <li className="active" onClick={() => handlesecondNavbar("FAQs")}><Link href="#faqs"> FAQs</Link></li> :
-  <li onClick={() => handlesecondNavbar("FAQs")}><Link href="#faqs"> FAQs</Link></li>
-}
-</ul>
+            <ul className="fastFactList">
+              {activeValue === "fast" ?
+                <li className="active" onClick={() => handlesecondNavbar("fast")} ><Link href="#fast-facts"><a>FAST FACTS</a></Link></li> :
+                <li Click={() => handlesecondNavbar("fast")}><Link href="#fast-facts"> FAST FACTS</Link></li>}
+              {activeValue === "topUniversity" ?
+                <li className="active" onClick={() => handlesecondNavbar("topUniversity")} ><Link href="#top-universities"> TOP UNIVERSITIES</Link></li> :
+                <li onClick={() => handlesecondNavbar("topUniversity")} ><Link href="#top-universities"> TOP UNIVERSITIES</Link></li>
+              }
+              {activeValue === "admission" ?
+                <li className="active" onClick={() => handlesecondNavbar("admission")}><Link href="#admissions"> ADMISSIONS</Link></li> :
+                <li onClick={() => handlesecondNavbar("admission")}><Link href="#admissions"> ADMISSIONS</Link></li>
+              }
+              {activeValue === "visa" ?
+                <li className="active" onClick={() => handlesecondNavbar("visa")}><Link href="#visa"> VISA</Link></li> :
+                <li onClick={() => handlesecondNavbar("visa")}><Link href="#visa"> VISA</Link></li>
+              }
+              {activeValue === "COST" ?
+                <li className="active" onClick={() => handlesecondNavbar("COST")}><Link href="#cost-of-living"> COST OF LIVING</Link></li> :
+                <li onClick={() => handlesecondNavbar("COST")}><Link href="#cost-of-living"> COST OF LIVING</Link></li>
+              }
+              {activeValue === "work" ?
+                <li className="active" onClick={() => handlesecondNavbar("work")}><Link href="#work-opportunities"> WORK OPPORTUNITIES</Link></li> :
+                <li onClick={() => handlesecondNavbar("work")}><Link href="#work-opportunities"> WORK OPPORTUNITIES</Link></li>
+              }
+              {activeValue === "FAQs" ?
+                <li className="active" onClick={() => handlesecondNavbar("FAQs")}><Link href="#faqs"> FAQs</Link></li> :
+                <li onClick={() => handlesecondNavbar("FAQs")}><Link href="#faqs"> FAQs</Link></li>
+              }
+            </ul>
 
             <div className="container">
               <div className="row  mt-5 mb-5">
@@ -546,7 +546,7 @@ const Study = () => {
 
                         </div>
                         <div className="study-location-facts_imgDetails__3qjdN">
-                          <p>Currency<br /><strong>Australian Dollar</strong></p>
+                          <p>Currency<br /><strong>Canadan Dollar</strong></p>
                         </div>
                       </div>
                     </div>
@@ -570,7 +570,7 @@ const Study = () => {
                   </div>
                   <div className="study-location-facts_studyGuide__isgq9 mobile-hide">
                     <div className="textC ">
-                      {/* <p style={{ marginBottom: '0px' }}>Download your Australia Free Guide</p> */}
+                      {/* <p style={{ marginBottom: '0px' }}>Download your Canada Free Guide</p> */}
                     </div>
                   </div>
                 </div>
@@ -578,28 +578,39 @@ const Study = () => {
             </div>
             <section className="taranding-block" id="top-universities">
               <div className="container">
-                <h2>Australia Universities</h2>
-
+                <h2>Canada Universities</h2>
                 <Slider {...settings}>
 
                   {allGroupsUserSpecific.map((element, index) => (
 
 
+
                     <div className="uniBlock" key={index}>
+                 
                       {/* start for bookmark */}
                       {/* end for bookmark */}
-                      <div className="headerBlock">
+                      <div className="headerBlock"><a href="#" target="_blank">
+                        <Link href={'/schools/' + element.universityPrimaryInformation.slug} target="_blank" className="name">
+                          <img className="logo"
+                            src=
+                            {element.universityImage.logo}
+
+                            loading="lazy"
+                          />
+                        </Link>
+                      </a>
                         <div className="nameBlock">
 
                           <div className="name">
-                        
+                            <Link href={'/schools/' + element.universityPrimaryInformation.slug} target="_blank" className="name">
+                              {element.universityPrimaryInformation.name}
+                            </Link>
                           </div>
                           <div className="address">{element.universityPrimaryInformation.state}, {element.universityPrimaryInformation.country}</div>
 
                           {element.following === true ?
                             <img onClick={() => handleStarClick("active", element._id, element.universityPrimaryInformation.name, element.universityImage.logo, element.universityPrimaryInformation.slug)} src=
-                              "/images/starActive.webp"
-                              alt=""
+                              "/images/starActive.webp" alt=""
                               style={{
                                 width: "33px",
                                 height: "33px",
@@ -628,15 +639,18 @@ const Study = () => {
                           </div>
                         </div>
                         <div className="detail">
-                          <img src="/images/ranking.webp" alt="dev logo" />
-
+                        
                           <div className="content">
                             <div className="value">{element.universityOverview.ranking}</div>
                             <div className="description">Ranking</div>
                           </div>
                         </div>
                       </div>
-                  
+                      <Link  href={'/schools/' + element.universityPrimaryInformation.slug} target="_blank"  ><a className="redirector">
+                      Apply Now
+                      </a>
+     
+                      </Link>
 
                     </div>
 
@@ -679,7 +693,7 @@ const Study = () => {
                           <div className="blog-content">
                             <h4 className="blog-title mt-3">
                               <Link href="#"><a>{element.title.rendered}nj</a></Link>
-                              </h4>
+                            </h4>
                             {element.content.rendered != null ?
                               <p className="desc">
                                 {parse(element.content.rendered.substring(0, 250))}</p> : <p></p>
@@ -718,7 +732,7 @@ const Study = () => {
                     </div>
                     <div className="col-md-6">
                       <ul>
-                        <li><span><FontAwesomeIcon icon={faFile} /></span>Australian secondary school certificate of
+                        <li><span><FontAwesomeIcon icon={faFile} /></span>Canadan secondary school certificate of
                           education (Year 12) or equivalent or Diploma / Advanced Diploma from the Vocational
                           Education and Training (VET) sector</li>
                         <li><span><FontAwesomeIcon icon={faFile} /></span>GMAT/GRE scores for PG programs</li>
@@ -974,7 +988,7 @@ const Study = () => {
                         <h6 className="cost">Cost - AU$1634</h6>
                         <p className="type">Type- Work</p>
                         <p className="desc">This visa is for international students who have recently graduated in
-                          Australia. It lets you live, study and work in Australia temporarily.</p>
+                          Canada. It lets you live, study and work in Canada temporarily.</p>
                       </div>
                     </div>
                   </div>
@@ -1165,17 +1179,17 @@ const Study = () => {
                 <div className="freedemo">
                   <div className="row">
                     <div className="col-md-12">
-                      <h4>Why Study in Australia</h4>
-                      <p>A country famed for its pioneering innovations, Australia ranks among the top 3 study abroad
+                      <h4>Why Study in Canada</h4>
+                      <p>A country famed for its pioneering innovations, Canada ranks among the top 3 study abroad
                         destinations. Apart from the Group Eight Universities, the island nation houses some of the
-                        leading academic institutions offering quality education across fields. Australia is the
+                        leading academic institutions offering quality education across fields. Canada is the
                         origin for inventions like Wifi and Google Maps which the world now depends upon. Studying
                         under renowned experts and professionals, students can gain skills and grow abundantly in
                         their unique field of interest.</p>
-                      <p>Studying in Australia guarantees high academic standards and globally recognised
-                        qualifications with education administered by the Australian Qualifications Framework (AQF).
+                      <p>Studying in Canada guarantees high academic standards and globally recognised
+                        qualifications with education administered by the Canadan Qualifications Framework (AQF).
                         From experiencing a serene environment and exploring the world’s largest coral reef,
-                        studying in Australia is definitely a unique experience.</p>
+                        studying in Canada is definitely a unique experience.</p>
                     </div>
                   </div>
                 </div>
@@ -1193,7 +1207,7 @@ const Study = () => {
                         <h2 className="accordion-header" id="headingOne">
                           <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
                             aria-expanded="true" aria-controls="collapseOne">
-                            How much does it cost to study in Australia?
+                            How much does it cost to study in Canada?
                           </button>
                         </h2>
                         <div id="collapseOne" className="accordion-collapse collapse Five" aria-labelledby="headingOne"
@@ -1207,7 +1221,7 @@ const Study = () => {
                         <h2 className="accordion-header" id="headingTwo">
                           <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                             data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                            How do you get PR in Australia?
+                            How do you get PR in Canada?
                           </button>
                         </h2>
                         <div id="collapseTwo" className="accordion-collapse collapse" aria-labelledby="headingTwo"
@@ -1221,7 +1235,7 @@ const Study = () => {
                         <h2 className="accordion-header" id="headingThree">
                           <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                             data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                            How much does a student earn in Australia?
+                            How much does a student earn in Canada?
                           </button>
                         </h2>
                         <div id="collapseThree" className="accordion-collapse collapse" aria-labelledby="headingThree"
@@ -1236,13 +1250,13 @@ const Study = () => {
                         <h2 className="accordion-header" id="headingFour">
                           <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour"
                             aria-expanded="true" aria-controls="collapseFour">
-                            Which is the best course to study in Australia?
+                            Which is the best course to study in Canada?
                           </button>
                         </h2>
                         <div id="collapseFour" className="accordion-collapse collapse" aria-labelledby="headingFour"
                           data-bs-parent="#accordionExample">
                           <div className="accordion-body">
-                            <strong>Being the biggest technology hub, Australia is known for courses like Engineering, Data Science, and Electronics. Apart from these, other popular courses include Business Management, Medicine, Architecture, and Accounting.</strong>
+                            <strong>Being the biggest technology hub, Canada is known for courses like Engineering, Data Science, and Electronics. Apart from these, other popular courses include Business Management, Medicine, Architecture, and Accounting.</strong>
                           </div>
                         </div>
                       </div>
@@ -1250,13 +1264,13 @@ const Study = () => {
                         <h2 className="accordion-header" id="headingFive">
                           <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive"
                             aria-expanded="true" aria-controls="collapseFive">
-                            Which is the best university to study in Australia?
+                            Which is the best university to study in Canada?
                           </button>
                         </h2>
                         <div id="collapseFive" className="accordion-collapse collapse" aria-labelledby="headingFive"
                           data-bs-parent="#accordiFivexample">
                           <div className="accordion-body">
-                            <strong> The following are the top-ranked universities in Australia.</strong>
+                            <strong> The following are the top-ranked universities in Canada.</strong>
                           </div>
                         </div>
                       </div>
@@ -1403,7 +1417,7 @@ const Study = () => {
 
                       <option value="">Your preferred study destination</option>
                       <option value="United States of America">United States of America</option>
-                      <option value="Australia">Australia</option>
+                      <option value="Canada">Canada</option>
                       <option value="Canada">Canada</option>
                       <option value="United Kingdom">United Kingdom</option>
                       <option value="New Zealand">New Zealand</option>
