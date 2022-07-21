@@ -28,12 +28,38 @@ export async function getServerSideProps(context) {
 
     const res = await axios.get(process.env.REACT_APP_SERVER_URL + 'completeUniDetail/' + context.params.slug)
 
+const parseData = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+};
+console.log("parseData")
+console.log(parseData)
 
+var heavy_fruits = [];
+var questionResult = res.data.universities[0].universityFaqs;
+questionResult.forEach(function (message) {
+    var abc = {
+        "@type": "Question",
+        "name": message.question,
+        "acceptedAnswer": {
+            "@type": "Answer",
+            "text": message.answer
+        }
+
+    }
+    heavy_fruits.push(abc); // you push it to the array
+
+});
+
+parseData.mainEntity = heavy_fruits;
+console.log("parseData parseData")
+console.log(parseData)
     return {
 
         props: {
 
-            mydata: res.data.universities[0]
+            mydata: res.data.universities[0],
+            parseData:parseData
         },
     }
 
@@ -157,6 +183,8 @@ const MyschoolDetails = (pageProps) => {
 
     useEffect(() => {
         import("bootstrap/dist/js/bootstrap");
+      
+
     }, [])
 
     useEffect(() => {
@@ -197,6 +225,7 @@ const MyschoolDetails = (pageProps) => {
 
 
     }, [router.isReady, router.query.slug])
+ 
     function openforgot() {
         setshowModalforgot(true)
     }
@@ -340,16 +369,16 @@ const MyschoolDetails = (pageProps) => {
                 <meta charSet="utf-8" />
 
                 <title>
-                    {pageProps.mydata.universityPrimaryInformation.name + pageProps.mydata.universityPrimaryInformation.state + ", " + pageProps.mydata.universityPrimaryInformation.country+ " Admission Process + CourseMentor™"}
+                    {pageProps.mydata.universityPrimaryInformation.name + pageProps.mydata.universityPrimaryInformation.state + ", " + pageProps.mydata.universityPrimaryInformation.country + " Admission Process + CourseMentor™"}
                 </title>
                 <meta name="description" content={pageProps.mydata.universityPrimaryInformation.name + pageProps.mydata.universityPrimaryInformation.state + ", " + pageProps.mydata.universityPrimaryInformation.country
-                        + "-" +
-                        "admissions process"
-                        +
-                        "- CourseMentor™"
-                    }
+                    + "-" +
+                    "admissions process"
+                    +
+                    "- CourseMentor™"
+                }
                 />
-                <meta property="og:title" content={pageProps.mydata.universityPrimaryInformation.name + pageProps.mydata.universityPrimaryInformation.state + ", " + pageProps.mydata.universityPrimaryInformation.country+ " Admission Process + CourseMentor™"}></meta>
+                <meta property="og:title" content={pageProps.mydata.universityPrimaryInformation.name + pageProps.mydata.universityPrimaryInformation.state + ", " + pageProps.mydata.universityPrimaryInformation.country + " Admission Process + CourseMentor™"}></meta>
                 <meta property="og:description"
                     content={pageProps.mydata.universityPrimaryInformation.name + pageProps.mydata.universityPrimaryInformation.state + ", " + pageProps.mydata.universityPrimaryInformation.country
                         + "-" +
@@ -364,11 +393,11 @@ const MyschoolDetails = (pageProps) => {
                 {/* start faq */}
 
                 {/* end faq */}
-                {unusedFaqSchema === 0 ?
-                    <script type="application/ld+json">
-                        {JSON.stringify(articleStructuredData)}
-                    </script> : null
-                }
+
+                <script type="application/ld+json">
+                    {JSON.stringify(pageProps.parseData)}
+                </script>
+             
                 {unusedCourseSchema === 0 ?
                     <script type="application/ld+json">
                         {JSON.stringify(completeCourseStructuredData)}
@@ -451,9 +480,9 @@ const MyschoolDetails = (pageProps) => {
                                             <div className="cover"
                                             //  style={{
                                             //     height: "160px", }}
-                                           >
+                                            >
 
-{/* <Image
+                                                {/* <Image
     alt='Mountains'
     src= {pageProps.mydata.universityImage.coverPic}
     layout='fill'
@@ -464,9 +493,9 @@ const MyschoolDetails = (pageProps) => {
                                                 <img unoptimized={true} src=
                                                     {pageProps.mydata.universityImage.coverPic}
                                                     loading="lazy" className="univeristyCoverImage"
-                                                    // style={{
-                                                    //     height: "160px", }}
-                                                        />
+                                                // style={{
+                                                //     height: "160px", }}
+                                                />
                                             </div>
                                             <div className="univer-logo"><img unoptimized={true} src={pageProps.mydata.universityImage.logo} loading="lazy" /></div>
                                             <h4> {pageProps.mydata.universityPrimaryInformation.name}
@@ -484,7 +513,7 @@ const MyschoolDetails = (pageProps) => {
                                             <div className="recent-post-widget">
                                                 <div className="post-img">
                                                     <span>
-                                                        <FontAwesomeIcon icon={faPhone} className="touch-faicon"/>
+                                                        <FontAwesomeIcon icon={faPhone} className="touch-faicon" />
                                                     </span>
                                                 </div>
                                                 <div className="post-desc">
@@ -495,7 +524,7 @@ const MyschoolDetails = (pageProps) => {
 
                                                 </div>
                                             </div>
-                                         
+
                                             <div className="recent-post-widget">
                                                 <div className="post-img">
                                                     <span>
