@@ -25,24 +25,24 @@ export const Footer = () => {
               </div>
               <ul className="footer-social md-mb-30">
                 <li>
-                  <a href="https://www.facebook.com/coursementors/" target="_blank" title='Facebook'><span>
+                  <a href="https://www.facebook.com/coursementors/" target="_blank"  rel="noreferrer" title='Facebook'><span>
                     <FontAwesomeIcon icon={faFacebook} />
                   </span></a>
                 </li>
                 <li>
-                  <a href="https://www.linkedin.com/company/coursementor-study-abroad/" target="_blank" title='Linkedin'><span>
+                  <a href="https://www.linkedin.com/company/coursementor-study-abroad/" target="_blank"  rel="noreferrer" title='Linkedin'><span>
 
                     <FontAwesomeIcon icon={faLinkedinIn} />
                   </span></a>
                 </li>
                 <li>
-                  <a href="https://www.instagram.com/course_mentor/" target="_blank" title='Pinterest'><span>
+                  <a href="https://www.instagram.com/course_mentor/" target="_blank"  rel="noreferrer" title='Pinterest'><span>
                     <FontAwesomeIcon icon={faPinterest} />
 
                   </span></a>
                 </li>
                 <li>
-                  <a href="https://in.pinterest.com/Thecoursementor/_created/" target="_blank" title='Instagram'><span>
+                  <a href="https://in.pinterest.com/Thecoursementor/_created/" target="_blank"  rel="noreferrer" title='Instagram'><span>
                     <FontAwesomeIcon icon={faInstagram} />
 
                   </span></a>
