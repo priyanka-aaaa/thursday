@@ -439,35 +439,35 @@ const Study = () => {
         {/* Breadcrumbs End */}
         <div id="secondaryNavBar" className="menu-area menu-sticky">
           <div className="fastFacts">
-          <ul className="fastFactList">
-{activeValue === "fast" ?
-  <li className="active" onClick={() => handlesecondNavbar("fast")} ><Link href="#fast-facts"><a>FAST FACTS</a></Link></li> :
-  <li Click={() => handlesecondNavbar("fast")}><Link href="#fast-facts"> FAST FACTS</Link></li>}
-{activeValue === "topUniversity" ?
-  <li className="active" onClick={() => handlesecondNavbar("topUniversity")} ><Link href="#top-universities"> TOP UNIVERSITIES</Link></li> :
-  <li onClick={() => handlesecondNavbar("topUniversity")} ><Link href="#top-universities"> TOP UNIVERSITIES</Link></li>
-}
-{activeValue === "admission" ?
-  <li className="active" onClick={() => handlesecondNavbar("admission")}><Link href="#admissions"> ADMISSIONS</Link></li> :
-  <li onClick={() => handlesecondNavbar("admission")}><Link href="#admissions"> ADMISSIONS</Link></li>
-}
-{activeValue === "visa" ?
-  <li className="active" onClick={() => handlesecondNavbar("visa")}><Link href="#visa"> VISA</Link></li> :
-  <li onClick={() => handlesecondNavbar("visa")}><Link href="#visa"> VISA</Link></li>
-}
-{activeValue === "COST" ?
-  <li className="active" onClick={() => handlesecondNavbar("COST")}><Link href="#cost-of-living"> COST OF LIVING</Link></li> :
-  <li onClick={() => handlesecondNavbar("COST")}><Link href="#cost-of-living"> COST OF LIVING</Link></li>
-}
-{activeValue === "work" ?
-  <li className="active" onClick={() => handlesecondNavbar("work")}><Link href="#work-opportunities"> WORK OPPORTUNITIES</Link></li> :
-  <li onClick={() => handlesecondNavbar("work")}><Link href="#work-opportunities"> WORK OPPORTUNITIES</Link></li>
-}
-{activeValue === "FAQs" ?
-  <li className="active" onClick={() => handlesecondNavbar("FAQs")}><Link href="#faqs"> FAQs</Link></li> :
-  <li onClick={() => handlesecondNavbar("FAQs")}><Link href="#faqs"> FAQs</Link></li>
-}
-</ul>
+            <ul className="fastFactList">
+              {activeValue === "fast" ?
+                <li className="active" onClick={() => handlesecondNavbar("fast")} ><Link href="#fast-facts"><a>FAST FACTS</a></Link></li> :
+                <li Click={() => handlesecondNavbar("fast")}><Link href="#fast-facts"> FAST FACTS</Link></li>}
+              {activeValue === "topUniversity" ?
+                <li className="active" onClick={() => handlesecondNavbar("topUniversity")} ><Link href="#top-universities"> TOP UNIVERSITIES</Link></li> :
+                <li onClick={() => handlesecondNavbar("topUniversity")} ><Link href="#top-universities"> TOP UNIVERSITIES</Link></li>
+              }
+              {activeValue === "admission" ?
+                <li className="active" onClick={() => handlesecondNavbar("admission")}><Link href="#admissions"> ADMISSIONS</Link></li> :
+                <li onClick={() => handlesecondNavbar("admission")}><Link href="#admissions"> ADMISSIONS</Link></li>
+              }
+              {activeValue === "visa" ?
+                <li className="active" onClick={() => handlesecondNavbar("visa")}><Link href="#visa"> VISA</Link></li> :
+                <li onClick={() => handlesecondNavbar("visa")}><Link href="#visa"> VISA</Link></li>
+              }
+              {activeValue === "COST" ?
+                <li className="active" onClick={() => handlesecondNavbar("COST")}><Link href="#cost-of-living"> COST OF LIVING</Link></li> :
+                <li onClick={() => handlesecondNavbar("COST")}><Link href="#cost-of-living"> COST OF LIVING</Link></li>
+              }
+              {activeValue === "work" ?
+                <li className="active" onClick={() => handlesecondNavbar("work")}><Link href="#work-opportunities"> WORK OPPORTUNITIES</Link></li> :
+                <li onClick={() => handlesecondNavbar("work")}><Link href="#work-opportunities"> WORK OPPORTUNITIES</Link></li>
+              }
+              {activeValue === "FAQs" ?
+                <li className="active" onClick={() => handlesecondNavbar("FAQs")}><Link href="#faqs"> FAQs</Link></li> :
+                <li onClick={() => handlesecondNavbar("FAQs")}><Link href="#faqs"> FAQs</Link></li>
+              }
+            </ul>
 
             <div className="container">
               <div className="row  mt-5 mb-5">
@@ -579,72 +579,85 @@ const Study = () => {
             <section className="taranding-block" id="top-universities">
               <div className="container">
                 <h2>Australia Universities</h2>
-
                 <Slider {...settings}>
 
-                  {allGroupsUserSpecific.map((element, index) => (
+{allGroupsUserSpecific.map((element, index) => (
 
 
-                    <div className="uniBlock" key={index}>
-                      {/* start for bookmark */}
-                      {/* end for bookmark */}
-                      <div className="headerBlock">
-                        <div className="nameBlock">
+  <div className="uniBlock" key={index}>
+    {/* start for bookmark */}
+    {/* end for bookmark */}
+    <div className="headerBlock"><a href="#" target="_blank">
+      <Link href={'/schools/' + element.universityPrimaryInformation.slug} target="_blank" className="name">
+        <img className="logo"
+          src=
+          {element.universityImage.logo}
 
-                          <div className="name">
-                        
-                          </div>
-                          <div className="address">{element.universityPrimaryInformation.state}, {element.universityPrimaryInformation.country}</div>
+          loading="lazy"
+        />
+      </Link>
+    </a>
+      <div className="nameBlock">
 
-                          {element.following === true ?
-                            <img onClick={() => handleStarClick("active", element._id, element.universityPrimaryInformation.name, element.universityImage.logo, element.universityPrimaryInformation.slug)} src=
-                              "/images/starActive.webp"
-                              alt=""
-                              style={{
-                                width: "33px",
-                                height: "33px",
-                                display: displayPrpoerty
-                              }} loading="lazy"
-                            />
-                            :
-                            <img onClick={() => handleStarClick("inactive", element._id, element.universityPrimaryInformation.name, element.universityImage.logo, element.universityPrimaryInformation.slug)} alt=""
-                              src="/images/starInactive.webp"
-                              style={{
-                                width: "33px",
-                                height: "33px",
-                                display: displayPrpoerty
-                              }}
-                            />
-                          }
-                        </div>
-                      </div>
-                      <div className="detailBlock">
-                        <div className="detail"><img className="logo" src=""
-                          loading="lazy"
-                        />
-                          <div className="content">
-                            <div className="value">6</div>
-                            <div className="description">Minimum IELTS Required</div>
-                          </div>
-                        </div>
-                        <div className="detail">
-                          <img src="/images/ranking.webp" alt="dev logo" />
+        <div className="name">
+          <Link href={'/schools/' + element.universityPrimaryInformation.slug} target="_blank" className="name">
+            {element.universityPrimaryInformation.name}
+          </Link>
+        </div>
+        <div className="address">{element.universityPrimaryInformation.state}, {element.universityPrimaryInformation.country}</div>
 
-                          <div className="content">
-                            <div className="value">{element.universityOverview.ranking}</div>
-                            <div className="description">Ranking</div>
-                          </div>
-                        </div>
-                      </div>
-                  
+        {element.following === true ?
+          <img onClick={() => handleStarClick("active", element._id, element.universityPrimaryInformation.name, element.universityImage.logo, element.universityPrimaryInformation.slug)} src=
+            "/images/starActive.webp" alt=""
+            style={{
+              width: "33px",
+              height: "33px",
+              display: displayPrpoerty
+            }} loading="lazy"
+          />
+          :
+          <img onClick={() => handleStarClick("inactive", element._id, element.universityPrimaryInformation.name, element.universityImage.logo, element.universityPrimaryInformation.slug)} alt=""
+            src="/images/starInactive.webp"
+            style={{
+              width: "33px",
+              height: "33px",
+              display: displayPrpoerty
+            }}
+          />
+        }
+      </div>
+    </div>
+    <div className="detailBlock">
+      <div className="detail"><img className="logo" src=""
+        loading="lazy"
+      />
+        <div className="content">
+          <div className="value">6</div>
+          <div className="description">Minimum IELTS Required</div>
+        </div>
+      </div>
+      <div className="detail"><img className="logo" src=
+        "/images/ranking.web"
+        loading="lazy"
 
-                    </div>
+      />
+        <div className="content">
+          <div className="value">{element.universityOverview.ranking}</div>
+          <div className="description">Ranking</div>
+        </div>
+      </div>
+    </div>
+    <Link href={'/schools/' + element.universityPrimaryInformation.slug} target="_blank" className="redirector" >
+      Apply Now
+    </Link>
+
+  </div>
 
 
 
-                  ))}
+))}
 
-                </Slider>
+</Slider>
 
 
 
@@ -679,7 +692,7 @@ const Study = () => {
                           <div className="blog-content">
                             <h4 className="blog-title mt-3">
                               <Link href="#"><a>{element.title.rendered}nj</a></Link>
-                              </h4>
+                            </h4>
                             {element.content.rendered != null ?
                               <p className="desc">
                                 {parse(element.content.rendered.substring(0, 250))}</p> : <p></p>

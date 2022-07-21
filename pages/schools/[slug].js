@@ -217,12 +217,11 @@ const MyschoolDetails = (pageProps) => {
         ]
     };
 
+    if (typeof window !== "undefined") {
 
-    useEffect(() => {
-        import("bootstrap/dist/js/bootstrap");
-
-
-    }, [])
+        require("bootstrap/dist/js/bootstrap");
+      }
+  
 
     useEffect(() => {
 
