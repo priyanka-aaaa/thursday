@@ -32,8 +32,7 @@ const parseData = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
 };
-console.log("parseData")
-console.log(parseData)
+
 
 var heavy_fruits = [];
 var questionResult = res.data.universities[0].universityFaqs;
@@ -52,8 +51,7 @@ questionResult.forEach(function (message) {
 });
 
 parseData.mainEntity = heavy_fruits;
-console.log("parseData parseData")
-console.log(parseData)
+
     return {
 
         props: {
