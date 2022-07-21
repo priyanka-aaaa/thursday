@@ -1,6 +1,7 @@
 
 import React, { useState, useEffect, Suspense } from "react";
 import { isValidPhoneNumber } from 'react-phone-number-input'
+import 'react-phone-number-input/style.css'
 import axios from 'axios';
 import Image from 'next/image'
 // import LoaderFrontend from './LoaderFrontend';
