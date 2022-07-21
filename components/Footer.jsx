@@ -17,7 +17,7 @@ export const Footer = () => {
             <div className="col-xl-3 col-md-6">
               <div className="footer-logo mb-30">
                 <a href="https://coursementor.com/">
-                  <img src="/imageslogo-white.webp" alt="" loading="lazy" /></a>
+                  <img src="/images/logo-white.webp" alt="" loading="lazy" /></a>
               </div>
               <div className="textwidget pb-30">
                 <p>Get the full-stack career guidance, study abroad with the best university match & live mentoring platform that matches students with the right courses, mentors and job opportunities.<br/><a href="https://coursementor.com/book-study-abroad-counseling"> Talk to our Expert </a></p>
