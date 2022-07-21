@@ -27,37 +27,76 @@ import { Modal, Button } from 'react-bootstrap';
 export async function getServerSideProps(context) {
 
     const res = await axios.get(process.env.REACT_APP_SERVER_URL + 'completeUniDetail/' + context.params.slug)
+    //start faq
+    const parseData = {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+    };
+    var heavy_fruits = [];
+    var questionResult = res.data.universities[0].universityFaqs;
+    questionResult.forEach(function (message) {
+        var abc = {
+            "@type": "Question",
+            "name": message.question,
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": message.answer
+            }
 
-const parseData = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-};
-
-
-var heavy_fruits = [];
-var questionResult = res.data.universities[0].universityFaqs;
-questionResult.forEach(function (message) {
-    var abc = {
-        "@type": "Question",
-        "name": message.question,
-        "acceptedAnswer": {
-            "@type": "Answer",
-            "text": message.answer
         }
+        heavy_fruits.push(abc); // you push it to the array
 
+    });
+    parseData.mainEntity = heavy_fruits;
+    //end faq
+    //start for course schema
+   var myuniversityName=res.data.universities[0].universityPrimaryInformation.name;
+   var myuniversityWebsite=res.data.universities[0].universityPrimaryInformation.website;
+
+    var courseResult = res.data.universities[0].universityCourses;
+    var objhello = [];
+    var i;
+    if (courseResult.length >= 4) {
+        for (i = 0; i < 4; i++) {
+            const courseStructuredData = {
+                "@context": "https://schema.org",
+                "@type": "Course",
+                "name": courseResult[i].courseName,
+                "description": courseResult[i].description,
+                "provider": {
+                    "@type": "Organization",
+                    "name": myuniversityName,
+                    "sameAs": myuniversityWebsite
+                }
+            };
+            objhello.push(courseStructuredData);
+        }
     }
-    heavy_fruits.push(abc); // you push it to the array
+    else {
+        for (i = 0; i < courseResult.length; i++) {
+            const courseStructuredData = {
+                "@context": "https://schema.org",
+                "@type": "Course",
+                "name": courseResult[i].courseName,
+                "description": courseResult[i].description,
+                "provider": {
+                    "@type": "Organization",
+                    "name": myuniversityName,
+                    "sameAs": myuniversityWebsite
+                }
+            };
+            objhello.push(courseStructuredData);
+        }
+    }
 
-});
-
-parseData.mainEntity = heavy_fruits;
-
+    //end for course schema
     return {
 
         props: {
 
             mydata: res.data.universities[0],
-            parseData:parseData
+            parseData: parseData,
+            objhello:objhello
         },
     }
 
@@ -181,7 +220,7 @@ const MyschoolDetails = (pageProps) => {
 
     useEffect(() => {
         import("bootstrap/dist/js/bootstrap");
-      
+
 
     }, [])
 
@@ -223,7 +262,7 @@ const MyschoolDetails = (pageProps) => {
 
 
     }, [router.isReady, router.query.slug])
- 
+
     function openforgot() {
         setshowModalforgot(true)
     }
@@ -395,12 +434,10 @@ const MyschoolDetails = (pageProps) => {
                 <script type="application/ld+json">
                     {JSON.stringify(pageProps.parseData)}
                 </script>
-             
-                {unusedCourseSchema === 0 ?
-                    <script type="application/ld+json">
-                        {JSON.stringify(completeCourseStructuredData)}
-                    </script> : null
-                }
+                <script type="application/ld+json">
+                    {JSON.stringify(pageProps.objhello)}
+                </script>
+
             </Head>
 
 
