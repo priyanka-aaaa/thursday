@@ -211,7 +211,7 @@ export default function PersonalInfoProfile() {
 
 
                             <div className="container-fluid">
-                                <div class="d-sm-flex align-items-center justify-content-between mb-4"><h1 class="h3 mb-0 text-gray-800">Profile</h1></div>
+                                <div className="d-sm-flex align-items-center justify-content-between mb-4"><h1 className="h3 mb-0 text-gray-800">Profile</h1></div>
                                 <div className="card">
                                     <div className="card-header"></div>
                                     <div className="card-body">

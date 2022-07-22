@@ -2696,7 +2696,7 @@ export default function AgentStudent() {
                                                                                                                     </div>
                                                                                                                     <div className="reply-content ">
                                                                                                                         <p>{element.message}</p>
-                                                                                                                        {element.file !== "" ? <a className="appAttachment" href={element.file} target="_blank">download Attachment</a>
+                                                                                                                        {element.file !== "" ? <a className="appAttachment" href={element.file} target="_blank" rel="noreferrer" >download Attachment</a>
                                                                                                                             : null}
 
                                                                                                                     </div>
@@ -2719,7 +2719,7 @@ export default function AgentStudent() {
                                                                                                                 </div>
                                                                                                                 <div className="reply-content ">
                                                                                                                     <p>{element.message}</p>
-                                                                                                                    {element.file !== "" ? <a className="appAttachment" href={element.file} target="_blank">download Attachment</a>
+                                                                                                                    {element.file !== "" ? <a className="appAttachment" href={element.file} target="_blank" rel="noreferrer" >download Attachment</a>
                                                                                                                         : null}
                                                                                                                 </div>
                                                                                                             </div>
