@@ -33,7 +33,7 @@ export default function Counseling() {
         { name: "Email", field: "email", sortable: true },
         { name: "Phone", field: "phone", sortable: false },
         { name: "Registration Date", field: "currentTime", sortable: false },
-        { name: "Agent Name", field: "agentName", sortable: false },
+       
         { name: "Action", field: "", sortable: false },
     ];
 
@@ -166,7 +166,7 @@ export default function Counseling() {
 
                             <div className="row">
                                 <div className="col-md-6">
-                                    <h3>Enquiry Receive From Popup</h3>
+                                    <h3>Registered Students</h3>
                                 </div>
                                 <div className="col-md-6 text-right">
                                     <div className="search-bar">
@@ -205,7 +205,7 @@ export default function Counseling() {
                                                                     <td>{object.email}</td>
                                                                     <td>{object.phone}</td>
                                                                     <td>{object.currentTime || ""}</td>
-                                                                    <td>{object.agentName}</td>
+                                                                   
 
                                                                     <td>
 

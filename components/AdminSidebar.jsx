@@ -7,7 +7,7 @@ import { Dropdown } from 'react-bootstrap';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
-  faSignOutAlt, faFile, faDashboard, faUserCircle, faAngleLeft, faAddressBook, faSetting, faCog, faEnvelope, faAward
+  faSignOutAlt, faFile, faDashboard, faUserCircle, faUser, faAngleLeft, faAddressBook, faSetting, faCog, faEnvelope, faAward
 } from '@fortawesome/free-solid-svg-icons';
 const AdminSidebar = () => {
   const [width, setwidth] = useState("navbar-nav bg-gradient-primary sidebar sidebar-dark accordion");
@@ -101,7 +101,7 @@ const AdminSidebar = () => {
               </div> */}
       <span className="sidebar-brand d-flex align-items-center justify-content-center" href="#">
         {width === "navbar-nav bg-gradient-primary sidebar sidebar-dark accordion toggled" ?
-          <Link href='/admin/dashboard'  class="nav-link">
+          <Link href='/admin/dashboard' class="nav-link">
             <img src="/images/small-dash-logo.webp" alt="dev logo" />
 
           </Link>
@@ -116,46 +116,67 @@ const AdminSidebar = () => {
         </div>
       </span>
       <hr className="sidebar-divider my-0" />
+   
+      <li className="nav-item current-tab" onClick={() => handleCurrentClick("addStudent")}>
+        <a className="nav-link collapsed" title="My Student" data-bs-toggle="collapse" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+          <i className="fas fa-user-tie"></i>
+          <span> <FontAwesomeIcon icon={faUser} />
+            Users </span>
+        </a>
+        <div id="collapseTwo" className="collapse" data-bs-parent="#accordion" data-parent="#accordionSidebar" >
+          <div className="bg-white py-2 collapse-inner rounded">
+            <Link href={'/admin/all-registered-user'} className="collapse-item" title="All Registered Users"><a className="collapse-item">
+              <span>All Registered Users</span></a></Link>
+            <Link href={'/admin/enquiry'} className="collapse-item" title="Enquiry Pop-UP"><a className="collapse-item">
+              <span>Enquiry Pop-UP</span></a></Link>
+            <Link href={'/admin/counseling'} className="collapse-item" title="Counseling Form"><a className="collapse-item">
+              <span> Counseling Form</span></a></Link>
+            <Link href={'/admin/registered-user'} className="collapse-item" title="Registered Students"><a className="collapse-item">
+              <span>Registered Students</span></a></Link>
+
+          </div>
+        </div>
+      </li>
       {currentMenu === "dashboard" ?
         <li className="nav-item " onClick={() => handleCurrentClick("Dashboard")}>
           <Link href='/admin/dashboard' className="nav-link current-tab" title="Dashboard" ><a className="nav-link">
             <i className="fas fa-fw fa-tachometer-alt"></i>
             <span> <FontAwesomeIcon icon={faDashboard} className="sidebar-faicon"
-           
-            
-            /><span className="text-mob-hide">Dashboard</span>  </span></a></Link>
+
+
+            /><span className="text-mob-hide">Student Applications</span>  </span></a></Link>
         </li>
         :
         <li className="nav-item " onClick={() => handleCurrentClick("Dashboard")}>
           <Link href='/admin/dashboard' className="nav-link" title="Dashboard" ><a className="nav-link">
             <i className="fas fa-fw fa-tachometer-alt"></i>
-            <span> <FontAwesomeIcon icon={faDashboard}  className="sidebar-faicon"/><span className="text-mob-hide">Dashboard</span>  </span></a></Link>
+            <span> <FontAwesomeIcon icon={faDashboard} className="sidebar-faicon" /><span className="text-mob-hide">Student Applications</span>  </span></a></Link>
         </li>
       }
       {currentMenu === "Recruitment Partner" ?
         <li className="nav-item " onClick={() => handleCurrentClick("Recruitment Partner")}>
           <Link href='/admin/agent' className="nav-link current-tab" title="Recruitment Partner" ><a className="nav-link">
             <i className="fas fa-fw fa-tachometer-alt"></i>
-            <span> <FontAwesomeIcon icon={faDashboard}   className="sidebar-faicon"/><span className="text-mob-hide">Recruitment Partner</span>  </span></a></Link>
+            <span> <FontAwesomeIcon icon={faDashboard} className="sidebar-faicon" /><span className="text-mob-hide">Recruitment Partner</span>  </span></a></Link>
         </li>
         :
         <li className="nav-item " onClick={() => handleCurrentClick("Recruitment Partner")}>
           <Link href='/admin/agent' className="nav-link" title="Recruitment Partner" ><a className="nav-link">
             <i className="fas fa-fw fa-tachometer-alt"></i>
-            <span> <FontAwesomeIcon icon={faDashboard}      className="sidebar-faicon"/><span className="text-mob-hide">Recruitment Partner</span>  </span></a></Link>
+            <span> <FontAwesomeIcon icon={faDashboard} className="sidebar-faicon" /><span className="text-mob-hide">Recruitment Partner</span>  </span></a></Link>
         </li>
       }
       {currentMenu === "dashboard" ?
         <li className="nav-item " onClick={() => handleCurrentClick("University")}>
           <Link href='/admin/university' className="nav-link current-tab" title="Dashboard" ><a className="nav-link">
             <i className="fas fa-fw fa-tachometer-alt"></i>
-            <span> <FontAwesomeIcon icon={faDashboard} className="sidebar-faicon"/><span className="text-mob-hide">University</span>  </span></a></Link>
+            <span> <FontAwesomeIcon icon={faDashboard} className="sidebar-faicon" /><span className="text-mob-hide">University</span>  </span></a></Link>
         </li>
         :
         <li className="nav-item " onClick={() => handleCurrentClick("University")}>
           <Link href='/admin/university' className="nav-link" title="Dashboard" ><a className="nav-link">
             <i className="fas fa-fw fa-tachometer-alt"></i>
-            <span> <FontAwesomeIcon icon={faDashboard} className="sidebar-faicon"/><span className="text-mob-hide">University</span>  </span></a></Link>
+            <span> <FontAwesomeIcon icon={faDashboard} className="sidebar-faicon" /><span className="text-mob-hide">University</span>  </span></a></Link>
         </li>
       }
       {currentMenu === "applicationStep" ?
@@ -163,44 +184,44 @@ const AdminSidebar = () => {
 
           <Link href='/admin/applicationStep' className="nav-link current-tab" title="Application Step"><a className="nav-link">
             <i className="fas fa-file-alt"></i>
-            <span><FontAwesomeIcon icon={faAddressBook} className="sidebar-faicon"/><span className="text-mob-hide">Application Step</span></span></a></Link>
+            <span><FontAwesomeIcon icon={faAddressBook} className="sidebar-faicon" /><span className="text-mob-hide">Application Step</span></span></a></Link>
         </li>
         :
         <li className="nav-item" onClick={() => handleCurrentClick("applicationStep")}>
 
           <Link href='/admin/applicationStep' className="nav-link" title="Application Step"><a className="nav-link">
             <i className="fas fa-file-alt"></i>
-            <span><FontAwesomeIcon icon={faAddressBook} className="sidebar-faicon"/><span className="text-mob-hide">Application Step</span></span></a></Link>
+            <span><FontAwesomeIcon icon={faAddressBook} className="sidebar-faicon" /><span className="text-mob-hide">Application Step</span></span></a></Link>
         </li>
       }
       {currentMenu === "team" ?
         <li className="nav-item " onClick={() => handleCurrentClick("team")}>
           <Link href='/admin/team' className="nav-link current-tab" title="Partner team" ><a className="nav-link">
             <i className="fas fa-file-upload"></i>
-            <span><FontAwesomeIcon icon={faFile} className="sidebar-faicon"/><span className="text-mob-hide">Partner team</span></span></a></Link>
+            <span><FontAwesomeIcon icon={faFile} className="sidebar-faicon" /><span className="text-mob-hide">Partner team</span></span></a></Link>
         </li>
         :
         <li className="nav-item " onClick={() => handleCurrentClick("team")}>
           <Link href='/admin/team' className="nav-link" title="Partner team" ><a className="nav-link">
             <i className="fas fa-file-upload"></i>
-            <span><FontAwesomeIcon icon={faFile} className="sidebar-faicon"/><span className="text-mob-hide">Partner team</span></span></a></Link>
+            <span><FontAwesomeIcon icon={faFile} className="sidebar-faicon" /><span className="text-mob-hide">Partner team</span></span></a></Link>
         </li>
       }
       {currentMenu === "Setting" ?
         <li className="nav-item " onClick={() => handleCurrentClick("Setting")}>
           <Link href='/admin/setting' className="nav-link current-tab" title="Setting"><a className="nav-link">
             <i className="fas fa-Setting"></i>
-            <span><FontAwesomeIcon icon={faDashboard} className="sidebar-faicon"/><span className="text-mob-hide">Setting</span></span></a></Link>
+            <span><FontAwesomeIcon icon={faDashboard} className="sidebar-faicon" /><span className="text-mob-hide">Setting</span></span></a></Link>
         </li>
         :
         <li className="nav-item " onClick={() => handleCurrentClick("Setting")}>
           <Link href='/admin/setting' className="nav-link" title="Setting"><a className="nav-link">
             <i className="fas fa-Setting"></i>
-            <span><FontAwesomeIcon icon={faDashboard} className="sidebar-faicon"/><span className="text-mob-hide">Setting</span></span></a></Link>
+            <span><FontAwesomeIcon icon={faDashboard} className="sidebar-faicon" /><span className="text-mob-hide">Setting</span></span></a></Link>
         </li>
       }
-    
- 
+
+
 
 
       <div className="text-center d-none d-md-inline">
