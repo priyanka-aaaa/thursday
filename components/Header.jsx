@@ -29,7 +29,9 @@ const Header = () => {
   // useEffect(() => {
   //     setProfileState(props);
   // }, [props]);
-
+  if (typeof window !== "undefined") {
+    require("bootstrap/dist/js/bootstrap");
+}
   useEffect(() => {
     // const url1 = process.env.REACT_APP_SERVER_URL + 'suggestion'
     // fetch(url1, {
@@ -151,16 +153,16 @@ const Header = () => {
                   <nav className="rs-menu pr-86 lg-pr-50 md-pr-0">
                     <ul className="nav-menu">
 
-                      <li><a target="_blank" rel="noreferrer" className="menu-item-has-children current-menu-item" href="https://study.coursementor.com/dashboard/" title="Schools">
-                        <span className='icon'><i className="fal fa-university fa-fw" ></i></span>Learn
-                      </a>
+                      <li> <a className="menu-item-has-children current-menu-item"  title="Learn" data-bs-toggle="modal" data-bs-target="#learnModal">
+                          <span className='icon'><i className="fal fa-university fa-fw" ></i></span>Learn
+                        </a>
                       </li>
 
-                      <li><Link href='/School' className="nav-link" title="Schools">
+                      <li><Link href='/school' className="nav-link" title="Schools">
                         Schools</Link>
                       </li>
                       <li><Link href='/recruitment' className="nav-link" title="Recruitment Partners">
-                        Recruitment Partners yhhhh</Link>
+                        Recruitment Partners </Link>
                       </li>
                       <li><Link href='/' title="Students">
                         Students </Link>
@@ -189,13 +191,13 @@ const Header = () => {
                     <li><Link href='/evaluation' title="evaluation">
                     Free Profile Assessment</Link>
                       </li>
-                      <li><a className="menu-item-has-children current-menu-item" href="https://study.coursementor.com/dashboard/" title="Learn" target="_blank" rel="noreferrer">
-                        <span className='icon'><i className="fal fa-university fa-fw" ></i></span>Learn
-                      </a>
+                      <li> <a className="menu-item-has-children current-menu-item"  title="Learn" data-bs-toggle="modal" data-bs-target="#learnModal">
+                          <span className='icon'><i className="fal fa-university fa-fw" ></i></span>Learn
+                        </a>
                       </li>
 
 
-                      <li><Link href='/School' title="School">
+                      <li><Link href='/school' title="School">
                         Schools</Link>
                       </li>
 
@@ -596,6 +598,23 @@ const Header = () => {
             </div>
           </div>
         </div>
+        <div class="modal fade" id="learnModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+             
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+            To access the learning material, please get username and password from <strong>I-WIN Consultants Admin Team </strong>for your learning. We wish you best of luck!!
+            </div>
+            <div class="modal-footer">
+            <a class="btn btn-success" target="_blank" href='https://study.coursementor.com/dashboard/'> Yes! I have login details</a>
+            <button type="button" class="btn btn-secondary"  data-bs-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
       </Modal>
 
       {/* end for search model */}
