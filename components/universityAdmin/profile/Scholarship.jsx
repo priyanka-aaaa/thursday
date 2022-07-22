@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import axios from 'axios';
 import parse from 'html-react-parser'
 
-import "trix/dist/trix";
+
 import SweetAlert from 'react-bootstrap-sweetalert';
 import Loader from '../../Loader';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';

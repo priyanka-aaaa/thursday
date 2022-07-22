@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from "react";
 import parse from 'html-react-parser'
 import axios from 'axios';
-import { TrixEditor } from "react-trix";
+
 import Loader from '../../Loader';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
