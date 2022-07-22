@@ -231,7 +231,7 @@ export default function RecommendationProfile() {
                     {down === "0" ?
                         null
                         :
-                        <FontAwesomeIcon icon={faAngleDown} style={{
+                        <FontAwesomeIcon  className="sidebar-faicon" icon={faAngleDown} style={{
                             position: "absolute",
                             fontWeight: 900,
                             fontFamily: 'Font Awesome 5 Free',
@@ -243,7 +243,7 @@ export default function RecommendationProfile() {
                     {up === "0" ?
                         null
                         :
-                        <FontAwesomeIcon icon={faAngleUp} style={{
+                        <FontAwesomeIcon  className="sidebar-faicon" icon={faAngleUp} style={{
                             position: "absolute",
                             fontWeight: 900,
                             fontFamily: 'Font Awesome 5 Free',
@@ -285,14 +285,14 @@ export default function RecommendationProfile() {
                                         {element._id !== "null" ?
                                                     <>
                                                         <a title="Delete" className="btn  btn-danger " onClick={() => handleDeleteClick(element._id)}>
-                                                            <FontAwesomeIcon icon={faTrash} />
+                                                            <FontAwesomeIcon  className="sidebar-faicon" icon={faTrash} />
                                                         </a>
                                                     </>
                                                     :
                                                     <>
                                                         {index!==0 ?
                                                             <a title="Delete" className="btn  btn-danger " onClick={() => handleEmptyDeleteClick(index)}>
-                                                                <FontAwesomeIcon icon={faTrash} />
+                                                                <FontAwesomeIcon  className="sidebar-faicon" icon={faTrash} />
                                                             </a>
                                                             : null
                                                         }

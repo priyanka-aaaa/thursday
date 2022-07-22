@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 // import Loader from '../../Home/Loader';
 import axios from 'axios';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { FontAwesomeIcon   } from '@fortawesome/react-fontawesome';
 import {
     faAngleDown, faAngleUp
 } from '@fortawesome/free-solid-svg-icons';
@@ -295,7 +295,7 @@ export default function AddressProfile() {
                     {down === "0" ?
                         null
                         :
-                        <FontAwesomeIcon icon={faAngleDown} style={{
+                        <FontAwesomeIcon  className="sidebar-faicon" icon={faAngleDown} style={{
                             position: "absolute",
                             fontWeight: 900,
                             fontFamily: 'Font Awesome 5 Free',
@@ -307,7 +307,7 @@ export default function AddressProfile() {
                     {up === "0" ?
                         null
                         :
-                        <FontAwesomeIcon icon={faAngleUp} style={{
+                        <FontAwesomeIcon  className="sidebar-faicon" icon={faAngleUp} style={{
                             position: "absolute",
                             fontWeight: 900,
                             fontFamily: 'Font Awesome 5 Free',

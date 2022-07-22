@@ -12,7 +12,7 @@ import Image from 'next/image'
 // import '../../scss/studentDashboard.scss';
 import Loader from '../../components/Loader';
 // import { BrowserRouter as Router, Switch, Route, Link, useParams, useLocation } from 'react-router-dom';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { FontAwesomeIcon   } from '@fortawesome/react-fontawesome';
 import {
     faCheckCircle, faUniversity, faGraduationCap, faCalendarDay, faAreaChart, faPaperPlane, faRedo, faClose
 } from '@fortawesome/free-solid-svg-icons';
@@ -788,22 +788,22 @@ export default function Dashboard(location) {
                                                     <div className="col-md-10">
 
                                                         <div className="unv-name">
-                                                            <span><FontAwesomeIcon icon={faUniversity} /></span>
+                                                            <span><FontAwesomeIcon  className="sidebar-faicon" icon={faUniversity} /></span>
                                                             <h5>App ID</h5>
                                                             <p>{object.buildApplicationID}</p>
                                                         </div>
                                                         <div className="unv-name">
-                                                            <span><FontAwesomeIcon icon={faUniversity} /></span>
+                                                            <span><FontAwesomeIcon  className="sidebar-faicon" icon={faUniversity} /></span>
                                                             <h5>University</h5>
                                                             <p>{object.universityName}</p>
                                                         </div>
                                                         <div className="course-name">
-                                                            <span><FontAwesomeIcon icon={faGraduationCap} /></span>
+                                                            <span><FontAwesomeIcon  className="sidebar-faicon" icon={faGraduationCap} /></span>
                                                             <h5>Course</h5>
                                                             <p>{object.courseName}</p>
                                                         </div>
                                                         <div className="Session-name">
-                                                            <span><FontAwesomeIcon icon={faCalendarDay} /></span>
+                                                            <span><FontAwesomeIcon  className="sidebar-faicon" icon={faCalendarDay} /></span>
                                                             <span><i className="fas fa-calendar-week" /></span>
                                                             <h5>Session</h5>
                                                             <p>{object.session}</p>
@@ -812,7 +812,7 @@ export default function Dashboard(location) {
                                                             <div className="row">
                                                                 <div className="col-md-6">
                                                                     <div className="unv-name">
-                                                                        <span><FontAwesomeIcon icon={faAreaChart} /></span>
+                                                                        <span><FontAwesomeIcon  className="sidebar-faicon" icon={faAreaChart} /></span>
 
                                                                         <h5>Current Application Process</h5>
                                                                         {object.applicationProgress}
@@ -916,7 +916,7 @@ export default function Dashboard(location) {
                                                         </div>
                                                         {/* start for dummy */}
                                                         <span className="msgRefresh" onClick={() => handleRefresh()}>
-                                                            <FontAwesomeIcon icon={faRedo} />
+                                                            <FontAwesomeIcon  className="sidebar-faicon" icon={faRedo} />
                                                             Refresh
                                                         </span>
 
@@ -1014,7 +1014,7 @@ export default function Dashboard(location) {
                                                                                                             <div className="row">
                                                                                                                 <div className="col-md-12">
                                                                                                                     <span className="msgRefreshRight" onClick={() => handleRefresh()}>
-                                                                                                                        <FontAwesomeIcon icon={faRedo} />
+                                                                                                                        <FontAwesomeIcon  className="sidebar-faicon" icon={faRedo} />
                                                                                                                         Refresh
                                                                                                                     </span>
                                                                                                                     <div className="form-group">
@@ -1061,7 +1061,7 @@ export default function Dashboard(location) {
                                                                                                                 </div>
                                                                                                             </div>
                                                                                                             <button title="Send Message" type="submit" className="btn-send-msg">
-                                                                                                                <FontAwesomeIcon icon={faPaperPlane} /> Send</button>
+                                                                                                                <FontAwesomeIcon  className="sidebar-faicon" icon={faPaperPlane} /> Send</button>
                                                                                                         </form>
                                                                                                     </div>
                                                                                                 </div>
@@ -1093,10 +1093,10 @@ export default function Dashboard(location) {
                                                                                     <>
                                                                                         {object === myapplicationProgress ?
                                                                                             <li className="statusBox current-stat" style={{ 'backgroundColor': '#0982A5' }}>{object}<span>
-                                                                                                <FontAwesomeIcon icon={faCheckCircle} />
+                                                                                                <FontAwesomeIcon  className="sidebar-faicon" icon={faCheckCircle} />
                                                                                             </span></li>
                                                                                             : <li className="statusBox" style={{ 'backgroundColor': "#fff" }}>{object}<span>
-                                                                                                <FontAwesomeIcon icon={faCheckCircle} />
+                                                                                                <FontAwesomeIcon  className="sidebar-faicon" icon={faCheckCircle} />
                                                                                             </span></li>}
                                                                                     </>
                                                                                     : <li className="statusBox">{object}<span className="status-completed">

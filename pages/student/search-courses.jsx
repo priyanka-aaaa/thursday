@@ -2861,7 +2861,7 @@ function FinalFilter() {
                                     <div className="data">
                                       <Link target="_blank" href={'/schools/' + element.myinformation[0].slug}
                                       ><a>
-                                        <FontAwesomeIcon icon={faCheckSquare} />
+                                        <FontAwesomeIcon icon={faCheckSquare}  className="sidebar-faicon"/>
                                         Know More</a></Link></div>
                                   </div>
                                 </div>

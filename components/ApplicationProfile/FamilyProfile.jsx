@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import SweetAlert from 'react-bootstrap-sweetalert';
 import axios from 'axios';
 // import Loader from '../../Home/Loader';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { FontAwesomeIcon   } from '@fortawesome/react-fontawesome';
 import {
     faTrash, faAngleDown, faAngleUp
 } from '@fortawesome/free-solid-svg-icons';
@@ -204,7 +204,7 @@ export default function FamilyProfile() {
                     {down === "0" ?
                         null
                         :
-                        <FontAwesomeIcon icon={faAngleDown} style={{
+                        <FontAwesomeIcon  className="sidebar-faicon" icon={faAngleDown} style={{
                             position: "absolute",
                             fontWeight: 900,
                             fontFamily: 'Font Awesome 5 Free',
@@ -216,7 +216,7 @@ export default function FamilyProfile() {
                     {up === "0" ?
                         null
                         :
-                        <FontAwesomeIcon icon={faAngleUp} style={{
+                        <FontAwesomeIcon  className="sidebar-faicon" icon={faAngleUp} style={{
                             position: "absolute",
                             fontWeight: 900,
                             fontFamily: 'Font Awesome 5 Free',
@@ -257,14 +257,14 @@ export default function FamilyProfile() {
                                         {element._id !== "null" ?
                                                     <>
                                                         <a title="Delete" className="btn  btn-danger " onClick={() => handleDeleteClick(element._id)}>
-                                                            <FontAwesomeIcon icon={faTrash} />
+                                                            <FontAwesomeIcon  className="sidebar-faicon" icon={faTrash} />
                                                         </a>
                                                     </>
                                                     :
                                                     <>
                                                         {index!==0 ?
                                                             <a title="Delete" className="btn  btn-danger " onClick={() => handleEmptyDeleteClick(index)}>
-                                                                <FontAwesomeIcon icon={faTrash} />
+                                                                <FontAwesomeIcon  className="sidebar-faicon" icon={faTrash} />
                                                             </a>
                                                             : null
                                                         }
