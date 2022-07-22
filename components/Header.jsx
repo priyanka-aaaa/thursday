@@ -609,7 +609,7 @@ const Header = () => {
             To access the learning material, please get username and password from <strong>I-WIN Consultants Admin Team </strong>for your learning. We wish you best of luck!!
             </div>
             <div className="modal-footer">
-            <a className="btn btn-success" target="_blank" href='https://study.coursementor.com/dashboard/'> Yes! I have login details</a>
+            <a className="btn btn-success" target="_blank" rel="noreferrer" href='https://study.coursementor.com/dashboard/'> Yes! I have login details</a>
             <button type="button" className="btn btn-secondary"  data-bs-dismiss="modal">Close</button>
             </div>
           </div>
