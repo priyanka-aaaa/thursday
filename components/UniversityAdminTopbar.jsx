@@ -5,7 +5,7 @@ import Image from 'next/image'
 import { Dropdown } from 'react-bootstrap';
 // import '../scss/dashboardSidebar.scss';
 import Router from "next/router";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { FontAwesomeIcon   } from '@fortawesome/react-fontawesome';
 import {
   faSignOutAlt, faFile, faDashboard, faBars, faUserCircle, faAngleLeft, faAddressBook, faBookmark, faCog, faEnvelope, faAward
 } from '@fortawesome/free-solid-svg-icons';
@@ -104,7 +104,7 @@ const UniversityAdminTopbar = () => {
             <button id="sidebarToggleTop" className="btn btn-link d-md-none rounded-circle mr-3"
               onClick={() => handletoogleClick()}
             >
-              <FontAwesomeIcon icon={faBars} />
+              <FontAwesomeIcon  className="sidebar-faicon" icon={faBars} />
 
             </button>
 
@@ -112,7 +112,7 @@ const UniversityAdminTopbar = () => {
               <li className="nav-item dropdown no-arrow mr-0">
                 <a className="nav-link dropdown-toggle" href="#collapseEleven1" id="userDropdown2" role="button" data-bs-toggle="collapse" aria-haspopup="true" aria-expanded="false">
                   <i className="fas fa-envelope fa-fw"></i>
-                  <FontAwesomeIcon icon={faEnvelope} />
+                  <FontAwesomeIcon  className="sidebar-faicon" icon={faEnvelope} />
                   {resultLength !== 0 ?
                     <span className="badge badge-danger badge-counter">{resultLength}</span>
                     : null}
@@ -123,7 +123,7 @@ const UniversityAdminTopbar = () => {
                     onClick={(e) => logout()}
 
                     href="" data-toggle="modal" data-target="#logoutModal">
-                    <FontAwesomeIcon icon={faSignOutAlt} />
+                    <FontAwesomeIcon  className="sidebar-faicon" icon={faSignOutAlt} />
 
                     Logout
 
@@ -147,7 +147,7 @@ const UniversityAdminTopbar = () => {
                     onClick={(e) => logout()}
 
                     href="" data-toggle="modal" data-target="#logoutModal">
-                    <FontAwesomeIcon icon={faSignOutAlt} />
+                    <FontAwesomeIcon  className="sidebar-faicon" icon={faSignOutAlt} />
 
                     Logout
                   </p>
