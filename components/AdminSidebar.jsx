@@ -77,7 +77,7 @@ const AdminSidebar = () => {
     var splitcurrentUrl = currentUrl.split("admin/")
     setcurrentMenu(splitcurrentUrl[1])
   }, [])
-  var title = "ggggggg"
+
   function handleCurrentClick(value) {
     setcurrentMenu(value)
   }

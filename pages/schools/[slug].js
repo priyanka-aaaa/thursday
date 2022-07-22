@@ -50,8 +50,8 @@ export async function getServerSideProps(context) {
     parseData.mainEntity = heavy_fruits;
     //end faq
     //start for course schema
-   var myuniversityName=res.data.universities[0].universityPrimaryInformation.name;
-   var myuniversityWebsite=res.data.universities[0].universityPrimaryInformation.website;
+    var myuniversityName = res.data.universities[0].universityPrimaryInformation.name;
+    var myuniversityWebsite = res.data.universities[0].universityPrimaryInformation.website;
 
     var courseResult = res.data.universities[0].universityCourses;
     var objhello = [];
@@ -96,7 +96,7 @@ export async function getServerSideProps(context) {
 
             mydata: res.data.universities[0],
             parseData: parseData,
-            objhello:objhello
+            objhello: objhello
         },
     }
 
@@ -218,10 +218,9 @@ const MyschoolDetails = (pageProps) => {
     };
 
     if (typeof window !== "undefined") {
-
         require("bootstrap/dist/js/bootstrap");
-      }
-  
+    }
+
 
     useEffect(() => {
 

@@ -22,12 +22,10 @@ export const AgentLoginForm  = () => {
     const [EmailExistError, setEmailExistError] = useState(false);
     useEffect(() => {
         const { pathname } = Router;
-        // if (pathname === "/") {
-        //     Router.push("/agent/dashboard");
-        //   }
+      
         if (localStorage.getItem('agentId')) {
             setredirectToReferrer(true)
-            Router.push("/agent/dashboard");
+            Router.push("/recruitment/dashboard");
         }
     }, [])
     function open() {
@@ -69,7 +67,7 @@ export const AgentLoginForm  = () => {
                         localStorage.setItem('agentEmail', responseJson.data.agent.email);
                         localStorage.setItem('agentPhone', responseJson.data.agent.phone);
                         setredirectToReferrer(true)
-                        Router.push("/agent/dashboard");
+                        Router.push("/recruitment/dashboard");
 
                     }
                     else {
@@ -90,9 +88,6 @@ export const AgentLoginForm  = () => {
         }
     }
 
-    // if (localStorage.getItem('agentId') || redirectToReferrer === true) {
-    //     return (<Redirect to={'/agent/dashboard'} />)
-    // }
     function onChangeresetEmail(e) {
         setresetEmail(e)
     }
