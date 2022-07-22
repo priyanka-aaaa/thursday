@@ -165,7 +165,7 @@ export default function StudentRegisterForm() {
                     {/* end google login */}
                 </div>
                 <p> Already have an account? Click here to
-                    <Link href={'/students'} className="" >
+                    <Link href={'/'} className="" >
 
 
                         Login</Link></p>
