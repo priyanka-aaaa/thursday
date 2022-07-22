@@ -222,7 +222,7 @@ const UniversityAdminSidebar = () => {
       <div className="text-center d-none d-md-inline">
         <button title="Sidenar-toggle" className="rounded-circle border-0" id="sidebarToggle" onClick={() => handletoogleClick()}>
           <i className="fa-solid fa-arrow-right"></i>
-          <FontAwesomeIcon   className="sidebar-faicon" icon={faAngleLeft} className="sidebar-faicon" style={{
+          <FontAwesomeIcon   className="sidebar-faicon" icon={faAngleLeft}  style={{
             fontWeight: 900,
             marginRight: "0.1rem",
             color: "rgba(255, 255, 255, 0.5)"
