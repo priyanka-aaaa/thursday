@@ -432,9 +432,9 @@ const MyschoolDetails = (pageProps) => {
                 <script type="application/ld+json">
                     {JSON.stringify(pageProps.parseData)}
                 </script>
-                <script type="application/ld+json">
+                {/* <script type="application/ld+json">
                     {JSON.stringify(pageProps.objhello)}
-                </script>
+                </script> */}
 
             </Head>
 
