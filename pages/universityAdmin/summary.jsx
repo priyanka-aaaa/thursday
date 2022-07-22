@@ -311,7 +311,7 @@ export default function Summary() {
                                                                 {Intakedata.map((object, i) => {
 
                                                                     return (
-                                                                        <option value={object.year + "&&" + object.month}>{object.year + " " + object.month}</option>
+                                                                        <option key={i} value={object.year + "&&" + object.month}>{object.year + " " + object.month}</option>
                                                                     )
                                                                 })}
 
