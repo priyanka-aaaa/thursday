@@ -219,8 +219,8 @@ const Header = () => {
                   <div className="dropdown-menu ">
                     <h5>Dashboard</h5>
                     <p>Login or signup to access your dashboard</p>
-                    <Link className="dropdown-item btn btn-login" href="https://abroad.coursementor.com/StudentLogin">Login</Link>
-                    <Link className="dropdown-item btn btn-register" href="https://abroad.coursementor.com/StudentRegister">Register</Link>
+                    <Link className="dropdown-item btn btn-login" href="https://abroad.coursementor.com/StudentLogin"><a className="dropdown-item btn btn-login">Login</a></Link>
+                    <Link className="dropdown-item btn btn-register" href="https://abroad.coursementor.com/StudentRegister"><a className="dropdown-item btn btn-register" >Register</a></Link>
 
                   </div>
                 </div>
