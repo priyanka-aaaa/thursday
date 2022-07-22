@@ -476,7 +476,7 @@ const Study = () => {
                     <div className="col-sm-4 mb-3">
                       <div className="study-location-facts_capital__1MYWF">
                         <div className="study-location-facts_imgBox__3psUR">
-                          <img src="/washington-monument.webp" alt="dev logo" />
+                          <img src="/images/washington-monument.webp" alt="dev logo" />
 
                         </div>
                         <div className="study-location-facts_imgDetails__3qjdN">
