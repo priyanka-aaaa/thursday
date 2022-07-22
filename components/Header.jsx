@@ -1,6 +1,6 @@
 import Link from "next/link";
 import React, { useState, useEffect } from "react";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { FontAwesomeIcon   } from '@fortawesome/react-fontawesome';
 import Image from 'next/image'
 import {
   faPlus, faTrash, faPen, faAngleDown, faAngleUp, faBars, faSearch, faClose, faArrowRight
@@ -140,7 +140,7 @@ const Header = () => {
               <div className="mobile-menu">
                 <a className="rs-menu-toggle rs-menu-toggle-close secondary" onClick={() => ToggleTwoButton()}>
                   {/* <i className="fa fa-bars" /> */}
-                  <FontAwesomeIcon icon={faBars} />
+                  <FontAwesomeIcon  className="sidebar-faicon" icon={faBars} />
 
                 </a>
               </div>
@@ -231,7 +231,7 @@ const Header = () => {
                     <li className="sidebarmenu-search">
 
                       <a onClick={() => open()} className="frontend-main-search" title="Enter course, college, exam or destination">
-                        <FontAwesomeIcon icon={faSearch} /></a>
+                        <FontAwesomeIcon   icon={faSearch} /></a>
                     </li>
                     <li>
 
@@ -279,7 +279,7 @@ const Header = () => {
         </div>
 
         <ul className="mobilemenu">
-          {/* <a className="btn-search " href="https://abroad.coursementor.com/search-study-abroad-program"><span><FontAwesomeIcon icon={faSearch} /></span>Search for universities & courses</a> */}
+          {/* <a className="btn-search " href="https://abroad.coursementor.com/search-study-abroad-program"><span><FontAwesomeIcon   icon={faSearch} /></span>Search for universities & courses</a> */}
           <h5>Site Map</h5>
           <li><a href="https://study.coursementor.com/">Learn</a></li>
           <li><a href="https://abroad.coursementor.com/School">Schools</a></li>
@@ -346,7 +346,7 @@ const Header = () => {
       >
         <button type="button" className="close" onClick={() => close()}  >
 
-          <FontAwesomeIcon icon={faClose} onClick={() => close()} />
+          <FontAwesomeIcon  className="sidebar-faicon" icon={faClose} onClick={() => close()} />
           <span className="flaticon-cross" />
         </button>
         <div className="">
@@ -366,7 +366,7 @@ const Header = () => {
                       <div className="row" style={{ display: coursedisplay }}>
                         <div className="col-md-12">
                           <div className="searchInputs">
-                            {/* <span> <FontAwesomeIcon icon={faSearch} /></span> */}
+                            {/* <span> <FontAwesomeIcon   icon={faSearch} /></span> */}
                             <input
                               type="text"
                               placeholder="Enter course, college, exam or destination"
@@ -382,7 +382,7 @@ const Header = () => {
                                   <a
                                     //  onClick={() => open()}
                                     className="frontend-main-search">
-                                    {/* <FontAwesomeIcon icon={faSearch} /> */}
+                                    {/* <FontAwesomeIcon   icon={faSearch} /> */}
                                   </a>
                                 </>
 
@@ -412,7 +412,7 @@ const Header = () => {
                       </div>
                       {/* end for after search suggestion */}
                       <div className="searchInputs" style={{ display: searchdisplay }}>
-                        <span> <FontAwesomeIcon icon={faSearch} /></span>
+                        <span> <FontAwesomeIcon   icon={faSearch} /></span>
                         <input
                           type="text"
                           placeholder="Enter course, college, exam or destination"
@@ -428,7 +428,7 @@ const Header = () => {
                               <a
                                 //  onClick={() => open()}
                                 className="frontend-main-search x">
-                                <FontAwesomeIcon icon={faSearch} /></a>
+                                <FontAwesomeIcon   icon={faSearch} /></a>
                             </>
 
                             // <CloseIcon id="clearBtn" onClick={clearInput} />
@@ -451,7 +451,7 @@ const Header = () => {
                     </div>
                   }
                   {/* end search bar */}
-                  <button className="btn-search">Search <span><FontAwesomeIcon icon={faArrowRight} /></span></button>
+                  <button className="btn-search">Search <span><FontAwesomeIcon  className="sidebar-faicon" icon={faArrowRight} /></span></button>
                 </div>
               </form>
               <div className="top-country mt-5">
