@@ -19,7 +19,7 @@ export default function ApplicationProfile() {
                 <div id="content-wrapper" className="d-flex flex-column">
                     <div id="content">
                         <StudentTopbar />
-
+                        <div className="container">
                         <div className="row">
                             <div className="col-xl-12 col-lg-7">
                                 <div id="accordion">
@@ -35,7 +35,7 @@ export default function ApplicationProfile() {
                                 </div>
                             </div>
                         </div>
-                        {/* </div> */}
+                        </div>
                     </div>
                 </div>
             </div>
