@@ -598,7 +598,7 @@ const Header = () => {
             </div>
           </div>
         </div>
-        <div className="modal fade" id="learnModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div className="modal fade" id="learnModal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div className="modal-dialog">
           <div className="modal-content">
             <div className="modal-header">
