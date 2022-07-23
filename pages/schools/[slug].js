@@ -435,6 +435,9 @@ const MyschoolDetails = (pageProps) => {
                 <script type='application/ld+json' dangerouslySetInnerHTML={{
                     __html:  JSON.stringify(pageProps.parseData)}}
                 />
+                 <script type='application/ld+json' dangerouslySetInnerHTML={{
+                    __html:  JSON.stringify(pageProps.objhello)}}
+                />
                 {/* <script type="application/ld+json">
                     {JSON.stringify(pageProps.objhello)}
                 </script> */}
