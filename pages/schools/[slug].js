@@ -429,9 +429,9 @@ const MyschoolDetails = (pageProps) => {
 
                 {/* end faq */}
 
-                <script type="application/ld+json">
+                {/* <script type="application/ld+json">
                     {JSON.stringify(pageProps.parseData)}
-                </script>
+                </script> */}
                 {/* <script type="application/ld+json">
                     {JSON.stringify(pageProps.objhello)}
                 </script> */}
