@@ -432,6 +432,54 @@ const MyschoolDetails = (pageProps) => {
                 {/* <script type="application/ld+json">
                     {JSON.stringify(pageProps.parseData)}
                 </script> */}
+                <script type="application/ld+json">
+
+                    {JSON.stringify({
+                        "@context": "https://schema.org",
+                        "@type": "FAQPage",
+                        "mainEntity": [{
+                            "@type": "Question",
+                            "name": "How old is Victoria University ?",
+                            "acceptedAnswer": {
+                                "@type": "Answer",
+                                "text": "Victoria University is a direct descendant of Footscray Technical School, which first opened its doors to students in February 1916. Local companies and residents sought to offer students an education that would prepare them for a future in a skilled industry and help them rise beyond the ranks of unskilled labourers."
+                            }
+                        },
+                        {
+                            "@type": "Question",
+                            "name": "Is Victoria University private or public?",
+                            "acceptedAnswer": {
+                                "@type": "Answer",
+                                "text": "Victoria University (VU or Vic Uni) is a public research university based in Melbourne, Victoria, Australia. It is one of only six dual-sector universities in Australia, providing courses in both higher education and Technical and Further Education (TAFE)."
+                            }
+                        },
+                        {
+                            "@type": "Question",
+                            "name": "What is the VU Global Leaders Scholarship ?",
+                            "acceptedAnswer": {
+                                "@type": "Answer",
+                                "text": "The scholarship supports new international students who plan to commence their higher education diploma, undergraduate or postgraduate (coursework) studies in 2022. A 20% tuition fee reduction for the entire standard duration of eligible courses (calculated from the date of commencement to the course end date in the letter of offer) is offered."
+                            }
+                        },
+                        {
+                            "@type": "Question",
+                            "name": "What is the ranking of Victoria University ?",
+                            "acceptedAnswer": {
+                                "@type": "Answer",
+                                "text": "In the Times Higher Education (THE) World University Rankings 2022 (and previously in 2017–21), VU was ranked in the top 2% of universities worldwide. In other THE rankings, VU is ranked in the world's top 100 universities under 50 years old, in the Times Higher Education Young University Rankings. Based on the United Nations Sustainable Development Goals, VU is ranked: #101-200."
+                            }
+                        },
+                        {
+                            "@type": "Question",
+                            "name": "How many campuses does Victoria University have?",
+                            "acceptedAnswer": {
+                                "@type": "Answer",
+                                "text": "Victoria University has campuses across Melbourne's CBD and western suburbs. International students can also choose to study at VU Sydney or partner institutions overseas. The flagship campus is located in Footscray."
+                            }
+                        }]
+                    })
+                    }
+                </script>
                 {/* <script type="application/ld+json">
                     {JSON.stringify(pageProps.objhello)}
                 </script> */}
