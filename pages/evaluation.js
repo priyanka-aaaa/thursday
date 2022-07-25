@@ -776,7 +776,7 @@ export default function About() {
                                                     </li>
                                                     <li>
                                                         <div className={flagGermany} onClick={() => handleCountryClick("Germany")}><img className="evaluation-img" src=
-                                                            "images/ire-flag.jpg"
+                                                            "/images/ire-flag.jpg"
                                                         />
                                                             <div className="country-name">Germany</div>
                                                         </div>
