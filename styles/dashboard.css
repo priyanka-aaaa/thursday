@@ -13345,3 +13345,43 @@ span.msgRefresh svg {
     height: 16px;
     width: 16px
 }
+/* start dummy dashboard css */
+.Home_navcontainer__1-_Sr {
+    position: fixed;
+    width: 200px;
+    height: 100%;
+    background-color: #fff;
+    -webkit-box-shadow: 3px 0px 6px 0px rgb(246 246 246 / 75%);
+    box-shadow: 3px 0px 6px 0px rgb(246 246 246 / 75%);
+}
+.Home_headcontainer__1MkbA {
+    /* display: flex;
+    flex-wrap: wrap; */
+    height: 70px;
+    background-color: rgb(255, 255, 255);
+    margin-left: 225px;
+    /* z-index: -1; */
+}
+@media only screen and (max-width: 768px){
+.Home_navcontainer__1-_Sr {
+    width: 70px;
+}
+}
+@media only screen and (max-width: 768px){
+.Home_headcontainer__1MkbA {
+    width: 100%;
+    margin-left: 70px;
+}
+}
+@media only screen and (max-width: 768px){
+.Home_contentcontainer__2-f2W {
+    margin-left: 70px;
+}
+}
+@media only screen and (max-width: 768px){
+.Home_headcontainer__1MkbA {
+    width: 100%;
+    margin-left: 123px;
+}
+}
+/* end dummy dashboard css */
