@@ -635,7 +635,7 @@ export default function About() {
 
             </div>
             <div onClick={() => handleClick()}>
-                <div className="main-title evaluation-main">
+                <div className="main-title-evaluation evaluation-main">
                     <div className="container-fluid">
                         <div className="row">
                             <div className="col-md-12">
@@ -649,7 +649,7 @@ export default function About() {
                         </div>
                     </div>
                 </div>
-                <div className="main-block1">
+                <div className="main-block1-evaluation">
                     <div className="evaluation-form">
                         <div className="evaluation-form-wrapper container-fluid">
                             <div className="evaluation-progress-steps">
@@ -740,42 +740,42 @@ export default function About() {
                                             <div className="eval-count-list">
                                                 <ul>
                                                     <li>
-                                                        <div className={flagUSA} onClick={() => handleCountryClick("United States")}><img src=
+                                                        <div className={flagUSA} onClick={() => handleCountryClick("United States")}><img className="evaluation-img" src=
                                                             "/images/us-flag.jpg"
                                                         />
                                                             <div className="country-name">United States</div>
                                                         </div>
                                                     </li>
                                                     <li>
-                                                        <div className={flagUK} onClick={() => handleCountryClick("United Kingdom")}><img src=
+                                                        <div className={flagUK} onClick={() => handleCountryClick("United Kingdom")}><img className="evaluation-img" src=
                                                             "/images/uk-flag.jpg"
                                                         />
                                                             <div className="country-name">United Kingdom</div>
                                                         </div>
                                                     </li>
                                                     <li>
-                                                        <div className={flagAustralia} onClick={() => handleCountryClick("Australia")}><img src=
+                                                        <div className={flagAustralia} onClick={() => handleCountryClick("Australia")}><img className="evaluation-img" src=
                                                             "/images/au-flag.jpg"
                                                         />
                                                             <div className="country-name">Australia</div>
                                                         </div>
                                                     </li>
                                                     <li>
-                                                        <div className={flagNewZealand} onClick={() => handleCountryClick("NewZealand")}><img src=
+                                                        <div className={flagNewZealand} onClick={() => handleCountryClick("NewZealand")}><img className="evaluation-img" src=
                                                             "/images/new-zea-flag.jpg"
                                                         />
                                                             <div className="country-name">New Zealand</div>
                                                         </div>
                                                     </li>
                                                     <li>
-                                                        <div className={flagCanada} onClick={() => handleCountryClick("Canada")}><img src=
+                                                        <div className={flagCanada} onClick={() => handleCountryClick("Canada")}><img className="evaluation-img" src=
                                                             "/images/ca-flag.jpg"
                                                         />
                                                             <div className="country-name">Canada</div>
                                                         </div>
                                                     </li>
                                                     <li>
-                                                        <div className={flagGermany} onClick={() => handleCountryClick("Germany")}><img src=
+                                                        <div className={flagGermany} onClick={() => handleCountryClick("Germany")}><img className="evaluation-img" src=
                                                             "images/ire-flag.jpg"
                                                         />
                                                             <div className="country-name">Germany</div>
@@ -789,7 +789,7 @@ export default function About() {
                                         </div>
                                         {arrayCountry.length !== 0 ?
                                             <div className="text-center mt-5">
-                                                <a className="btn website-btn next action-button"
+                                                <a className="btn website-btn-evaluation next action-button"
                                                     onClick={() => submitCountry()}
                                                 >Next</a>
                                             </div>
@@ -804,7 +804,7 @@ export default function About() {
                                             <div className="eval-country-title">
                                                 What Course Level are You Targeting?
                                             </div>
-                                            <div className="course-level">
+                                            <div className="course-level-evaluation">
                                                 <ul>
                                                     <li className={levelactivepost} onClick={() => handleLevelClick("Masters")}><span><i className="fa fa-graduation-cap" /></span>Postgraduate</li>
                                                     <li className={levelactivegraduate} onClick={() => handleLevelClick("Bachelors")}><span><i className="fa fa-graduation-cap" /></span>Undergraduate</li>
@@ -812,8 +812,8 @@ export default function About() {
                                             </div>
                                         </div>
                                         {arrayLevel !== "" ? <div className="text-center mt-5">
-                                            <a className="btn btn-back" onClick={() => backLevel()}>Back</a>
-                                            <a className="btn website-btn next action-button"
+                                            <a className="btn btn-back-evaluation" onClick={() => backLevel()}>Back</a>
+                                            <a className="btn website-btn-evaluation next action-button"
                                                 onClick={() => submitLevel()}
                                             >Next</a>
                                         </div>
@@ -829,7 +829,7 @@ export default function About() {
                                             <div className="eval-country-title">
                                                 Which Field Do You Wish to Study?
                                             </div>
-                                            <div className="study-list">
+                                            <div className="study-list-evaluation">
                                                 <ul>
                                                     <li className={flagManagement} onClick={() => handleInterestClick("Management")}>
                                                         <span><i className="fa fa-desktop" /></span>
@@ -896,8 +896,8 @@ export default function About() {
                                             </div>
                                         </div>
                                         {arrayInterest.length !== 0 ? <div className="text-center mt-5">
-                                            <a className="btn btn-back" onClick={() => backInterest()}>Back</a>
-                                            <a className="btn website-btn next action-button"
+                                            <a className="btn btn-back-evaluation" onClick={() => backInterest()}>Back</a>
+                                            <a className="btn website-btn-evaluation next action-button"
                                                 onClick={() => submitInterest()}
                                             >Next</a>
                                         </div>
@@ -916,34 +916,34 @@ export default function About() {
                                             <div className="eval-country-title intakeFilter">
                                                 When Would You Like to Start Your Program?
                                             </div>
-                                            <div className="intake-list">
+                                            <div className="intake-list-evaluation">
                                                 <ul>
                                                     <li>
-                                                        <div className="intake-box">
-                                                            <h5>2022</h5>
+                                                        <div className="intake-box-evaluation">
+                                                            <h5 className="evaluation-h5">2022</h5>
                                                             <div className="intake-timeline">
-                                                                <div className={"intake-month " + flagMay1} onClick={() => handleIntakeClick("May - August", "2022")}>
+                                                                <div className={"intake-month-evaluation " + flagMay1} onClick={() => handleIntakeClick("May - August", "2022")}>
                                                                     May-Aug
                                                                 </div>
-                                                                <div className={"intake-month " + flagSep1} onClick={() => handleIntakeClick("Sep - Dec", "2022")}>
+                                                                <div className={"intake-month-evaluation " + flagSep1} onClick={() => handleIntakeClick("Sep - Dec", "2022")}>
                                                                     Sep-Dec
                                                                 </div>
                                                             </div>
                                                         </div>
                                                     </li>
                                                     <li>
-                                                        <div className="intake-box">
-                                                            <h5>2023</h5>
+                                                        <div className="intake-box-evaluation">
+                                                            <h5 className="evaluation-h5">2023</h5>
                                                             <div className="intake-timeline">
-                                                                <div className={"intake-month " + flagJan2} onClick={() => handleIntakeClick("Jan - April", "2023")}>
+                                                                <div className={"intake-month-evaluation " + flagJan2} onClick={() => handleIntakeClick("Jan - April", "2023")}>
                                                                     Jan-Apr
                                                                 </div>
-                                                                <div className={"intake-month " + flagMay2} onClick={() => handleIntakeClick("May - August", "2023")}>
+                                                                <div className={"intake-month-evaluation " + flagMay2} onClick={() => handleIntakeClick("May - August", "2023")}>
                                                                     May-Aug
                                                                 </div>
                                                             </div>
                                                             <div className="intake-timeline">
-                                                                <div className={"intake-month " + flagSep2} onClick={() => handleIntakeClick("Sep - Dec", "2023")}>
+                                                                <div className={"intake-month-evaluation " + flagSep2} onClick={() => handleIntakeClick("Sep - Dec", "2023")}>
                                                                     Sep-Dec
                                                                 </div>
 
@@ -951,18 +951,18 @@ export default function About() {
                                                         </div>
                                                     </li>
                                                     <li>
-                                                        <div className="intake-box">
-                                                            <h5>2024</h5>
+                                                        <div className="intake-box-evaluation">
+                                                            <h5 className="evaluation-h5">2024</h5>
                                                             <div className="intake-timeline">
-                                                                <div className={"intake-month " + flagJan3} onClick={() => handleIntakeClick("Jan - April", "2024")}>
+                                                                <div className={"intake-month-evaluation " + flagJan3} onClick={() => handleIntakeClick("Jan - April", "2024")}>
                                                                     Jan-Apr
                                                                 </div>
-                                                                <div className={"intake-month " + flagMay3} onClick={() => handleIntakeClick("May - August", "2024")}>
+                                                                <div className={"intake-month-evaluation " + flagMay3} onClick={() => handleIntakeClick("May - August", "2024")}>
                                                                     May-Aug
                                                                 </div>
                                                             </div>
                                                             <div className="intake-timeline">
-                                                                <div className={"intake-month " + flagSep3} onClick={() => handleIntakeClick("Sep - Dec", "2024")}>
+                                                                <div className={"intake-month-evaluation " + flagSep3} onClick={() => handleIntakeClick("Sep - Dec", "2024")}>
                                                                     Sep-Dec
                                                                 </div>
 
@@ -974,8 +974,8 @@ export default function About() {
                                         </div>
                                         {arrayIntake.length !== 0 ?
                                             <div className="text-center mt-5">
-                                                <a className="btn btn-back" onClick={() => backIntake()}>Back</a>
-                                                <a className="btn website-btn next action-button" onClick={() => submitIntake()}>Next</a>
+                                                <a className="btn btn-back-evaluation" onClick={() => backIntake()}>Back</a>
+                                                <a className="btn website-btn-evaluation next action-button" onClick={() => submitIntake()}>Next</a>
                                             </div>
                                             : null}
                                     </div>
@@ -987,7 +987,7 @@ export default function About() {
                                             <div className="eval-country-title">
                                                 Which English Proficiency Exam Have You Taken/Do You Plan to Take?
                                             </div>
-                                            <div className="study-list">
+                                            <div className="study-list-evaluation">
                                                 <ul>
                                                     <li className={flagIELTS} onClick={() => handleEnglishClick("IELTS")}
                                                     >
@@ -1000,42 +1000,15 @@ export default function About() {
                                                         TOEFL
                                                     </li>
                                                 </ul>
-                                                {/* <ul>
-                                                    <li>
-                                                        <div className="ielts-marks">
-                                                            <h6>Enter Marks Between 4.00 and 9.00</h6>
-                                                            <div className="from-group">
-                                                                <input type="text" className="form-control" placeholder="Achieved Marks" />
-                                                            </div>
-                                                        </div>
-                                                    </li>
-                                                    <li>
-                                                        <div className="ielts-marks">
-                                                            <h6>Enter Marks Between 10.00 and 90.00</h6>
-                                                            <div className="from-group">
-                                                                <input type="text" className="form-control" placeholder="Achieved Marks" />
-                                                            </div>
-                                                        </div>
-                                                    </li>
-                                                    <li>
-                                                        <div className="ielts-marks">
-                                                            <h6>
-
-                                                                Enter Marks Between 30.00 and 120.00</h6>
-                                                            <div className="from-group">
-                                                                <input type="text" className="form-control" placeholder="Achieved Marks" />
-                                                            </div>
-                                                        </div>
-                                                    </li>
-                                                </ul> */}
+                                 
                                             </div>
                                         </div>
                                         {arrayEnglish.length !== 0 ?
                                             <div className="text-center mt-5">
-                                                <a className="btn btn-back" onClick={() => backEnglish()}>Back</a>
-                                                <Link className="btn website-btn next action-button"
+                                                <a className="btn btn-back-evaluation" onClick={() => backEnglish()}>Back</a>
+                                                <button className="btn website-btn-evaluation next action-button"
                                                     onClick={() => submitEnglish()}
-                                                >Next</Link>
+                                                >Next</button>
                                             </div>
                                             : null
                                         }
@@ -1077,7 +1050,7 @@ export default function About() {
                     <form onSubmit={handleSubmit}>
                         <div className="mb-3 mt-3">
                             <label className="form-label">Email </label>
-                            <input type="email" className="form-control " id="email"
+                            <input type="email" className="form-control-evaluation " id="email"
                                 placeholder="Enter email" name="email"
                                 value={email}
                                 onChange={(e) => setEmail(e.target.value)}
@@ -1090,7 +1063,7 @@ export default function About() {
                         <span className="error-msg">{emailError}</span>
                         <div className="mb-3 mt-3">
                             <label className="form-label">Password</label>
-                            <input type="password" className="form-control " id="uname"
+                            <input type="password" className="form-control-evaluation " id="uname"
                                 placeholder="Password" name="name"
                                 value={password}
                                 onChange={(e) => setPassword(e.target.value)}

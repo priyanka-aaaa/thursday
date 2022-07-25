@@ -6,7 +6,7 @@ import StudentSidebar from '../../components/StudentSidebar';
 import { Modal, Button } from 'react-bootstrap';
 import Image from 'next/image'
 
-
+// import '../styles/responsive.css'
 
 export default function About() {
   const [state, setState] = useState({
