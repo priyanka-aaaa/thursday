@@ -25,7 +25,7 @@ const Header = () => {
 
 
   const [showModal, setshowModal] = useState(false);
-  // const [profileState, setProfileState] = useState(props);
+  const [profileState, setProfileState] = useState("");
   // useEffect(() => {
   //     setProfileState(props);
   // }, [props]);
@@ -261,7 +261,7 @@ const Header = () => {
       {/* Menu End */}
       {/* start for toogle */}
 
-      <nav className="right_menu_togle "  >
+      <nav className="right_menu_togle "   style={{ right: profileState.name }}>
         <div className="close-btn">
           <div className="nav-link">
             <a title="close" id="nav-close" className="humburger nav-expander" onClick={() => ToggleButton()} >
