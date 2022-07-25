@@ -15,7 +15,9 @@ import AdminSidebar from '../../components/AdminSidebar';
 export default function AdminUniversity() {
 
     const [myindexValue, setmyindexValue] = useState();
+    const [adminName, setadminName] = useState();
 
+    
     const [mounted, setMounted] = useState();
     const [data, setdata] = useState([]);
     const [comments, setComments] = useState([{
@@ -159,7 +161,9 @@ export default function AdminUniversity() {
         setFormValues([])
         var adminId = localStorage.getItem('adminId');
         var mounted = localStorage.getItem("adminToken")
+        var adminName=localStorage.getItem("adminName")
         setMounted(mounted)
+        setadminName(adminName)
         if (adminId !== null) {
             function myallStudents() {
                 setmyloader("true")
@@ -1646,7 +1650,7 @@ export default function AdminUniversity() {
                                                                                                                                                     <div className="col-md-11">
                                                                                                                                                         <div className="anw-content-rightblock  drak-blue">
                                                                                                                                                             <div className="des-title">
-                                                                                                                                                                <h6><strong>Visa Team:</strong>(admin) Sent a Message </h6><span className="date-block">{element.messageTime}</span>
+                                                                                                                                                                <h6>({adminName})<strong>Visa Team:</strong> Sent a Message </h6><span className="date-block">{element.messageTime}</span>
                                                                                                                                                             </div>
                                                                                                                                                             <div className="reply-content ">
                                                                                                                                                                 <p>{element.message}</p>
