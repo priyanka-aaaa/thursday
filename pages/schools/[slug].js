@@ -11,8 +11,8 @@ import EnquiryModal from '../../components/EnquiryModal';
 import { Footer } from '../../components/Footer';
 import Slider from "react-slick";
 import parse from 'html-react-parser'
-// import "slick-carousel/slick/slick.css";
-// import "slick-carousel/slick/slick-theme.css";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
     faStar, faGraduationCap, faCalendarCheck, faPhone,
@@ -27,6 +27,10 @@ import { Modal, Button } from 'react-bootstrap';
 export async function getServerSideProps(context) {
 
     const res = await axios.get(process.env.REACT_APP_SERVER_URL + 'completeUniDetail/' + context.params.slug)
+    const res2 = await axios.get(process.env.REACT_APP_SERVER_URL + 'universitySimilar/' + context.params.slug)
+    // var myresultsUniversity = data.universities
+    console.log("res2")
+    console.log(res2.data.universities)
     //start faq
     const parseData = {
         "@context": "https://schema.org",
@@ -88,7 +92,8 @@ export async function getServerSideProps(context) {
             objhello.push(courseStructuredData);
         }
     }
-
+    console.log("second second")
+    console.log(res2.data.universities)
     //end for course schema
     return {
 
@@ -96,7 +101,8 @@ export async function getServerSideProps(context) {
 
             mydata: res.data.universities[0],
             parseData: parseData,
-            objhello: objhello
+            objhello: objhello,
+            similarUniversity:res2.data.universities
         },
     }
 
@@ -433,10 +439,12 @@ const MyschoolDetails = (pageProps) => {
                     {JSON.stringify(pageProps.parseData)}
                 </script> */}
                 <script type='application/ld+json' dangerouslySetInnerHTML={{
-                    __html:  JSON.stringify(pageProps.parseData)}}
+                    __html: JSON.stringify(pageProps.parseData)
+                }}
                 />
-                 <script type='application/ld+json' dangerouslySetInnerHTML={{
-                    __html:  JSON.stringify(pageProps.objhello)}}
+                <script type='application/ld+json' dangerouslySetInnerHTML={{
+                    __html: JSON.stringify(pageProps.objhello)
+                }}
                 />
                 {/* <script type="application/ld+json">
                     {JSON.stringify(pageProps.objhello)}
@@ -1034,8 +1042,10 @@ const MyschoolDetails = (pageProps) => {
                                             <div id="Similar" className="blog-item">
                                                 <div className="similar_fullbox__1qBJc  blog-content">
                                                     <h3 className="blog-title"><a href="#">Similar Universities</a></h3>
+                                                    {console.log("pageProps.similarUniversity")}
+                                                    {console.log(pageProps.similarUniversity)}
                                                     <Slider {...settings}>
-                                                        {similarUniveristyValues.map((element, index) =>
+                                                        {pageProps.similarUniversity.map((element, index) =>
                                                         (
                                                             <>
                                                                 <div className="col-md-4" key={index} >
@@ -1043,11 +1053,11 @@ const MyschoolDetails = (pageProps) => {
                                                                     <div data-index="0" className="slick-slide slick-active slick-current"
                                                                         tabIndex="-1" aria-hidden="false">
                                                                         <div>
-                                                                            {/* <Link to={'/schools/' + element.universityPrimaryInformation.slug} target="_blank" >
-
+                                                                            <Link href={'/schools/' + element.universityPrimaryInformation.slug} target="_blank" >
+<a>
                                                                                 <div tabIndex="-1">
                                                                                     <div className="similar_box__2Lq08">
-                                                                                        <Image    unoptimized={true} src={element.universityImage.coverPic} alt="university coverPik" loading="lazy" />
+                                                                                        <img    unoptimized={true} src={element.universityImage.coverPic} alt="university coverPik" loading="lazy" />
 
                                                                                         <div className="similar_footerText__2go-e w-100 row">
                                                                                             <h1 className="similar_unidata__1lxt7 col-10">
@@ -1065,7 +1075,8 @@ const MyschoolDetails = (pageProps) => {
                                                                                         </h2>
                                                                                     </div>
                                                                                 </div>
-                                                                            </Link> */}
+                                                                                </a>
+                                                                            </Link>
                                                                         </div>
                                                                     </div>
                                                                 </div>
