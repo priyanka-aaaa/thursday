@@ -26,24 +26,24 @@ export const Footer = () => {
               <ul className="footer-social md-mb-30">
                 <li>
                   <a href="https://www.facebook.com/coursementors/" target="_blank"  rel="noreferrer" title='Facebook'><span>
-                    <FontAwesomeIcon icon={faFacebook} />
+                    <FontAwesomeIcon icon={faFacebook} className="touch-faicon"/>
                   </span></a>
                 </li>
                 <li>
                   <a href="https://www.linkedin.com/company/coursementor-study-abroad/" target="_blank"  rel="noreferrer" title='Linkedin'><span>
 
-                    <FontAwesomeIcon icon={faLinkedinIn} />
+                    <FontAwesomeIcon icon={faLinkedinIn} className="touch-faicon"/>
                   </span></a>
                 </li>
                 <li>
                   <a href="https://www.instagram.com/course_mentor/" target="_blank"  rel="noreferrer" title='Pinterest'><span>
-                    <FontAwesomeIcon icon={faPinterest} />
+                    <FontAwesomeIcon icon={faPinterest}  className="touch-faicon"/>
 
                   </span></a>
                 </li>
                 <li>
                   <a href="https://in.pinterest.com/Thecoursementor/_created/" target="_blank"  rel="noreferrer" title='Instagram'><span>
-                    <FontAwesomeIcon icon={faInstagram} />
+                    <FontAwesomeIcon icon={faInstagram}  className="touch-faicon"/>
 
                   </span></a>
                 </li>
