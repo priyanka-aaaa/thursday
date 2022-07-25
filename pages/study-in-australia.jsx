@@ -131,48 +131,12 @@ const Study = (pageProps) => {
       .then(data2 => {
         setblogData(data2)
       })
-
-    const url1 = process.env.REACT_APP_SERVER_URL + 'universityCountry/Australia';
-    fetch(url1, {
-      method: 'GET'
-    })
-      .then(response => response.json())
-      .then(data1 => {
-        var myresultsUniversity = data1.universities;
-
-        setUniveristyValues(data1.universities)
-        if (Object.keys(myresultsUniversity).length > 3) {
-          var universityLength = 3
-        }
-        else {
-          var universityLength = Object.keys(myresultsUniversity).length
-        }
+    if (localStorage.getItem("studentToken")) {
+      var studentToken = localStorage.getItem("studentToken")
+      setstudentToken(studentToken)
+    }
 
 
-        if (localStorage.getItem("studentToken")) {
-          var studentToken = localStorage.getItem("studentToken")
-          setstudentToken(studentToken)
-          const url = process.env.REACT_APP_SERVER_URL + 'student/bookmarks';
-          fetch(url, {
-            method: 'GET',
-            headers: { 'Authorization': studentToken }
-          })
-            .then(response => response.json())
-            .then(data => {
-              setdata(data.studentBookmarks)
-              var resultstudentBookmarks = data.studentBookmarks
-              let followingIds = resultstudentBookmarks.map(group => group.universityID);
-              let allGroupsUserSpecific1 = myresultsUniversity.map(group => (
-                { ...group, following: followingIds.includes(group._id) })
-              );
-              setallGroupsUserSpecific(allGroupsUserSpecific1)
-            })
-        }
-        else {
-          var allGroupsUserSpecific1 = data1.universities
-          setallGroupsUserSpecific(allGroupsUserSpecific1)
-        }
-      })
   }, [])
   function open() {
     setshowModal(true)
@@ -343,9 +307,10 @@ const Study = (pageProps) => {
         };
         axios.post(process.env.REACT_APP_SERVER_URL + 'student/bookmarks', obj, { headers: { 'Authorization': studentToken } })
           .then(function (res) {
-
-
             if (res.data.success === true) {
+              setsuccessMessage("You have Shortlisted This University")
+              setTimeout(() => setsubmitSuccess(""), 3000);
+              setsubmitSuccess(1)
               const url = process.env.REACT_APP_SERVER_URL + 'student/bookmarks';
               fetch(url, {
                 method: 'GET',

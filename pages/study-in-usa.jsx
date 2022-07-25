@@ -29,7 +29,15 @@ import {
   faFacebookF, faGoogle, faTwitter, faFacebook,
   faPinterest, faInstagram
 } from "@fortawesome/free-brands-svg-icons";
-const Study = () => {
+export async function getServerSideProps(context) {
+  const res = await axios.get(process.env.REACT_APP_SERVER_URL + 'universityCountry/United States')
+  return {
+    props: {
+      mydata: res.data.universities,
+    },
+  }
+}
+const Study = (pageProps) => {
   const [UniveristyValues, setUniveristyValues] = useState([{
     universityPrimaryInformation: "", universityOverview: "", universityImage: "", _id: "", slug: ""
   }])
@@ -123,48 +131,11 @@ const Study = () => {
       .then(data2 => {
         setblogData(data2)
       })
-
-    const url1 = process.env.REACT_APP_SERVER_URL + 'universityCountry/United States';
-    fetch(url1, {
-      method: 'GET'
-    })
-      .then(response => response.json())
-      .then(data1 => {
-        var myresultsUniversity = data1.universities;
-
-        setUniveristyValues(data1.universities)
-        if (Object.keys(myresultsUniversity).length > 3) {
-          var universityLength = 3
-        }
-        else {
-          var universityLength = Object.keys(myresultsUniversity).length
-        }
-
-
-        if (localStorage.getItem("studentToken")) {
-          var studentToken = localStorage.getItem("studentToken")
-          setstudentToken(studentToken)
-          const url = process.env.REACT_APP_SERVER_URL + 'student/bookmarks';
-          fetch(url, {
-            method: 'GET',
-            headers: { 'Authorization': studentToken }
-          })
-            .then(response => response.json())
-            .then(data => {
-              setdata(data.studentBookmarks)
-              var resultstudentBookmarks = data.studentBookmarks
-              let followingIds = resultstudentBookmarks.map(group => group.universityID);
-              let allGroupsUserSpecific1 = myresultsUniversity.map(group => (
-                { ...group, following: followingIds.includes(group._id) })
-              );
-              setallGroupsUserSpecific(allGroupsUserSpecific1)
-            })
-        }
-        else {
-          var allGroupsUserSpecific1 = data1.universities
-          setallGroupsUserSpecific(allGroupsUserSpecific1)
-        }
-      })
+      if (localStorage.getItem("studentToken")) {
+        var studentToken = localStorage.getItem("studentToken")
+        setstudentToken(studentToken)
+      }
+  
   }, [])
   function open() {
     setshowModal(true)
@@ -581,7 +552,7 @@ const Study = () => {
                 <h2>USA Universities</h2>
                 <Slider {...settings}>
 
-                  {allGroupsUserSpecific.map((element, index) => (
+                  {pageProps.mydata.map((element, index) => (
 
 
 
