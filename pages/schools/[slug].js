@@ -102,7 +102,7 @@ export async function getServerSideProps(context) {
             mydata: res.data.universities[0],
             parseData: parseData,
             objhello: objhello,
-            similarUniversity:res2.data.universities
+            similarUniversity: res2.data.universities
         },
     }
 
@@ -1003,10 +1003,10 @@ const MyschoolDetails = (pageProps) => {
                                                         ))}
                                                     </div>
                                                     {/* {coursesNoValues === 1 ? */}
-                                                        <div>
-                                                            <Link href={'/schools/' + router.query.slug + '/courses'} className="nav-link btn-view-all" >View All Courses</Link>
-                                                        </div>
-                                                        {/* // : null} */}
+                                                    <div>
+                                                        <Link href={'/schools/' + router.query.slug + '/courses'} className="nav-link btn-view-all" >View All Courses</Link>
+                                                    </div>
+                                                    {/* // : null} */}
                                                 </div>
                                             </div>
                                         </div>
@@ -1054,27 +1054,27 @@ const MyschoolDetails = (pageProps) => {
                                                                         tabIndex="-1" aria-hidden="false">
                                                                         <div>
                                                                             <Link href={'/schools/' + element.universityPrimaryInformation.slug} target="_blank" >
-<a>
-                                                                                <div tabIndex="-1">
-                                                                                    <div className="similar_box__2Lq08">
-                                                                                        <img    unoptimized={true} src={element.universityImage.coverPic} alt="university coverPik" loading="lazy" />
+                                                                                <a>
+                                                                                    <div tabIndex="-1">
+                                                                                        <div className="similar_box__2Lq08">
+                                                                                            <img unoptimized={true} src={element.universityImage.coverPic} alt="university coverPik" loading="lazy" />
 
-                                                                                        <div className="similar_footerText__2go-e w-100 row">
-                                                                                            <h1 className="similar_unidata__1lxt7 col-10">
+                                                                                            <div className="similar_footerText__2go-e w-100 row">
+                                                                                                <h1 className="similar_unidata__1lxt7 col-10">
 
-                                                                                                {element.universityPrimaryInformation.name}
+                                                                                                    {element.universityPrimaryInformation.name}
 
-                                                                                            </h1>
+                                                                                                </h1>
 
-                                                                                            <h2 className="similar_unidesc__10ic3"> {element.universityPrimaryInformation.name},  {element.universityPrimaryInformation.country}</h2>
+                                                                                                <h2 className="similar_unidesc__10ic3"> {element.universityPrimaryInformation.name},  {element.universityPrimaryInformation.country}</h2>
+                                                                                            </div>
+                                                                                            <h2 className="similar_facts__1i5bJ"> {element.universityPrimaryInformation.type}
+                                                                                                | Estd.{element.universityOverview.foundedYear}
+
+                                                                                                | {element.universityOverview.courseNo}+ Courses
+                                                                                            </h2>
                                                                                         </div>
-                                                                                        <h2 className="similar_facts__1i5bJ"> {element.universityPrimaryInformation.type}
-                                                                                            | Estd.{element.universityOverview.foundedYear}
-
-                                                                                            | {element.universityOverview.courseNo}+ Courses
-                                                                                        </h2>
                                                                                     </div>
-                                                                                </div>
                                                                                 </a>
                                                                             </Link>
                                                                         </div>

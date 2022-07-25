@@ -16,7 +16,7 @@ import SweetAlert from 'react-bootstrap-sweetalert';
 // import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import Slider from "react-slick";
 import { Modal, Button } from 'react-bootstrap';
-import { FontAwesomeIcon   } from '@fortawesome/react-fontawesome';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Tabs, Tab } from 'react-bootstrap';
 import PhoneInput from 'react-phone-number-input'
 import {
@@ -29,7 +29,15 @@ import {
   faFacebookF, faGoogle, faTwitter, faFacebook,
   faPinterest, faInstagram
 } from "@fortawesome/free-brands-svg-icons";
-const Study = () => {
+export async function getServerSideProps(context) {
+  const res = await axios.get(process.env.REACT_APP_SERVER_URL + 'universityCountry/Australia')
+  return {
+    props: {
+      mydata: res.data.universities,
+    },
+  }
+}
+const Study = (pageProps) => {
   const [UniveristyValues, setUniveristyValues] = useState([{
     universityPrimaryInformation: "", universityOverview: "", universityImage: "", _id: "", slug: ""
   }])
@@ -581,12 +589,12 @@ const Study = () => {
                 <h2>Australia Universities</h2>
                 <Slider {...settings}>
 
-                  {allGroupsUserSpecific.map((element, index) => (
+                  {pageProps.mydata.map((element, index) => (
 
 
 
                     <div className="uniBlock" key={index}>
-                 
+
                       {/* start for bookmark */}
                       {/* end for bookmark */}
                       <div className="headerBlock"><a href="#" target="_blank">
@@ -639,17 +647,17 @@ const Study = () => {
                           </div>
                         </div>
                         <div className="detail">
-                        
+
                           <div className="content">
                             <div className="value">{element.universityOverview.ranking}</div>
                             <div className="description">Ranking</div>
                           </div>
                         </div>
                       </div>
-                      <Link  href={'/schools/' + element.universityPrimaryInformation.slug} target="_blank"  ><a className="redirector">
-                      Apply Now
+                      <Link href={'/schools/' + element.universityPrimaryInformation.slug} target="_blank"  ><a className="redirector">
+                        Apply Now
                       </a>
-     
+
                       </Link>
 
                     </div>
@@ -723,21 +731,21 @@ const Study = () => {
                         <li><span>
 
 
-                          <FontAwesomeIcon  className="sidebar-faicon" icon={faFile} /></span>Copy of a valid passport</li>
-                        <li><span><FontAwesomeIcon  className="sidebar-faicon" icon={faFile} /></span>ACT/SAT/LSAT for UG programs</li>
-                        <li><span><FontAwesomeIcon  className="sidebar-faicon" icon={faFile} /></span>English proficiency scores (TOEFL/IELTS)</li>
-                        <li><span><FontAwesomeIcon  className="sidebar-faicon" icon={faFile} /></span>CV/Resume/Essays</li>
-                        <li><span><FontAwesomeIcon  className="sidebar-faicon" icon={faFile} /></span>Evidence of funds</li>
+                          <FontAwesomeIcon className="sidebar-faicon" icon={faFile} /></span>Copy of a valid passport</li>
+                        <li><span><FontAwesomeIcon className="sidebar-faicon" icon={faFile} /></span>ACT/SAT/LSAT for UG programs</li>
+                        <li><span><FontAwesomeIcon className="sidebar-faicon" icon={faFile} /></span>English proficiency scores (TOEFL/IELTS)</li>
+                        <li><span><FontAwesomeIcon className="sidebar-faicon" icon={faFile} /></span>CV/Resume/Essays</li>
+                        <li><span><FontAwesomeIcon className="sidebar-faicon" icon={faFile} /></span>Evidence of funds</li>
                       </ul>
                     </div>
                     <div className="col-md-6">
                       <ul>
-                        <li><span><FontAwesomeIcon  className="sidebar-faicon" icon={faFile} /></span>Australian secondary school certificate of
+                        <li><span><FontAwesomeIcon className="sidebar-faicon" icon={faFile} /></span>Australian secondary school certificate of
                           education (Year 12) or equivalent or Diploma / Advanced Diploma from the Vocational
                           Education and Training (VET) sector</li>
-                        <li><span><FontAwesomeIcon  className="sidebar-faicon" icon={faFile} /></span>GMAT/GRE scores for PG programs</li>
-                        <li><span><FontAwesomeIcon  className="sidebar-faicon" icon={faFile} /></span>Letters of Recommendation</li>
-                        <li><span><FontAwesomeIcon  className="sidebar-faicon" icon={faFile} /></span>Statement of Purpose (SOP) </li>
+                        <li><span><FontAwesomeIcon className="sidebar-faicon" icon={faFile} /></span>GMAT/GRE scores for PG programs</li>
+                        <li><span><FontAwesomeIcon className="sidebar-faicon" icon={faFile} /></span>Letters of Recommendation</li>
+                        <li><span><FontAwesomeIcon className="sidebar-faicon" icon={faFile} /></span>Statement of Purpose (SOP) </li>
                       </ul>
                     </div>
                   </div>
@@ -781,16 +789,16 @@ const Study = () => {
                               <li><span>
 
 
-                                <FontAwesomeIcon  className="sidebar-faicon" icon={faAngleRight} /></span>Agriculture and
+                                <FontAwesomeIcon className="sidebar-faicon" icon={faAngleRight} /></span>Agriculture and
                                 Environmental
                                 Sciences</li>
-                              <li><span><FontAwesomeIcon  className="sidebar-faicon" icon={faAngleRight} /></span>Business</li>
-                              <li><span><FontAwesomeIcon  className="sidebar-faicon" icon={faAngleRight} /></span>Engineering</li>
-                              <li><span><FontAwesomeIcon  className="sidebar-faicon" icon={faAngleRight} /></span>Medicine</li>
-                              <li><span><FontAwesomeIcon  className="sidebar-faicon" icon={faAngleRight} /></span>Education and Training</li>
-                              <li><span><FontAwesomeIcon  className="sidebar-faicon" icon={faAngleRight} /></span>Management and Commerce</li>
-                              <li><span><FontAwesomeIcon  className="sidebar-faicon" icon={faAngleRight} /></span>Information Technology</li>
-                              <li><span><FontAwesomeIcon  className="sidebar-faicon" icon={faAngleRight} /></span>Nursing and Allied Health
+                              <li><span><FontAwesomeIcon className="sidebar-faicon" icon={faAngleRight} /></span>Business</li>
+                              <li><span><FontAwesomeIcon className="sidebar-faicon" icon={faAngleRight} /></span>Engineering</li>
+                              <li><span><FontAwesomeIcon className="sidebar-faicon" icon={faAngleRight} /></span>Medicine</li>
+                              <li><span><FontAwesomeIcon className="sidebar-faicon" icon={faAngleRight} /></span>Education and Training</li>
+                              <li><span><FontAwesomeIcon className="sidebar-faicon" icon={faAngleRight} /></span>Management and Commerce</li>
+                              <li><span><FontAwesomeIcon className="sidebar-faicon" icon={faAngleRight} /></span>Information Technology</li>
+                              <li><span><FontAwesomeIcon className="sidebar-faicon" icon={faAngleRight} /></span>Nursing and Allied Health
                               </li>
                             </ul>
                           </div>
@@ -848,17 +856,17 @@ const Study = () => {
                           <div className="timeline-box">
                             <h4>Popular Programs</h4>
                             <ul>
-                              <li><span><FontAwesomeIcon  className="sidebar-faicon" icon={faAngleRight} /></span>Agriculture and
+                              <li><span><FontAwesomeIcon className="sidebar-faicon" icon={faAngleRight} /></span>Agriculture and
                                 Environmental
                                 Sciences</li>
-                              <li><span><FontAwesomeIcon  className="sidebar-faicon" icon={faAngleRight} /></span>Business</li>
-                              <li><span><FontAwesomeIcon  className="sidebar-faicon" icon={faAngleRight} /></span>Engineering</li>
-                              <li><span><FontAwesomeIcon  className="sidebar-faicon" icon={faAngleRight} /></span>Medicine</li>
-                              <li><span><FontAwesomeIcon  className="sidebar-faicon" icon={faAngleRight} /></span>Hospitality and Tourism</li>
-                              <li><span><FontAwesomeIcon  className="sidebar-faicon" icon={faAngleRight} /></span>Education and Training</li>
-                              <li><span><FontAwesomeIcon  className="sidebar-faicon" icon={faAngleRight} /></span>Management and Commerce</li>
-                              <li><span><FontAwesomeIcon  className="sidebar-faicon" icon={faAngleRight} /></span>Information Technology</li>
-                              <li><span><FontAwesomeIcon  className="sidebar-faicon" icon={faAngleRight} /></span>Nursing and Allied Health
+                              <li><span><FontAwesomeIcon className="sidebar-faicon" icon={faAngleRight} /></span>Business</li>
+                              <li><span><FontAwesomeIcon className="sidebar-faicon" icon={faAngleRight} /></span>Engineering</li>
+                              <li><span><FontAwesomeIcon className="sidebar-faicon" icon={faAngleRight} /></span>Medicine</li>
+                              <li><span><FontAwesomeIcon className="sidebar-faicon" icon={faAngleRight} /></span>Hospitality and Tourism</li>
+                              <li><span><FontAwesomeIcon className="sidebar-faicon" icon={faAngleRight} /></span>Education and Training</li>
+                              <li><span><FontAwesomeIcon className="sidebar-faicon" icon={faAngleRight} /></span>Management and Commerce</li>
+                              <li><span><FontAwesomeIcon className="sidebar-faicon" icon={faAngleRight} /></span>Information Technology</li>
+                              <li><span><FontAwesomeIcon className="sidebar-faicon" icon={faAngleRight} /></span>Nursing and Allied Health
                               </li>
                             </ul>
                           </div>
@@ -914,19 +922,19 @@ const Study = () => {
                           <div className="timeline-box">
                             <h4>Popular Programs</h4>
                             <ul>
-                              <li><span><FontAwesomeIcon  className="sidebar-faicon" icon={faAngleRight} /></span>Agriculture and
+                              <li><span><FontAwesomeIcon className="sidebar-faicon" icon={faAngleRight} /></span>Agriculture and
                                 Environmental
                                 Sciences</li>
-                              <li><span><FontAwesomeIcon  className="sidebar-faicon" icon={faAngleRight} /></span>Business</li>
-                              <li><span><FontAwesomeIcon  className="sidebar-faicon" icon={faAngleRight} /></span>Engineering</li>
-                              <li><span><FontAwesomeIcon  className="sidebar-faicon" icon={faAngleRight} /></span>Medicine</li>
-                              <li><span><FontAwesomeIcon  className="sidebar-faicon" icon={faAngleRight} /></span>Hospitality and Tourism</li>
-                              <li><span><FontAwesomeIcon  className="sidebar-faicon" icon={faAngleRight} /></span>Education and Training</li>
-                              <li><span><FontAwesomeIcon  className="sidebar-faicon" icon={faAngleRight} /></span>Management and Commerce</li>
-                              <li><span><FontAwesomeIcon  className="sidebar-faicon" icon={faAngleRight} /></span>Information Technology</li>
-                              <li><span><FontAwesomeIcon  className="sidebar-faicon" icon={faAngleRight} /></span>Nursing and Allied Health
+                              <li><span><FontAwesomeIcon className="sidebar-faicon" icon={faAngleRight} /></span>Business</li>
+                              <li><span><FontAwesomeIcon className="sidebar-faicon" icon={faAngleRight} /></span>Engineering</li>
+                              <li><span><FontAwesomeIcon className="sidebar-faicon" icon={faAngleRight} /></span>Medicine</li>
+                              <li><span><FontAwesomeIcon className="sidebar-faicon" icon={faAngleRight} /></span>Hospitality and Tourism</li>
+                              <li><span><FontAwesomeIcon className="sidebar-faicon" icon={faAngleRight} /></span>Education and Training</li>
+                              <li><span><FontAwesomeIcon className="sidebar-faicon" icon={faAngleRight} /></span>Management and Commerce</li>
+                              <li><span><FontAwesomeIcon className="sidebar-faicon" icon={faAngleRight} /></span>Information Technology</li>
+                              <li><span><FontAwesomeIcon className="sidebar-faicon" icon={faAngleRight} /></span>Nursing and Allied Health
                               </li>
-                              <li><span><FontAwesomeIcon  className="sidebar-faicon" icon={faAngleRight} /></span>Corporate Administration
+                              <li><span><FontAwesomeIcon className="sidebar-faicon" icon={faAngleRight} /></span>Corporate Administration
                               </li>
                             </ul>
                           </div>
