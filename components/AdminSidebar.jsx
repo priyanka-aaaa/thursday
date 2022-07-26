@@ -220,7 +220,19 @@ const AdminSidebar = () => {
             <span><FontAwesomeIcon icon={faDashboard} className="sidebar-faicon" /><span className="text-mob-hide">Setting</span></span></a></Link>
         </li>
       }
-
+  {currentMenu === "offlineApplication" ?
+        <li className="nav-item " onClick={() => handleCurrentClick("offlineApplication")}>
+          <Link href='/admin/offlineApplication' className="nav-link current-tab" title="Offline Application"><a className="nav-link">
+            <i className="fas fa-Setting"></i>
+            <span><FontAwesomeIcon icon={faDashboard} className="sidebar-faicon" /><span className="text-mob-hide">Offline Application</span></span></a></Link>
+        </li>
+        :
+        <li className="nav-item " onClick={() => handleCurrentClick("offlineApplication")}>
+          <Link href='/admin/offlineApplication' className="nav-link" title="Offline Application"><a className="nav-link">
+            <i className="fas fa-Setting"></i>
+            <span><FontAwesomeIcon icon={faDashboard} className="sidebar-faicon" /><span className="text-mob-hide">Offline Application</span></span></a></Link>
+        </li>
+      }
 
 
 
