@@ -154,12 +154,12 @@ const StudentDummy2 = () => {
                   {/*<li><a href="#"><i class="lnr lnr-cog"></i> <span>Settings</span></a></li>*/}
                   <li className="hvtb"><a href="https://www.codeavail.com/logout"><i className="lnr lnr-exit" /> <span>   <i className="fas fa-sign-out-alt" /> &nbsp; Logout</span></a></li>
                   <li className="hvtb"><a href="https://www.codeavail.com/support"><i className="lnr lnr-exit" /> <span>   <i className="fas fa-info-circle" /> &nbsp; Support After Sale</span></a></li>
-                  <li className="hvtb"><a title="Browsing History" href="https://www.codeavail.com/tracking_details" target="_blank"><span><i className="fa fa-history" />&nbsp; Browsing History</span></a></li>
+                  <li className="hvtb"><a title="Browsing History" href="https://www.codeavail.com/tracking_details" target="_blank" rel="noreferrer"><span><i className="fa fa-history" />&nbsp; Browsing History</span></a></li>
                 </ul>
               </li>
             </div>
             {/* <li>
-                  <a class="update-pro" href="https://www.themeineed.com/downloads/klorofil-pro-bootstrap-admin-dashboard-template/?utm_source=klorofil&utm_medium=template&utm_campaign=KlorofilPro" title="Upgrade to Pro" target="_blank"><i class="fa fa-rocket"></i> <span>UPGRADE TO PRO</span></a>
+                  <a class="update-pro" href="https://www.themeineed.com/downloads/klorofil-pro-bootstrap-admin-dashboard-template/?utm_source=klorofil&utm_medium=template&utm_campaign=KlorofilPro" title="Upgrade to Pro" target="_blank" rel="noreferrer"><i class="fa fa-rocket"></i> <span>UPGRADE TO PRO</span></a>
               </li> */}
           </ul>
         </div>
@@ -182,7 +182,7 @@ const StudentDummy2 = () => {
               <li><a title="My Earning" href="https://www.codeavail.com/earn-money" className><i className="fas fa-dollar-sign " /><span>Refer &amp; Earn</span></a></li>
               <li><a title="Refer & Earn" href="https://www.codeavail.com/referral" className><i className="fa fa-retweet " aria-hidden="true" /><span>Become Partner</span></a></li>
               <li><a title="Settings" href="https://www.codeavail.com/settings" className><i className="fas fa-users-cog" /><span>Settings</span></a></li>
-              <li><a title="Settings" href="https://courses.codeavail.com/" target="_blank" className><i className="fas fa-laptop-code" /><span>Online Courses</span></a></li>
+              <li><a title="Settings" href="https://courses.codeavail.com/" target="_blank" rel="noreferrer" className><i className="fas fa-laptop-code" /><span>Online Courses</span></a></li>
               {/* <li><a title="Settings" href="https://www.codeavail.com/tracking_details"  class=""><i class="fa fa-history"></i><span>Tracking Details</span></a></li> */}
             </ul>				</nav>
         </div>

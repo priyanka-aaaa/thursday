@@ -3,7 +3,8 @@ import AdminTopbar from '../../components/AdminTopbar';
 import AdminSidebar from '../../components/AdminSidebar';
 import axios from 'axios';
 // import '../../scss/adminDashboard.scss';
-function offlineApplication(props) {
+export default function offlineApplication(props) {
+
     const [email, setemail] = useState("");
     const [universityName, setuniversityName] = useState("");
     const [courseName, setcourseName] = useState("");
@@ -99,7 +100,7 @@ function offlineApplication(props) {
                                         <div className="col">
                                             <div className="from-group">
                                                 <label htmlFor="lname" className="form-label">Country Name  <span className="req-star">*</span></label>
-                                                <select class="form-control" name="country" required
+                                                <select className="form-control" name="country" required
                                                     value={country || ""}
                                                     onChange={(e) => setcountry(e.target.value)}
                                                 >
@@ -126,5 +127,3 @@ function offlineApplication(props) {
         </div>
     );
 }
-
-export default offlineApplication;
