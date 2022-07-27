@@ -59,7 +59,7 @@ export const Footer = () => {
 
                 <li>  <a href="https://coursementor.com/contact-us" title='Contact Us'>
                   Contact Us </a></li>
-                  <li>  <a href="https://coursementor.com/blog" title='Contact Us'>
+                  <li>  <a href="https://coursementor.com/blog/" title='Contact Us'>
                   Blog</a></li>
               </ul>
               {/* <p className="widget-desc">We denounce with righteous and in and dislike men who are so beguiled and demo realized.</p> */}
