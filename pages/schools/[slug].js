@@ -1003,7 +1003,7 @@ const MyschoolDetails = (pageProps) => {
                                                     </div>
                                                     {/* {coursesNoValues === 1 ? */}
                                                     <div>
-                                                        <Link href={'/schools/' + router.query.slug + '/courses'} className="nav-link btn-view-all" >View All Courses</Link>
+                                                        {/* <Link href={'/schools/' + router.query.slug + '/courses'} className="nav-link btn-view-all" >View All Courses</Link> */}
                                                     </div>
                                                     {/* // : null} */}
                                                 </div>
