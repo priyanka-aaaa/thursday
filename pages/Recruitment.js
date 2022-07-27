@@ -16,8 +16,8 @@ import {
 import { Footer } from '../components/Footer';
 import Header from '../components/Header';
 import EnquiryModal from '../components/EnquiryModal';
+const Recruitment = (pageProps) => {
 
-export default function Recruitment() {
   const [redirectToReferrer, setredirectToReferrer] = useState(false);
   // const [loginData, setLoginData] = useState(
   //   localStorage.getItem('loginData')
@@ -699,3 +699,4 @@ export default function Recruitment() {
     </div>
   )
 }
+export default Recruitment
