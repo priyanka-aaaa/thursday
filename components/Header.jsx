@@ -161,7 +161,7 @@ const Header = () => {
                       <li><Link href='/school' className="nav-link" title="Schools">
                         Schools</Link>
                       </li>
-                      <li><Link href='/recruitment' className="nav-link" title="Recruitment Partners">
+                      <li><Link href='/agent' className="nav-link" title="Recruitment Partners">
                         Recruitment Partners </Link>
                       </li>
                       <li><Link href='/' title="Students">
@@ -201,7 +201,7 @@ const Header = () => {
                         Schools</Link>
                       </li>
 
-                      <li><Link href='/recruitment' className="nav-link" title="Recruitment Partners">
+                      <li><Link href='/agent' className="nav-link" title="Recruitment Partners">
                         Recruitment Partners </Link>
                       </li>
                       <li><Link href='/' title="Students">
@@ -283,7 +283,7 @@ const Header = () => {
           <h5>Site Map</h5>
           <li><a href="https://study.coursementor.com/">Learn</a></li>
           <li><a href="https://abroad.coursementor.com/School">Schools</a></li>
-          <li><a href="https://abroad.coursementor.com/Recruitment">Recruitment
+          <li><a href="https://abroad.coursementor.com/agent">Recruitment
             Partners</a>
           </li>
           <li><a href="https://abroad.coursementor.com/students">Students</a></li>
