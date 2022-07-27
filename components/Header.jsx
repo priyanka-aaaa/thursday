@@ -191,7 +191,10 @@ const Header = () => {
                     <li><Link href='/evaluation' title="evaluation">
                     Free Profile Assessment</Link>
                       </li>
-                      <li> <a className="menu-item-has-children current-menu-item"  title="Learn" data-bs-toggle="modal" data-bs-target="#learnModal">
+                      <li> <a className="menu-item-has-children current-menu-item"  title="Learn"
+                      href="https://study.coursementor.com/dashboard/"
+                      // data-bs-toggle="modal" data-bs-target="#learnModal"
+                      >
                           <span className='icon'><i className="fal fa-university fa-fw" ></i></span>Learn
                         </a>
                       </li>
