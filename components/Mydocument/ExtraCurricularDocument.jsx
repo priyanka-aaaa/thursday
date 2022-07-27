@@ -189,7 +189,7 @@ export default function ExtraCurricularDocument() {
                 {up === "0" ?
                     null
                     :
-                    <FontAwesomeIcon icon={faAngleUp} style={{
+                    <FontAwesomeIcon icon={faAngleUp} className="sidebar-faicon"   style={{
                         position: "absolute",
                         fontWeight: 900,
                         fontFamily: 'Font Awesome 5 Free',

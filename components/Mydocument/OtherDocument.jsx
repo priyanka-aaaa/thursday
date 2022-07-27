@@ -188,7 +188,7 @@ export default function OtherDocument() {
                 {up === "0" ?
                     null
                     :
-                    <FontAwesomeIcon icon={faAngleUp}  className="sidebar-faicon" style={{
+                    <FontAwesomeIcon icon={faAngleUp} className="sidebar-faicon"    className="sidebar-faicon" style={{
                         position: "absolute",
                         fontWeight: 900,
                         fontFamily: 'Font Awesome 5 Free',
