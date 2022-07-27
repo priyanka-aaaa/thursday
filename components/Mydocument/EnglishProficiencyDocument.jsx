@@ -173,7 +173,7 @@ export default function EnglishProficiencyDocument() {
                 {down === "0" ?
                     null
                     :
-                    <FontAwesomeIcon icon={faAngleDown} style={{
+                    <FontAwesomeIcon icon={faAngleDown}  className="sidebar-faicon"style={{
                         position: "absolute",
                         fontWeight: 900,
                         fontFamily: 'Font Awesome 5 Free',
