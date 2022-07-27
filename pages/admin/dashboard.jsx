@@ -837,30 +837,23 @@ export default function AdminStudentApplication() {
 
     }
     function handleFeeSubmit(event) {
-
         event.preventDefault();
         setmyloader("true")
         const obj = {
-            applicationFee: applicationFee,
-            applicationcurrency: applicationcurrency,
-
-
+            appPrice: applicationFee,
+            appCurrency: applicationcurrency,
         };
-
-
-        axios.put(process.env.REACT_APP_SERVER_URL + 'courseOrderFee/' + mycourseID, obj, { headers: { 'Authorization': mounted } })
+        axios.put(process.env.REACT_APP_SERVER_URL + 'admin/updateOrderFee/' + id, obj, { headers: { 'Authorization': mounted } })
             .then(function (res) {
                 setmyloader("false")
                 if (res.data.success === true) {
                     setsuccessMessage("Application Fee Updated")
                     setTimeout(() => setsubmitSuccess(""), 3000);
                     setsubmitSuccess(1)
-
                 }
             })
             .catch(error => {
             });
-
     }
 
     return (
@@ -933,7 +926,7 @@ export default function AdminStudentApplication() {
                                             })
                                                 .then(response => response.json())
                                                 .then(data => {
-                                                   
+
                                                     var orderResult = data.orders
                                                     orderResult.forEach((item, i) => {
                                                         item.NO = i + 1;

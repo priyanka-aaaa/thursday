@@ -344,7 +344,7 @@ export default function Dashboard(location) {
                     // setcourseID(myresult.courseID)
 
                     // start for application fee
-
+                  
                     if (myresult.courseID !== undefined) {
                         var studentCourseId = myresult.courseID
                         const url70 = process.env.REACT_APP_SERVER_URL + 'courseOrderFee/' + studentCourseId;
@@ -361,6 +361,11 @@ export default function Dashboard(location) {
                                 // setcourseApplicationFee(data.courses.applicationFee)
                                 // setpendingFee(myapplicationFee - paid)
                             })
+                    }
+                    else {
+                        settotalPrice(myresult.appPrice)
+                        setcurrency(myresult.appCurrency)
+      
                     }
                     //end for application fee
 
@@ -605,7 +610,8 @@ export default function Dashboard(location) {
                                                         <p>{mycountry}</p>
                                                     </div>
                                                     <div className="col-md-9">
-                                                        {myapplicationProgressStep >= 2 && totalPrice !== undefined && totalPrice!=="none"
+                                                      
+                                                        {myapplicationProgressStep >= 2 && totalPrice !== undefined && totalPrice !== "none"
                                                             ?
                                                             <>
                                                                 <div className="row">
