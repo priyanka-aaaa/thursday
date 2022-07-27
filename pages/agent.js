@@ -89,7 +89,7 @@ const Agent = (pageProps) => {
 
 
                           </div>
-                          <AgentLoginForm/>
+                          <LinkgentLoginForm/>
                         </div>
                       </div>
                     </div>
@@ -148,7 +148,7 @@ const Agent = (pageProps) => {
                           </div>
                         </div>
                         <div className="front-title-part">
-                          <h3 className="title"><a href="/students">Best Commissions </a></h3>
+                          <h3 className="title"><Link href="/students">Best Commissions </Link></h3>
                         </div>
                         <div className="front-desc-part">
                           <p>
@@ -157,7 +157,7 @@ const Agent = (pageProps) => {
                             hard work.</p>
                         </div>
                         <div className="front-btn-part">
-                          <a className="readon view-more" href="/students">View More</a>
+                          <Link className="readon view-more" href="/students">View More</Link>
                         </div>
                       </div>
                     </div>
@@ -178,8 +178,8 @@ const Agent = (pageProps) => {
                           </div>
                         </div>
                         <div className="front-title-part">
-                          <h3 className="title"><a href="/students">
-                          </a></h3>
+                          <h3 className="title"><Link href="/students">
+                          </Link></h3>
                         </div>
                         <div className="front-desc-part">
                           <p>
@@ -187,7 +187,7 @@ const Agent = (pageProps) => {
                           </p>
                         </div>
                         <div className="front-btn-part">
-                          <a className="readon view-more" href="/students">View More</a>
+                          <Link className="readon view-more" href="/students">View More</Link>
                         </div>
                       </div>
                     </div>
@@ -207,7 +207,7 @@ const Agent = (pageProps) => {
                           </div>
                         </div>
                         <div className="front-title-part">
-                          <h3 className="title"><a href="/students">Events and Webinars </a></h3>
+                          <h3 className="title"><Link href="/students">Events and Webinars </Link></h3>
                         </div>
                         <div className="front-desc-part">
                           <p>
@@ -215,7 +215,7 @@ const Agent = (pageProps) => {
                           </p>
                         </div>
                         <div className="front-btn-part">
-                          <a className="readon view-more" href="/students">View More</a>
+                          <Link className="readon view-more" href="/students">View More</Link>
                         </div>
                       </div>
                     </div>
@@ -286,15 +286,15 @@ const Agent = (pageProps) => {
                   </div>
                   <div className="services-content">
                     <div className="services-text">
-                      <h3 className="title"><a href="#">
-                        Local Support</a></h3>
+                      <h3 className="title"><Link href="#">
+                        Local Support</Link></h3>
                     </div>
                     <div className="services-desc">
                       <p>
                         Our international recruitment experts are there to <br></br>support you every<br></br> step of the way.
                       </p>
                     </div>
-                    <div className="services-button"><a href="#">Read More</a></div>
+                    <div className="services-button"><Link href="#">Read More</Link></div>
                   </div>
                 </div>
               </div>
@@ -311,14 +311,14 @@ const Agent = (pageProps) => {
                   </div>
                   <div className="services-content">
                     <div className="services-text">
-                      <h3 className="title"><a href="#">Education</a></h3>
+                      <h3 className="title"><Link href="#">Education</Link></h3>
                     </div>
                     <div className="services-desc">
                       <p>
                         Expand your knowledge and stay at the top of your competitors with guided online courses and certificates.
                       </p>
                     </div>
-                    <div className="services-button"><a href="#">Read More</a></div>
+                    <div className="services-button"><Link href="#">Read More</Link></div>
                   </div>
                 </div>
               </div>
@@ -335,15 +335,15 @@ const Agent = (pageProps) => {
                   </div>
                   <div className="services-content">
                     <div className="services-text">
-                      <h3 className="title"><a href="#">
-                        Events and Webinars</a></h3>
+                      <h3 className="title"><Link href="#">
+                        Events and Webinars</Link></h3>
                     </div>
                     <div className="services-desc">
                       <p>
                         Regular online webinars, training and events, to keep you updated on the latest trends and regulations.
                       </p>
                     </div>
-                    <div className="services-button"><a href="#">Read More</a></div>
+                    <div className="services-button"><Link href="#">Read More</Link></div>
                   </div>
                 </div>
               </div>
@@ -360,14 +360,14 @@ const Agent = (pageProps) => {
                   </div>
                   <div className="services-content">
                     <div className="services-text">
-                      <h3 className="title"><a href="#">Data and Insights</a></h3>
+                      <h3 className="title"><Link href="#">Data and Insights</Link></h3>
                     </div>
                     <div className="services-desc">
                       <p>
                         Industry leading insights and knowledge that helps you plan expand, and achieve your goals.
                       </p>
                     </div>
-                    <div className="services-button"><a href="#">Read More</a></div>
+                    <div className="services-button"><Link href="#">Read More</Link></div>
                   </div>
                 </div>
               </div>
@@ -385,66 +385,66 @@ const Agent = (pageProps) => {
             <div className="row">
               <div className="col-lg-2 col-md-4 col-sm-4 col-6">
                 <div className="technology-item">
-                  <a href="#">
+                  <Link href="#">
                     <div className="logo-img">
 
                       <img src="/images/pt-1.webp" alt="dev logo" />
 
                     </div>
-                  </a>
+                  </Link>
                 </div>
               </div>
               <div className="col-lg-2 col-md-4 col-sm-4 col-6">
                 <div className="technology-item">
-                  <a href="#">
+                  <Link href="#">
                     <div className="logo-img">
 
                       <img src="/images/pt-2.webp" alt="dev logo" />
 
                     </div>
-                  </a>
+                  </Link>
                 </div>
               </div>
               <div className="col-lg-2 col-md-4 col-sm-4 col-6">
                 <div className="technology-item">
-                  <a href="#">
+                  <Link href="#">
                     <div className="logo-img">
                       <img src="/images/pt-3.webp" alt="dev logo" />
 
 
                     </div>
-                  </a>
+                  </Link>
                 </div>
               </div>
               <div className="col-lg-2 col-md-4 col-sm-4 col-6">
                 <div className="technology-item">
-                  <a href="#">
+                  <Link href="#">
                     <div className="logo-img">
                       <img src="/images/pt-4.webp" alt="dev logo" />
 
 
                     </div>
-                  </a>
+                  </Link>
                 </div>
               </div>
               <div className="col-lg-2 col-md-4 col-sm-4 col-6">
                 <div className="technology-item">
-                  <a href="#">
+                  <Link href="#">
                     <div className="logo-img">
                       <img src="/images/pt-5.webp" alt="dev logo" />
 
                     </div>
-                  </a>
+                  </Link>
                 </div>
               </div>
               <div className="col-lg-2 col-md-4 col-sm-4 col-6">
                 <div className="technology-item">
-                  <a href="#">
+                  <Link href="#">
                     <div className="logo-img">
                       <img src="/images/pt-6.webp" alt="dev logo" />
 
                     </div>
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -495,7 +495,7 @@ const Agent = (pageProps) => {
 
                         </div>
                         <div className="author-part">
-                          <a className="name" href="#">Parteek sharma</a>
+                          <Link className="name" href="#">Parteek sharma</Link>
 
                         </div>
                       </div>
@@ -520,7 +520,7 @@ const Agent = (pageProps) => {
 
                         </div>
                         <div className="author-part">
-                          <a className="name" href="#">Somya Saini</a>
+                          <Link className="name" href="#">Somya Saini</Link>
 
                         </div>
                       </div>
@@ -544,7 +544,7 @@ const Agent = (pageProps) => {
 
                         </div>
                         <div className="author-part">
-                          <a className="name" href="#">Imran Khan</a>
+                          <Link className="name" href="#">Imran Khan</Link>
 
                         </div>
                       </div>
@@ -570,7 +570,7 @@ const Agent = (pageProps) => {
 
                         </div>
                         <div className="author-part">
-                          <a className="name" href="#">Parteek sharma</a>
+                          <Link className="name" href="#">Parteek sharma</Link>
 
                         </div>
                       </div>
@@ -598,7 +598,7 @@ const Agent = (pageProps) => {
 
                         </div>
                         <div className="author-part">
-                          <a className="name" href="#">Somya Saini</a>
+                          <Link className="name" href="#">Somya Saini</Link>
 
                         </div>
                       </div>

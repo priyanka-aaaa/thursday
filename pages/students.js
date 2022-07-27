@@ -21,7 +21,7 @@ import EnquiryModal from '../components/EnquiryModal';
 
 import { StudentloginForm } from '../components/StudentloginForm';
 
-export default function students() {
+export default function Students() {
 
 
 
