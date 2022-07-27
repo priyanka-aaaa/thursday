@@ -8,7 +8,7 @@ import Router from "next/router";
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
-  faSignOutAlt, faFile, faBars, faUser, faDashboard, faUserCircle, faAngleLeft, faAddressBook, faBookmark, faCog, faEnvelope, faAward
+  faSignOutAlt, faFile, faBars, faUser, faDashboard, faStar, faUserCircle, faAngleLeft, faAddressBook, faBookmark, faCog, faEnvelope, faAward
 } from '@fortawesome/free-solid-svg-icons';
 const StudentLayout = () => {
 
@@ -142,7 +142,7 @@ const StudentLayout = () => {
               <li onClick={() => handleCurrentClick("Explore")}>
                 <Link href='/student/search-courses'><a title="All Orders">
                   <FontAwesomeIcon icon={faDashboard} className="sidebar-faicon" />
-                  <span>All Orders</span>
+                  <span>Explore Courses</span>
                 </a></Link>
               </li>
               <li onClick={() => handleCurrentClick("Explore")}>
@@ -171,22 +171,28 @@ const StudentLayout = () => {
               </li>
               <li onClick={() => handleCurrentClick("Explore")}>
                 <Link href='/student/bookmark'><a title="All Orders">
-                  <FontAwesomeIcon icon={faBookmark} className="sidebar-faicon" />
-                  <span>Bookmark</span>
+                  <FontAwesomeIcon icon={faStar} className="sidebar-faicon" />
+                  <span>Favourites</span>
                 </a></Link>
               </li>
               <li onClick={() => handleCurrentClick("Explore")}>
                 <Link href='/student/message'><a title="All Orders">
-                  <FontAwesomeIcon icon={faBookmark} className="sidebar-faicon" />
+                  <FontAwesomeIcon icon={faEnvelope} className="sidebar-faicon" />
                   <span>Message</span>
                 </a></Link>
               </li>
 
               <li onClick={() => handleCurrentClick("Explore")}>
                 <Link href='/student/setting'><a title="All Orders">
-                  <FontAwesomeIcon icon={faBookmark} className="sidebar-faicon" />
+                  <FontAwesomeIcon icon={faCog} className="sidebar-faicon" />
                   <span>Settings</span>
                 </a></Link>
+              </li>
+              <li onClick={() => handleCurrentClick("Explore")}>
+                <a href='https://study.coursementor.com/dashboard/'>
+                  <FontAwesomeIcon icon={faAward} className="sidebar-faicon" />
+                  <span>Learn</span>
+                </a>
               </li>
             </ul>
           </nav>
