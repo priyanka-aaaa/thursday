@@ -16,7 +16,7 @@ import {
 import { Footer } from '../components/Footer';
 import Header from '../components/Header';
 import EnquiryModal from '../components/EnquiryModal';
-const Agent = (pageProps) => {
+const Agent = () => {
 
   const [redirectToReferrer, setredirectToReferrer] = useState(false);
   // const [loginData, setLoginData] = useState(
