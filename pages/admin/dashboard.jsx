@@ -503,6 +503,7 @@ export default function AdminStudentApplication() {
                     var completeTime = month + " " + date + ",  " + year + ", " + timerr
                     setmydate(completeTime)
                     //start for course Id
+                   
 
                     if (myresults[0].courseID != undefined) {
                         const url70 = process.env.REACT_APP_SERVER_URL + 'courseOrderFee/' + myresults[0].courseID;
@@ -520,6 +521,13 @@ export default function AdminStudentApplication() {
                                 setapplicationFee(data.courses.applicationFee)
 
                             })
+                    }
+                    {
+                        // settotalPrice(myresults.appPrice)
+                        // setcurrency(myresults.appCurrency)
+
+                        setapplicationcurrency(myresults[0].appCurrency)
+                        setapplicationFee(myresults[0].appPrice)
                     }
 
                     //end for course Id
