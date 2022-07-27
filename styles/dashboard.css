@@ -13712,4 +13712,7 @@ span.msgRefresh svg {
         margin-left: 101px;
     }
 }
+div#mySidenav {
+    z-index: 1000 !important;
+}
 /* end for sidebar and navbar*/
