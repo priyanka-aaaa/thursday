@@ -16,7 +16,7 @@ import {
 import { Footer } from '../components/Footer';
 import Header from '../components/Header';
 import EnquiryModal from '../components/EnquiryModal';
-const Recruitment = (pageProps) => {
+const Agent = (pageProps) => {
 
   const [redirectToReferrer, setredirectToReferrer] = useState(false);
   // const [loginData, setLoginData] = useState(
@@ -699,4 +699,4 @@ const Recruitment = (pageProps) => {
     </div>
   )
 }
-export default Recruitment
+export default Agent
