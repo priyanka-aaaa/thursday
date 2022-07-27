@@ -388,9 +388,13 @@ export default function Dashboard(location) {
                     setpaid(myresult.paid)
                     // settotalPrice(myresult.totalPrice)
                     // setcurrency(myresult.currency)
+
                     var pendingFee = Number(myresult.totalPrice) - Number(myresult.paid);
                     setpendingFee(pendingFee)
-                    const url60 = process.env.REACT_APP_SERVER_URL + 'countriesStep/' + myresult.countryID;
+
+
+
+                    const url60 = process.env.REACT_APP_SERVER_URL + 'countryStepName/' + myresult.country;
                     fetch(url60, {
                         method: 'GET',
                         headers: { 'Authorization': mounted }

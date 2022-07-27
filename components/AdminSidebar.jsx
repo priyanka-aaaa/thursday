@@ -43,31 +43,6 @@ const AdminSidebar = () => {
       setMounted(mounted)
       setadminEmail(adminEmail)
       setadminId(adminId)
-
-      const url = process.env.REACT_APP_SERVER_URL + 'admin/messagesUnread';
-      fetch(url, {
-        method: 'GET',
-        headers: { 'Authorization': mounted }
-      })
-        .then(response => response.json())
-        .then(data => {
-          if (data.notifications === undefined) {
-            localStorage.removeItem("adminId");
-            localStorage.removeItem("adminToken");
-            localStorage.removeItem("adminName");
-            localStorage.removeItem("adminEmail");
-            window.location.href = "/";
-          }
-          var myresults = data.notifications
-
-
-          setnotification(data.notifications)
-          var resultLength = Object.keys(myresults).length
-          setresultLength(resultLength)
-        })
-
-
-
     }
     else {
       var adminEmail = "";
@@ -116,7 +91,7 @@ const AdminSidebar = () => {
         </div>
       </span>
       <hr className="sidebar-divider my-0" />
-   
+
       <li className="nav-item current-tab" onClick={() => handleCurrentClick("addStudent")}>
         <a className="nav-link collapsed" title="My Student" data-bs-toggle="collapse" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
           <i className="fas fa-user-tie"></i>
@@ -220,7 +195,7 @@ const AdminSidebar = () => {
             <span><FontAwesomeIcon icon={faDashboard} className="sidebar-faicon" /><span className="text-mob-hide">Setting</span></span></a></Link>
         </li>
       }
-  {currentMenu === "offlineApplication" ?
+      {currentMenu === "offlineApplication" ?
         <li className="nav-item " onClick={() => handleCurrentClick("offlineApplication")}>
           <Link href='/admin/offlineApplication' className="nav-link current-tab" title="Offline Application"><a className="nav-link">
             <i className="fas fa-Setting"></i>

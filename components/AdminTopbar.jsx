@@ -5,7 +5,7 @@ import Image from 'next/image'
 import { Dropdown } from 'react-bootstrap';
 // import '../scss/dashboardSidebar.scss';
 import Router from "next/router";
-import { FontAwesomeIcon   } from '@fortawesome/react-fontawesome';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faSignOutAlt, faFile, faDashboard, faBars, faUserCircle, faAngleLeft, faAddressBook, faBookmark, faCog, faEnvelope, faAward
 } from '@fortawesome/free-solid-svg-icons';
@@ -44,31 +44,6 @@ const AdminTopbar = () => {
       setMounted(mounted)
       setadminEmail(adminEmail)
       setadminId(adminId)
-
-      const url = process.env.REACT_APP_SERVER_URL + 'admin/messagesUnread';
-      fetch(url, {
-        method: 'GET',
-        headers: { 'Authorization': mounted }
-      })
-        .then(response => response.json())
-        .then(data => {
-          if (data.notifications === undefined) {
-            localStorage.removeItem("adminId");
-            localStorage.removeItem("adminToken");
-            localStorage.removeItem("adminName");
-            localStorage.removeItem("adminEmail");
-            window.location.href = "/";
-          }
-          var myresults = data.notifications
-
-
-          setnotification(data.notifications)
-          var resultLength = Object.keys(myresults).length
-          setresultLength(resultLength)
-        })
-
-
-
     }
     else {
       var adminEmail = "";
@@ -104,7 +79,7 @@ const AdminTopbar = () => {
             <button id="sidebarToggleTop" className="btn btn-link d-md-none rounded-circle mr-3"
               onClick={() => handletoogleClick()}
             >
-              <FontAwesomeIcon  className="sidebar-faicon" icon={faBars} />
+              <FontAwesomeIcon className="sidebar-faicon" icon={faBars} />
 
             </button>
 
@@ -112,7 +87,7 @@ const AdminTopbar = () => {
               <li className="nav-item dropdown no-arrow mr-0">
                 <a className="nav-link dropdown-toggle" href="#collapseEleven1" id="userDropdown2" role="button" data-bs-toggle="collapse" aria-haspopup="true" aria-expanded="false">
                   <i className="fas fa-envelope fa-fw"></i>
-                  <FontAwesomeIcon  className="sidebar-faicon" icon={faEnvelope} />
+                  <FontAwesomeIcon className="sidebar-faicon" icon={faEnvelope} />
                   {resultLength !== 0 ?
                     <span className="badge badge-danger badge-counter">{resultLength}</span>
                     : null}
@@ -123,7 +98,7 @@ const AdminTopbar = () => {
                     onClick={(e) => logout()}
 
                     href="" data-toggle="modal" data-target="#logoutModal">
-                    <FontAwesomeIcon  className="sidebar-faicon" icon={faSignOutAlt} />
+                    <FontAwesomeIcon className="sidebar-faicon" icon={faSignOutAlt} />
 
                     Logout
 
@@ -147,7 +122,7 @@ const AdminTopbar = () => {
                     onClick={(e) => logout()}
 
                     href="" data-toggle="modal" data-target="#logoutModal">
-                    <FontAwesomeIcon  className="sidebar-faicon" icon={faSignOutAlt} />
+                    <FontAwesomeIcon className="sidebar-faicon" icon={faSignOutAlt} />
 
                     Logout
                   </p>
