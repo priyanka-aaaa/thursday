@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useMemo } from "react";
 // import Loader from './Loader';
+import Head from 'next/head'
 import Link from 'next/link'
 import Loader from '../components/Loader';
 //start for pagination
@@ -2481,6 +2482,15 @@ function FinalFilter() {
     //end group of one
   }
   return (
+    <div>
+    <Head>
+    <title>Search from 100K+ Study Abroad Programs @ CourseMentor™</title>
+    <meta name="description" content="CourseMentor™ - Study Abroad - Search the Best University and colleges Courses to study in foreign. Save upto 1000's USD, Apply for upcoming intakes now!" />
+    <meta property="og:title" content="Search from 100K+ Study Abroad Programs @ CourseMentor™" />
+    <meta property="og:description" content="CourseMentor™ - Study Abroad - Search the Best University and college Courses to study in foreign. Save upto 1000's USD, Apply for upcoming intakes now!" />
+    <meta property="og:image" content="og image" />
+   
+  </Head>
     <div className="main-content">
 
       {loader === "true" ?
@@ -2934,7 +2944,7 @@ function FinalFilter() {
       </div>
 
       <Footer />
-
+      </div>
     </div>
   );
 }

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link'
-
+import Head from 'next/head'
 import axios from 'axios';
 import { Footer } from '../components/Footer';
 import Header from '../components/Header';
@@ -628,6 +628,15 @@ export default function About() {
         }
     }
     return (
+        <div>
+        <Head>
+        <title>Free Study Abroad Profile Evaluation by CourseMentor™</title>
+        <meta name="description" content="CourseMentor™ - Study Abroad - Best University and colleges Course Finder to study in foreign. Apply for upcoming intakes now!" />
+        <meta property="og:title" content="Free Study Abroad Profile Evaluation by CourseMentor™" />
+        <meta property="og:description" content="CourseMentor™ - Study Abroad - Best University and colleges Course Finder to study in foreign. Apply for upcoming intakes now!" />
+        <meta property="og:image" content="og image" />
+       
+      </Head>
         <div className="main-content">
             
             <div className="full-width-header">
@@ -1086,7 +1095,7 @@ export default function About() {
 
             </Modal>
         </div>
-
+        </div>
 
     );
 }
