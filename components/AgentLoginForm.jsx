@@ -203,7 +203,7 @@ export const AgentLoginForm  = () => {
                     <a title="Forgot Password" onClick={() => open()} >     Forgot your Password?</a>
 
                     <p>Don't have an account? Click here to
-                        <Link to={'/Studentregister'} className="" href="#" title="Register">
+                        <Link to={'/studentregister'} className="" href="#" title="Register">
                             Register</Link></p>
                 </div>
                 {/* start google login */}
