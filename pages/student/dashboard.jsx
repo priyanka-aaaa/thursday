@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import StudentLayout from '../../components/StudentLayout';
 import { isValidPhoneNumber } from 'react-phone-number-input'
 import Link from 'next/link'
 import { Modal, Button } from 'react-bootstrap';
@@ -12,7 +13,7 @@ import Image from 'next/image'
 // import '../../scss/studentDashboard.scss';
 import Loader from '../../components/Loader';
 // import { BrowserRouter as Router, Switch, Route, Link, useParams, useLocation } from 'react-router-dom';
-import { FontAwesomeIcon   } from '@fortawesome/react-fontawesome';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
     faCheckCircle, faUniversity, faGraduationCap, faCalendarDay, faAreaChart, faPaperPlane, faRedo, faClose
 } from '@fortawesome/free-solid-svg-icons';
@@ -748,158 +749,155 @@ export default function Dashboard(location) {
         }
     }
     return (
-        <div id="page-top">
-            <div id="wrapper">
-                <StudentSidebar />
-                <div id="content-wrapper" className="d-flex flex-column">
-                    <div id="content">
-                        <StudentTopbar />
-                        <div className="container">
-                            {submitSuccess === 1 ? <div className="Show_success_message">
-                                <strong>Success!</strong> {successMessage}
-                            </div> : null}
-                            {showSweetAlert === "1" ?
+        <>
+            <StudentLayout />
+            <div className="mainmain">
+                <div className="container">
+                    {submitSuccess === 1 ? <div className="Show_success_message">
+                        <strong>Success!</strong> {successMessage}
+                    </div> : null}
+                    {showSweetAlert === "1" ?
 
-                                <SweetAlert
-                                    success
-                                    title="ThankYou!"
-                                    onConfirm={(value) => {
-                                        setshowSweetAlert("0")
-                                    }}
-                                >
-                                    You Pay Successfully.
-                                </SweetAlert>
-                                : null
-                            }
-                            {
-                                loader === "true" ?
-                                    <Loader />
-                                    : null
-                            }
-                            <div className="d-sm-flex align-items-center justify-content-between mb-4">
-                                <h1 className="h3 mb-0 text-gray-800">My Application</h1>
-                            </div>
-                            <div className="row">
-                                <div className="col-xl-12 col-lg-7">
-                                    {data.map((object, i) => {
-                                        return (
-                                            <div className="card shadow mb-4 appblock" key={i}>
-                                                <div className="row">
-                                                    <div className="col-md-10">
+                        <SweetAlert
+                            success
+                            title="ThankYou!"
+                            onConfirm={(value) => {
+                                setshowSweetAlert("0")
+                            }}
+                        >
+                            You Pay Successfully.
+                        </SweetAlert>
+                        : null
+                    }
+                    {
+                        loader === "true" ?
+                            <Loader />
+                            : null
+                    }
+                    <div className="d-sm-flex align-items-center justify-content-between mb-4">
+                        <h1 className="h3 mb-0 text-gray-800">My Application</h1>
+                    </div>
+                    <div className="row">
+                        <div className="col-xl-12 col-lg-7">
+                            {data.map((object, i) => {
+                                return (
+                                    <div className="card shadow mb-4 appblock" key={i}>
+                                        <div className="row">
+                                            <div className="col-md-10">
 
-                                                        <div className="unv-name">
-                                                            <span><FontAwesomeIcon  className="sidebar-faicon" icon={faUniversity} /></span>
-                                                            <h5>App ID</h5>
-                                                            <p>{object.buildApplicationID}</p>
-                                                        </div>
-                                                        <div className="unv-name">
-                                                            <span><FontAwesomeIcon  className="sidebar-faicon" icon={faUniversity} /></span>
-                                                            <h5>University</h5>
-                                                            <p>{object.universityName}</p>
-                                                        </div>
-                                                        <div className="course-name">
-                                                            <span><FontAwesomeIcon  className="sidebar-faicon" icon={faGraduationCap} /></span>
-                                                            <h5>Course</h5>
-                                                            <p>{object.courseName}</p>
-                                                        </div>
-                                                        <div className="Session-name">
-                                                            <span><FontAwesomeIcon  className="sidebar-faicon" icon={faCalendarDay} /></span>
-                                                            <span><i className="fas fa-calendar-week" /></span>
-                                                            <h5>Session</h5>
-                                                            <p>{object.session}</p>
-                                                        </div>
-                                                        <div className="apply-process">
-                                                            <div className="row">
-                                                                <div className="col-md-6">
-                                                                    <div className="unv-name">
-                                                                        <span><FontAwesomeIcon  className="sidebar-faicon" icon={faAreaChart} /></span>
+                                                <div className="unv-name">
+                                                    <span><FontAwesomeIcon className="sidebar-faicon" icon={faUniversity} /></span>
+                                                    <h5>App ID</h5>
+                                                    <p>{object.buildApplicationID}</p>
+                                                </div>
+                                                <div className="unv-name">
+                                                    <span><FontAwesomeIcon className="sidebar-faicon" icon={faUniversity} /></span>
+                                                    <h5>University</h5>
+                                                    <p>{object.universityName}</p>
+                                                </div>
+                                                <div className="course-name">
+                                                    <span><FontAwesomeIcon className="sidebar-faicon" icon={faGraduationCap} /></span>
+                                                    <h5>Course</h5>
+                                                    <p>{object.courseName}</p>
+                                                </div>
+                                                <div className="Session-name">
+                                                    <span><FontAwesomeIcon className="sidebar-faicon" icon={faCalendarDay} /></span>
+                                                    <span><i className="fas fa-calendar-week" /></span>
+                                                    <h5>Session</h5>
+                                                    <p>{object.session}</p>
+                                                </div>
+                                                <div className="apply-process">
+                                                    <div className="row">
+                                                        <div className="col-md-6">
+                                                            <div className="unv-name">
+                                                                <span><FontAwesomeIcon className="sidebar-faicon" icon={faAreaChart} /></span>
 
-                                                                        <h5>Current Application Process</h5>
-                                                                        {object.applicationProgress}
-                                                                    </div>
-                                                                </div>
-                                                                <div className="col-md-6 text-right">
-                                                                </div>
+                                                                <h5>Current Application Process</h5>
+                                                                {object.applicationProgress}
                                                             </div>
                                                         </div>
-                                                    </div>
-                                                    <div className="col-md-2">
-                                                        <div className="btn-groups admin-btn">
-                                                            <button title="View Student Application" className="btn btn-success"
-                                                                onClick={() => handleView(object._id, object.courseID)}>View Application  </button>
-                                                            <Link href={'/student/document'}  ><button type="button" className="btn btn-primary" title="Upload Document">Upload Doc</button></Link>
+                                                        <div className="col-md-6 text-right">
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                        )
-                                    })}
-                                </div>
-                            </div>
-                            {/* start for sidebar */}
-                            <div id="mySidenav" className="sidenav" style={{ width: firstviewWidth }}>
+                                            <div className="col-md-2">
+                                                <div className="btn-groups admin-btn">
+                                                    <button title="View Student Application" className="btn btn-success"
+                                                        onClick={() => handleView(object._id, object.courseID)}>View Application  </button>
+                                                    <Link href={'/student/document'}  ><button type="button" className="btn btn-primary" title="Upload Document">Upload Doc</button></Link>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                )
+                            })}
+                        </div>
+                    </div>
+                    {/* start for sidebar */}
+                    <div id="mySidenav" className="sidenav" style={{ width: firstviewWidth }}>
 
-                                {submitError === 1 ? <div className="Show_error_message">
-                                    <strong></strong> File extension not supported
-                                </div> : null}
-                                <section className="pcoded-main-containerx container-fluid">
-                                    <a onClick={() => handleCloseView()} className="closebtn" >×</a>
-                                    <div className="pcoded-content">
-                                        <div className="pcoded-content">
-                                            <div className="row">
-                                                <div className="col-md-8">
-                                                    <div className="card">
-                                                        <h5>Application Information</h5><hr />
-                                                        <div className="row">
-                                                            <div className="col-md-3">
-                                                                <h5>Application ID </h5>
-                                                                <p>{mybuildApplicationID}</p>
-                                                            </div>
-                                                            <div className="col-md-3">
-                                                                <h5>Course Name</h5>
-                                                                <p>{mycourseName}</p>
-                                                            </div>
-                                                            <div className="col-md-3">
-                                                                <h5> Session</h5>
-                                                                <p>{mysession} </p>
-                                                            </div>
-                                                            <div className="col-md-3">
-                                                                <h5>University Name</h5>
-                                                                <p>{myuniversityName}</p>
-                                                            </div>
-                                                        </div>
-                                                        <div className="row">
-                                                            <div className="col-md-3">
-                                                                <h5> University Country</h5>
-                                                                <p>{mycountry}</p>
-                                                            </div>
-                                                            <div className="col-md-9">
-                                                                {myapplicationProgressStep >= 2 && totalPrice !== undefined
-                                                                    ?
-                                                                    <>
-                                                                        <div className="row">
-                                                                            <div className="col-md-3">
-                                                                                <h5>Total Price</h5>
-                                                                                <p>{totalPrice + " " + currency}</p>
+                        {submitError === 1 ? <div className="Show_error_message">
+                            <strong></strong> File extension not supported
+                        </div> : null}
+                        <section className="pcoded-main-containerx container-fluid">
+                            <a onClick={() => handleCloseView()} className="closebtn" >×</a>
+                            <div className="pcoded-content">
+                                <div className="pcoded-content">
+                                    <div className="row">
+                                        <div className="col-md-8">
+                                            <div className="card">
+                                                <h5>Application Information</h5><hr />
+                                                <div className="row">
+                                                    <div className="col-md-3">
+                                                        <h5>Application ID </h5>
+                                                        <p>{mybuildApplicationID}</p>
+                                                    </div>
+                                                    <div className="col-md-3">
+                                                        <h5>Course Name</h5>
+                                                        <p>{mycourseName}</p>
+                                                    </div>
+                                                    <div className="col-md-3">
+                                                        <h5> Session</h5>
+                                                        <p>{mysession} </p>
+                                                    </div>
+                                                    <div className="col-md-3">
+                                                        <h5>University Name</h5>
+                                                        <p>{myuniversityName}</p>
+                                                    </div>
+                                                </div>
+                                                <div className="row">
+                                                    <div className="col-md-3">
+                                                        <h5> University Country</h5>
+                                                        <p>{mycountry}</p>
+                                                    </div>
+                                                    <div className="col-md-9">
+                                                        {myapplicationProgressStep >= 2 && totalPrice !== undefined
+                                                            ?
+                                                            <>
+                                                                <div className="row">
+                                                                    <div className="col-md-3">
+                                                                        <h5>Total Price</h5>
+                                                                        <p>{totalPrice + " " + currency}</p>
 
-                                                                            </div>
-                                                                            <div className="col-md-3">
-                                                                                <h5>Paid</h5>
-                                                                                <p>{paid + " " + currency}</p>
+                                                                    </div>
+                                                                    <div className="col-md-3">
+                                                                        <h5>Paid</h5>
+                                                                        <p>{paid + " " + currency}</p>
 
-                                                                            </div>
+                                                                    </div>
 
-                                                                            {pendingFee !== 0 ?
-                                                                                <div className="col-md-2">
-                                                                                    <button className="btn btn-success" onClick={() => handlePayment()}>Pay</button>
-                                                                                </div>
-                                                                                : null}
+                                                                    {pendingFee !== 0 ?
+                                                                        <div className="col-md-2">
+                                                                            <button className="btn btn-success" onClick={() => handlePayment()}>Pay</button>
                                                                         </div>
-                                                                    </>
-                                                                    : null}
-                                                                {/* start payment */}
+                                                                        : null}
+                                                                </div>
+                                                            </>
+                                                            : null}
+                                                        {/* start payment */}
 
-                                                                {/* <div style={{ display: payDisplay }}>
+                                                        {/* <div style={{ display: payDisplay }}>
                           <div className="pcoded-content">
 
                             Amount  To Pay
@@ -910,235 +908,235 @@ export default function Dashboard(location) {
                             </button>
                           </div>
                         </div> */}
-                                                                {/* end payment */}
-                                                            </div>
+                                                        {/* end payment */}
+                                                    </div>
 
-                                                        </div>
-                                                        {/* start for dummy */}
-                                                        <span className="msgRefresh" onClick={() => handleRefresh()}>
-                                                            <FontAwesomeIcon  className="sidebar-faicon" icon={faRedo} />
-                                                            Refresh
-                                                        </span>
+                                                </div>
+                                                {/* start for dummy */}
+                                                <span className="msgRefresh" onClick={() => handleRefresh()}>
+                                                    <FontAwesomeIcon className="sidebar-faicon" icon={faRedo} />
+                                                    Refresh
+                                                </span>
 
-                                                        <div className="activite">
-                                                            <div className="row">
-                                                                <div className="cardx mb-4">
-                                                                    <div className="act-note">
-                                                                        <ul className="nav nav-tabs" role="tablist">
-                                                                            <li className="nav-item">
-                                                                                <a className="nav-link active" data-bs-toggle="tab" href="#message1">Messages</a>
-                                                                            </li>
-
-
-                                                                        </ul>
-                                                                        {/* Tab panes */}
+                                                <div className="activite">
+                                                    <div className="row">
+                                                        <div className="cardx mb-4">
+                                                            <div className="act-note">
+                                                                <ul className="nav nav-tabs" role="tablist">
+                                                                    <li className="nav-item">
+                                                                        <a className="nav-link active" data-bs-toggle="tab" href="#message1">Messages</a>
+                                                                    </li>
 
 
+                                                                </ul>
+                                                                {/* Tab panes */}
 
-                                                                        <div id="message1" className=" tab-pane active"><br />
-                                                                            <div className="applic-document">
-                                                                                <div className="row">
-                                                                                    <div className="col-xl-12 col-lg-7">
-                                                                                        <div className="card shadow mb-4">
-                                                                                            <div className="row">
-                                                                                                <div className="col-md-12">
-                                                                                                    <div className="chat-message msg_list">
-                                                                                                        <div className="row">
-                                                                                                            <div className="col-md-12">
-                                                                                                                {FormValues.map((element, index) => {
-                                                                                                                    return (
-                                                                                                                        <div className="anw-block" key={index}>
-                                                                                                                            {element.type === 0 ?
-                                                                                                                                <div className="anw-block">
-                                                                                                                                    <div className="row">
-                                                                                                                                        <div className="col-md-1">
-                                                                                                                                            <div className="us-img us-letter">
-                                                                                                                                                <h6>S</h6>
-                                                                                                                                            </div>
+
+
+                                                                <div id="message1" className=" tab-pane active"><br />
+                                                                    <div className="applic-document">
+                                                                        <div className="row">
+                                                                            <div className="col-xl-12 col-lg-7">
+                                                                                <div className="card shadow mb-4">
+                                                                                    <div className="row">
+                                                                                        <div className="col-md-12">
+                                                                                            <div className="chat-message msg_list">
+                                                                                                <div className="row">
+                                                                                                    <div className="col-md-12">
+                                                                                                        {FormValues.map((element, index) => {
+                                                                                                            return (
+                                                                                                                <div className="anw-block" key={index}>
+                                                                                                                    {element.type === 0 ?
+                                                                                                                        <div className="anw-block">
+                                                                                                                            <div className="row">
+                                                                                                                                <div className="col-md-1">
+                                                                                                                                    <div className="us-img us-letter">
+                                                                                                                                        <h6>S</h6>
+                                                                                                                                    </div>
+                                                                                                                                </div>
+                                                                                                                                <div className="col-md-11">
+                                                                                                                                    <div
+                                                                                                                                        className="anw-content-rightblock  light-greenish">
+                                                                                                                                        <div className="des-title">
+                                                                                                                                            <h6><strong>Student:</strong>
+                                                                                                                                                ({studentName}) Sent a Message</h6>
+                                                                                                                                            <span
+                                                                                                                                                className="date-block">{element.messageTime}</span>
                                                                                                                                         </div>
-                                                                                                                                        <div className="col-md-11">
-                                                                                                                                            <div
-                                                                                                                                                className="anw-content-rightblock  light-greenish">
-                                                                                                                                                <div className="des-title">
-                                                                                                                                                    <h6><strong>Student:</strong>
-                                                                                                                                                        ({studentName}) Sent a Message</h6>
-                                                                                                                                                    <span
-                                                                                                                                                        className="date-block">{element.messageTime}</span>
-                                                                                                                                                </div>
-                                                                                                                                                <div className="reply-content ">
-                                                                                                                                                    <p>{element.message}</p>
-                                                                                                                                                    {element.file !== "" ? <a className="appAttachment" href={"https://coursementor.com/uploadApi/download.php?file=" + element.file} >download Attachment</a>
-                                                                                                                                                        : null}
+                                                                                                                                        <div className="reply-content ">
+                                                                                                                                            <p>{element.message}</p>
+                                                                                                                                            {element.file !== "" ? <a className="appAttachment" href={"https://coursementor.com/uploadApi/download.php?file=" + element.file} >download Attachment</a>
+                                                                                                                                                : null}
 
-                                                                                                                                                </div>
-                                                                                                                                            </div>
                                                                                                                                         </div>
                                                                                                                                     </div>
                                                                                                                                 </div>
-                                                                                                                                :
-                                                                                                                                <div className="row">
-                                                                                                                                    <div className="col-md-1">
-                                                                                                                                        <div className="us-img us-letter">
-                                                                                                                                            <h6>A</h6>
-                                                                                                                                        </div>
-                                                                                                                                    </div>
-                                                                                                                                    <div className="col-md-11">
-                                                                                                                                        <div
-                                                                                                                                            className="anw-content-rightblock  drak-blue">
-                                                                                                                                            <div className="des-title">
-                                                                                                                                                <h6><strong>Visa Team:</strong>(admin)
-                                                                                                                                                    Sent a Message </h6><span
-                                                                                                                                                        className="date-block">{element.messageTime}</span>
-                                                                                                                                            </div>
-                                                                                                                                            <div className="reply-content ">
-                                                                                                                                                <p>{element.message}</p>
-                                                                                                                                                {element.file !== "" ? <a className="appAttachment" href={"https://coursementor.com/uploadApi/download.php?file=" + element.file} >download Attachment</a>
-                                                                                                                                                    : null}
-                                                                                                                                            </div>
-                                                                                                                                        </div>
-                                                                                                                                    </div>
-                                                                                                                                </div>
-                                                                                                                            }
+                                                                                                                            </div>
                                                                                                                         </div>
-                                                                                                                    )
-                                                                                                                })}
-                                                                                                            </div>
-                                                                                                        </div>
+                                                                                                                        :
+                                                                                                                        <div className="row">
+                                                                                                                            <div className="col-md-1">
+                                                                                                                                <div className="us-img us-letter">
+                                                                                                                                    <h6>A</h6>
+                                                                                                                                </div>
+                                                                                                                            </div>
+                                                                                                                            <div className="col-md-11">
+                                                                                                                                <div
+                                                                                                                                    className="anw-content-rightblock  drak-blue">
+                                                                                                                                    <div className="des-title">
+                                                                                                                                        <h6><strong>Visa Team:</strong>(admin)
+                                                                                                                                            Sent a Message </h6><span
+                                                                                                                                                className="date-block">{element.messageTime}</span>
+                                                                                                                                    </div>
+                                                                                                                                    <div className="reply-content ">
+                                                                                                                                        <p>{element.message}</p>
+                                                                                                                                        {element.file !== "" ? <a className="appAttachment" href={"https://coursementor.com/uploadApi/download.php?file=" + element.file} >download Attachment</a>
+                                                                                                                                            : null}
+                                                                                                                                    </div>
+                                                                                                                                </div>
+                                                                                                                            </div>
+                                                                                                                        </div>
+                                                                                                                    }
+                                                                                                                </div>
+                                                                                                            )
+                                                                                                        })}
                                                                                                     </div>
                                                                                                 </div>
                                                                                             </div>
-                                                                                            <div className="row">
-                                                                                                <div className="col-md-12">
-                                                                                                    <div className="msg-form">
-                                                                                                        <form onSubmit={handleMsgSubmit}>
-                                                                                                            <div className="row">
-                                                                                                                <div className="col-md-12">
-                                                                                                                    <span className="msgRefreshRight" onClick={() => handleRefresh()}>
-                                                                                                                        <FontAwesomeIcon  className="sidebar-faicon" icon={faRedo} />
-                                                                                                                        Refresh
-                                                                                                                    </span>
-                                                                                                                    <div className="form-group">
-                                                                                                                        <label className="form-label">Message
-                                                                                                                            <span className="req-star">*</span></label>
-                                                                                                                        <textarea rows={5} cols={7} className="form-control" required
-                                                                                                                            value={message} onChange={(e) => setmessage(e.target.value)} />
-                                                                                                                        <label className="form-label">Upload file
-                                                                                                                        </label>
-                                                                                                                        <Dropzone onDrop={(acceptedFiles) => {
-                                                                                                                            setmsgFile(acceptedFiles[0])
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div className="row">
+                                                                                        <div className="col-md-12">
+                                                                                            <div className="msg-form">
+                                                                                                <form onSubmit={handleMsgSubmit}>
+                                                                                                    <div className="row">
+                                                                                                        <div className="col-md-12">
+                                                                                                            <span className="msgRefreshRight" onClick={() => handleRefresh()}>
+                                                                                                                <FontAwesomeIcon className="sidebar-faicon" icon={faRedo} />
+                                                                                                                Refresh
+                                                                                                            </span>
+                                                                                                            <div className="form-group">
+                                                                                                                <label className="form-label">Message
+                                                                                                                    <span className="req-star">*</span></label>
+                                                                                                                <textarea rows={5} cols={7} className="form-control" required
+                                                                                                                    value={message} onChange={(e) => setmessage(e.target.value)} />
+                                                                                                                <label className="form-label">Upload file
+                                                                                                                </label>
+                                                                                                                <Dropzone onDrop={(acceptedFiles) => {
+                                                                                                                    setmsgFile(acceptedFiles[0])
 
-                                                                                                                            setselectedfileName(acceptedFiles[0].name)
-                                                                                                                            var fileName = acceptedFiles[0].path;
-                                                                                                                            var fileExtension = fileName.split('.').pop();
-                                                                                                                            if (fileExtension === "pdf" || fileExtension === "doc" || fileExtension === "docx"
-                                                                                                                                || fileExtension === "jpeg" || fileExtension === "jpg" || fileExtension === "png"
-                                                                                                                            ) {
+                                                                                                                    setselectedfileName(acceptedFiles[0].name)
+                                                                                                                    var fileName = acceptedFiles[0].path;
+                                                                                                                    var fileExtension = fileName.split('.').pop();
+                                                                                                                    if (fileExtension === "pdf" || fileExtension === "doc" || fileExtension === "docx"
+                                                                                                                        || fileExtension === "jpeg" || fileExtension === "jpg" || fileExtension === "png"
+                                                                                                                    ) {
 
 
-                                                                                                                            }
-                                                                                                                            else {
+                                                                                                                    }
+                                                                                                                    else {
 
-                                                                                                                                setTimeout(() => setsubmitError(""), 3000);
-                                                                                                                                setsubmitError(1)
-                                                                                                                            }
-                                                                                                                            setThumbnailFiles(acceptedFiles.map(file => Object.assign(file, {
-                                                                                                                                preview: URL.createObjectURL(file)
+                                                                                                                        setTimeout(() => setsubmitError(""), 3000);
+                                                                                                                        setsubmitError(1)
+                                                                                                                    }
+                                                                                                                    setThumbnailFiles(acceptedFiles.map(file => Object.assign(file, {
+                                                                                                                        preview: URL.createObjectURL(file)
 
-                                                                                                                            })));
-                                                                                                                        }} name="heroImage" multiple={false}>
-                                                                                                                            {({ getRootProps, getInputProps }) => (
-                                                                                                                                <div {...getRootProps({ className: 'dropzoneMsg' })}>
-                                                                                                                                    <input {...getInputProps()} />
-                                                                                                                                    <div style={{ fontSize: ".8rem" }}>
-                                                                                                                                        Upload/Drag & Drop here
-                                                                                                                                    </div>
-                                                                                                                                </div>
-                                                                                                                            )}
-                                                                                                                        </Dropzone>
-                                                                                                                    </div>
-                                                                                                                    <span > {selectedfileName}</span>
-                                                                                                                    <span className="error-msg"> {messageError}</span>
-                                                                                                                </div>
+                                                                                                                    })));
+                                                                                                                }} name="heroImage" multiple={false}>
+                                                                                                                    {({ getRootProps, getInputProps }) => (
+                                                                                                                        <div {...getRootProps({ className: 'dropzoneMsg' })}>
+                                                                                                                            <input {...getInputProps()} />
+                                                                                                                            <div style={{ fontSize: ".8rem" }}>
+                                                                                                                                Upload/Drag & Drop here
+                                                                                                                            </div>
+                                                                                                                        </div>
+                                                                                                                    )}
+                                                                                                                </Dropzone>
                                                                                                             </div>
-                                                                                                            <button title="Send Message" type="submit" className="btn-send-msg">
-                                                                                                                <FontAwesomeIcon  className="sidebar-faicon" icon={faPaperPlane} /> Send</button>
-                                                                                                        </form>
+                                                                                                            <span > {selectedfileName}</span>
+                                                                                                            <span className="error-msg"> {messageError}</span>
+                                                                                                        </div>
                                                                                                     </div>
-                                                                                                </div>
+                                                                                                    <button title="Send Message" type="submit" className="btn-send-msg">
+                                                                                                        <FontAwesomeIcon className="sidebar-faicon" icon={faPaperPlane} /> Send</button>
+                                                                                                </form>
                                                                                             </div>
                                                                                         </div>
                                                                                     </div>
                                                                                 </div>
                                                                             </div>
                                                                         </div>
-
                                                                     </div>
                                                                 </div>
+
                                                             </div>
                                                         </div>
-                                                        {/* end for dummy */}
                                                     </div>
                                                 </div>
-                                                <div className="col-md-4">
-                                                    <div className="card">
-                                                        <h5>Application Current Status</h5>
-                                                        <hr />
-                                                        <div className="profile-main">
-                                                            <div className="application-current-status">
-                                                                <ul>
-                                                                    {universityApplication.map((object, i) => {
-                                                                        return (
-                                                                            <div key={i}>
-                                                                                {i <= myapplicationProgressStep ?
-                                                                                    <>
-                                                                                        {object === myapplicationProgress ?
-                                                                                            <li className="statusBox current-stat" style={{ 'backgroundColor': '#0982A5' }}>{object}<span>
-                                                                                                <FontAwesomeIcon  className="sidebar-faicon" icon={faCheckCircle} />
-                                                                                            </span></li>
-                                                                                            : <li className="statusBox" style={{ 'backgroundColor': "#fff" }}>{object}<span>
-                                                                                                <FontAwesomeIcon  className="sidebar-faicon" icon={faCheckCircle} />
-                                                                                            </span></li>}
-                                                                                    </>
-                                                                                    : <li className="statusBox">{object}<span className="status-completed">
-
+                                                {/* end for dummy */}
+                                            </div>
+                                        </div>
+                                        <div className="col-md-4">
+                                            <div className="card">
+                                                <h5>Application Current Status</h5>
+                                                <hr />
+                                                <div className="profile-main">
+                                                    <div className="application-current-status">
+                                                        <ul>
+                                                            {universityApplication.map((object, i) => {
+                                                                return (
+                                                                    <div key={i}>
+                                                                        {i <= myapplicationProgressStep ?
+                                                                            <>
+                                                                                {object === myapplicationProgress ?
+                                                                                    <li className="statusBox current-stat" style={{ 'backgroundColor': '#0982A5' }}>{object}<span>
+                                                                                        <FontAwesomeIcon className="sidebar-faicon" icon={faCheckCircle} />
+                                                                                    </span></li>
+                                                                                    : <li className="statusBox" style={{ 'backgroundColor': "#fff" }}>{object}<span>
+                                                                                        <FontAwesomeIcon className="sidebar-faicon" icon={faCheckCircle} />
                                                                                     </span></li>}
-                                                                            </div>
-                                                                        )
-                                                                    })}
-                                                                </ul>
-                                                            </div>
-                                                        </div>
+                                                                            </>
+                                                                            : <li className="statusBox">{object}<span className="status-completed">
+
+                                                                            </span></li>}
+                                                                    </div>
+                                                                )
+                                                            })}
+                                                        </ul>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-
-                                </section>
-                            </div>
-                            {/* start msg */}
-
-                            {/* end msg */}
-                            <div className="row">
-                                <div className="col-lg-12 mb-4">
-                                    <div className="card shadow mb-4">
-                                        <div className="card-header py-3">
-                                            <h6 className="m-0 font-weight-bold text-primary">List To Follow</h6>
-                                        </div>
-                                        <div className="card-body">
-                                            <h4 className="small ">1 Visit our Facebook Profile <a href="https://www.facebook.com/coursementors/" target="_blank" rel="noreferrer"
-                                                className="float-right">Visit</a></h4>
-                                            <h4 className="small">3 Link your Pinterest profile <a href="https://in.pinterest.com/Thecoursementor/_created/" target="_blank" rel="noreferrer"
-                                                className="float-right">Visit</a></h4>
-                                            <h4 className="small">4 Link your Instagram profile <a href="https://www.instagram.com/course_mentor/" target="_blank" rel="noreferrer"
-                                                className="float-right">Visit</a></h4>
-                                        </div>
-                                    </div>
                                 </div>
-
                             </div>
-                            {/* start modal */}
-                            {/* <Modal className="modal-container enqblock"
+
+                        </section>
+                    </div>
+                    {/* start msg */}
+
+                    {/* end msg */}
+                    <div className="row">
+                        <div className="col-lg-12 mb-4">
+                            <div className="card shadow mb-4">
+                                <div className="card-header py-3">
+                                    <h6 className="m-0 font-weight-bold text-primary">List To Follow</h6>
+                                </div>
+                                <div className="card-body">
+                                    <h4 className="small ">1 Visit our Facebook Profile <a href="https://www.facebook.com/coursementors/" target="_blank" rel="noreferrer"
+                                        className="float-right">Visit</a></h4>
+                                    <h4 className="small">3 Link your Pinterest profile <a href="https://in.pinterest.com/Thecoursementor/_created/" target="_blank" rel="noreferrer"
+                                        className="float-right">Visit</a></h4>
+                                    <h4 className="small">4 Link your Instagram profile <a href="https://www.instagram.com/course_mentor/" target="_blank" rel="noreferrer"
+                                        className="float-right">Visit</a></h4>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    {/* start modal */}
+                    {/* <Modal className="modal-container enqblock"
         show={showModal}
         onHide={() => close()}
 
@@ -1184,11 +1182,10 @@ export default function Dashboard(location) {
 
 
       </Modal> */}
-                            {/* end modal */}
-                        </div>
-                    </div>
+                    {/* end modal */}
                 </div>
             </div>
-        </div>
+
+        </>
     );
 }

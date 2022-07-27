@@ -2,7 +2,7 @@ import React from "react";
 import PersonalInfoProfile from '../../components/ApplicationProfile/PersonalInfoProfile';
 import StudentTopbar from '../../components/StudentTopbar';
 import StudentSidebar from '../../components/StudentSidebar';
-
+import StudentLayout from '../../components/StudentLayout';
 import AddressProfile from '../../components/ApplicationProfile/AddressProfile';
 import FamilyProfile from '../../components/ApplicationProfile/FamilyProfile';
 import EducationProfile from '../../components/ApplicationProfile/EducationProfile';
@@ -13,12 +13,9 @@ import RecommendationProfile from '../../components/ApplicationProfile/Recommend
 // import '../../scss/studentApplicationProfile.scss';
 export default function ApplicationProfile() {
     return (
-        <div id="page-top">
-            <div id="wrapper">
-                <StudentSidebar />
-                <div id="content-wrapper" className="d-flex flex-column">
-                    <div id="content">
-                        <StudentTopbar />
+        <>
+      <StudentLayout />
+      <div className="mainmain">
                         <div className="container">
                         <div className="row">
                             <div className="col-xl-12 col-lg-7">
@@ -37,9 +34,8 @@ export default function ApplicationProfile() {
                         </div>
                         </div>
                     </div>
-                </div>
-            </div>
-        </div>
+            
+        </>
        
     );
 }

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import StudentLayout from '../../components/StudentLayout';
 import StudentTopbar from '../../components/StudentTopbar';
 import StudentSidebar from '../../components/StudentSidebar';
 import Dropzone from "react-dropzone";
@@ -125,12 +126,9 @@ export default function Message() {
             });
     }
     return (
-        <div id="page-top">
-        <div id="wrapper">
-            <StudentSidebar />
-            <div id="content-wrapper" className="d-flex flex-column">
-                <div id="content">
-                   <StudentTopbar/> 
+        <>
+        <StudentLayout />
+        <div className="mainmain">
         <div className="container-fluid">
             {loader === "true" ?
                 <Loader />
@@ -266,8 +264,7 @@ export default function Message() {
             </div>
         </div>
         </div>
-                </div>
-            </div>
-        </div>
+            
+        </>
     );
 }

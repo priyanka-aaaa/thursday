@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from 'axios';
 import StudentTopbar from '../../components/StudentTopbar';
 import StudentSidebar from '../../components/StudentSidebar';
-
+import StudentLayout from '../../components/StudentLayout';
 
 
 import Loader from '../../components/Loader';
@@ -67,12 +67,9 @@ export default function Setting() {
         }
     }
     return (
-        <div id="page-top">
-            <div id="wrapper">
-                <StudentSidebar />
-                <div id="content-wrapper" className="d-flex flex-column">
-                    <div id="content">
-                        <StudentTopbar />
+        <>
+        <StudentLayout />
+        <div className="mainmain">
                         <div className="container">
                             {submitSuccess === 1 ? <div className="Show_success_message">
                                 <strong>Success!</strong> {successMessage}
@@ -128,8 +125,7 @@ export default function Setting() {
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
-        </div>
+              
+        </>
     );
 }

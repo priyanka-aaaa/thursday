@@ -51,7 +51,7 @@ export default function Bookmark() {
     <>
       <StudentLayout />
       <div className="mainmain">
-     
+
 
         <div className="d-sm-flex align-items-center justify-content-between mb-4">
           {showBookmark === "1" ?
@@ -137,7 +137,7 @@ export default function Bookmark() {
             : null}
         </div>
       </div>
-   
+
     </>
 
   );

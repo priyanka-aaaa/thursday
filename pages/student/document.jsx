@@ -8,17 +8,15 @@ import EnglishProficiencyDocument from '../../components/Mydocument/EnglishProfi
 import IdentityDocument from '../../components/Mydocument/IdentityDocument';
 import StudentTopbar from '../../components/StudentTopbar';
 import StudentSidebar from '../../components/StudentSidebar';
+import StudentLayout from '../../components/StudentLayout';
 // import Header from '../components/Header';
 // import '../../scss/studentdocument.scss';
 export default function Document() {
 
     return (
-        <div id="page-top">
-            <div id="wrapper">
-                <StudentSidebar />
-                <div id="content-wrapper" className="d-flex flex-column">
-                    <div id="content">
-                        <StudentTopbar />
+        <>
+        <StudentLayout />
+        <div className="mainmain">
                         <div className="container">
                             <div className=" align-items-center justify-content-between mb-4">
                                 <h1 className="h3 mb-0 text-gray-800">Application Documents</h1>
@@ -39,8 +37,7 @@ export default function Document() {
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
-        </div>
+              
+        </>
     );
 }

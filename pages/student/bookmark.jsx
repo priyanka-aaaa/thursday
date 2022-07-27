@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from 'axios';
 import StudentTopbarSidebar from '../../components/StudentTopbarSidebar';
-import StudentDummy from '../../components/StudentDummy';
+import StudentLayout from '../../components/StudentLayout';
 
 
 // import StudentSidebar from '../../components/StudentSidebar';
@@ -49,8 +49,8 @@ export default function Bookmark() {
   }
   return (
     <>
-      <StudentDummy />
-      <div className="container">
+      <StudentLayout />
+      <div className="mainmain">
 
 
         <div className="d-sm-flex align-items-center justify-content-between mb-4">
