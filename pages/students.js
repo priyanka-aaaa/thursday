@@ -155,15 +155,15 @@ export default function Students() {
                           </div>
                         </div>
                         <div className="front-title-part">
-                          <h3 className="title"><a href="/students">Students
-                            Helped </a></h3>
+                          <h3 className="title"><Link href="/students">Students
+                            Helped </Link></h3>
                         </div>
                         <div className="front-desc-part">
                           <p>
                             200,000+</p>
                         </div>
                         <div className="front-btn-part">
-                          <a className="readon view-more" href="/students">View More</a>
+                          <Link className="readon view-more" href="/students">View More</Link>
                         </div>
                       </div>
                     </div>
@@ -184,8 +184,8 @@ export default function Students() {
                           </div>
                         </div>
                         <div className="front-title-part">
-                          <h3 className="title"><a href="/students">Student Source
-                            Countries</a></h3>
+                          <h3 className="title"><Link href="/students">Student Source
+                            Countries</Link></h3>
                         </div>
                         <div className="front-desc-part">
                           <p>
@@ -193,7 +193,7 @@ export default function Students() {
                           </p>
                         </div>
                         <div className="front-btn-part">
-                          <a className="readon view-more" href="/students">View More</a>
+                          <Link className="readon view-more" href="/students">View More</Link>
                         </div>
                       </div>
                     </div>
@@ -213,8 +213,8 @@ export default function Students() {
                           </div>
                         </div>
                         <div className="front-title-part">
-                          <h3 className="title"><a href="/students">Offer of
-                            Admission Rate </a></h3>
+                          <h3 className="title"><Link href="/students">Offer of
+                            Admission Rate </Link></h3>
                         </div>
                         <div className="front-desc-part">
                           <p>
@@ -222,7 +222,7 @@ export default function Students() {
                           </p>
                         </div>
                         <div className="front-btn-part">
-                          <a className="readon view-more" href="/students">View More</a>
+                          <Link className="readon view-more" href="/students">View More</Link>
                         </div>
                       </div>
                     </div>
@@ -287,14 +287,14 @@ export default function Students() {
                   </div>
                   <div className="services-content">
                     <div className="services-text">
-                      <h3 className="title"><a href="#">Check Your Eligibility</a></h3>
+                      <h3 className="title"><Link href="#">Check Your Eligibility</Link></h3>
                     </div>
                     <div className="services-desc">
                       <p>
                         Complete a short survey and get matched to programs and schools.
                       </p>
                     </div>
-                    <div className="services-button"><a href="#">Read More</a></div>
+                    <div className="services-button"><Link href="#">Read More</Link></div>
                   </div>
                 </div>
               </div>
@@ -311,14 +311,14 @@ export default function Students() {
                   </div>
                   <div className="services-content">
                     <div className="services-text">
-                      <h3 className="title"><a href="#"> Apply to Schools</a></h3>
+                      <h3 className="title"><Link href="#"> Apply to Schools</Link></h3>
                     </div>
                     <div className="services-desc">
                       <p>
                         Select a school and program, complete profile, pay fees, and submit documents.
                       </p>
                     </div>
-                    <div className="services-button"><a href="#">Read More</a></div>
+                    <div className="services-button"><Link href="#">Read More</Link></div>
                   </div>
                 </div>
               </div>
@@ -336,14 +336,14 @@ export default function Students() {
                   </div>
                   <div className="services-content">
                     <div className="services-text">
-                      <h3 className="title"><a href="#">Get Accepted</a></h3>
+                      <h3 className="title"><Link href="#">Get Accepted</Link></h3>
                     </div>
                     <div className="services-desc">
                       <p>
                         The schools review your application and an acceptance letter is issued.
                       </p>
                     </div>
-                    <div className="services-button"><a href="#">Read More</a></div>
+                    <div className="services-button"><Link href="#">Read More</Link></div>
                   </div>
                 </div>
               </div>
@@ -360,14 +360,14 @@ export default function Students() {
                   </div>
                   <div className="services-content">
                     <div className="services-text">
-                      <h3 className="title"><a href="#">Applies for Visa</a></h3>
+                      <h3 className="title"><Link href="#">Applies for Visa</Link></h3>
                     </div>
                     <div className="services-desc">
                       <p>
                         Course Mentor experts guide the student through the visa application process.
                       </p>
                     </div>
-                    <div className="services-button"><a href="#">Read More</a></div>
+                    <div className="services-button"><Link href="#">Read More</Link></div>
                   </div>
                 </div>
               </div>
@@ -384,14 +384,14 @@ export default function Students() {
                   </div>
                   <div className="services-content">
                     <div className="services-text">
-                      <h3 className="title"><a href="#">Student Journey Begins</a></h3>
+                      <h3 className="title"><Link href="#">Student Journey Begins</Link></h3>
                     </div>
                     <div className="services-desc">
                       <p>
                         Book your flight, pack your bags, and start your adventure.
                       </p>
                     </div>
-                    <div className="services-button"><a href="#">Read More</a></div>
+                    <div className="services-button"><Link href="#">Read More</Link></div>
                   </div>
                 </div>
               </div>
@@ -408,14 +408,14 @@ export default function Students() {
                   </div>
                   <div className="services-content">
                     <div className="services-text">
-                      <h3 className="title"><a href="#">Learn From Industry Experts</a></h3>
+                      <h3 className="title"><Link href="#">Learn From Industry Experts</Link></h3>
                     </div>
                     <div className="services-desc">
                       <p>
                         Learning top skills can bring an extra-ordinary outcome in a career.
                       </p>
                     </div>
-                    <div className="services-button"><a href="#">Read More</a></div>
+                    <div className="services-button"><Link href="#">Read More</Link></div>
                   </div>
                 </div>
               </div>
@@ -434,66 +434,66 @@ export default function Students() {
             <div className="row">
               <div className="col-lg-2 col-md-4 col-sm-4 col-6">
                 <div className="technology-item">
-                  <a href="#">
+                  <Link href="#">
                     <div className="logo-img">
 
                       <img src="/images/pt-1.webp" alt="dev logo" />
 
                     </div>
-                  </a>
+                  </Link>
                 </div>
               </div>
               <div className="col-lg-2 col-md-4 col-sm-4 col-6">
                 <div className="technology-item">
-                  <a href="#">
+                  <Link href="#">
                     <div className="logo-img">
 
                       <img src="/images/pt-2.webp" alt="dev logo" />
 
                     </div>
-                  </a>
+                  </Link>
                 </div>
               </div>
               <div className="col-lg-2 col-md-4 col-sm-4 col-6">
                 <div className="technology-item">
-                  <a href="#">
+                  <Link href="#">
                     <div className="logo-img">
                       <img src="/images/pt-3.webp" alt="dev logo" />
 
 
                     </div>
-                  </a>
+                  </Link>
                 </div>
               </div>
               <div className="col-lg-2 col-md-4 col-sm-4 col-6">
                 <div className="technology-item">
-                  <a href="#">
+                  <Link href="#">
                     <div className="logo-img">
                       <img src="/images/pt-4.webp" alt="dev logo" />
 
 
                     </div>
-                  </a>
+                  </Link>
                 </div>
               </div>
               <div className="col-lg-2 col-md-4 col-sm-4 col-6">
                 <div className="technology-item">
-                  <a href="#">
+                  <Link href="#">
                     <div className="logo-img">
                       <img src="/images/pt-5.webp" alt="dev logo" />
 
                     </div>
-                  </a>
+                  </Link>
                 </div>
               </div>
               <div className="col-lg-2 col-md-4 col-sm-4 col-6">
                 <div className="technology-item">
-                  <a href="#">
+                  <Link href="#">
                     <div className="logo-img">
                       <img src="/images/pt-6.webp" alt="dev logo" />
 
                     </div>
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -544,7 +544,7 @@ export default function Students() {
 
                         </div>
                         <div className="author-part">
-                          <a className="name" href="#">Parteek sharma</a>
+                          <Link className="name" href="#">Parteek sharma</Link>
 
                         </div>
                       </div>
@@ -569,7 +569,7 @@ export default function Students() {
 
                         </div>
                         <div className="author-part">
-                          <a className="name" href="#">Somya Saini</a>
+                          <Link className="name" href="#">Somya Saini</Link>
 
                         </div>
                       </div>
@@ -593,7 +593,7 @@ export default function Students() {
 
                         </div>
                         <div className="author-part">
-                          <a className="name" href="#">Imran Khan</a>
+                          <Link className="name" href="#">Imran Khan</Link>
 
                         </div>
                       </div>
@@ -619,7 +619,7 @@ export default function Students() {
 
                         </div>
                         <div className="author-part">
-                          <a className="name" href="#">Parteek sharma</a>
+                          <Link className="name" href="#">Parteek sharma</Link>
 
                         </div>
                       </div>
@@ -647,7 +647,7 @@ export default function Students() {
 
                         </div>
                         <div className="author-part">
-                          <a className="name" href="#">Somya Saini</a>
+                          <Link className="name" href="#">Somya Saini</Link>
 
                         </div>
                       </div>

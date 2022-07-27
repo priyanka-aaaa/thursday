@@ -89,7 +89,7 @@ const Agent = (pageProps) => {
 
 
                           </div>
-                          <LinkgentLoginForm/>
+                          <AgentLoginForm/>
                         </div>
                       </div>
                     </div>
