@@ -9,7 +9,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faSignOutAlt, faFile, faBars, faUser, faDashboard, faUserCircle, faAngleLeft, faAddressBook, faBookmark, faCog, faEnvelope, faAward
 } from '@fortawesome/free-solid-svg-icons';
-const StudentDummy2 = () => {
+const StudentLayout = () => {
 
   const [width, setwidth] = useState("navbar-nav bg-gradient-primary sidebar sidebar-dark accordion");
   const [redirectToReferrer, setredirectToReferrer] = useState("false");
@@ -226,4 +226,4 @@ const StudentDummy2 = () => {
     </div>
   )
 }
-export default StudentDummy2
+export default StudentLayout

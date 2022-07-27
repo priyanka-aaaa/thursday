@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from 'axios';
 import StudentTopbarSidebar from '../../components/StudentTopbarSidebar';
-import StudentDummy2 from '../../components/StudentDummy2';
+import StudentLayout from '../../components/StudentLayout';
 
 
 // import StudentSidebar from '../../components/StudentSidebar';
@@ -49,7 +49,7 @@ export default function Bookmark() {
   }
   return (
     <>
-      <StudentDummy2 />
+      <StudentLayout />
       <div className="mainmain">
      
 
