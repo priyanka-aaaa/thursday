@@ -538,14 +538,17 @@ export default function Dashboard(location) {
                                                     <h5>Course</h5>
                                                     <p>{object.courseName}</p>
                                                 </div>
-                                                <div className="Session-name">
-                                                    <span><FontAwesomeIcon className="sidebar-faicon" icon={faCalendarDay} /></span>
-                                                    <span><i className="fas fa-calendar-week" /></span>
-                                                    <h5>Session</h5>
-                                                    <p>{object.session}</p>
-                                                </div>
+  
                                                 <div className="apply-process">
                                                     <div className="row">
+                                                    <div className="col-md-6">
+                                                            <div className="unv-name">
+                                                                <span><FontAwesomeIcon className="sidebar-faicon" icon={faAreaChart} /></span>
+
+                                                                <h5>Session</h5>
+                                                                {object.session}
+                                                            </div>
+                                                        </div>
                                                         <div className="col-md-6">
                                                             <div className="unv-name">
                                                                 <span><FontAwesomeIcon className="sidebar-faicon" icon={faAreaChart} /></span>
@@ -554,8 +557,7 @@ export default function Dashboard(location) {
                                                                 {object.applicationProgress}
                                                             </div>
                                                         </div>
-                                                        <div className="col-md-6 text-right">
-                                                        </div>
+                                                       
                                                     </div>
                                                 </div>
                                             </div>
