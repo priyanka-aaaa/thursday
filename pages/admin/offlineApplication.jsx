@@ -5,6 +5,7 @@ import AdminSidebar from '../../components/AdminSidebar';
 import axios from 'axios';
 // import '../../scss/adminDashboard.scss';
 export default function OfflineApplication(props) {
+    const [session, setsession] = useState("");
 
     const [email, setemail] = useState("");
     const [universityName, setuniversityName] = useState("");
@@ -15,7 +16,7 @@ export default function OfflineApplication(props) {
     const [successMessage, setsuccessMessage] = useState("");
     const [submitSuccess, setsubmitSuccess] = useState("0");
 
-    
+
     useEffect(() => {
         var mounted = localStorage.getItem("adminToken")
         setMounted(mounted)
@@ -26,7 +27,8 @@ export default function OfflineApplication(props) {
             universityName: universityName,
             courseName: courseName,
             country: country,
-            email: email
+            email: email,
+            session:session
             //end for passport yes
         };
         axios.post(process.env.REACT_APP_SERVER_URL + 'admin/order', obj, { headers: { 'Authorization': mounted } })
@@ -42,7 +44,7 @@ export default function OfflineApplication(props) {
 
             })
             .catch(error => {
-              
+
             });
     }
     return (
@@ -114,6 +116,20 @@ export default function OfflineApplication(props) {
                                                 </select>
 
 
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className="mb-3">
+                                        <div className="row">
+
+                                            <div className="col-md-6">
+                                                <div className="from-group">
+                                                    <label htmlFor="Mname" className="form-label">Session</label>
+                                                    <input
+                                                        value={session || ""}
+                                                        onChange={(e) => setsession(e.target.value)}
+                                                        type="text" className="form-control" placeholder="Session" name="Mname" required />
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
