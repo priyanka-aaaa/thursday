@@ -344,21 +344,24 @@ export default function Dashboard(location) {
                     // setcourseID(myresult.courseID)
 
                     // start for application fee
-                    var studentCourseId = myresult.courseID
-                    const url70 = process.env.REACT_APP_SERVER_URL + 'courseOrderFee/' + studentCourseId;
-                    fetch(url70, {
-                        method: 'GET',
 
-                    })
-                        .then(response => response.json())
-                        .then(data => {
-                            var myapplicationFee = data.courses.applicationFee
+                    if (myresult.courseID !== undefined) {
+                        var studentCourseId = myresult.courseID
+                        const url70 = process.env.REACT_APP_SERVER_URL + 'courseOrderFee/' + studentCourseId;
+                        fetch(url70, {
+                            method: 'GET',
 
-                            settotalPrice(data.courses.applicationFee)
-                            setcurrency(data.courses.applicationcurrency)
-                            // setcourseApplicationFee(data.courses.applicationFee)
-                            // setpendingFee(myapplicationFee - paid)
                         })
+                            .then(response => response.json())
+                            .then(data => {
+                                var myapplicationFee = data.courses.applicationFee
+
+                                settotalPrice(data.courses.applicationFee)
+                                setcurrency(data.courses.applicationcurrency)
+                                // setcourseApplicationFee(data.courses.applicationFee)
+                                // setpendingFee(myapplicationFee - paid)
+                            })
+                    }
                     //end for application fee
 
                     //start for set msg read
@@ -602,7 +605,7 @@ export default function Dashboard(location) {
                                                         <p>{mycountry}</p>
                                                     </div>
                                                     <div className="col-md-9">
-                                                        {myapplicationProgressStep >= 2 && totalPrice !== undefined
+                                                        {myapplicationProgressStep >= 2 && totalPrice !== undefined && totalPrice!=="none"
                                                             ?
                                                             <>
                                                                 <div className="row">
