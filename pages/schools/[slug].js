@@ -408,23 +408,23 @@ const MyschoolDetails = (pageProps) => {
                 <meta charSet="utf-8" />
 
                 <title>
-                    {pageProps.mydata.universityPrimaryInformation.name + pageProps.mydata.universityPrimaryInformation.state + ", " + pageProps.mydata.universityPrimaryInformation.country + " Admission Process + CourseMentor™"}
+                    {pageProps.mydata.universityPrimaryInformation.name +" " +pageProps.mydata.universityPrimaryInformation.state  + " CourseMentor™"}
                 </title>
-                <meta name="description" content={pageProps.mydata.universityPrimaryInformation.name + pageProps.mydata.universityPrimaryInformation.state + ", " + pageProps.mydata.universityPrimaryInformation.country
+                <meta name="description" content={pageProps.mydata.universityPrimaryInformation.name + " "+pageProps.mydata.universityPrimaryInformation.state + " " + pageProps.mydata.universityPrimaryInformation.country
                     + "-" +
                     "admissions process"
                     +
-                    "- CourseMentor™"
+                    "- CourseMentor™. Save upto 1000's of $, Apply for next upcoming intakes now"
                 }
                 />
-                <meta property="og:title" content={pageProps.mydata.universityPrimaryInformation.name + pageProps.mydata.universityPrimaryInformation.state + ", " + pageProps.mydata.universityPrimaryInformation.country + " Admission Process + CourseMentor™"}></meta>
+                <meta property="og:title" content= {pageProps.mydata.universityPrimaryInformation.name +" " +pageProps.mydata.universityPrimaryInformation.state  + " CourseMentor™"}></meta>
                 <meta property="og:description"
-                    content={pageProps.mydata.universityPrimaryInformation.name + pageProps.mydata.universityPrimaryInformation.state + ", " + pageProps.mydata.universityPrimaryInformation.country
-                        + "-" +
-                        "admissions process"
-                        +
-                        "- CourseMentor™"
-                    }></meta>
+                    content={pageProps.mydata.universityPrimaryInformation.name + " "+pageProps.mydata.universityPrimaryInformation.state + " " + pageProps.mydata.universityPrimaryInformation.country
+                    + "-" +
+                    "admissions process"
+                    +
+                    "- CourseMentor™. Save upto 1000's of $, Apply for next upcoming intakes now"
+                }></meta>
                 <meta property="og:image" content={pageProps.mydata.universityImage.coverPic}
 
                 ></meta>
