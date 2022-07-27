@@ -347,11 +347,10 @@ const Study = (pageProps) => {
   return (
     <div>
       <Head>
-        <title>USA Study Visa | CourseMentor</title>
-        <title>CourseMentor - Study Abroad - Course Finder study austrial</title>
-        <meta name="description" content="CourseMentor - Study Abroad - Course Finder study austrial" />
-        <meta property="og:title" content="USA Study Visa | CourseMentor" />
-        <meta property="og:description" content="CourseMentor - Study Abroad - Course Finder study austrial" />
+      <title>Apply USA Study Visa Now - CourseMentor™</title>
+        <meta name="description" content="CourseMentor™ - Study Abroad in America - Best University Course Finder to study in usa. Apply for upcoming intakes now!" />
+        <meta property="og:title" content="Apply USA Study Visa Now - CourseMentor™" />
+        <meta property="og:description" content="CourseMentor™ - Study Abroad in America - Best USA University Course Finder to study in usa. Apply for upcoming intakes now!" />
         <meta property="og:image" content="og image" />
         <script type="application/ld+json">
           {JSON.stringify(articleStructuredData)}

@@ -349,11 +349,10 @@ const Study = (pageProps) => {
   return (
     <div>
       <Head>
-        <title>Australia Study Visa | CourseMentor</title>
-        <title>CourseMentor - Study Abroad - Course Finder study austrial</title>
-        <meta name="description" content="CourseMentor - Study Abroad - Course Finder study austrial" />
-        <meta property="og:title" content="Australia Study Visa | CourseMentor" />
-        <meta property="og:description" content="CourseMentor - Study Abroad - Course Finder study austrial" />
+        <title>Apply Australia Study Visa Now - CourseMentor™</title>
+        <meta name="description" content="CourseMentor™ - Study Abroad in Australia - Best University Course Finder to study in australia. Apply for upcoming intakes now!" />
+        <meta property="og:title" content="Apply Australia Study Visa Now - CourseMentor™" />
+        <meta property="og:description" content="CourseMentor™ - Study Abroad in Australia - Best University Course Finder to study in australia. Apply for upcoming intakes now!" />
         <meta property="og:image" content="og image" />
         <script type="application/ld+json">
           {JSON.stringify(articleStructuredData)}
