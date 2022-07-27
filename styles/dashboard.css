@@ -13715,4 +13715,9 @@ span.msgRefresh svg {
 div#mySidenav {
     z-index: 1000 !important;
 }
+.sidebar .nav svg {
+    margin-right: 10px;
+    font-size: 14px;
+    width: 18px;
+}
 /* end for sidebar and navbar*/
