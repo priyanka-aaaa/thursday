@@ -171,7 +171,7 @@ const Header = () => {
                         <Link href='/' className="btn outline-website-btn" title="Login">Login</Link>
                       </li>
                       <li>
-                        <Link href='/studentRegister' className="btn website-btn" title="Register">Register</Link>
+                        <Link href='/studentregister' className="btn website-btn" title="Register">Register</Link>
 
 
                       </li>
@@ -218,12 +218,12 @@ const Header = () => {
                   </nav>
                 </div>
 
-                <div className="homedropdown dropdown dropdown-menu-end my-account"><a className="" href="https://abroad.coursementor.com/studentRegister" data-bs-toggle="dropdown" title="Login or signup to access your dashboard"> <img layout="fill" src="/images/user-profile.png" alt="" unoptimized={true} loading="lazy" /></a>
+                <div className="homedropdown dropdown dropdown-menu-end my-account"><a className="" href="https://abroad.coursementor.com/studentregister" data-bs-toggle="dropdown" title="Login or signup to access your dashboard"> <img layout="fill" src="/images/user-profile.png" alt="" unoptimized={true} loading="lazy" /></a>
                   <div className="dropdown-menu ">
                     <h5>Dashboard</h5>
                     <p>Login or signup to access your dashboard</p>
                     <Link className="dropdown-item btn btn-login" href="https://abroad.coursementor.com/StudentLogin"><a className="dropdown-item btn btn-login">Login</a></Link>
-                    <Link className="dropdown-item btn btn-register" href="https://abroad.coursementor.com/studentRegister"><a className="dropdown-item btn btn-register" >Register</a></Link>
+                    <Link className="dropdown-item btn btn-register" href="https://abroad.coursementor.com/studentregister"><a className="dropdown-item btn btn-register" >Register</a></Link>
 
                   </div>
                 </div>
