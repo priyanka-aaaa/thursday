@@ -14,13 +14,15 @@ import { saveAs } from "file-saver";
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
-    faEye, faCloudDownload, faCheckCircle, faPaperPlane, faRedo
+    faEye, faCloudDownload, faCheckCircle, faPaperPlane, faRedo, faTrash
 } from '@fortawesome/free-solid-svg-icons';
 export default function AdminStudentApplication() {
     // const { state1 } = useLocation();
     //start for set extenstion
     const [myagentName, setmyagentName] = useState("");
     const [myagentEmail, setmyagentEmail] = useState("");
+    const [deleteId, setdeleteId] = useState("");
+
 
     const [mypaid, setmypaid] = useState("");
     const [myfamilyResult, setmyfamilyResult] = useState("");
@@ -47,6 +49,7 @@ export default function AdminStudentApplication() {
     const [thumbnailFiles, setThumbnailFiles] = useState([]);
     const [submitError, setsubmitError] = useState("0");
     const [showSweetAlert, setshowSweetAlert] = useState("0");
+    const [showSweetAlertDelete, setshowSweetAlertDelete] = useState("0");
     const [applicationFeeStatus, setapplicationFeeStatus] = useState("");
     const [applicationcurrency, setapplicationcurrency] = useState("");
     const [applicationFee, setapplicationFee] = useState("");
@@ -326,6 +329,10 @@ export default function AdminStudentApplication() {
     function handleAppliedView() {
         setsecondviewWidth("90%");
     }
+    function handleDelete(id) {
+        setshowSweetAlertDelete("1")
+        setdeleteId(id)
+    }
     function handleView(id) {
 
         //start all empty
@@ -496,7 +503,7 @@ export default function AdminStudentApplication() {
                     var completeTime = month + " " + date + ",  " + year + ", " + timerr
                     setmydate(completeTime)
                     //start for course Id
-                  
+
                     if (myresults[0].courseID != undefined) {
                         const url70 = process.env.REACT_APP_SERVER_URL + 'courseOrderFee/' + myresults[0].courseID;
                         fetch(url70, {
@@ -898,6 +905,53 @@ export default function AdminStudentApplication() {
                             </SweetAlert>
                                 : null
                             }
+                            {showSweetAlertDelete === "1" ? <SweetAlert
+                                warning
+                                showCancel
+                                confirmBtnText="Yes, Confirm it!"
+                                confirmBtnBsStyle="danger"
+                                title="Are you sure want to delete this application?"
+                                onConfirm={(value) => {
+                                    var adminUniversityId = localStorage.getItem('adminUniversityId');
+                                    setshowSweetAlertDelete("0");
+                                    setmyloader("true")
+                                    const url = process.env.REACT_APP_SERVER_URL + 'admin/OrderDelete/' + deleteId;
+                                    fetch(url, {
+                                        method: 'delete',
+                                        headers: { 'Authorization': mounted }
+                                    })
+                                        .then(response => response.json())
+                                        .then(data => {
+                                            setmyloader("false")
+                                            setsuccessMessage("Application Deleted")
+                                            setTimeout(() => setsubmitSuccess(""), 3000);
+                                            setsubmitSuccess(1)
+                                            const url11 = process.env.REACT_APP_SERVER_URL + 'admin/OrdersAll';
+                                            fetch(url11, {
+                                                method: 'GET',
+                                                headers: { 'Authorization': mounted }
+                                            })
+                                                .then(response => response.json())
+                                                .then(data => {
+                                                   
+                                                    var orderResult = data.orders
+                                                    orderResult.forEach((item, i) => {
+                                                        item.NO = i + 1;
+                                                    });
+
+                                                    setComments(orderResult);
+                                                })
+                                        })
+
+                                }}
+                                onCancel={() =>
+                                    setshowSweetAlertDelete("0")
+                                }
+                                focusCancelBtn
+                            >
+                            </SweetAlert>
+                                : null
+                            }
 
                             {
                                 loader === "true" ?
@@ -966,6 +1020,12 @@ export default function AdminStudentApplication() {
 
                                                                         >
                                                                             <FontAwesomeIcon icon={faEye} />
+                                                                        </button>
+                                                                        <button title="Delete Student Application" className="btn btn-success"
+                                                                            onClick={() => handleDelete(object._id)}
+
+                                                                        >
+                                                                            <FontAwesomeIcon icon={faTrash} />
                                                                         </button>
                                                                     </td>
                                                                 </tr>
