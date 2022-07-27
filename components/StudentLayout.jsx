@@ -189,7 +189,7 @@ const StudentLayout = () => {
                 </a></Link>
               </li>
               <li onClick={() => handleCurrentClick("Explore")}>
-                <a href='https://study.coursementor.com/dashboard/'>
+                <a href='#'>
                   <FontAwesomeIcon icon={faAward} className="sidebar-faicon" />
                   <span>Learn</span>
                 </a>

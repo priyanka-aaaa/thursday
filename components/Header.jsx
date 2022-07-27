@@ -192,7 +192,7 @@ const Header = () => {
                         Free Profile Assessment</Link>
                       </li>
                       <li> <a className="menu-item-has-children current-menu-item" title="Learn"
-                        href="https://study.coursementor.com/dashboard/"
+                        href="#"
                       // data-bs-toggle="modal" data-bs-target="#learnModal"
                       >
                         <span className='icon'><i className="fal fa-university fa-fw" ></i></span>Learn
@@ -612,7 +612,7 @@ const Header = () => {
                 To access the learning material, please get username and password from <strong>I-WIN Consultants Admin Team </strong>for your learning. We wish you best of luck!!
               </div>
               <div className="modal-footer">
-                <a className="btn btn-success" target="_blank" rel="noreferrer" href='https://study.coursementor.com/dashboard/'> Yes! I have login details</a>
+                <a className="btn btn-success" target="_blank" rel="noreferrer" href='#'> Yes! I have login details</a>
                 <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
               </div>
             </div>
