@@ -503,7 +503,7 @@ export default function AdminStudentApplication() {
                     var completeTime = month + " " + date + ",  " + year + ", " + timerr
                     setmydate(completeTime)
                     //start for course Id
-                   
+
 
                     if (myresults[0].courseID != undefined) {
                         const url70 = process.env.REACT_APP_SERVER_URL + 'courseOrderFee/' + myresults[0].courseID;
@@ -1046,6 +1046,9 @@ export default function AdminStudentApplication() {
                                 </div>
                             </div>
                             <div id="mySidenav" className="sidenav" style={{ width: firstviewWidth }}>
+                                {submitError === 1 ? <div className="Show_error_message">
+                                    <strong></strong> File extension not supported
+                                </div> : null}
                                 <section className="pcoded-main-containerx ">
 
                                     <div className="pcoded-content">
@@ -2025,15 +2028,15 @@ export default function AdminStudentApplication() {
                                                                                                                                                         <label className="form-label">Upload file
                                                                                                                                                         </label>
                                                                                                                                                         <Dropzone onDrop={(acceptedFiles) => {
-                                                                                                                                                            setmsgFile(acceptedFiles[0])
-
-                                                                                                                                                            setselectedfileName(acceptedFiles[0].name)
                                                                                                                                                             var fileName = acceptedFiles[0].path;
                                                                                                                                                             var fileExtension = fileName.split('.').pop();
                                                                                                                                                             if (fileExtension === "pdf" || fileExtension === "doc" || fileExtension === "docx"
                                                                                                                                                                 || fileExtension === "jpeg" || fileExtension === "jpg" || fileExtension === "png"
                                                                                                                                                             ) {
 
+                                                                                                                                                                setmsgFile(acceptedFiles[0])
+
+                                                                                                                                                                setselectedfileName(acceptedFiles[0].name)
 
                                                                                                                                                             }
                                                                                                                                                             else {

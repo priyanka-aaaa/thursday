@@ -344,7 +344,7 @@ export default function Dashboard(location) {
                     // setcourseID(myresult.courseID)
 
                     // start for application fee
-                  
+
                     if (myresult.courseID !== undefined) {
                         var studentCourseId = myresult.courseID
                         const url70 = process.env.REACT_APP_SERVER_URL + 'courseOrderFee/' + studentCourseId;
@@ -365,7 +365,7 @@ export default function Dashboard(location) {
                     else {
                         settotalPrice(myresult.appPrice)
                         setcurrency(myresult.appCurrency)
-      
+
                     }
                     //end for application fee
 
@@ -538,10 +538,10 @@ export default function Dashboard(location) {
                                                     <h5>Course</h5>
                                                     <p>{object.courseName}</p>
                                                 </div>
-  
+
                                                 <div className="apply-process">
                                                     <div className="row">
-                                                    <div className="col-md-6">
+                                                        <div className="col-md-6">
                                                             <div className="unv-name">
                                                                 <span><FontAwesomeIcon className="sidebar-faicon" icon={faAreaChart} /></span>
 
@@ -557,7 +557,7 @@ export default function Dashboard(location) {
                                                                 {object.applicationProgress}
                                                             </div>
                                                         </div>
-                                                       
+
                                                     </div>
                                                 </div>
                                             </div>
@@ -612,7 +612,7 @@ export default function Dashboard(location) {
                                                         <p>{mycountry}</p>
                                                     </div>
                                                     <div className="col-md-9">
-                                                      
+
                                                         {myapplicationProgressStep >= 2 && totalPrice !== undefined && totalPrice !== "none"
                                                             ?
                                                             <>
@@ -764,15 +764,15 @@ export default function Dashboard(location) {
                                                                                                                 <label className="form-label">Upload file
                                                                                                                 </label>
                                                                                                                 <Dropzone onDrop={(acceptedFiles) => {
-                                                                                                                    setmsgFile(acceptedFiles[0])
-
-                                                                                                                    setselectedfileName(acceptedFiles[0].name)
                                                                                                                     var fileName = acceptedFiles[0].path;
                                                                                                                     var fileExtension = fileName.split('.').pop();
                                                                                                                     if (fileExtension === "pdf" || fileExtension === "doc" || fileExtension === "docx"
                                                                                                                         || fileExtension === "jpeg" || fileExtension === "jpg" || fileExtension === "png"
                                                                                                                     ) {
 
+                                                                                                                        setmsgFile(acceptedFiles[0])
+
+                                                                                                                        setselectedfileName(acceptedFiles[0].name)
 
                                                                                                                     }
                                                                                                                     else {
