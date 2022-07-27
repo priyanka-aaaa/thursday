@@ -19,7 +19,7 @@ import Header from '../components/Header';
 import EnquiryModal from '../components/EnquiryModal';
 
 
-import { StudentloginForm } from '../components/StudentloginForm';
+import { UniversityloginForm } from '../components/UniversityloginForm';
 
 export default function Myschool() {
 
@@ -81,23 +81,14 @@ export default function Myschool() {
                     <div className="container">
                       <div className="row">
                         <div className="col-lg-12">
-                          {/* <GoogleLogin
-
-                      clientId={process.env.REACT_APP_GOOGLE_CLIENT_ID}
-                      buttonText="Log in with Google"
-                      plugin_name='abc'
-                      onSuccess={handleLogin}
-                      onFailure={handleFailure}
-                      cookiePolicy={'single_host_origin'}
-                    ></GoogleLogin>
-                    <StudentloginForm /> */}
+                        
                           <div>
 
 
 
 
                           </div>
-                          <StudentloginForm />
+                          <UniversityloginForm />
                         </div>
                       </div>
                     </div>

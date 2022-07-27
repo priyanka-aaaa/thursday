@@ -19,7 +19,7 @@ import Header from '../components/Header';
 import EnquiryModal from '../components/EnquiryModal';
 
 
-import { StudentloginForm } from '../components/StudentloginForm';
+import { AgentLoginForm } from '../components/AgentLoginForm';
 
 export default function Myagent() {
 
@@ -90,14 +90,14 @@ export default function Myagent() {
                       onFailure={handleFailure}
                       cookiePolicy={'single_host_origin'}
                     ></GoogleLogin>
-                    <StudentloginForm /> */}
+                    <AgentLoginForm /> */}
                           <div>
 
 
 
 
                           </div>
-                          <StudentloginForm />
+                          <AgentLoginForm />
                         </div>
                       </div>
                     </div>
