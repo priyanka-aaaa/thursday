@@ -88,7 +88,7 @@ const StudentDummy2 = () => {
   }
 
   return (
-    <div class="studentLayout">
+    <div className="studentLayout">
       <nav className="navbar navbar-default navbar-fixed-top">
         <div className="brand">
           <a href="https://www.codeavail.com/dashboard"></a><img src="https://www.codeavail.com/img/logo-dark.png" alt="CodeAvail Logo" className="img-responsive logo-only-mobile" />
@@ -99,10 +99,10 @@ const StudentDummy2 = () => {
             <li>
 
             </li>
-            {/* <li class="dropdown">
-                      <a title="Add Money to Wallet" href="https://www.codeavail.com/add-money" class="icon-menu">
-                      <i class="fas fa-wallet"></i>
-                      <span class="badge bg-danger">2</span>
+            {/* <li className="dropdown">
+                      <a title="Add Money to Wallet" href="https://www.codeavail.com/add-money" className="icon-menu">
+                      <i className="fas fa-wallet"></i>
+                      <span className="badge bg-danger">2</span>
                   </a>
               </li> */}
             <div className="logout-hovarable">
@@ -115,9 +115,9 @@ const StudentDummy2 = () => {
                 </ul>
               </li>
             </div>
-            {/*<li class="dropdown">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="far fa-question-circle" ></i> <span>Help</span> <i class="icon-submenu lnr lnr-chevron-down"></i></a>
-                  <ul class="dropdown-menu">
+            {/*<li className="dropdown">
+                  <a href="#" className="dropdown-toggle" data-toggle="dropdown"><i className="far fa-question-circle" ></i> <span>Help</span> <i className="icon-submenu lnr lnr-chevron-down"></i></a>
+                  <ul className="dropdown-menu">
                       <li><a href="#">Basic Use</a></li>
                       <li><a href="#">Working With Data</a></li>
                       <li><a href="#">Security</a></li>
@@ -149,7 +149,7 @@ const StudentDummy2 = () => {
              
             </div>
             {/* <li>
-                  <a class="update-pro" href="https://www.themeineed.com/downloads/klorofil-pro-bootstrap-admin-dashboard-template/?utm_source=klorofil&utm_medium=template&utm_campaign=KlorofilPro" title="Upgrade to Pro" target="_blank"><i class="fa fa-rocket"></i> <span>UPGRADE TO PRO</span></a>
+                  <a className="update-pro" href="https://www.themeineed.com/downloads/klorofil-pro-bootstrap-admin-dashboard-template/?utm_source=klorofil&utm_medium=template&utm_campaign=KlorofilPro" title="Upgrade to Pro" target="_blank"><i className="fa fa-rocket"></i> <span>UPGRADE TO PRO</span></a>
               </li> */}
           </ul>
         </div>
@@ -168,12 +168,12 @@ const StudentDummy2 = () => {
               <li><a title="All Orders" href="https://www.codeavail.com/dashboard" className><i className="fa fa-tasks " aria-hidden="true" /><span>All Orders</span></a></li>
               <li><a title="In-process Orders" href="https://www.codeavail.com/in-process" className><i className="fa fa-spinner" aria-hidden="true" /><span>In-process Orders</span></a></li>
               <li><a title="Completed Orders" href="https://www.codeavail.com/completed" className><i className="fa fa-check-square " aria-hidden="true" /><span>Completed Orders</span></a></li>
-              {/* <li><a title="Add Money" href="https://www.codeavail.com/add-money" class=""><i class="fa fa-retweet " aria-hidden="true"></i><span>Add Wallet Money</span></a></li> */}
+              {/* <li><a title="Add Money" href="https://www.codeavail.com/add-money" className=""><i className="fa fa-retweet " aria-hidden="true"></i><span>Add Wallet Money</span></a></li> */}
               <li><a title="My Earning" href="https://www.codeavail.com/earn-money" className><i className="fas fa-dollar-sign " /><span>Refer &amp; Earn</span></a></li>
               <li><a title="Refer & Earn" href="https://www.codeavail.com/referral" className><i className="fa fa-retweet " aria-hidden="true" /><span>Become Partner</span></a></li>
               <li><a title="Settings" href="https://www.codeavail.com/settings" className><i className="fas fa-users-cog" /><span>Settings</span></a></li>
-              <li><a title="Settings" href="https://courses.codeavail.com/" target="_blank" className><i className="fas fa-laptop-code" /><span>Online Courses</span></a></li>
-              {/* <li><a title="Settings" href="https://www.codeavail.com/tracking_details"  class=""><i class="fa fa-history"></i><span>Tracking Details</span></a></li> */}
+              <li><a title="Settings" href="https://courses.codeavail.com/" target="_blank"  rel="noreferrer" className><i className="fas fa-laptop-code" /><span>Online Courses</span></a></li>
+              {/* <li><a title="Settings" href="https://www.codeavail.com/tracking_details"  className=""><i className="fa fa-history"></i><span>Tracking Details</span></a></li> */}
             </ul>				</nav>
         </div>
       </div>
