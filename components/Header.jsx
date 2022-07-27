@@ -284,7 +284,7 @@ const Header = () => {
         <ul className="mobilemenu">
           {/* <a className="btn-search " href="https://abroad.coursementor.com/search-study-abroad-program"><span><FontAwesomeIcon   icon={faSearch} /></span>Search for universities & courses</a> */}
           <h5>Site Map</h5>
-          <li><a href="https://study.coursementor.com/">Learn</a></li>
+          <li><a href="#">Learn</a></li>
           <li><a href="https://abroad.coursementor.com/School">Schools</a></li>
           <li><a href="https://abroad.coursementor.com/agent">Recruitment
             Partners</a>
