@@ -6,7 +6,7 @@ const nextConfig = {
 module.exports = {
   env: {
 
-    REACT_APP_SERVER_URL: 'http://localhost:5000/',
+    REACT_APP_SERVER_URL: 'https://abroadcoursementor.herokuapp.com/',
     REACT_APP_KEY_ID: 'rzp_test_P63PCFNjePx2xF',
     REACT_APP_GOOGLE_CLIENT_ID: '66848945093-dodujok6k18qdlldghlce727ua4ttfql.apps.googleusercontent.com'
   },
