@@ -292,8 +292,8 @@ const Header = () => {
           <li><a href="https://abroad.coursementor.com/students">Students</a></li>
         </ul>
         <div className="canvas-logo">
-          <a href="index.html">
-            <img layout="fill" src="/images/logo.webp" unoptimized={true} alt="logo" loading="lazy" /></a>
+          <Link href="/">
+            <img layout="fill" src="/images/logo.webp" unoptimized={true} alt="logo" loading="lazy" /></Link>
         </div>
         <div className="offcanvas-text">
           <p>Get the full-stack career guidance, study abroad with the best university match & live mentoring platform that matches students with the right courses, mentors and job opportunities.
