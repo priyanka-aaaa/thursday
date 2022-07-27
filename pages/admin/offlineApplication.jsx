@@ -3,7 +3,7 @@ import AdminTopbar from '../../components/AdminTopbar';
 import AdminSidebar from '../../components/AdminSidebar';
 import axios from 'axios';
 // import '../../scss/adminDashboard.scss';
-export default function offlineApplication(props) {
+export default function OfflineApplication(props) {
 
     const [email, setemail] = useState("");
     const [universityName, setuniversityName] = useState("");
