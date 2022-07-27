@@ -17,7 +17,7 @@ import { Footer } from '../components/Footer';
 import Header from '../components/Header';
 import EnquiryModal from '../components/EnquiryModal';
 
-export default function recruitment() {
+export default function Recruitment() {
   const [redirectToReferrer, setredirectToReferrer] = useState(false);
   // const [loginData, setLoginData] = useState(
   //   localStorage.getItem('loginData')
