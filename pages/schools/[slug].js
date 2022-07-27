@@ -881,14 +881,14 @@ const MyschoolDetails = (pageProps) => {
                                                                     <div className="col-md-4" key={index}>
                                                                         <div className="blog-img mb-3">
                                                                             {element.type === "image" ?
-                                                                                <a >
+                                                                                <a  rel="noreferrer noopener nofollow">
                                                                                     <img unoptimized={true} src={element.link} alt="image" loading="lazy" />
                                                                                 </a>
                                                                                 :
-                                                                                <a >
+                                                                                <a  rel="noreferrer noopener nofollow" >
                                                                                     <iframe className='video'
                                                                                         title='Youtube player'
-                                                                                        rel="noreferrer noopener nofollow" 
+                                                                                        // rel="noreferrer noopener nofollow" 
                                                                                         sandbox='allow-same-origin allow-forms allow-popups allow-scripts allow-presentation'
                                                                                         src={'https://youtube.com/embed/' + myArray[1] + '?autoplay=0'}>
                                                                                     </iframe>
