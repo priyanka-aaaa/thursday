@@ -92,22 +92,13 @@ const StudentLayout = () => {
       <nav className="navbar navbar-default navbar-fixed-top">
         <div className="brand">
           <a href="https://www.codeavail.com/dashboard"></a>
-
           <img src="/images/logo2.webp" alt="coursemetnor Logo" className="img-responsive logo-only-mobile" />
-
         </div>
         <div id="navbar-menu">
           <ul className="nav">
             <li>
-
             </li>
-            {/* <li className="dropdown">
-                      <a title="Add Money to Wallet" href="https://www.codeavail.com/add-money" className="icon-menu">
-                      <i className="fas fa-wallet"></i>
-                      <span className="badge bg-danger">2</span>
-                  </a>
-              </li> */}
-            <div className="logout-hovarable">
+            {/* <div className="logout-hovarable">
               <li id="msg_notification" className="dropdown"><a title="Notifaction" href="#" className="icon-menu" data-toggle="dropdown">
                 <i className="fas fa-bell" />
                 <FontAwesomeIcon className="sidebar-faicon" icon={faEnvelope} />
@@ -116,43 +107,23 @@ const StudentLayout = () => {
 
                 </ul>
               </li>
-            </div>
-            {/*<li className="dropdown">
-                  <a href="#" className="dropdown-toggle" data-toggle="dropdown"><i className="far fa-question-circle" ></i> <span>Help</span> <i className="icon-submenu lnr lnr-chevron-down"></i></a>
-                  <ul className="dropdown-menu">
-                      <li><a href="#">Basic Use</a></li>
-                      <li><a href="#">Working With Data</a></li>
-                      <li><a href="#">Security</a></li>
-                      <li><a href="#">Troubleshooting</a></li>
-                  </ul>
-              </li>*/}
+            </div> */}
+
             <div className="logout-hovarable">
 
               <a className="nav-link dropdown-toggle" href="#collapseEleven" id="userDropdown" role="button" data-bs-toggle="collapse" aria-haspopup="true" aria-expanded="false">
-                {/* <span>{studentName}fff</span> */}
                 <span className="mr-2 d-none d-lg-inline text-gray-600 small">{studentName}</span>
                 <FontAwesomeIcon className="sidebar-faicon" icon={faUser} />
-
-                {/* <img src="undraw_profile" alt="dev logo" /> */}
-
               </a>
               <div className="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown" id="collapseEleven" data-bs-parent="#accordion" >
                 <p className="dropdown-item"
                   onClick={(e) => logout()}
-
                   href="" data-toggle="modal" data-target="#logoutModal">
                   <FontAwesomeIcon className="sidebar-faicon" icon={faSignOutAlt} />
-
                   Logout
                 </p>
               </div>
-
-
-
             </div>
-            {/* <li>
-                  <a className="update-pro" href="https://www.themeineed.com/downloads/klorofil-pro-bootstrap-admin-dashboard-template/?utm_source=klorofil&utm_medium=template&utm_campaign=KlorofilPro" title="Upgrade to Pro" target="_blank"><i className="fa fa-rocket"></i> <span>UPGRADE TO PRO</span></a>
-              </li> */}
           </ul>
         </div>
       </nav>
@@ -219,7 +190,6 @@ const StudentLayout = () => {
                 </a></Link>
               </li>
             </ul>
-
           </nav>
         </div>
       </div>
