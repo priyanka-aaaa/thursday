@@ -13385,3 +13385,331 @@ span.msgRefresh svg {
 }
 }
 /* end dummy dashboard css */
+/* start for sidebar and navbar*/
+.studentLayout nav.navbar.navbar-default.navbar-fixed-top {
+    width: 86%;
+    position: fixed;
+    top: 0;
+    z-index: 99;
+    left: 265px;
+    border-bottom: 1px solid #cccccc4a;
+}
+
+.studentLayout.navbar-default .brand {
+    float: left;
+    padding: 24px 10px;
+    background-color: #fff;
+}
+
+.studentLayout .nav {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+}
+.dashboardSidebarDisplay {
+    display: block !important;
+}
+.studentLayout div#navbar-menu ul li {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 18px;
+}
+
+.studentLayout .logout-hovarable {
+    position: relative;
+}
+
+.studentLayout div#navbar-menu ul li a {
+    color: #777;
+    letter-spacing: 0.5px;
+}
+
+.studentLayout .logout-hovarable .dropdown-content {
+    display: none;
+    position: absolute;
+    box-shadow: 1.8px 1.8px 16px 0 rgb(0 0 0 / 30%);
+    z-index: 1;
+    top: 78px;
+    min-width: 240px;
+    padding-left: 0;
+    right: 10px;
+    background: #fff;
+}
+
+.studentLayout div#navbar-menu ul li {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 18px;
+}
+
+.studentLayout a.mobile-menu {
+    display: none;
+}
+
+.studentLayout a {
+    color: #007bff;
+    text-decoration: none;
+    background-color: transparent;
+}
+
+
+
+
+.studentLayout .sidebar {
+    height: 100vh;
+    overflow: auto;
+    /* position: sticky; */
+    left: 0;
+    top: 0;
+}
+.studentLayout .brand {
+    text-align: center;
+}
+
+.studentLayout a.compose {
+    background-color: #ff8a00;
+    color: #fff;
+    width: 68%;
+    font-weight: 500;
+    float: left;
+    font-size: 16px;
+    text-align: center;
+    padding: 12px 0;
+    border-radius: 3px;
+    margin: 40px 13px;
+    box-shadow: 0 0 3px #7f7a7a;
+    letter-spacing: 0.5px;
+    border: 2px solid transparent;
+}
+
+ /* nav,
+ section {
+    display: block;
+} */
+
+.studentLayout .sidebar .nav {
+    margin-top: 0px;
+    float: left;
+    width: 100%;
+}
+
+.studentLayout .sidebar ul.nav li {
+    line-height: 45px;
+    width: 100%;
+}
+
+.studentLayout .sidebar .nav>li>a {
+    padding: 0px 16px;
+    width: 100%;
+    color: #fff;
+    border-left: 5px solid transparent;
+    border-left-width: 5px;
+    border-left-style: solid;
+    border-left-color: transparent;
+    float: left;
+    letter-spacing: 0.5px;
+    font-size: 14px;
+}
+
+
+.studentLayout #sidebar-nav,
+.studentLayout .mainmain {
+    padding-top: 47px;
+}
+
+.studentLayout .sidebar {
+    height: 100vh;
+    overflow: auto;
+    /* position: sticky; */
+    left: 0;
+    top: 0;
+}
+
+.studentLayout .sidebar {
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    width: 260px;
+    height: 100%;
+    float: left;
+    background-color: #004961;
+    position: fixed;
+    left: 0;
+}
+.studentLayout .sidebar-faiconNew {
+    height: 20px;
+    width: 20px;
+
+}
+.studentLayout .nav {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+}
+.studentLayout .logo-only-mobile {
+    display: none;
+}
+ .mainmain {
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    width: calc(100% - 260px);
+    left: 0;
+    position: relative;
+    float: right;
+    /* background-color: #f5f5fa; */
+}
+.mainmain {
+    margin-top: 96px;
+}
+@media screen and (max-width: 767px) {
+    .studentLayout .navbar {
+        left: 0 !important;
+        height: 120px;
+        display: flex;
+        padding-top: 14px;
+        align-items: flex-start;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .studentLayout nav.navbar.navbar-default.navbar-fixed-top {
+        position: inherit;
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .studentLayout .navbar-default .brand {
+        width: 118px;
+    }
+}
+
+@media screen and (max-width: 568px) {
+    .studentLayout .navbar-default .brand {
+        padding: 0px 0 0 14px;
+        width: 140px;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .studentLayout .navbar-default #navbar-menu {
+        float: right;
+    }
+}
+
+
+@media screen and (max-width: 1024px) {
+    .studentLayout div#navbar-menu ul.nav {
+        justify-content: center;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .studentLayout div#navbar-menu ul li:first-child {
+        width: auto;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .studentLayout #sidebar-nav {
+        position: inherit;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .studentLayout .sidebar {
+        width: 100%;
+        height: 390px;
+        padding-top: 0 !important;
+        position: inherit;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .studentLayout a.mobile-menu {
+        font-size: 18px;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .studentLayout a.mobile-menu {
+        display: block;
+        width: 100%;
+        text-align: center;
+        background-color: #004961;
+        padding: 10px 40px;
+        font-size: 26px;
+        color: #fff;
+        display: flex;
+        letter-spacing: 0.5px;
+        align-items: center;
+        justify-content: flex-start;
+        border-bottom: 1px solid #0c033a;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .studentLayout #sidebar-nav {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .mainmain {
+        width: 100% !important;
+        margin-top: 16px;
+    }
+}
+
+@media screen and (max-width: 568px) {
+    .studentLayout .navbar-default .brand a img {
+        max-width: 100%;
+    }
+}
+@media screen and (max-width: 1024px) {
+    .studentLayout .logo-only-mobile {
+        display: block !important;
+    }
+}
+@media screen and (max-width: 1024px) {
+    .studentLayout .navbar {
+        left: 0 !important;
+    }
+}
+@media screen and (max-width: 767px) {
+    .studentLayout .navbar {
+        left: 0 !important;
+        height: 120px;
+        display: flex;
+        padding-top: 14px;
+        align-items: flex-start;
+    }
+}
+@media screen and (max-width: 320px) {
+    .studentLayout a.mobile-menu span {
+        margin-right: 10px;
+    }
+}
+
+
+@media screen and (max-width: 767px) {
+    .studentLayout p.dropdown-item {
+        margin-left: 101px;
+    }
+}
+/* end for sidebar and navbar*/

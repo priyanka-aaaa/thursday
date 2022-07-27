@@ -29,8 +29,7 @@ export async function getServerSideProps(context) {
     const res = await axios.get(process.env.REACT_APP_SERVER_URL + 'completeUniDetail/' + context.params.slug)
     const res2 = await axios.get(process.env.REACT_APP_SERVER_URL + 'universitySimilar/' + context.params.slug)
     // var myresultsUniversity = data.universities
-    console.log("res2")
-    console.log(res2.data.universities)
+  
     //start faq
     const parseData = {
         "@context": "https://schema.org",
@@ -92,8 +91,7 @@ export async function getServerSideProps(context) {
             objhello.push(courseStructuredData);
         }
     }
-    console.log("second second")
-    console.log(res2.data.universities)
+
     //end for course schema
     return {
 
@@ -1042,8 +1040,7 @@ const MyschoolDetails = (pageProps) => {
                                             <div id="Similar" className="blog-item">
                                                 <div className="similar_fullbox__1qBJc  blog-content">
                                                     <h3 className="blog-title"><a href="#">Similar Universities</a></h3>
-                                                    {console.log("pageProps.similarUniversity")}
-                                                    {console.log(pageProps.similarUniversity)}
+                                                 
                                                     <Slider {...settings}>
                                                         {pageProps.similarUniversity.map((element, index) =>
                                                         (

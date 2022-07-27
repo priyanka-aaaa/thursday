@@ -29,8 +29,7 @@ export async function getServerSideProps(context) {
     const res = await axios.get(process.env.REACT_APP_SERVER_URL + 'completeUniDetail/' + context.params.slug)
     const res2 = await axios.get(process.env.REACT_APP_SERVER_URL + 'universitySimilar/' + context.params.slug)
     // var myresultsUniversity = data.universities
-    console.log("res2")
-    console.log(res2.data.universities)
+
     //start faq
     const parseData = {
         "@context": "https://schema.org",
@@ -92,8 +91,7 @@ export async function getServerSideProps(context) {
             objhello.push(courseStructuredData);
         }
     }
-    console.log("second second")
-    console.log(res2.data.universities)
+   
     //end for course schema
     return {
 
@@ -912,6 +910,7 @@ const MyschoolDetails = (pageProps) => {
                                                 <div className="blog-content">
                                                     <h3 className="blog-title">Browse Courses</h3>
                                                     <div className="row mb-3" >
+
                                                         {pageProps.mydata.universityCourses.map((element, index) => (
                                                             <>
                                                                 {index < 4 ?
@@ -984,8 +983,8 @@ const MyschoolDetails = (pageProps) => {
                                                                                 </div>
                                                                             </div>
                                                                             <div className="text-right w-100">
-
-                                                                                <button className="btn btn-primary  w-100" onClick={() => handleApplyNow(universityId, element._id, element.month, "first", FormPrimaryInformationValues.country, FormPrimaryInformationValues.name, element.courseName)}>Apply Now
+                                                                         
+                                                                                <button className="btn btn-primary  w-100" onClick={() => handleApplyNow(pageProps.mydata._id, element._id, element.month, "first", pageProps.mydata.universityPrimaryInformation.country, pageProps.mydata.universityPrimaryInformation.name, element.courseName)}>Apply Now
                                                                                     {/* <Image    unoptimized={true}
                                                                                         src="https://images.leverageedu.com/university/whitearrow.svg" loading="lazy" />
                                                                                 */}
@@ -1042,8 +1041,7 @@ const MyschoolDetails = (pageProps) => {
                                             <div id="Similar" className="blog-item">
                                                 <div className="similar_fullbox__1qBJc  blog-content">
                                                     <h3 className="blog-title"><a href="#">Similar Universities</a></h3>
-                                                    {console.log("pageProps.similarUniversity")}
-                                                    {console.log(pageProps.similarUniversity)}
+                                                   
                                                     <Slider {...settings}>
                                                         {pageProps.similarUniversity.map((element, index) =>
                                                         (
