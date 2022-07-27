@@ -106,7 +106,7 @@ export const Footer = () => {
 
             <div className="col-lg-12">
               <div className="copyright">
-                <p>©Copyright  2022 <a href="http://Coursementor.com/" title='main website'> Coursementor.com</a> All
+                <p>©Copyright  2022 <a href="https://Coursementor.com/" title='main website'> Coursementor.com</a> All
                   rights reserved.</p>
               </div>
             </div>
