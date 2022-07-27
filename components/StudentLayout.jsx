@@ -3,6 +3,7 @@ import axios from 'axios';
 import Link from 'next/link'
 import Image from 'next/image'
 import { Dropdown } from 'react-bootstrap';
+import Router from "next/router";
 // import '../scss/dashboardSidebar.scss';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -52,12 +53,10 @@ const StudentLayout = () => {
       setMounted(mounted)
       setstudentEmail(studentEmail)
       setstudentId(studentId)
-
-
-
-
     }
     else {
+      Router.push("/");
+
       var studentEmail = "";
       setredirectToReferrer("true")
     }

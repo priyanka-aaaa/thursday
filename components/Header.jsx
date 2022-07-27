@@ -1,6 +1,6 @@
 import Link from "next/link";
 import React, { useState, useEffect } from "react";
-import { FontAwesomeIcon   } from '@fortawesome/react-fontawesome';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Image from 'next/image'
 import {
   faPlus, faTrash, faPen, faAngleDown, faAngleUp, faBars, faSearch, faClose, faArrowRight
@@ -31,7 +31,7 @@ const Header = () => {
   // }, [props]);
   if (typeof window !== "undefined") {
     require("bootstrap/dist/js/bootstrap");
-}
+  }
   useEffect(() => {
     // const url1 = process.env.REACT_APP_SERVER_URL + 'suggestion'
     // fetch(url1, {
@@ -140,7 +140,7 @@ const Header = () => {
               <div className="mobile-menu">
                 <a className="rs-menu-toggle rs-menu-toggle-close secondary" onClick={() => ToggleTwoButton()}>
                   {/* <i className="fa fa-bars" /> */}
-                  <FontAwesomeIcon  className="sidebar-faicon" icon={faBars} />
+                  <FontAwesomeIcon className="sidebar-faicon" icon={faBars} />
 
                 </a>
               </div>
@@ -153,9 +153,9 @@ const Header = () => {
                   <nav className="rs-menu pr-86 lg-pr-50 md-pr-0">
                     <ul className="nav-menu">
 
-                      <li> <a className="menu-item-has-children current-menu-item"  title="Learn" data-bs-toggle="modal" data-bs-target="#learnModal">
-                          <span className='icon'><i className="fal fa-university fa-fw" ></i></span>Learn
-                        </a>
+                      <li> <a className="menu-item-has-children current-menu-item" title="Learn" data-bs-toggle="modal" data-bs-target="#learnModal">
+                        <span className='icon'><i className="fal fa-university fa-fw" ></i></span>Learn
+                      </a>
                       </li>
 
                       <li><Link href='/school' className="nav-link" title="Schools">
@@ -187,16 +187,16 @@ const Header = () => {
                 <div className="main-menu desktop" style={{ display: display }}>
                   <nav className="rs-menu pr-86 lg-pr-50 md-pr-0">
                     <ul className="nav-menu">
-                      
-                    <li><Link href='/evaluation' title="evaluation">
-                    Free Profile Assessment</Link>
+
+                      <li><Link href='/evaluation' title="evaluation">
+                        Free Profile Assessment</Link>
                       </li>
-                      <li> <a className="menu-item-has-children current-menu-item"  title="Learn"
-                      href="https://study.coursementor.com/dashboard/"
+                      <li> <a className="menu-item-has-children current-menu-item" title="Learn"
+                        href="https://study.coursementor.com/dashboard/"
                       // data-bs-toggle="modal" data-bs-target="#learnModal"
                       >
-                          <span className='icon'><i className="fal fa-university fa-fw" ></i></span>Learn
-                        </a>
+                        <span className='icon'><i className="fal fa-university fa-fw" ></i></span>Learn
+                      </a>
                       </li>
 
 
@@ -211,7 +211,7 @@ const Header = () => {
                         Students</Link>
                       </li>
 
-                     
+
 
                     </ul>
 
@@ -234,7 +234,7 @@ const Header = () => {
                     <li className="sidebarmenu-search">
 
                       <a onClick={() => open()} className="frontend-main-search" title="Enter course, college, exam or destination">
-                        <FontAwesomeIcon   icon={faSearch} /></a>
+                        <FontAwesomeIcon icon={faSearch} /></a>
                     </li>
                     <li>
 
@@ -264,7 +264,7 @@ const Header = () => {
       {/* Menu End */}
       {/* start for toogle */}
 
-      <nav className="right_menu_togle "   style={{ right: profileState.name }}>
+      <nav className="right_menu_togle " style={{ right: profileState.name }}>
         <div className="close-btn">
           <div className="nav-link">
             <a title="close" id="nav-close" className="humburger nav-expander" onClick={() => ToggleButton()} >
@@ -349,7 +349,7 @@ const Header = () => {
       >
         <button type="button" className="close" onClick={() => close()}  >
 
-          <FontAwesomeIcon  className="sidebar-faicon" icon={faClose} onClick={() => close()} />
+          <FontAwesomeIcon className="sidebar-faicon" icon={faClose} onClick={() => close()} />
           <span className="flaticon-cross" />
         </button>
         <div className="">
@@ -415,7 +415,7 @@ const Header = () => {
                       </div>
                       {/* end for after search suggestion */}
                       <div className="searchInputs" style={{ display: searchdisplay }}>
-                        <span> <FontAwesomeIcon   icon={faSearch} /></span>
+                        <span> <FontAwesomeIcon icon={faSearch} /></span>
                         <input
                           type="text"
                           placeholder="Enter course, college, exam or destination"
@@ -431,7 +431,7 @@ const Header = () => {
                               <a
                                 //  onClick={() => open()}
                                 className="frontend-main-search x">
-                                <FontAwesomeIcon   icon={faSearch} /></a>
+                                <FontAwesomeIcon icon={faSearch} /></a>
                             </>
 
                             // <CloseIcon id="clearBtn" onClick={clearInput} />
@@ -454,7 +454,7 @@ const Header = () => {
                     </div>
                   }
                   {/* end search bar */}
-                  <button className="btn-search">Search <span><FontAwesomeIcon  className="sidebar-faicon" icon={faArrowRight} /></span></button>
+                  <button className="btn-search">Search <span><FontAwesomeIcon className="sidebar-faicon" icon={faArrowRight} /></span></button>
                 </div>
               </form>
               <div className="top-country mt-5">
@@ -602,22 +602,22 @@ const Header = () => {
           </div>
         </div>
         <div className="modal fade" id="learnModal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div className="modal-dialog">
-          <div className="modal-content">
-            <div className="modal-header">
-             
-              <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div className="modal-body">
-            To access the learning material, please get username and password from <strong>I-WIN Consultants Admin Team </strong>for your learning. We wish you best of luck!!
-            </div>
-            <div className="modal-footer">
-            <a className="btn btn-success" target="_blank" rel="noreferrer" href='https://study.coursementor.com/dashboard/'> Yes! I have login details</a>
-            <button type="button" className="btn btn-secondary"  data-bs-dismiss="modal">Close</button>
+          <div className="modal-dialog">
+            <div className="modal-content">
+              <div className="modal-header">
+
+                <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div className="modal-body">
+                To access the learning material, please get username and password from <strong>I-WIN Consultants Admin Team </strong>for your learning. We wish you best of luck!!
+              </div>
+              <div className="modal-footer">
+                <a className="btn btn-success" target="_blank" rel="noreferrer" href='https://study.coursementor.com/dashboard/'> Yes! I have login details</a>
+                <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              </div>
             </div>
           </div>
         </div>
-      </div>
       </Modal>
 
       {/* end for search model */}
