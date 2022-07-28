@@ -886,7 +886,7 @@ const MyschoolDetails = (pageProps) => {
                                                                                     <img unoptimized={true} src={element.link} alt="image" loading="lazy" />
                                                                                 </a>
                                                                                 :
-                                                                                <a  target="_blank" rel="noreferrer noopener nofollow" >
+                                                                                <a   rel="nofollow noopener noreferrer" >
                                                                                     <iframe className='video'
                                                                                         title='Youtube player'
                                                                                         // rel="noreferrer noopener nofollow" 
