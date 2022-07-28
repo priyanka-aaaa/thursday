@@ -17,6 +17,8 @@ import {
     faEye, faCloudDownload, faCheckCircle, faPaperPlane, faRedo, faTrash
 } from '@fortawesome/free-solid-svg-icons';
 export default function AdminStudentApplication() {
+    const [resultDocument, setresultDocument] = useState([{
+    }])
     // const { state1 } = useLocation();
     //start for set extenstion
     const [myagentName, setmyagentName] = useState("");
@@ -723,7 +725,20 @@ export default function AdminStudentApplication() {
         // setmyagentName(agentName)
         // setmyagentEmail(agentEmail)
 
+        const url = process.env.REACT_APP_SERVER_URL + "admin/students/" + mystudentID + "/documents/";
+        fetch(url, {
+            method: 'GET',
+            headers: { 'Authorization': mounted }
+        })
+            .then(response => response.json())
+            .then(data => {
+                var resultDocument = data.studentDocuments;
+                
 
+                setresultDocument(resultDocument)
+
+
+            })
 
 
 
@@ -864,7 +879,25 @@ export default function AdminStudentApplication() {
             .catch(error => {
             });
     }
+    function downloadAllDocument() {
+        var jsonData = {};
+        resultDocument.forEach(function (column) {
+            jsonData[mybuildStudentID + "-" + myname + "-" + column.documentName + column.name + "." + column.fileExtension] = column.file;
+        });
+        const obj1 = new FormData();
+        obj1.append("vehicle", JSON.stringify(jsonData));
+        const url4 = 'https://coursementor.com/uploadApi/downloadMany.php';
+        fetch(url4, {
+            method: 'POST',
+            body: obj1,
+            headers: { 'Accept': "application/zip" },
+            responseType: "arraybuffer",
 
+        }).then(res => res.blob())
+            .then(blob => saveAs(blob, mybuildStudentID + "-" + myname + "-" + "allDocument.zip"))
+            .catch((err) => {
+            });
+    }
     return (
         <div id="page-top">
             <div id="wrapper">
@@ -1903,7 +1936,7 @@ export default function AdminStudentApplication() {
                                                                                                                         <div className="row">
                                                                                                                             <div className="col-md-6"><h6>All Documents Generate ZIP Folder</h6></div>
                                                                                                                             <div className="col-md-6">
-                                                                                                                                <button type="button" title="Download All Document ZIP" className="btn btn-outline-primary btn-download"><span>
+                                                                                                                                <button type="button" title="Download All Document" className="btn btn-outline-primary btn-download" onClick={downloadAllDocument}><span>
                                                                                                                                     <FontAwesomeIcon icon={faCloudDownload} />
                                                                                                                                 </span>Download All Document</button>
                                                                                                                             </div>
