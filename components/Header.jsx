@@ -131,8 +131,7 @@ const Header = () => {
             <div className="col-md-2 col-lg-2">
               <div className="logo-part">
                 <Link href="/" title="Coursementor"
-                >
-                  <img layout="fill" unoptimized={true} src="/images/logo.webp" alt="" loading="lazy" />
+                > <img layout="fill" unoptimized={true} src="/images/logo.webp" alt="" loading="lazy" />
                 </Link>
 
 
