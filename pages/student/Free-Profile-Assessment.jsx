@@ -1074,7 +1074,7 @@ export default function About() {
               <a onClick={() => open()} >     Forgot your Password?</a>
 
               <p>Don't have an account? Click here to
-                <Link href={'/studentregister'} className="" >
+                <Link href={'/StudentRegister'} className="" >
                   Register</Link></p>
 
             </div>

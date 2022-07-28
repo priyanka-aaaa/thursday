@@ -171,7 +171,7 @@ const Header = () => {
                         <Link href='/' className="btn outline-website-btn" title="Login">Login</Link>
                       </li>
                       <li>
-                        <Link href='/studentregister' className="btn website-btn" title="Register">Register</Link>
+                        <Link href='/StudentRegister' className="btn website-btn" title="Register">Register</Link>
 
 
                       </li>
@@ -218,12 +218,12 @@ const Header = () => {
                   </nav>
                 </div>
 
-                <div className="homedropdown dropdown dropdown-menu-end my-account"><a className="" href="https://abroad.coursementor.com/studentregister" data-bs-toggle="dropdown" title="Login or signup to access your dashboard"> <img layout="fill" src="/images/user-profile.png" alt="" unoptimized={true} loading="lazy" /></a>
+                <div className="homedropdown dropdown dropdown-menu-end my-account"><a className="" href="/StudentRegister" data-bs-toggle="dropdown" title="Login or signup to access your dashboard"> <img layout="fill" src="/images/user-profile.png" alt="" unoptimized={true} loading="lazy" /></a>
                   <div className="dropdown-menu ">
                     <h5>Dashboard</h5>
                     <p>Login or signup to access your dashboard</p>
-                    <Link className="dropdown-item btn btn-login" href="https://abroad.coursementor.com/Studentlogin"><a className="dropdown-item btn btn-login">Login</a></Link>
-                    <Link className="dropdown-item btn btn-register" href="https://abroad.coursementor.com/studentregister"><a className="dropdown-item btn btn-register" >Register</a></Link>
+                    <Link className="dropdown-item btn btn-login" href="/Studentlogin"><a className="dropdown-item btn btn-login">Login</a></Link>
+                    <Link className="dropdown-item btn btn-register" href="/StudentRegister"><a className="dropdown-item btn btn-register" >Register</a></Link>
 
                   </div>
                 </div>
@@ -282,14 +282,14 @@ const Header = () => {
         </div>
 
         <ul className="mobilemenu">
-          {/* <a className="btn-search " href="https://abroad.coursementor.com/search-study-abroad-program"><span><FontAwesomeIcon   icon={faSearch} /></span>Search for universities & courses</a> */}
+          {/* <a className="btn-search " href="/search-study-abroad-program"><span><FontAwesomeIcon   icon={faSearch} /></span>Search for universities & courses</a> */}
           <h5>Site Map</h5>
           <li><a href="#">Learn</a></li>
-          <li><a href="https://abroad.coursementor.com/School">Schools</a></li>
-          <li><a href="https://abroad.coursementor.com/agent">Recruitment
+          <li><a href="/School">Schools</a></li>
+          <li><a href="/agent">Recruitment
             Partners</a>
           </li>
-          <li><a href="https://abroad.coursementor.com/students">Students</a></li>
+          <li><a href="/students">Students</a></li>
         </ul>
         <div className="canvas-logo">
           <Link href="/">
