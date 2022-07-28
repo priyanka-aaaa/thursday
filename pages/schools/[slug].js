@@ -890,9 +890,9 @@ const MyschoolDetails = (pageProps) => {
                                                                                     
 
                                                                                     <iframe src={'https://www.youtube.com/embed/'+myArray[1]}
-                                                                                        frameborder='0'
+                                                                                        frameBorder='0'
                                                                                         allow='autoplay; encrypted-media'
-                                                                                        allowfullscreen
+                                                                                        allowFullScreen
                                                                                         title='video'
                                                                                     />
 
