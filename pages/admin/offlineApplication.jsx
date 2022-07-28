@@ -1,12 +1,13 @@
 import React, { useState, useEffect, useMemo } from "react";
-
+// import Loader from '../../Loader';
+import Loader from '../../components/Loader';
 import AdminTopbar from '../../components/AdminTopbar';
 import AdminSidebar from '../../components/AdminSidebar';
 import axios from 'axios';
 // import '../../scss/adminDashboard.scss';
 export default function OfflineApplication(props) {
     const [session, setsession] = useState("");
-
+    const [loader, setmyloader] = useState("false");
     const [email, setemail] = useState("");
     const [universityName, setuniversityName] = useState("");
     const [courseName, setcourseName] = useState("");
@@ -23,16 +24,18 @@ export default function OfflineApplication(props) {
     }, [])
     function Personal_Information(event) {
         event.preventDefault();
+        setmyloader("true")
         const obj = {
             universityName: universityName,
             courseName: courseName,
             country: country,
             email: email,
-            session:session
+            session: session
             //end for passport yes
         };
         axios.post(process.env.REACT_APP_SERVER_URL + 'admin/order', obj, { headers: { 'Authorization': mounted } })
             .then(function (res) {
+                setmyloader("false")
                 if (res.data.message === "Email not exist") {
                     setemailExistError("Email not exist")
                 }
@@ -40,6 +43,11 @@ export default function OfflineApplication(props) {
                     setsuccessMessage("Appllication Added")
                     setTimeout(() => setsubmitSuccess(""), 3000);
                     setsubmitSuccess(1)
+                    setuniversityName("")
+                    setcourseName("")
+                    setcountry("")
+                    setemail("")
+                    setsession("")
                 }
 
             })
@@ -56,6 +64,9 @@ export default function OfflineApplication(props) {
                     <div id="content">
                         <AdminTopbar />
                         <div className="container">
+                            {loader === "true" ?
+                                <Loader />
+                                : null}
                             {submitSuccess === 1 ? <div className="Show_success_message">
                                 <strong>Success!</strong> {successMessage}
                             </div> : null}
@@ -125,10 +136,28 @@ export default function OfflineApplication(props) {
                                             <div className="col-md-6">
                                                 <div className="from-group">
                                                     <label htmlFor="Mname" className="form-label">Session</label>
-                                                    <input
-                                                        value={session || ""}
-                                                        onChange={(e) => setsession(e.target.value)}
-                                                        type="text" className="form-control" placeholder="Session" name="Mname" required />
+                                                    <select
+
+                                                        className="form-control"
+                                                        placeholder="Session" name="Month"
+                                                        value={session} required
+                                                        onChange={(e) => setsession(e.target.value)}>
+                                                        <option value=''>Select Session</option>
+                                                        <option value='Jan'>Janaury</option>
+                                                        <option value='Feb'>February</option>
+                                                        <option value='March'>March</option>
+                                                        <option value='April'>April</option>
+                                                        <option value='May'>May</option>
+                                                        <option value='June'>June</option>
+                                                        <option value='July'>July</option>
+                                                        <option value='Aug'>August</option>
+                                                        <option value='Sep'>September</option>
+                                                        <option value='Oct'>October</option>
+                                                        <option value='Nov'>November</option>
+                                                        <option value='Dec'>December</option>
+                                                    </select>
+
+
                                                 </div>
                                             </div>
                                         </div>
