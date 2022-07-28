@@ -887,10 +887,10 @@ const MyschoolDetails = (pageProps) => {
                                                                                 </a>
                                                                                 :
                                                                                 <a   rel="nofollow noopener noreferrer" >
-                                                                                    <iframe className='video' sandbox=""
+                                                                                    <iframe className='video' 
                                                                                         title='Youtube player'
                                                                                         // rel="noreferrer noopener nofollow" 
-                                                                                      
+                                                                                        sandbox='allow-forms allow-scripts'
                                                                                         src={'https://youtube.com/embed/' + myArray[1] + '?autoplay=0'}>
                                                                                     </iframe>
                                                                                 </a>

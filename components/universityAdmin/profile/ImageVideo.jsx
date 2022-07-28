@@ -496,7 +496,7 @@ export default function ImageVideo() {
                                                             <>
                                                                 <iframe className='video'
                                                                     title='Youtube player'
-                                                                    sandbox=""
+                                                                    sandbox='allow-forms allow-scripts'
                                                                     src={'https://youtube.com/embed/' + myArray[1] + '?autoplay=0'}>
                                                                 </iframe>
                                                             </>
