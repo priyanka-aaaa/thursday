@@ -14,7 +14,7 @@ import { saveAs } from "file-saver";
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
-    faEye, faCloudDownload, faCheckCircle, faPaperPlane, faRedo, faTrash,faDownload
+    faEye, faCloudDownload, faCheckCircle, faPaperPlane, faRedo, faTrash, faDownload
 } from '@fortawesome/free-solid-svg-icons';
 export default function AdminStudentApplication() {
     const [resultDocument, setresultDocument] = useState([{
@@ -500,9 +500,6 @@ export default function AdminStudentApplication() {
                         .then(response => response.json())
                         .then(data => {
                             var resultDocument = data.studentDocuments;
-                            console.log('resultDocument')
-                            console.log(resultDocument)
-
                             setresultDocument(resultDocument)
                         })
 
