@@ -59,8 +59,8 @@ export default function Home() {
   return (
     <div >
       <Head>
-        <title>CourseMentor - Study Abroad - Course Finder student</title>
-        <meta name="description" content="CourseMentor - Study Abroad - Course Finder student" />
+        <title>CourseMentor™ - Study Abroad - Course Finder student</title>
+        <meta name="description" content="CourseMentor™ - Study Abroad - Course Finder student" />
         <link rel="icon"  href="/images/favicon.ico" />
       </Head>
 

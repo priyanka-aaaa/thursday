@@ -106,9 +106,9 @@ export default function Login() {
     return (
         <div>
             <Head>
-                <title>Student Login - CourseMentor
+                <title>Student Login - CourseMentor™
                 </title>
-                <meta name="description" content="Student Login - CourseMentor" />
+                <meta name="description" content="Student Login - CourseMentor™" />
                 <link rel="icon" href="/images/favicon.ico" />
             </Head>
 
