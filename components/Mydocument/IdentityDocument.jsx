@@ -222,7 +222,7 @@ export default function IdentityDocument() {
                                         <div className="modal-dialog">
                                             <div className="modal-content">
                                                 <div className="modal-header">
-                                                    <h4 className="modal-title">Passport</h4>
+                                                    <h4 className="modal-title">Document</h4>
                                                     <button type="button" className="btn-close" data-bs-dismiss="modal"></button>
                                                 </div>
                                                 {passportValue.fileExtension === "jpeg" || passportValue.fileExtension === "jpg" || passportValue.fileExtension === "png" ?
@@ -315,7 +315,7 @@ export default function IdentityDocument() {
                                         <div className="modal-dialog">
                                             <div className="modal-content">
                                                 <div className="modal-header">
-                                                    <h4 className="modal-title">Passport</h4>
+                                                    <h4 className="modal-title">Document</h4>
                                                     <button type="button" className="btn-close" data-bs-dismiss="modal"></button>
                                                 </div>
                                                 {passportBackValue.fileExtension === "jpeg" || passportBackValue.fileExtension === "jpg" || passportBackValue.fileExtension === "png" ?
