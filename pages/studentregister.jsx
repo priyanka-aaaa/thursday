@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Footer } from '../components/Footer';
 import Header from '../components/Header';
-
+import Head from 'next/head'
 
 import StudentRegisterForm from '../components/StudentRegisterForm';
 
@@ -16,6 +16,13 @@ export default function Studentregister() {
 }, [])
    
   return (
+    <div>
+         <Head>
+        <title>Student Register - Study Abroad - Step By Step Process</title>
+        <meta name="description" content="Student Register - Study Abroad - step by step guidance to fulfil your admission process in foreign universities." />
+        <link rel="icon"  href="/images/favicon.ico" />
+      </Head>
+
         <div className="main-content">
             <div className="full-width-header">
                 <Header />
@@ -34,6 +41,7 @@ export default function Studentregister() {
                 </section>
             </div>
             <Footer />
+        </div>
         </div>
     );
 }
