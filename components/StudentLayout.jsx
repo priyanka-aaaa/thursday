@@ -188,12 +188,7 @@ const StudentLayout = () => {
                   <span>Settings</span>
                 </a></Link>
               </li>
-              <li onClick={() => handleCurrentClick("Explore")}>
-                <a href='#'>
-                  <FontAwesomeIcon icon={faAward} className="sidebar-faicon" />
-                  <span>Learn</span>
-                </a>
-              </li>
+            
             </ul>
           </nav>
         </div>
