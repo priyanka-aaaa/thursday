@@ -137,7 +137,7 @@ export default function Myagent() {
             <div className="sec-title2 text-center mb-45">
               <span className="sub-text gold-color">We Are Best</span>
               <h2 className="title">
-                Our Impact Impact
+                Our Impact 
               </h2>
             </div>
             <div className="row">
