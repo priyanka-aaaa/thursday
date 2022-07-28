@@ -130,9 +130,8 @@ const Header = () => {
           <div className="row align-items-center">
             <div className="col-md-2 col-lg-2">
               <div className="logo-part">
-                <Link href="/" title="Coursementor"
-                > <img layout="fill" unoptimized={true} src="/images/logo.webp" alt="" loading="lazy" />
-                </Link>
+                <Link href="/" title="Coursementor"><a><img layout="fill" unoptimized={true} src="/images/logo.webp" alt="" loading="lazy" />
+                </a> </Link>
 
 
               </div>
@@ -217,7 +216,8 @@ const Header = () => {
                   </nav>
                 </div>
 
-                <div className="homedropdown dropdown dropdown-menu-end my-account"><Link className="" href="/studentregister" data-bs-toggle="dropdown" title="Login or signup to access your dashboard"><a><img layout="fill" src="/images/user-profile.png" alt="" unoptimized={true} loading="lazy" /></a> </Link>
+                <div className="homedropdown dropdown dropdown-menu-end my-account">
+                  <Link className="" href="/studentregister" title=""><a><img layout="fill" src="/images/user-profile.png" alt="" unoptimized={true} loading="lazy" /></a> </Link>
                   <div className="dropdown-menu ">
                     <h5>Dashboard</h5>
                     <p>Login or signup to access your dashboard</p>
@@ -291,8 +291,8 @@ const Header = () => {
           <li><Link href="/students">Students</Link></li>
         </ul>
         <div className="canvas-logo">
-          <Link href="/">
-            <img layout="fill" src="/images/logo.webp" unoptimized={true} alt="logo" loading="lazy" /></Link>
+          <Link href="/"><a>
+            <img layout="fill" src="/images/logo.webp" unoptimized={true} alt="logo" loading="lazy" /></a></Link>
         </div>
         <div className="offcanvas-text">
           <p>Get the full-stack career guidance, study abroad with the best university match & live mentoring platform that matches students with the right courses, mentors and job opportunities.
@@ -461,38 +461,40 @@ const Header = () => {
                 <div className="row">
                   <div className="col-lg-3 col-sm-6 md-mb-50">
                     <div className="addon-process">
-                      <Link href='/study-in-australia' className="process-wrap" onClick={() => close()}>
+                      <Link href='/study-in-australia' className="process-wrap" onClick={() => close()}><a>
                         <div className="process-wrap">
                           <div className="process-img">
-                            <a >
+                           
                               <img layout="fill" src="/images/process1.webp"
                                 alt="" unoptimized={true} loading="lazy" />
-                            </a>
+                           
                           </div>
                           <div className="process-text">
                             <h3 className="title">Australia</h3>
                           </div>
                         </div>
+                        </a>
                       </Link>
                     </div>
                   </div>
                   <div className="col-lg-3 col-sm-6 md-mb-50">
                     <div className="addon-process">
-                      <Link href='/study-in-canada' className="process-wrap" onClick={() => close()}>
+                      <Link href='/study-in-canada' className="process-wrap" onClick={() => close()}><a>
                         <div className="process-wrap">
                           <div className="process-img">
-                            <a ><img layout="fill" src="/images/process2.webp" alt="" unoptimized={true} loading="lazy" /></a>
+                           <img layout="fill" src="/images/process2.webp" alt="" unoptimized={true} loading="lazy" />
                           </div>
                           <div className="process-text">
                             <h3 className="title">Canada</h3>
                           </div>
                         </div>
+                        </a>
                       </Link>
                     </div>
                   </div>
                   <div className="col-lg-3 col-sm-6">
                     <div className="addon-process">
-                      <Link href='/study-in-uk' className="process-wrap" onClick={() => close()}>
+                      <Link href='/study-in-uk' className="process-wrap" onClick={() => close()}><a>
 
                         <div className="process-wrap">
                           <div className="process-img">
@@ -502,22 +504,22 @@ const Header = () => {
                             <h3 className="title">United Kingdom</h3>
                           </div>
                         </div>
-                      </Link>
+                        </a></Link>
                     </div>
                   </div>
                   <div className="col-lg-3 col-sm-6">
                     <div className="addon-process">
-                      <Link href='/study-in-usa' className="process-wrap" onClick={() => close()}>
+                      <Link href='/study-in-usa' className="process-wrap" onClick={() => close()}><a>
 
                         <div className="process-wrap">
                           <div className="process-img">
-                            <a ><img layout="fill" src="/images/process-4.webp" alt="" unoptimized={true} loading="lazy" /></a>
+                          <img layout="fill" src="/images/process-4.webp" alt="" unoptimized={true} loading="lazy" />
                           </div>
                           <div className="process-text">
                             <h3 className="title">United States</h3>
                           </div>
                         </div>
-                      </Link>
+                        </a></Link>
                     </div>
                   </div>
                 </div>
