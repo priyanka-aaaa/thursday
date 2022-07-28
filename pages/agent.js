@@ -63,8 +63,7 @@ export default function Myagent() {
         <meta name="description" content="International Students Recruitment Partner Portal - Signup and Earn Commissions on Sending Applications - Transparent and Fast - CourseMentor™" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
-      <div className="main-content">
+<div className="main-content">
 
         <div className="full-width-header">
 
