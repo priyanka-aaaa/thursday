@@ -733,11 +733,7 @@ export default function AdminStudentApplication() {
             .then(response => response.json())
             .then(data => {
                 var resultDocument = data.studentDocuments;
-                
-
                 setresultDocument(resultDocument)
-
-
             })
 
 
