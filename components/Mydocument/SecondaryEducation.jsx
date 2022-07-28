@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Dropzone from "react-dropzone";
 import SweetAlert from 'react-bootstrap-sweetalert';
-// import Loader from '../../Home/Loader';
+import Loader from '../Loader';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
 import Image from 'next/image'
@@ -128,9 +128,9 @@ export default function SecondaryEducation() {
     }
     return (
         <div className="card-body">
-            {/* {loader === "true" ?
+            {loader === "true" ?
                 <Loader />
-                : null} */}
+                : null}
             {submitSuccess === 1 ? <div className="Show_success_message">
                 <strong></strong> {successMessage}
             </div> : null}

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Dropzone from "react-dropzone";
 import SweetAlert from 'react-bootstrap-sweetalert';
-// import Loader from '../../Home/Loader';
+import Loader from '../Loader';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
     faAngleDown, faAngleUp, faTrash
@@ -124,9 +124,9 @@ export default function IdentityDocument() {
     }
     return (
         <div className="card">
-            {/* {loader === "true" ?
+            {loader === "true" ?
                 <Loader />
-                : null} */}
+                : null}
             <a className="card-header" data-bs-toggle="collapse" href="#collapseOne" onClick={() => handleClick()} >
                 <strong>1</strong>   Identity Documents
                 {down === "0" ?

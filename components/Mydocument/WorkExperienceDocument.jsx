@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import Dropzone from "react-dropzone";
 import SweetAlert from 'react-bootstrap-sweetalert';
 import Image from 'next/image'
-// import Loader from '../../Home/Loader';
+import Loader from '../Loader';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
     faAngleDown, faAngleUp, faTrash
@@ -189,9 +189,9 @@ export default function WorkExperienceDocument() {
 
     return (
         <div className="card">
-            {/* {loader === "true" ?
+            {loader === "true" ?
                 <Loader />
-                : null} */}
+                : null}
             <a className="card-header" data-bs-toggle="collapse" href="#collapse3" onClick={() => handleClick()}>
                 <strong>3</strong>  Work Experience Documents
                 {down === "0" ?

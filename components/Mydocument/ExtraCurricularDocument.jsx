@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import Dropzone from "react-dropzone";
 import Image from 'next/image'
 import SweetAlert from 'react-bootstrap-sweetalert';
-// import Loader from '../../Home/Loader';
+import Loader from '../Loader';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
     faAngleDown, faAngleUp, faTrash
@@ -169,9 +169,9 @@ export default function ExtraCurricularDocument() {
 
     return (
         <div className="card">
-            {/* {loader === "true" ?
+            {loader === "true" ?
                 <Loader />
-                : null} */}
+                : null}
             <a className="card-header" data-bs-toggle="collapse" href="#collapse5" onClick={() => handleClick()}>
                 <strong>5</strong> Extra Curricular Document
                 {down === "0" ?
