@@ -8,7 +8,7 @@ import Header from '../components/Header';
 import Loader from '../components/Loader';
 import SweetAlert from 'react-bootstrap-sweetalert';
 import { StudentloginForm } from '../components/StudentloginForm';
-
+import Head from 'next/head'
 
 
 export default function Login() {
@@ -105,6 +105,12 @@ export default function Login() {
     }
     return (
         <div>
+            <Head>
+                <title>Student Login - CourseMentor
+                </title>
+                <meta name="description" content="Student Login - CourseMentor" />
+                <link rel="icon" href="/images/favicon.ico" />
+            </Head>
 
 
             {loader === "true" ?
