@@ -14,7 +14,7 @@ import { saveAs } from "file-saver";
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
-    faEye, faCloudDownload, faCheckCircle, faPaperPlane, faRedo, faTrash
+    faEye, faCloudDownload, faCheckCircle, faPaperPlane, faRedo, faTrash,faDownload
 } from '@fortawesome/free-solid-svg-icons';
 export default function AdminStudentApplication() {
     const [resultDocument, setresultDocument] = useState([{
@@ -25,7 +25,7 @@ export default function AdminStudentApplication() {
     const [myagentEmail, setmyagentEmail] = useState("");
     const [deleteId, setdeleteId] = useState("");
 
-
+    const [myindexValue, setmyindexValue] = useState();
     const [mypaid, setmypaid] = useState("");
     const [myfamilyResult, setmyfamilyResult] = useState("");
     const [myeducationResult, setmyeducationResult] = useState("");
@@ -491,6 +491,22 @@ export default function AdminStudentApplication() {
                     setmybuildApplicationID(myresults[0].buildApplicationID)
                     setmystudentID(myresults[0].studentID)
                     var mystudentID = myresults[0].studentID
+
+                    const url = process.env.REACT_APP_SERVER_URL + "admin/students/" + mystudentID + "/documents/";
+                    fetch(url, {
+                        method: 'GET',
+                        headers: { 'Authorization': mounted }
+                    })
+                        .then(response => response.json())
+                        .then(data => {
+                            var resultDocument = data.studentDocuments;
+                            console.log('resultDocument')
+                            console.log(resultDocument)
+
+                            setresultDocument(resultDocument)
+                        })
+
+
                     const d = new Date(myresults[0].date)
                     var date = d.getDate()
                     var month = d.getMonth() + 1;
@@ -725,16 +741,6 @@ export default function AdminStudentApplication() {
         // setmyagentName(agentName)
         // setmyagentEmail(agentEmail)
 
-        const url = process.env.REACT_APP_SERVER_URL + "admin/students/" + mystudentID + "/documents/";
-        fetch(url, {
-            method: 'GET',
-            headers: { 'Authorization': mounted }
-        })
-            .then(response => response.json())
-            .then(data => {
-                var resultDocument = data.studentDocuments;
-                setresultDocument(resultDocument)
-            })
 
 
 
@@ -893,6 +899,11 @@ export default function AdminStudentApplication() {
             .then(blob => saveAs(blob, mybuildStudentID + "-" + myname + "-" + "allDocument.zip"))
             .catch((err) => {
             });
+    }
+    function dummy(value) {
+
+        setmyindexValue(value)
+        setshowModal(true)
     }
     return (
         <div id="page-top">
@@ -1938,30 +1949,57 @@ export default function AdminStudentApplication() {
                                                                                                                             </div>
                                                                                                                         </div>
                                                                                                                     </li>
-                                                                                                                    <li>
-                                                                                                                        <div className="doc-topheader">
-                                                                                                                            <div className="row">
-                                                                                                                                <div className="col-md-6"> <h5>Identity Documents</h5></div>
-                                                                                                                                <div className="col-md-6 text-right">
-                                                                                                                                    {studentPassportDocument !== "" || studentPassportBackDocument !== "" || studentCVDocument !== "" ?
-                                                                                                                                        <button type="button" title="Identity Documents" className="btn btn-outline-primary btn-download" ><span>
-                                                                                                                                            <FontAwesomeIcon icon={faCloudDownload} />
-                                                                                                                                        </span>Download</button>
-                                                                                                                                        :
-                                                                                                                                        <button type="button" title="Identity Documents" className="btn btn-outline-primary btn-download disabled" ><span>
-                                                                                                                                            <FontAwesomeIcon icon={faCloudDownload} />
-                                                                                                                                        </span>Download</button>}
+                                                                                                                    {/* start dummy */}
+                                                                                                                    <div className="doc-topheader">
+                                                                                                                        {resultDocument.map((element, index) => (
+                                                                                                                            <div className="row" key={index}>
+                                                                                                                                <div className="col-md-6">
+                                                                                                                                    <h6>{element.documentName}</h6>
                                                                                                                                 </div>
+                                                                                                                                <div className="col-md-3 ">
+                                                                                                                                    <a href={"https://coursementor.com/uploadApi/download.php?file=" + element.file}
+                                                                                                                                        title="view document" type="button" ><FontAwesomeIcon icon={faDownload} title="view document" className="btn btn-outline-primary" />
+                                                                                                                                    </a>
+                                                                                                                                </div>
+                                                                                                                                <div className="col-md-3 text-right">
+
+
+                                                                                                                                    {element.fileExtension === "docx" || element.fileExtension === "doc" ?
+                                                                                                                                        <a href={"https://coursementor.com/uploadApi/download.php?file=" + element.file}
+                                                                                                                                            title="view document" type="button" ><FontAwesomeIcon icon={faEye} title="view document" className="btn btn-outline-primary" />
+                                                                                                                                        </a>
+                                                                                                                                        :
+                                                                                                                                        <a title="view document" type="button" onClick={() => dummy(index)}>
+                                                                                                                                            <FontAwesomeIcon icon={faEye} title="view document" className="btn btn-outline-primary" />
+                                                                                                                                        </a>
+                                                                                                                                    }
+
+                                                                                                                                </div>
+                                                                                                                                {myindexValue === index ?
+                                                                                                                                    <Modal className="modal-container"
+                                                                                                                                        show={showModal}
+                                                                                                                                        onHide={() => close()}
+                                                                                                                                        animation={true}>
+                                                                                                                                        <Modal.Header closeButton>
+                                                                                                                                            <Modal.Title>Document</Modal.Title>
+                                                                                                                                        </Modal.Header>
+                                                                                                                                        <div className="modal-body">
+
+                                                                                                                                            {element.fileExtension === "jpeg" || element.fileExtension === "jpg" || element.fileExtension === "png" ?
+                                                                                                                                                <img src={element.file} alt="passportback" />
+                                                                                                                                                : element.fileExtension === "pdf" ?
+                                                                                                                                                    <div>
+                                                                                                                                                        <iframe src={element.file} width="100%" height="500px"></iframe>
+                                                                                                                                                    </div>
+                                                                                                                                                    : null
+                                                                                                                                            }
+                                                                                                                                        </div>
+                                                                                                                                    </Modal>
+                                                                                                                                    : null}
                                                                                                                             </div>
-                                                                                                                        </div>
-
-
-
-
-
-
-                                                                                                                    </li>
-
+                                                                                                                        ))}
+                                                                                                                    </div>
+                                                                                                                    {/* end dummy */}
 
                                                                                                                 </ul>
                                                                                                             </div>
