@@ -2,16 +2,11 @@ import React, { useState, useEffect } from "react";
 import axios from 'axios';
 import StudentTopbarSidebar from '../../components/StudentTopbarSidebar';
 import StudentLayout from '../../components/StudentLayout';
-
-
-// import StudentSidebar from '../../components/StudentSidebar';
 import Image from 'next/image'
 import SweetAlert from 'react-bootstrap-sweetalert';
 import Link from 'next/link'
 import Loader from '../../components/Loader';
-// import Loader from '../Home/Loader';
-// import Link from 'next/link'
-// import '../../scss/bookmark.scss';
+
 export default function Bookmark() {
   const [deleteId, setdeleteId] = useState();
   const [mounted, setMounted] = useState();
@@ -28,6 +23,7 @@ export default function Bookmark() {
     var mounted = localStorage.getItem("studentToken")
     setMounted(mounted)
     if (studentId !== null) {
+      setmyloader("true")
       const url = process.env.REACT_APP_SERVER_URL + 'student/bookmarks';
       fetch(url, {
         method: 'GET',
@@ -35,6 +31,7 @@ export default function Bookmark() {
       })
         .then(response => response.json())
         .then(data => {
+          setmyloader("false")
           setdata(data.studentBookmarks)
           var myresults = data.studentBookmarks
           if (Object.keys(myresults).length !== 0) {
@@ -55,7 +52,7 @@ export default function Bookmark() {
 
         <div className="d-sm-flex align-items-center justify-content-between mb-4">
           {showBookmark === "1" ?
-            <h1 className="h3 mb-0 text-gray-800">My Favourites</h1> : <h1 className="h3 mb-0 text-gray-800">No BookMarks Available</h1>}
+            <h1 className="h3 mb-0 text-gray-800">My Favourites</h1> : <h1 className="h3 mb-0 text-gray-800">No Favourites Available</h1>}
         </div>
         {submitSuccess === 1 ? <div className="Show_success_message">
           <strong>Success!</strong> {successMessage}
