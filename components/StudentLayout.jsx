@@ -154,13 +154,13 @@ const StudentLayout = () => {
               <li onClick={() => handleCurrentClick("Explore")}>
                 <Link href='/student/dashboard'><a title="All Orders">
                   <FontAwesomeIcon icon={faDashboard} className="sidebar-faicon" />
-                  <span>Applied Application</span>
+                  <span>Applied Application(s)</span>
                 </a></Link>
               </li>
               <li onClick={() => handleCurrentClick("Explore")}>
                 <Link href='/student/applicationProfile'><a title="All Orders">
                   <FontAwesomeIcon icon={faAddressBook} className="sidebar-faicon" />
-                  <span>Application Profile</span>
+                  <span>My Application Profile</span>
                 </a></Link>
               </li>
               <li onClick={() => handleCurrentClick("Explore")}>
