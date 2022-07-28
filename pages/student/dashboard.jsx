@@ -272,12 +272,14 @@ export default function Dashboard(location) {
         else {
 
 
+
             setmyloader("true")
             const obj = new FormData();
             obj.append("message", message);
             obj.append("studentID", studentId);
             obj.append("type", 0);
             obj.append("file", msgFile);
+            obj.append("msgfileName", selectedfileName);
             obj.append("mybuildApplicationID", mybuildApplicationID);
 
 
@@ -706,7 +708,7 @@ export default function Dashboard(location) {
                                                                                                                                         </div>
                                                                                                                                         <div className="reply-content ">
                                                                                                                                             <p>{element.message}</p>
-                                                                                                                                            {element.file !== "" ? <a className="appAttachment" href={"https://coursementor.com/uploadApi/download.php?file=" + element.file} >download Attachment</a>
+                                                                                                                                            {element.file !== "" ? <a className="appAttachment" href={"https://coursementor.com/uploadApi/download.php?file=" + element.file} >{element.msgfileName}</a>
                                                                                                                                                 : null}
 
                                                                                                                                         </div>
@@ -731,7 +733,7 @@ export default function Dashboard(location) {
                                                                                                                                     </div>
                                                                                                                                     <div className="reply-content ">
                                                                                                                                         <p>{element.message}</p>
-                                                                                                                                        {element.file !== "" ? <a className="appAttachment" href={"https://coursementor.com/uploadApi/download.php?file=" + element.file} >download Attachment</a>
+                                                                                                                                        {element.file !== "" ? <a className="appAttachment" href={"https://coursementor.com/uploadApi/download.php?file=" + element.file} >{element.msgfileName}</a>
                                                                                                                                             : null}
                                                                                                                                     </div>
                                                                                                                                 </div>

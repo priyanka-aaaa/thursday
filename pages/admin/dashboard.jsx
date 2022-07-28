@@ -773,6 +773,7 @@ export default function AdminStudentApplication() {
             obj.append("studentID", mystudentID);
             obj.append("type", 0);
             obj.append("file", msgFile);
+            obj.append("msgfileName", selectedfileName);
             obj.append("mybuildApplicationID", mybuildApplicationID);
             axios.post(process.env.REACT_APP_SERVER_URL + 'admin/msg/' + mystudentID + "/" + id, obj, { headers: { 'Authorization': mounted } })
                 .then(function (res) {
@@ -1971,7 +1972,7 @@ export default function AdminStudentApplication() {
                                                                                                                                                                                 </div>
                                                                                                                                                                                 <div className="reply-content ">
                                                                                                                                                                                     <p>{element.message}</p>
-                                                                                                                                                                                    {element.file !== "" ? <a className="appAttachment" href={"https://coursementor.com/uploadApi/download.php?file=" + element.file} target="_blank" rel="noreferrer" >download Attachment</a>
+                                                                                                                                                                                    {element.file !== "" ? <a className="appAttachment" href={"https://coursementor.com/uploadApi/download.php?file=" + element.file}  >{element.msgfileName}</a>
                                                                                                                                                                                         : null}
                                                                                                                                                                                 </div>
                                                                                                                                                                             </div>
@@ -1992,7 +1993,7 @@ export default function AdminStudentApplication() {
                                                                                                                                                                             </div>
                                                                                                                                                                             <div className="reply-content ">
                                                                                                                                                                                 <p>{element.message}</p>
-                                                                                                                                                                                {element.file !== "" ? <a className="appAttachment" href={"https://coursementor.com/uploadApi/download.php?file=" + element.file} target="_blank" rel="noreferrer" >download Attachment</a>
+                                                                                                                                                                                {element.file !== "" ? <a className="appAttachment" href={"https://coursementor.com/uploadApi/download.php?file=" + element.file} >{element.msgfileName}</a>
                                                                                                                                                                                     : null}
                                                                                                                                                                             </div>
                                                                                                                                                                         </div>
