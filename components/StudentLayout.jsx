@@ -178,7 +178,7 @@ const StudentLayout = () => {
               <li onClick={() => handleCurrentClick("Explore")}>
                 <Link href='/student/message'><a title="All Orders">
                   <FontAwesomeIcon icon={faEnvelope} className="sidebar-faicon" />
-                  <span>Message</span>
+                  <span>Messages</span>
                 </a></Link>
               </li>
 

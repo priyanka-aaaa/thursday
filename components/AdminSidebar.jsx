@@ -186,13 +186,13 @@ const AdminSidebar = () => {
         <li className="nav-item " onClick={() => handleCurrentClick("Setting")}>
           <Link href='/admin/setting' className="nav-link current-tab" title="Setting"><a className="nav-link">
             <i className="fas fa-Setting"></i>
-            <span><FontAwesomeIcon icon={faDashboard} className="sidebar-faicon" /><span className="text-mob-hide">Setting</span></span></a></Link>
+            <span><FontAwesomeIcon icon={faDashboard} className="sidebar-faicon" /><span className="text-mob-hide">Settings</span></span></a></Link>
         </li>
         :
         <li className="nav-item " onClick={() => handleCurrentClick("Setting")}>
           <Link href='/admin/setting' className="nav-link" title="Setting"><a className="nav-link">
             <i className="fas fa-Setting"></i>
-            <span><FontAwesomeIcon icon={faDashboard} className="sidebar-faicon" /><span className="text-mob-hide">Setting</span></span></a></Link>
+            <span><FontAwesomeIcon icon={faDashboard} className="sidebar-faicon" /><span className="text-mob-hide">Settings</span></span></a></Link>
         </li>
       }
       {currentMenu === "offlineApplication" ?
