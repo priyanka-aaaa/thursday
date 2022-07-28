@@ -284,12 +284,12 @@ const Header = () => {
         <ul className="mobilemenu">
           {/* <a className="btn-search " href="/search-study-abroad-program"><span><FontAwesomeIcon   icon={faSearch} /></span>Search for universities & courses</a> */}
           <h5>Site Map</h5>
-          <li><a href="#">Learn</a></li>
+          <li><Link href="#">Learn</Link></li>
           <li><Link href="/School">Schools</Link></li>
           <li><Link href="/agent">Recruitment
             Partners</Link>
           </li>
-          <li><a href="/students">Students</a></li>
+          <li><Link href="/students">Students</Link></li>
         </ul>
         <div className="canvas-logo">
           <Link href="/">
