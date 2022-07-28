@@ -222,7 +222,7 @@ const Header = () => {
                   <div className="dropdown-menu ">
                     <h5>Dashboard</h5>
                     <p>Login or signup to access your dashboard</p>
-                    <Link className="dropdown-item btn btn-login" href="/studentlogin"><a className="dropdown-item btn btn-login">Login</a></Link>
+                    <Link className="dropdown-item btn btn-login" href="/login"><a className="dropdown-item btn btn-login">Login</a></Link>
                     <Link className="dropdown-item btn btn-register" href="/studentregister"><a className="dropdown-item btn btn-register" >Register</a></Link>
 
                   </div>
