@@ -285,9 +285,9 @@ const Header = () => {
           {/* <a className="btn-search " href="/search-study-abroad-program"><span><FontAwesomeIcon   icon={faSearch} /></span>Search for universities & courses</a> */}
           <h5>Site Map</h5>
           <li><a href="#">Learn</a></li>
-          <li><a href="/School">Schools</a></li>
-          <li><a href="/agent">Recruitment
-            Partners</a>
+          <li><Link href="/School">Schools</Link></li>
+          <li><Link href="/agent">Recruitment
+            Partners</Link>
           </li>
           <li><a href="/students">Students</a></li>
         </ul>
