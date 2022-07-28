@@ -890,7 +890,7 @@ const MyschoolDetails = (pageProps) => {
                                                                                     <iframe className='video' 
                                                                                         title='Youtube player'
                                                                                         // rel="noreferrer noopener nofollow" 
-                                                                                        sandbox='allow-forms allow-scripts'
+                                                                                        sandbox='allow-forms allow-scripts" allow-same-origin allow-forms allow-popups allow-scripts allow-presentation'
                                                                                         src={'https://youtube.com/embed/' + myArray[1] + '?autoplay=0'}>
                                                                                     </iframe>
                                                                                 </a>
