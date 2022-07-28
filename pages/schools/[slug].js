@@ -91,7 +91,7 @@ export async function getServerSideProps(context) {
             objhello.push(courseStructuredData);
         }
     }
-   
+
     //end for course schema
     return {
 
@@ -408,27 +408,27 @@ const MyschoolDetails = (pageProps) => {
                 <meta charSet="utf-8" />
 
                 <title>
-                    {pageProps.mydata.universityPrimaryInformation.name +" " +pageProps.mydata.universityPrimaryInformation.state  + " CourseMentor™"}
+                    {pageProps.mydata.universityPrimaryInformation.name + " " + pageProps.mydata.universityPrimaryInformation.state + " CourseMentor™"}
                 </title>
-                <meta name="description" content={pageProps.mydata.universityPrimaryInformation.name + " "+pageProps.mydata.universityPrimaryInformation.state + " " + pageProps.mydata.universityPrimaryInformation.country
+                <meta name="description" content={pageProps.mydata.universityPrimaryInformation.name + " " + pageProps.mydata.universityPrimaryInformation.state + " " + pageProps.mydata.universityPrimaryInformation.country
                     + "-" +
                     "admissions process"
                     +
                     "- CourseMentor™. Save upto 1000's of $, Apply for next upcoming intakes now"
                 }
                 />
-                <meta property="og:title" content= {pageProps.mydata.universityPrimaryInformation.name +" " +pageProps.mydata.universityPrimaryInformation.state  + " CourseMentor™"}></meta>
+                <meta property="og:title" content={pageProps.mydata.universityPrimaryInformation.name + " " + pageProps.mydata.universityPrimaryInformation.state + " CourseMentor™"}></meta>
                 <meta property="og:description"
-                    content={pageProps.mydata.universityPrimaryInformation.name + " "+pageProps.mydata.universityPrimaryInformation.state + " " + pageProps.mydata.universityPrimaryInformation.country
-                    + "-" +
-                    "admissions process"
-                    +
-                    "- CourseMentor™. Save upto 1000's of $, Apply for next upcoming intakes now"
-                }></meta>
+                    content={pageProps.mydata.universityPrimaryInformation.name + " " + pageProps.mydata.universityPrimaryInformation.state + " " + pageProps.mydata.universityPrimaryInformation.country
+                        + "-" +
+                        "admissions process"
+                        +
+                        "- CourseMentor™. Save upto 1000's of $, Apply for next upcoming intakes now"
+                    }></meta>
                 <meta property="og:image" content={pageProps.mydata.universityImage.coverPic}
 
                 ></meta>
-                  <link rel="icon"  href="/images/favicon.ico" />
+                <link rel="icon" href="/images/favicon.ico" />
                 <link rel="canonical" href="https://abroad.coursementor.com/" />
                 {/* start faq */}
 
@@ -882,17 +882,26 @@ const MyschoolDetails = (pageProps) => {
                                                                     <div className="col-md-4" key={index}>
                                                                         <div className="blog-img mb-3">
                                                                             {element.type === "image" ?
-                                                                                <a  rel="noreferrer noopener nofollow">
+                                                                                <a rel="noreferrer noopener nofollow">
                                                                                     <img unoptimized={true} src={element.link} alt="image" loading="lazy" />
                                                                                 </a>
                                                                                 :
-                                                                                <a   rel="nofollow noopener noreferrer" >
-                                                                                    <iframe className='video' 
+                                                                                <a rel="nofollow noopener noreferrer" >
+                                                                                    
+
+                                                                                    <iframe src={'https://www.youtube.com/embed/'+myArray[1]}
+                                                                                        frameborder='0'
+                                                                                        allow='autoplay; encrypted-media'
+                                                                                        allowfullscreen
+                                                                                        title='video'
+                                                                                    />
+
+                                                                                    {/* <iframe className='video'
                                                                                         title='Youtube player'
                                                                                         // rel="noreferrer noopener nofollow" 
                                                                                         sandbox='allow-forms allow-scripts" allow-same-origin allow-forms allow-popups allow-scripts allow-presentation'
                                                                                         src={'https://youtube.com/embed/' + myArray[1] + '?autoplay=0'}>
-                                                                                    </iframe>
+                                                                                    </iframe> */}
                                                                                 </a>
                                                                             }
                                                                         </div>
@@ -985,7 +994,7 @@ const MyschoolDetails = (pageProps) => {
                                                                                 </div>
                                                                             </div>
                                                                             <div className="text-right w-100">
-                                                                         
+
                                                                                 <button className="btn btn-primary  w-100" onClick={() => handleApplyNow(pageProps.mydata._id, element._id, element.month, "first", pageProps.mydata.universityPrimaryInformation.country, pageProps.mydata.universityPrimaryInformation.name, element.courseName)}>Apply Now
                                                                                     {/* <Image    unoptimized={true}
                                                                                         src="https://images.leverageedu.com/university/whitearrow.svg" loading="lazy" />
@@ -1043,7 +1052,7 @@ const MyschoolDetails = (pageProps) => {
                                             <div id="Similar" className="blog-item">
                                                 <div className="similar_fullbox__1qBJc  blog-content">
                                                     <h3 className="blog-title"><a href="#">Similar Universities</a></h3>
-                                                   
+
                                                     <Slider {...settings}>
                                                         {pageProps.similarUniversity.map((element, index) =>
                                                         (
