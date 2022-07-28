@@ -428,6 +428,7 @@ const MyschoolDetails = (pageProps) => {
                 <meta property="og:image" content={pageProps.mydata.universityImage.coverPic}
 
                 ></meta>
+                  <link rel="icon"  href="/images/favicon.ico" />
                 <link rel="canonical" href="https://abroad.coursementor.com/" />
                 {/* start faq */}
 

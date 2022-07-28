@@ -354,6 +354,7 @@ const Study = (pageProps) => {
         <meta property="og:title" content="Apply Australia Study Visa Now - CourseMentor™" />
         <meta property="og:description" content="CourseMentor™ - Study Abroad in Australia - Best University Course Finder to study in australia. Apply for upcoming intakes now!" />
         <meta property="og:image" content="og image" />
+        <link rel="icon"  href="/images/favicon.ico" />
         <script type="application/ld+json">
           {JSON.stringify(articleStructuredData)}
         </script>

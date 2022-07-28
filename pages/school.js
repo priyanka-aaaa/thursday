@@ -61,7 +61,7 @@ export default function Myschool() {
       <Head>
         <title>International School Authority Signin</title>
         <meta name="description" content="International School Authority Signin" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon"  href="/images/favicon.ico" />
       </Head>
 
       <div className="main-content">

@@ -352,6 +352,7 @@ const Study = (pageProps) => {
         <meta property="og:title" content="Apply USA Study Visa Now - CourseMentor™" />
         <meta property="og:description" content="CourseMentor™ - Study Abroad in America - Best USA University Course Finder to study in usa. Apply for upcoming intakes now!" />
         <meta property="og:image" content="og image" />
+        <link rel="icon"  href="/images/favicon.ico" />
         <script type="application/ld+json">
           {JSON.stringify(articleStructuredData)}
         </script>

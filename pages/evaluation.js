@@ -635,7 +635,7 @@ export default function About() {
         <meta property="og:title" content="Free Study Abroad Profile Evaluation by CourseMentor™" />
         <meta property="og:description" content="CourseMentor™ - Study Abroad - Best University and colleges Course Finder to study in foreign. Apply for upcoming intakes now!" />
         <meta property="og:image" content="og image" />
-       
+        <link rel="icon"  href="/images/favicon.ico" />
       </Head>
         <div className="main-content">
             
