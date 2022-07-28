@@ -12,6 +12,10 @@ export default function OfflineApplication(props) {
     const [universityName, setuniversityName] = useState("");
     const [courseName, setcourseName] = useState("");
     const [country, setcountry] = useState("");
+    const [month, setmonth] = useState("");
+
+    const [year, setyear] = useState("");
+
     const [mounted, setMounted] = useState();
     const [emailExistError, setemailExistError] = useState("");
     const [successMessage, setsuccessMessage] = useState("");
@@ -25,12 +29,13 @@ export default function OfflineApplication(props) {
     function Personal_Information(event) {
         event.preventDefault();
         setmyloader("true")
+        var finalvalue=month+" "+year;
         const obj = {
             universityName: universityName,
             courseName: courseName,
             country: country,
             email: email,
-            session: session
+            session: finalvalue
             //end for passport yes
         };
         axios.post(process.env.REACT_APP_SERVER_URL + 'admin/order', obj, { headers: { 'Authorization': mounted } })
@@ -83,8 +88,8 @@ export default function OfflineApplication(props) {
                                                 <input
                                                     value={email || ""}
                                                     onChange={(e) => {
-                                                         setemail(e.target.value)
-                                                         setemailExistError("")
+                                                        setemail(e.target.value)
+                                                        setemailExistError("")
                                                     }
                                                     }
                                                     type="text" className="form-control" placeholder="Email" name="fname" required />
@@ -139,14 +144,14 @@ export default function OfflineApplication(props) {
 
                                             <div className="col-md-6">
                                                 <div className="from-group">
-                                                    <label htmlFor="Mname" className="form-label">Session</label>
+                                                    <label htmlFor="Mname" className="form-label">Session month</label>
                                                     <select
 
                                                         className="form-control"
                                                         placeholder="Session" name="Month"
-                                                        value={session} required
-                                                        onChange={(e) => setsession(e.target.value)}>
-                                                        <option value=''>Select Session</option>
+                                                        value={month} required
+                                                        onChange={(e) => setmonth(e.target.value)}>
+                                                        <option value=''>Select Month</option>
                                                         <option value='Jan'>Janaury</option>
                                                         <option value='Feb'>February</option>
                                                         <option value='March'>March</option>
@@ -159,6 +164,26 @@ export default function OfflineApplication(props) {
                                                         <option value='Oct'>October</option>
                                                         <option value='Nov'>November</option>
                                                         <option value='Dec'>December</option>
+                                                    </select>
+
+
+                                                </div>
+                                            </div>
+                                            <div className="col-md-6">
+                                                <div className="from-group">
+                                                    <label htmlFor="Mname" className="form-label">Session Year</label>
+                                                    <select required
+                                                        className="form-control"
+                                                        placeholder="Year" name="year"
+                                                        value={year}
+                                                        onChange={(e) => setyear(e.target.value)}>
+                                                        <option value=''>Select Year</option>
+                                                        <option value='2022'>2022</option>
+                                                        <option value='2023'>2023</option>
+                                                        <option value='2024'>2024</option>
+                                                        <option value='2025'>2025</option>
+                                                        <option value='2026'>2026</option>
+
                                                     </select>
 
 
