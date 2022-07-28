@@ -1136,11 +1136,7 @@ const MyschoolDetails = (pageProps) => {
                         <button type="submit" className="btn btn-website">Login</button>
                     </form>
 
-                    {/* <a title="Password Chnage" onClick={() => openforgot()} >     Forgot your Password?</a> */}
-                    {/* <StudentForgotPass /> */}
-                    {/* <p>Don't have an account? Click here to
-                        <Link to={'/StudentRegister'} className="" >
-                            Register</Link></p> */}
+
 
                 </div>
 
