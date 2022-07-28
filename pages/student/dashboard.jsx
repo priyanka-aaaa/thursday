@@ -29,6 +29,7 @@ export default function Dashboard(location) {
     const [data, setdata] = useState([]);
     const [selectedfileName, setselectedfileName] = useState("");
     const [refreshMsg, setrefreshMsg] = useState([]);
+    const [refreshApplication, setrefreshApplication] = useState([]);
     const [thumbnailFiles, setThumbnailFiles] = useState([]);
     const [submitError, setsubmitError] = useState("0");
     const [studentId, setstudentId] = useState("0px");
@@ -116,6 +117,9 @@ export default function Dashboard(location) {
     function handleRefresh() {
         setrefreshMsg(["refresh"]);
     }
+    function handleApplicationRefresh() {
+        setrefreshApplication(["refresh"]);
+    }
     function open() {
         setshowModal(true)
     }
@@ -155,6 +159,125 @@ export default function Dashboard(location) {
                 });
         }
     }, [refreshMsg]);
+    useEffect(() => {
+        if (id !== undefined) {
+            axios.get(process.env.REACT_APP_SERVER_URL + 'student/orders/' + id, { headers: { 'Authorization': mounted } })
+                .then(function (res) {
+                    if (res.data.success === true) {
+
+                        var myresult = res.data.studentOrder
+
+                        setmycourseID(myresult.courseID)
+                        // setcourseID(myresult.courseID)
+
+                        // start for application fee
+
+                        if (myresult.courseID !== undefined) {
+                            var studentCourseId = myresult.courseID
+                            const url70 = process.env.REACT_APP_SERVER_URL + 'courseOrderFee/' + studentCourseId;
+                            fetch(url70, {
+                                method: 'GET',
+
+                            })
+                                .then(response => response.json())
+                                .then(data => {
+                                    var myapplicationFee = data.courses.applicationFee
+
+                                    settotalPrice(data.courses.applicationFee)
+                                    setcurrency(data.courses.applicationcurrency)
+                                    // setcourseApplicationFee(data.courses.applicationFee)
+                                    // setpendingFee(myapplicationFee - paid)
+                                })
+                        }
+                        else {
+                            settotalPrice(myresult.appPrice)
+                            setcurrency(myresult.appCurrency)
+
+                        }
+                        //end for application fee
+
+                        //start for set msg read
+                        const obj1 = new FormData();
+                        obj1.append("status", "1");
+                        axios.put(process.env.REACT_APP_SERVER_URL + 'student/messagesUnread/' + id, obj1, { headers: { 'Authorization': mounted } })
+                            .then(function (res) {
+
+                            })
+                            .catch(error => {
+                            });
+
+                        //end for set msg read
+
+
+                        setid(myresult._id)
+                        setmyapplicationProgress(myresult.applicationProgress)
+                        setmyapplicationProgressStep(myresult.applicationProgressStep)
+                        setmybuildApplicationID(myresult.buildApplicationID)
+                        setmycountry(myresult.country)
+                        setmycountryID(myresult.countryID)
+                        setmycourseName(myresult.courseName)
+
+
+                        setmysession(myresult.session)
+                        setmyuniversityName(myresult.universityName)
+                        setpaid(myresult.paid)
+                        // settotalPrice(myresult.totalPrice)
+                        // setcurrency(myresult.currency)
+
+                        var pendingFee = Number(myresult.totalPrice) - Number(myresult.paid);
+                        setpendingFee(pendingFee)
+
+
+
+                        const url60 = process.env.REACT_APP_SERVER_URL + 'countryStepName/' + myresult.country;
+                        fetch(url60, {
+                            method: 'GET',
+                            headers: { 'Authorization': mounted }
+                        })
+                            .then(response => response.json())
+                            .then(data => {
+                                setuniversityApplication(data.adminCountry.countrySteps)
+                            })
+
+
+                    }
+                })
+                .catch(error => {
+                });
+
+
+            axios.get(process.env.REACT_APP_SERVER_URL + 'student/msg/' + studentId + "/" + id, { headers: { 'Authorization': mounted } })
+                .then(function (res) {
+                    if (res.data.success === true) {
+                        setmyloader("false")
+                        var myresults = res.data.notifications;
+
+                        if (Object.keys(myresults).length === 0) {
+                        }
+                        const newArr = myresults.map(obj => {
+                            var myd = obj.messageTime
+                            const d = new Date(myd)
+                            var date = d.getDate()
+                            var month = d.getMonth() + 1;
+                            var year = d.getFullYear();
+                            var month = d.toLocaleString('default', { month: 'long' })
+                            var options = {
+                                hour: 'numeric',
+                                minute: 'numeric',
+                                hour12: true
+                            };
+                            var timerr = new Intl.DateTimeFormat('en-US', options).format(d)
+                            var completeTime = month + " " + date + ",  " + year + ", " + timerr
+                            return { ...obj, messageTime: completeTime };
+                            return obj;
+                        });
+                        setFormValues(newArr)
+                    }
+                })
+                .catch(error => {
+                })
+        }
+    }, [refreshApplication]);
     const initPayment = (data) => {
         var options = {
             "key": process.env.REACT_APP_KEY_ID, // Enter the Key ID generated from the Dashboard
@@ -587,9 +710,14 @@ export default function Dashboard(location) {
                             <div className="pcoded-content">
                                 <div className="pcoded-content">
                                     <div className="row">
+
                                         <div className="col-md-8">
                                             <div className="card">
-                                                <h5>Application Information</h5><hr />
+                                                <span className="msgRefresh" onClick={() => handleApplicationRefresh()}>
+                                                    <FontAwesomeIcon className="sidebar-faicon" icon={faRedo} />
+                                                    Refresh
+                                                </span>
+                                                <h5>Application Information <span></span></h5><hr />
                                                 <div className="row">
                                                     <div className="col-md-3">
                                                         <h5>Application ID </h5>
