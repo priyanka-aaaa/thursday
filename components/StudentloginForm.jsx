@@ -208,7 +208,7 @@ export const StudentloginForm = () => {
                     <a title="Forgot Password" onClick={() => open()} >     Forgot your Password?</a>
 
                     <p>Don't have an account? Click here to
-                        <Link href={'/StudentRegister'} className="" title="Register">
+                        <Link href={'/studentregister'} className="" title="Register">
                             Register</Link></p>
                 </div>
                 {/* start google login */}
