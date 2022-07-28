@@ -828,7 +828,7 @@ export default function AdminStudentApplication() {
         }
         else {
             var mailId = myemail
-            var loginUrl = "https://abroad.coursementor.com/Studentlogin"
+            var loginUrl = "https://abroad.coursementor.com/StudentLogin"
         }
         const obj = {
             applicationProgress: value1,
