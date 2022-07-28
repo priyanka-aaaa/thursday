@@ -218,11 +218,11 @@ const Header = () => {
                   </nav>
                 </div>
 
-                <div className="homedropdown dropdown dropdown-menu-end my-account"><a className="" href="/" data-bs-toggle="dropdown" title="Login or signup to access your dashboard"> <img layout="fill" src="/images/user-profile.png" alt="" unoptimized={true} loading="lazy" /></a>
+                <div className="homedropdown dropdown dropdown-menu-end my-account"><a className=""  data-bs-toggle="dropdown" title="Login or signup to access your dashboard"> <img layout="fill" src="/images/user-profile.png" alt="" unoptimized={true} loading="lazy" /></a>
                   <div className="dropdown-menu ">
                     <h5>Dashboard</h5>
                     <p>Login or signup to access your dashboard</p>
-                    <Link className="dropdown-item btn btn-login" href="/StudentLogin"><a className="dropdown-item btn btn-login">Login</a></Link>
+                    <Link className="dropdown-item btn btn-login" href="/studentlogin"><a className="dropdown-item btn btn-login">Login</a></Link>
                     <Link className="dropdown-item btn btn-register" href="/studentregister"><a className="dropdown-item btn btn-register" >Register</a></Link>
 
                   </div>
