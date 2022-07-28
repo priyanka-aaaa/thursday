@@ -82,7 +82,11 @@ export default function OfflineApplication(props) {
 
                                                 <input
                                                     value={email || ""}
-                                                    onChange={(e) => setemail(e.target.value)}
+                                                    onChange={(e) => {
+                                                         setemail(e.target.value)
+                                                         setemailExistError("")
+                                                    }
+                                                    }
                                                     type="text" className="form-control" placeholder="Email" name="fname" required />
                                                 <div className="error-msg"> {emailExistError}</div>
                                             </div>
