@@ -6,7 +6,7 @@ import Head from 'next/head'
 import StudentRegisterForm from '../components/StudentRegisterForm';
 
 import Link from 'next/link'
-export default function Studentregister() {
+export default function StudentRegister() {
     const [redirectToReferrer, setredirectToReferrer] = useState(false);
     useEffect(() => {
     
