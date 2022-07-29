@@ -148,7 +148,7 @@ export default function Counseling() {
                                 onConfirm={(value) => {
                                     setshowSweetAlert("0");
                                     setmyloader("true")
-                                    axios.delete(process.env.REACT_APP_SERVER_URL + 'admin/enquiry/' + deleteId, { headers: { 'Authorization': mounted } })
+                                    axios.delete(process.env.REACT_APP_SERVER_URL + 'admin/offlineVisit/' + deleteId, { headers: { 'Authorization': mounted } })
                                         .then(function (res) {
                                             setmyloader("false")
                                             if (res.data.success === true) {
