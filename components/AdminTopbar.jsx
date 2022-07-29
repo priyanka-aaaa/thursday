@@ -64,7 +64,7 @@ const AdminTopbar = () => {
     localStorage.removeItem("adminName");
     localStorage.removeItem("adminEmail");
     localStorage.removeItem("adminPhone");
-    window.location.href = "/";
+    window.location.href = "/adminlogin";
   }
 
 
