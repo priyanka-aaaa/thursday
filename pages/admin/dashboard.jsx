@@ -465,6 +465,9 @@ export default function AdminStudentApplication() {
         }])
 
         //end for all empty
+        
+    
+
         //start one order of one student
         var url80 = process.env.REACT_APP_SERVER_URL + 'admin/oneOrder/' + id;
         axios.get(url80, { headers: { 'Authorization': mounted } })
@@ -473,6 +476,15 @@ export default function AdminStudentApplication() {
                     var myresults = res.data.orders
 
                     var studentDetails = myresults[0].studentDetail[0]
+                    const url60 = process.env.REACT_APP_SERVER_URL + 'countryStepName/' + myresults[0].country;
+                    fetch(url60, {
+                        method: 'GET',
+                        headers: { 'Authorization': mounted }
+                    })
+                        .then(response => response.json())
+                        .then(data => {
+                            setuniversityApplication(data.adminCountry.countrySteps)
+                        })
                     setmyagentName(studentDetails.agentName)
                     setmyagentEmail(studentDetails.agentEmail)
                     setmyname(studentDetails.name)
@@ -560,16 +572,6 @@ export default function AdminStudentApplication() {
                     //         setuniversityApplication(data.adminCountry.countrySteps)
                     //     })
 
-
-                    const url60 = process.env.REACT_APP_SERVER_URL + 'countryStepName/' + myresults[0].country;
-                    fetch(url60, {
-                        method: 'GET',
-                        headers: { 'Authorization': mounted }
-                    })
-                        .then(response => response.json())
-                        .then(data => {
-                            setuniversityApplication(data.adminCountry.countrySteps)
-                        })
 
                     //end for country Id
                     //start for student details
@@ -944,7 +946,7 @@ export default function AdminStudentApplication() {
                                     //start for send sms
                                     axios.put('https://coursementor.com/uploadApi/sms.php', myobj2, { headers: { 'Authorization': mounted } })
                                         .then(function (res) {
-                                          console.log("res")
+                                       
                                             // if (res.data.success === true) {
                                             //     setsuccessMessage("Application Step Updated")
                                             //     setTimeout(() => setsubmitSuccess(""), 3000);
