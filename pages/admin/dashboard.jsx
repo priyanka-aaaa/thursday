@@ -14,7 +14,7 @@ import { saveAs } from "file-saver";
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
-    faEye, faCloudDownload, faCheckCircle, faPaperPlane, faRedo, faTrash, faDownload
+    faEye, faCloudDownload, faCheckCircle, faPaperPlane, faRedo, faTrash, faDownload,faClose
 } from '@fortawesome/free-solid-svg-icons';
 export default function AdminStudentApplication() {
     const [resultDocument, setresultDocument] = useState([{
@@ -24,6 +24,7 @@ export default function AdminStudentApplication() {
     const [myagentName, setmyagentName] = useState("");
     const [myagentEmail, setmyagentEmail] = useState("");
     const [deleteId, setdeleteId] = useState("");
+    const [myapplicationClose, setmyapplicationClose] = useState("");
 
     const [myindexValue, setmyindexValue] = useState();
     const [mypaid, setmypaid] = useState("");
@@ -465,8 +466,8 @@ export default function AdminStudentApplication() {
         }])
 
         //end for all empty
-        
-    
+
+
 
         //start one order of one student
         var url80 = process.env.REACT_APP_SERVER_URL + 'admin/oneOrder/' + id;
@@ -485,6 +486,7 @@ export default function AdminStudentApplication() {
                         .then(data => {
                             setuniversityApplication(data.adminCountry.countrySteps)
                         })
+
                     setmyagentName(studentDetails.agentName)
                     setmyagentEmail(studentDetails.agentEmail)
                     setmyname(studentDetails.name)
@@ -493,6 +495,7 @@ export default function AdminStudentApplication() {
                     setsplitFirstname(splitname[0])
                     setmyemail(studentDetails.email)
                     setmyphone(studentDetails.phone)
+                    setmyapplicationClose(myresults[0].applicationClose)
                     setmypaid(myresults[0].paid)
                     setmycourseID(myresults[0].courseID)
                     setmycountryID(myresults[0].countryID)
@@ -911,6 +914,23 @@ export default function AdminStudentApplication() {
         setmyindexValue(value)
         setshowModal(true)
     }
+    function handleApplicationClosed() {
+        const obj5 = {
+            applicationClose: "yes",
+
+        };
+        axios.put(process.env.REACT_APP_SERVER_URL + 'admin/updateOrderAppClose/' + id, obj5, { headers: { 'Authorization': mounted } })
+            .then(function (res) {
+                setmyloader("false")
+                if (res.data.success === true) {
+                    setsuccessMessage("Application Close")
+                    setTimeout(() => setsubmitSuccess(""), 3000);
+                    setsubmitSuccess(1)
+                }
+            })
+            .catch(error => {
+            });
+    }
     return (
         <div id="page-top">
             <div id="wrapper">
@@ -946,7 +966,7 @@ export default function AdminStudentApplication() {
                                     //start for send sms
                                     axios.put('https://coursementor.com/uploadApi/sms.php', myobj2, { headers: { 'Authorization': mounted } })
                                         .then(function (res) {
-                                       
+
                                             // if (res.data.success === true) {
                                             //     setsuccessMessage("Application Step Updated")
                                             //     setTimeout(() => setsubmitSuccess(""), 3000);
@@ -2176,7 +2196,12 @@ export default function AdminStudentApplication() {
                                                                 </div>
                                                                 <div className="col-xl-4">
                                                                     <div className="card mb-4">
-                                                                        <div className="profile-main">
+                                                                        {myapplicationClose === "yes" ? <div className="profile-main"><div className="application-current-status">
+                                                                            <h5>Application Closed</h5>
+                                                                            <ul>    <li className="statusBox current-statAppClosed" style={{ 'backgroundColor': '#0982A5' }}>Application Closed<span>
+                                                                                <FontAwesomeIcon icon={faClose} />
+                                                                            </span></li></ul>
+                                                                        </div></div> : <> <div className="profile-main">
                                                                             <div className="application-current-status">
                                                                                 <h5>Application Current Status</h5>
                                                                                 <ul>
@@ -2253,10 +2278,8 @@ export default function AdminStudentApplication() {
 
 
                                                                             </div>
-
-
-
                                                                         </div>
+                                                                        <div> <button className="btn-send-msg" onClick={() => handleApplicationClosed()}>Application Closed</button></div>
                                                                         <div className="set-payment">
                                                                             <h5>Set Payment</h5>
                                                                             {/* start for update application fee */}
@@ -2297,7 +2320,8 @@ export default function AdminStudentApplication() {
                                                                                 </div>
                                                                                 <button type="submit" className="btn-send-msg">Submit</button>
                                                                             </form>
-                                                                        </div>
+                                                                        </div></>}
+                                                                       
                                                                     </div>
                                                                 </div>
                                                             </div>

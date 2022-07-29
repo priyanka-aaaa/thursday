@@ -23,7 +23,7 @@ export default function Dashboard(location) {
     const [showModal, setshowModal] = useState("");
     const [msgFile, setmsgFile] = useState([]);
     const [mycourseID, setmycourseID] = useState("");
-
+    const [myapplicationClose, setmyapplicationClose] = useState("");
     const [popupphone, setpopupphone] = useState("");
     const [popupphoneError, setpopupphoneError] = useState("");
     const [data, setdata] = useState([]);
@@ -464,7 +464,7 @@ export default function Dashboard(location) {
                 if (res.data.success === true) {
 
                     var myresult = res.data.studentOrder
-
+                    setmyapplicationClose(myresult.applicationClose)
                     setmycourseID(myresult.courseID)
                     // setcourseID(myresult.courseID)
 
@@ -611,6 +611,23 @@ export default function Dashboard(location) {
 
         }
     }
+    function handleApplicationClosed() {
+        const obj5 = {
+            applicationClose: "yes",
+
+        };
+        axios.put(process.env.REACT_APP_SERVER_URL + 'admin/updateOrderAppClose/' + id, obj5, { headers: { 'Authorization': mounted } })
+            .then(function (res) {
+                setmyloader("false")
+                if (res.data.success === true) {
+                    setsuccessMessage("Application Close")
+                    setTimeout(() => setsubmitSuccess(""), 3000);
+                    setsubmitSuccess(1)
+                }
+            })
+            .catch(error => {
+            });
+    }
     return (
         <>
             <StudentLayout />
@@ -677,9 +694,13 @@ export default function Dashboard(location) {
                                                         <div className="col-md-6">
                                                             <div className="unv-name">
                                                                 <span><FontAwesomeIcon className="sidebar-faicon" icon={faAreaChart} /></span>
-
                                                                 <h5>Current Application Process</h5>
-                                                                {object.applicationProgress}
+                                                                {object.applicationClose === "yes" ? <div className="profile-main"><div className="application-current-status">
+                                                                   <div className="applicationclosed">Application Closed</div>
+                                                                  
+                                                                </div></div> : <>{object.applicationProgress}</>}
+
+
                                                             </div>
                                                         </div>
 
@@ -950,33 +971,40 @@ export default function Dashboard(location) {
                                         </div>
                                         <div className="col-md-4">
                                             <div className="card">
-                                                <h5>Application Current Status</h5>
-                                                <hr />
-                                                <div className="profile-main">
-                                                    <div className="application-current-status">
-                                                        <ul>
-                                                            {universityApplication.map((object, i) => {
-                                                                return (
-                                                                    <div key={i}>
-                                                                        {i <= myapplicationProgressStep ?
-                                                                            <>
-                                                                                {object === myapplicationProgress ?
-                                                                                    <li className="statusBox current-stat" style={{ 'backgroundColor': '#0982A5' }}>{object}<span>
-                                                                                        <FontAwesomeIcon className="sidebar-faicon" icon={faCheckCircle} />
-                                                                                    </span></li>
-                                                                                    : <li className="statusBox" style={{ 'backgroundColor': "#fff" }}>{object}<span>
-                                                                                        <FontAwesomeIcon className="sidebar-faicon" icon={faCheckCircle} />
-                                                                                    </span></li>}
-                                                                            </>
-                                                                            : <li className="statusBox">{object}<span className="status-completed">
 
-                                                                            </span></li>}
-                                                                    </div>
-                                                                )
-                                                            })}
-                                                        </ul>
-                                                    </div>
-                                                </div>
+                                                {myapplicationClose === "yes" ? <div className="profile-main"><div className="application-current-status">
+                                                    <h5>Application Closed</h5>
+                                                    <ul>    <li className="statusBox current-statAppClosed" style={{ 'backgroundColor': '#0982A5' }}>Application Closed<span>
+
+                                                    </span></li></ul>
+                                                </div></div> : <>
+                                                    <h5>Application Current Status</h5>
+                                                    <hr />
+                                                    <div className="profile-main">
+                                                        <div className="application-current-status">
+                                                            <ul>
+                                                                {universityApplication.map((object, i) => {
+                                                                    return (
+                                                                        <div key={i}>
+                                                                            {i <= myapplicationProgressStep ?
+                                                                                <>
+                                                                                    {object === myapplicationProgress ?
+                                                                                        <li className="statusBox current-stat" style={{ 'backgroundColor': '#0982A5' }}>{object}<span>
+                                                                                            <FontAwesomeIcon className="sidebar-faicon" icon={faCheckCircle} />
+                                                                                        </span></li>
+                                                                                        : <li className="statusBox" style={{ 'backgroundColor': "#fff" }}>{object}<span>
+                                                                                            <FontAwesomeIcon className="sidebar-faicon" icon={faCheckCircle} />
+                                                                                        </span></li>}
+                                                                                </>
+                                                                                : <li className="statusBox">{object}<span className="status-completed">
+
+                                                                                </span></li>}
+                                                                        </div>
+                                                                    )
+                                                                })}
+                                                            </ul>
+                                                        </div>
+                                                    </div></>}
                                             </div>
                                         </div>
                                     </div>

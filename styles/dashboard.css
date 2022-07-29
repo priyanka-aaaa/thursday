@@ -13385,6 +13385,20 @@ span.msgRefresh svg {
 }
 }
 /* end dummy dashboard css */
+li.statusBox.current-statAppClosed {
+    background-color: red !important;
+    color: #fff;
+    font-size: 19px;
+    font-weight: bold;
+}
+.applicationclosed{
+    background-color: red !important;
+    color: #fff;
+    font-size: 19px;
+    font-weight: bold;
+    padding: 10px 10px;
+    width: 182px;
+}
 /* start for sidebar and navbar*/
 .studentLayout nav.navbar.navbar-default.navbar-fixed-top {
     width: 86%;
