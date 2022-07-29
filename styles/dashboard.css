@@ -13734,4 +13734,8 @@ div#mySidenav {
     font-size: 14px;
     width: 18px;
 }
+
 /* end for sidebar and navbar*/
+.sidecurrentMenu {
+    background-color: #020080 !important;
+}

@@ -33,10 +33,12 @@ const StudentLayout = () => {
     }
     var currentUrl = window.location.href;
     var splitcurrentUrl = currentUrl.split("student/")
+    
     setcurrentMenu(splitcurrentUrl[1])
   }, [])
 
   function handleCurrentClick(value) {
+    
     setcurrentMenu(value)
   }
   function logout() {
@@ -96,55 +98,111 @@ const StudentLayout = () => {
 
           <nav>
             <ul className="nav">
-              <li onClick={() => handleCurrentClick("Explore")}>
-                <Link href='/student/search-courses'><a title="All Orders">
+            {currentMenu === "search-courses" ?
+              <li onClick={() => handleCurrentClick("Explore Courses")} class="sidecurrentMenu">
+                <Link href='/student/search-courses'><a title="Explore Courses">
                   <FontAwesomeIcon icon={faDashboard} className="sidebar-faicon" />
                   <span>Explore Courses</span>
                 </a></Link>
               </li>
-              <li onClick={() => handleCurrentClick("Explore")}>
-                <Link href='/student/Free-Profile-Assessment'><a title="All Orders">
+              :
+              <li onClick={() => handleCurrentClick("Explore Courses")} >
+              <Link href='/student/search-courses'><a title="Explore Courses">
+                <FontAwesomeIcon icon={faDashboard} className="sidebar-faicon" />
+                <span>Explore Courses</span>
+              </a></Link>
+            </li>}
+            {currentMenu === "Free-Profile-Assessment" ?
+              <li onClick={() => handleCurrentClick("Free Profile Assessment")} class="sidecurrentMenu">
+                <Link href='/student/Free-Profile-Assessment'><a title="Free Profile Assessment">
                   <FontAwesomeIcon icon={faDashboard} className="sidebar-faicon" />
                   <span>Free Profile Assessment</span>
                 </a></Link>
               </li>
-              <li onClick={() => handleCurrentClick("Explore")}>
-                <Link href='/student/dashboard'><a title="All Orders">
+              :
+              <li onClick={() => handleCurrentClick("Free Profile Assessment")}>
+              <Link href='/student/Free-Profile-Assessment'><a title="Free Profile Assessment">
+                <FontAwesomeIcon icon={faDashboard} className="sidebar-faicon" />
+                <span>Free Profile Assessment</span>
+              </a></Link>
+            </li>}
+            {currentMenu === "dashboard" ?
+              <li onClick={() => handleCurrentClick("Applied Application")}  class="sidecurrentMenu">
+                <Link href='/student/dashboard'><a title="Applied Application">
                   <FontAwesomeIcon icon={faDashboard} className="sidebar-faicon" />
                   <span>Applied Application(s)</span>
                 </a></Link>
-              </li>
-              <li onClick={() => handleCurrentClick("Explore")}>
-                <Link href='/student/applicationProfile'><a title="All Orders">
+              </li>:
+               <li onClick={() => handleCurrentClick("Applied Application")}>
+               <Link href='/student/dashboard'><a title="Applied Application">
+                 <FontAwesomeIcon icon={faDashboard} className="sidebar-faicon" />
+                 <span>Applied Application(s)</span>
+               </a></Link>
+             </li>}
+             {currentMenu === "applicationProfile" ?
+              <li onClick={() => handleCurrentClick("My Application Profile")} class="sidecurrentMenu">
+                <Link href='/student/applicationProfile'><a title="My Application Profile">
                   <FontAwesomeIcon icon={faAddressBook} className="sidebar-faicon" />
                   <span>My Application Profile</span>
                 </a></Link>
-              </li>
-              <li onClick={() => handleCurrentClick("Explore")}>
-                <Link href='/student/document'><a title="All Orders">
+              </li>:
+              <li onClick={() => handleCurrentClick("My Application Profile")}>
+              <Link href='/student/applicationProfile'><a title="My Application Profile">
+                <FontAwesomeIcon icon={faAddressBook} className="sidebar-faicon" />
+                <span>My Application Profile</span>
+              </a></Link>
+            </li>}
+            {currentMenu === "document" ?
+              <li onClick={() => handleCurrentClick("My Documents")} class="sidecurrentMenu">
+                <Link href='/student/document'><a title="My Documents">
                   <FontAwesomeIcon icon={faFile} className="sidebar-faicon" />
                   <span>My Documents</span>
                 </a></Link>
-              </li>
-              <li onClick={() => handleCurrentClick("Explore")}>
-                <Link href='/student/bookmark'><a title="All Orders">
+              </li>: <li onClick={() => handleCurrentClick("My Documents")}>
+                <Link href='/student/document'><a title="My Documents">
+                  <FontAwesomeIcon icon={faFile} className="sidebar-faicon" />
+                  <span>My Documents</span>
+                </a></Link>
+              </li>}
+              {currentMenu === "bookmark" ?
+              <li onClick={() => handleCurrentClick("Favourites")} class="sidecurrentMenu">
+                <Link href='/student/bookmark'><a title="Favourites">
                   <FontAwesomeIcon icon={faStar} className="sidebar-faicon" />
                   <span>Favourites</span>
                 </a></Link>
-              </li>
-              <li onClick={() => handleCurrentClick("Explore")}>
-                <Link href='/student/message'><a title="All Orders">
+              </li>:
+               <li onClick={() => handleCurrentClick("Favourites")}>
+               <Link href='/student/bookmark'><a title="Favourites">
+                 <FontAwesomeIcon icon={faStar} className="sidebar-faicon" />
+                 <span>Favourites</span>
+               </a></Link>
+             </li>}
+             {currentMenu === "message" ?
+              <li onClick={() => handleCurrentClick("Messages")} class="sidecurrentMenu">
+                <Link href='/student/message'><a title="Messages">
                   <FontAwesomeIcon icon={faEnvelope} className="sidebar-faicon" />
                   <span>Messages</span>
                 </a></Link>
-              </li>
-
-              <li onClick={() => handleCurrentClick("Explore")}>
-                <Link href='/student/setting'><a title="All Orders">
+              </li>:
+              <li onClick={() => handleCurrentClick("Messages")}>
+                <Link href='/student/message'><a title="Messages">
+                  <FontAwesomeIcon icon={faEnvelope} className="sidebar-faicon" />
+                  <span>Messages</span>
+                </a></Link>
+              </li>}
+              {currentMenu === "setting" ?
+              <li onClick={() => handleCurrentClick("Settings")} class="sidecurrentMenu">
+                <Link href='/student/setting'><a title="Settings">
                   <FontAwesomeIcon icon={faCog} className="sidebar-faicon" />
                   <span>Settings</span>
                 </a></Link>
-              </li>
+              </li>:
+              <li onClick={() => handleCurrentClick("Settings")}>
+              <Link href='/student/setting'><a title="Settings">
+                <FontAwesomeIcon icon={faCog} className="sidebar-faicon" />
+                <span>Settings</span>
+              </a></Link>
+            </li>}
             </ul>
           </nav>
         </div>
