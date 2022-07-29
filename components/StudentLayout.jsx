@@ -1,38 +1,25 @@
 import React, { useState, useEffect } from "react";
-import axios from 'axios';
 import Link from 'next/link'
-import Image from 'next/image'
-import { Dropdown } from 'react-bootstrap';
 import Router from "next/router";
-// import '../scss/dashboardSidebar.scss';
-
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
-  faSignOutAlt, faFile, faBars, faUser, faDashboard, faStar,  faAddressBook, faCog, faEnvelope
+  faSignOutAlt, faFile, faBars, faUser, faDashboard, faStar, faAddressBook, faCog, faEnvelope
 } from '@fortawesome/free-solid-svg-icons';
 const StudentLayout = () => {
-
-
   const [mounted, setMounted] = useState();
   const [email, setemail] = useState();
-
   const [studentEmail, setstudentEmail] = useState();
   const [studentId, setstudentId] = useState();
   const [currentMenu, setcurrentMenu] = useState("");
-  const [studentName, setstudentName] = useState("");
   const [sidebarmobileShow, setsidebarmobileShow] = useState("");
   useEffect(() => {
     import("bootstrap/dist/js/bootstrap");
     var mounted = localStorage.getItem("studentToken")
     var studentEmail = localStorage.getItem("studentEmail")
-    var studentName = localStorage.getItem("studentName")
     var studentId = localStorage.getItem("studentId")
     setMounted(mounted)
     setstudentEmail(studentEmail)
-    setstudentName(studentName)
-
     setstudentId(studentId)
-
     if (localStorage.getItem("studentId")) {
       var mounted = localStorage.getItem("studentToken")
       var studentEmail = localStorage.getItem("studentEmail")
@@ -43,9 +30,6 @@ const StudentLayout = () => {
     }
     else {
       Router.push("/");
-
-      var studentEmail = "";
-      setredirectToReferrer("true")
     }
     var currentUrl = window.location.href;
     var splitcurrentUrl = currentUrl.split("student/")
@@ -64,7 +48,6 @@ const StudentLayout = () => {
     window.location.href = "/";
   }
   function handleNewtoogleClick() {
-
     if (sidebarmobileShow === "") {
       setsidebarmobileShow("dashboardSidebarDisplay")
     }
@@ -72,7 +55,6 @@ const StudentLayout = () => {
       setsidebarmobileShow("")
     }
   }
-
   return (
     <div className="studentLayout">
       <nav className="navbar navbar-default navbar-fixed-top">
