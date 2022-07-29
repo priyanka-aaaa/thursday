@@ -29,7 +29,7 @@ const AdminLayout = () => {
       setadminId(adminId)
     }
     else {
-      Router.push("/");
+      Router.push("/adminlogin");
     }
     var currentUrl = window.location.href;
     var splitcurrentUrl = currentUrl.split("admin/")
