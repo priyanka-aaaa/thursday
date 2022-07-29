@@ -99,7 +99,7 @@ const StudentLayout = () => {
           <nav>
             <ul className="nav">
             {currentMenu === "search-courses" ?
-              <li onClick={() => handleCurrentClick("Explore Courses")} class="sidecurrentMenu">
+              <li onClick={() => handleCurrentClick("Explore Courses")} className="sidecurrentMenu">
                 <Link href='/student/search-courses'><a title="Explore Courses">
                   <FontAwesomeIcon icon={faDashboard} className="sidebar-faicon" />
                   <span>Explore Courses</span>
@@ -113,7 +113,7 @@ const StudentLayout = () => {
               </a></Link>
             </li>}
             {currentMenu === "Free-Profile-Assessment" ?
-              <li onClick={() => handleCurrentClick("Free Profile Assessment")} class="sidecurrentMenu">
+              <li onClick={() => handleCurrentClick("Free Profile Assessment")} className="sidecurrentMenu">
                 <Link href='/student/Free-Profile-Assessment'><a title="Free Profile Assessment">
                   <FontAwesomeIcon icon={faDashboard} className="sidebar-faicon" />
                   <span>Free Profile Assessment</span>
@@ -127,7 +127,7 @@ const StudentLayout = () => {
               </a></Link>
             </li>}
             {currentMenu === "dashboard" ?
-              <li onClick={() => handleCurrentClick("Applied Application")}  class="sidecurrentMenu">
+              <li onClick={() => handleCurrentClick("Applied Application")}  className="sidecurrentMenu">
                 <Link href='/student/dashboard'><a title="Applied Application">
                   <FontAwesomeIcon icon={faDashboard} className="sidebar-faicon" />
                   <span>Applied Application(s)</span>
@@ -140,7 +140,7 @@ const StudentLayout = () => {
                </a></Link>
              </li>}
              {currentMenu === "applicationProfile" ?
-              <li onClick={() => handleCurrentClick("My Application Profile")} class="sidecurrentMenu">
+              <li onClick={() => handleCurrentClick("My Application Profile")} className="sidecurrentMenu">
                 <Link href='/student/applicationProfile'><a title="My Application Profile">
                   <FontAwesomeIcon icon={faAddressBook} className="sidebar-faicon" />
                   <span>My Application Profile</span>
@@ -153,7 +153,7 @@ const StudentLayout = () => {
               </a></Link>
             </li>}
             {currentMenu === "document" ?
-              <li onClick={() => handleCurrentClick("My Documents")} class="sidecurrentMenu">
+              <li onClick={() => handleCurrentClick("My Documents")} className="sidecurrentMenu">
                 <Link href='/student/document'><a title="My Documents">
                   <FontAwesomeIcon icon={faFile} className="sidebar-faicon" />
                   <span>My Documents</span>
@@ -165,7 +165,7 @@ const StudentLayout = () => {
                 </a></Link>
               </li>}
               {currentMenu === "bookmark" ?
-              <li onClick={() => handleCurrentClick("Favourites")} class="sidecurrentMenu">
+              <li onClick={() => handleCurrentClick("Favourites")} className="sidecurrentMenu">
                 <Link href='/student/bookmark'><a title="Favourites">
                   <FontAwesomeIcon icon={faStar} className="sidebar-faicon" />
                   <span>Favourites</span>
@@ -178,7 +178,7 @@ const StudentLayout = () => {
                </a></Link>
              </li>}
              {currentMenu === "message" ?
-              <li onClick={() => handleCurrentClick("Messages")} class="sidecurrentMenu">
+              <li onClick={() => handleCurrentClick("Messages")} className="sidecurrentMenu">
                 <Link href='/student/message'><a title="Messages">
                   <FontAwesomeIcon icon={faEnvelope} className="sidebar-faicon" />
                   <span>Messages</span>
@@ -191,7 +191,7 @@ const StudentLayout = () => {
                 </a></Link>
               </li>}
               {currentMenu === "setting" ?
-              <li onClick={() => handleCurrentClick("Settings")} class="sidecurrentMenu">
+              <li onClick={() => handleCurrentClick("Settings")} className="sidecurrentMenu">
                 <Link href='/student/setting'><a title="Settings">
                   <FontAwesomeIcon icon={faCog} className="sidebar-faicon" />
                   <span>Settings</span>
