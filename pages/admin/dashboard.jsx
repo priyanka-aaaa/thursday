@@ -14,7 +14,7 @@ import { saveAs } from "file-saver";
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
-    faEye, faCloudDownload, faCheckCircle, faPaperPlane, faRedo, faTrash, faDownload,faClose
+    faEye, faCloudDownload, faCheckCircle, faPaperPlane, faRedo, faTrash, faDownload, faClose
 } from '@fortawesome/free-solid-svg-icons';
 export default function AdminStudentApplication() {
     const [resultDocument, setresultDocument] = useState([{
@@ -49,6 +49,8 @@ export default function AdminStudentApplication() {
     const [refreshMsg, setrefreshMsg] = useState([]);
     const [myobj, setmyobj] = useState([]);
     const [myobj2, setmyobj2] = useState([]);
+    const [obj2phone, setobj2phone] = useState([]);
+
     const [mydate, setmydate] = useState("");
     const [thumbnailFiles, setThumbnailFiles] = useState([]);
     const [submitError, setsubmitError] = useState("0");
@@ -863,12 +865,10 @@ export default function AdminStudentApplication() {
             loginUrl: loginUrl
         };
         setmyobj(obj)
-        const obj2 = {
+        const obj2phone = new FormData();
+        obj2phone.append("phoneNumber", myphone);
 
-            phoneNumber: myphone,
-
-        };
-        setmyobj2(obj2)
+        setobj2phone(obj2phone)
 
     }
     function handleFeeSubmit(event) {
@@ -964,7 +964,7 @@ export default function AdminStudentApplication() {
                                         .catch(error => {
                                         });
                                     //start for send sms
-                                    axios.put('https://coursementor.com/uploadApi/sms.php', myobj2, { headers: { 'Authorization': mounted } })
+                                    axios.post('https://coursementor.com/uploadApi/sms.php', obj2phone, { headers: { 'Authorization': mounted } })
                                         .then(function (res) {
 
                                             // if (res.data.success === true) {
@@ -2279,49 +2279,49 @@ export default function AdminStudentApplication() {
 
                                                                             </div>
                                                                         </div>
-                                                                        <div> <button className="btn-send-msg" onClick={() => handleApplicationClosed()}>Application Closed</button></div>
-                                                                        <div className="set-payment">
-                                                                            <h5>Set Payment</h5>
-                                                                            {/* start for update application fee */}
-                                                                            <form onSubmit={handleFeeSubmit}>
-                                                                                <div className="form-group">
-                                                                                    <label className="form-label">Application fee<span className="req-star">*</span></label>
-                                                                                    <input type="number" className="form-control" placeholder="Application Fee"
-                                                                                        name="applicationFee"
-                                                                                        value={applicationFee}
-                                                                                        onChange={(e) => setapplicationFee(e.target.value)} required />
-                                                                                    {/* <div className="error-msg"> {applicationFeeError}</div> */}
-                                                                                </div>
+                                                                            <div> <button className="btn-send-msg" onClick={() => handleApplicationClosed()}>Application Closed</button></div>
+                                                                            <div className="set-payment">
+                                                                                <h5>Set Payment</h5>
+                                                                                {/* start for update application fee */}
+                                                                                <form onSubmit={handleFeeSubmit}>
+                                                                                    <div className="form-group">
+                                                                                        <label className="form-label">Application fee<span className="req-star">*</span></label>
+                                                                                        <input type="number" className="form-control" placeholder="Application Fee"
+                                                                                            name="applicationFee"
+                                                                                            value={applicationFee}
+                                                                                            onChange={(e) => setapplicationFee(e.target.value)} required />
+                                                                                        {/* <div className="error-msg"> {applicationFeeError}</div> */}
+                                                                                    </div>
 
 
 
 
 
-                                                                                <div className="form-group">
-                                                                                    <label className="form-label"> Application Currency<span className="req-star">*</span></label>
-                                                                                    <select type="text" className="form-control"
-                                                                                        placeholder="Application Currency" name="applicationcurrency"
+                                                                                    <div className="form-group">
+                                                                                        <label className="form-label"> Application Currency<span className="req-star">*</span></label>
+                                                                                        <select type="text" className="form-control"
+                                                                                            placeholder="Application Currency" name="applicationcurrency"
 
-                                                                                        value={applicationcurrency}
-                                                                                        onChange={(e) => setapplicationcurrency(e.target.value)}
-                                                                                        required
-                                                                                    >
-                                                                                        <option value="">Select Currency</option>
-                                                                                        <option value="USD">USD US Dollars</option>
-                                                                                        <option value="GBP">GBP British Pounds</option>
-                                                                                        <option value="EUR">EUR Euros</option>
-                                                                                        <option value="CAD">Canadian dollar</option>
-                                                                                        <option value="AUD">AUD Australian Dollars</option>
-                                                                                        <option value="NZD">NZD New Zealand Dollars</option>
-                                                                                        <option value="HKD">HKD Hong Kong Dollars</option>
-                                                                                        <option value="SGD">SGD Singapore Dollars</option>
-                                                                                        <option value="INR">INDIAN Rupees</option>
-                                                                                    </select>
-                                                                                </div>
-                                                                                <button type="submit" className="btn-send-msg">Submit</button>
-                                                                            </form>
-                                                                        </div></>}
-                                                                       
+                                                                                            value={applicationcurrency}
+                                                                                            onChange={(e) => setapplicationcurrency(e.target.value)}
+                                                                                            required
+                                                                                        >
+                                                                                            <option value="">Select Currency</option>
+                                                                                            <option value="USD">USD US Dollars</option>
+                                                                                            <option value="GBP">GBP British Pounds</option>
+                                                                                            <option value="EUR">EUR Euros</option>
+                                                                                            <option value="CAD">Canadian dollar</option>
+                                                                                            <option value="AUD">AUD Australian Dollars</option>
+                                                                                            <option value="NZD">NZD New Zealand Dollars</option>
+                                                                                            <option value="HKD">HKD Hong Kong Dollars</option>
+                                                                                            <option value="SGD">SGD Singapore Dollars</option>
+                                                                                            <option value="INR">INDIAN Rupees</option>
+                                                                                        </select>
+                                                                                    </div>
+                                                                                    <button type="submit" className="btn-send-msg">Submit</button>
+                                                                                </form>
+                                                                            </div></>}
+
                                                                     </div>
                                                                 </div>
                                                             </div>
