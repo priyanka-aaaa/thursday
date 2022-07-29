@@ -477,7 +477,7 @@ export default function AdminStudentApplication() {
             .then(function (res) {
                 if (res.data.success === true) {
                     var myresults = res.data.orders
-
+                    setmyapplicationClose(myresults[0].applicationClose)
                     var studentDetails = myresults[0].studentDetail[0]
                     const url60 = process.env.REACT_APP_SERVER_URL + 'countryStepName/' + myresults[0].country;
                     fetch(url60, {
@@ -497,7 +497,7 @@ export default function AdminStudentApplication() {
                     setsplitFirstname(splitname[0])
                     setmyemail(studentDetails.email)
                     setmyphone(studentDetails.phone)
-                    setmyapplicationClose(myresults[0].applicationClose)
+                   
                     setmypaid(myresults[0].paid)
                     setmycourseID(myresults[0].courseID)
                     setmycountryID(myresults[0].countryID)
@@ -913,11 +913,11 @@ export default function AdminStudentApplication() {
             email: mailId,
             myname: myname,
             loginUrl: loginUrl,
-            mybuildApplicationID:mybuildApplicationID,
-            applicationid:id,
-            studentId:mystudentID,
-            message:"Your Application is closed",
-            
+            mybuildApplicationID: mybuildApplicationID,
+            applicationid: id,
+            studentId: mystudentID,
+            message: "Your Application is closed",
+
 
 
         };
