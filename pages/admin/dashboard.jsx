@@ -928,6 +928,48 @@ export default function AdminStudentApplication() {
                     setsuccessMessage("Application Close")
                     setTimeout(() => setsubmitSuccess(""), 3000);
                     setsubmitSuccess(1)
+                    //start for fetch 
+                    
+axios.get(process.env.REACT_APP_SERVER_URL + 'admin/oneOrder/' + id, { headers: { 'Authorization': mounted } })
+.then(function (res) {
+    if (res.data.success === true) {
+        var myresults = res.data.orders
+        setmyapplicationClose(myresults[0].applicationClose)
+        var studentDetails = myresults[0].studentDetail[0]
+    }
+})
+.catch(error => {
+});
+axios.get(process.env.REACT_APP_SERVER_URL + 'admin/msg/' + mystudentID + "/" + id, { headers: { 'Authorization': mounted } })
+.then(function (res) {
+    if (res.data.success === true) {
+
+        var myresults = res.data.notifications;
+        if (Object.keys(myresults).length === 0) {
+        }
+        const newArr = myresults.map(obj => {
+            var myd = obj.messageTime
+            const d = new Date(myd)
+            var date = d.getDate()
+            var month = d.getMonth() + 1;
+            var year = d.getFullYear();
+            var month = d.toLocaleString('default', { month: 'long' })
+            var options = {
+                hour: 'numeric',
+                minute: 'numeric',
+                hour12: true
+            };
+            var timerr = new Intl.DateTimeFormat('en-US', options).format(d)
+            var completeTime = month + " " + date + ",  " + year + ", " + timerr
+            return { ...obj, messageTime: completeTime };
+            return obj;
+        });
+        setFormValues(newArr)
+    }
+})
+.catch(error => {
+});
+                    //end for fetch
                 }
             })
             .catch(error => {
