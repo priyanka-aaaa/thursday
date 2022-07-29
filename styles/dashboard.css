@@ -13721,11 +13721,11 @@ li.statusBox.current-statAppClosed {
 }
 
 
-@media screen and (max-width: 767px) {
+/* @media screen and (max-width: 767px) {
     .studentLayout p.dropdown-item {
         margin-left: 101px;
     }
-}
+} */
 div#mySidenav {
     z-index: 1000 !important;
 }

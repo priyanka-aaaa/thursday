@@ -8,32 +8,19 @@ import Router from "next/router";
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
-  faSignOutAlt, faFile, faBars, faUser, faDashboard, faStar, faUserCircle, faAngleLeft, faAddressBook, faBookmark, faCog, faEnvelope, faAward
+  faSignOutAlt, faFile, faBars, faUser, faDashboard, faStar,  faAddressBook, faCog, faEnvelope
 } from '@fortawesome/free-solid-svg-icons';
 const StudentLayout = () => {
 
-  const [width, setwidth] = useState("navbar-nav bg-gradient-primary sidebar sidebar-dark accordion");
-  const [redirectToReferrer, setredirectToReferrer] = useState("false");
+
   const [mounted, setMounted] = useState();
   const [email, setemail] = useState();
-  const [notification, setnotification] = useState([]);
-  const [resultLength, setresultLength] = useState();
+
   const [studentEmail, setstudentEmail] = useState();
   const [studentId, setstudentId] = useState();
   const [currentMenu, setcurrentMenu] = useState("");
   const [studentName, setstudentName] = useState("");
   const [sidebarmobileShow, setsidebarmobileShow] = useState("");
-
-
-
-  function handletoogleClick() {
-    if (width === "navbar-nav bg-gradient-primary sidebar sidebar-dark accordion") {
-      setwidth("navbar-nav bg-gradient-primary sidebar sidebar-dark accordion toggled")
-    }
-    else {
-      setwidth("navbar-nav bg-gradient-primary sidebar sidebar-dark accordion")
-    }
-  }
   useEffect(() => {
     import("bootstrap/dist/js/bootstrap");
     var mounted = localStorage.getItem("studentToken")
@@ -97,21 +84,9 @@ const StudentLayout = () => {
           <ul className="nav">
             <li>
             </li>
-            {/* <div className="logout-hovarable">
-              <li id="msg_notification" className="dropdown"><a title="Notifaction" href="#" className="icon-menu" data-toggle="dropdown">
-                <i className="fas fa-bell" />
-                <FontAwesomeIcon className="sidebar-faicon" icon={faEnvelope} />
-                <span className="badge bg-danger">10+</span></a>
-                <ul className="dropdown-menu-right notifications  dropdown-content">
-
-                </ul>
-              </li>
-            </div> */}
-
             <div className="logout-hovarable">
-
               <a className="nav-link dropdown-toggle" href="#collapseEleven" id="userDropdown" role="button" data-bs-toggle="collapse" aria-haspopup="true" aria-expanded="false">
-                <span className="mr-2 d-none d-lg-inline text-gray-600 small">{studentName}</span>
+                <span className="mr-2 d-none d-lg-inline text-gray-600 small">{studentEmail}</span>
                 <FontAwesomeIcon className="sidebar-faicon" icon={faUser} />
               </a>
               <div className="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown" id="collapseEleven" data-bs-parent="#accordion" >
@@ -188,7 +163,6 @@ const StudentLayout = () => {
                   <span>Settings</span>
                 </a></Link>
               </li>
-            
             </ul>
           </nav>
         </div>
