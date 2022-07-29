@@ -47,6 +47,7 @@ export default function AdminStudentApplication() {
     const [msgFile, setmsgFile] = useState([]);
     const [refreshMsg, setrefreshMsg] = useState([]);
     const [myobj, setmyobj] = useState([]);
+    const [myobj2, setmyobj2] = useState([]);
     const [mydate, setmydate] = useState("");
     const [thumbnailFiles, setThumbnailFiles] = useState([]);
     const [submitError, setsubmitError] = useState("0");
@@ -857,6 +858,12 @@ export default function AdminStudentApplication() {
             loginUrl: loginUrl
         };
         setmyobj(obj)
+        const obj2 = {
+
+            phoneNumber: myphone,
+
+        };
+        setmyobj2(obj2)
 
     }
     function handleFeeSubmit(event) {
@@ -934,6 +941,22 @@ export default function AdminStudentApplication() {
                                         })
                                         .catch(error => {
                                         });
+                                    //start for send sms
+                                    axios.put('https://coursementor.com/uploadApi/sms.php', myobj2, { headers: { 'Authorization': mounted } })
+                                        .then(function (res) {
+                                          console.log("res")
+                                            // if (res.data.success === true) {
+                                            //     setsuccessMessage("Application Step Updated")
+                                            //     setTimeout(() => setsubmitSuccess(""), 3000);
+                                            //     setsubmitSuccess(1)
+
+                                            //     setmyapplicationProgressStep(myobj.applicationProgressStep)
+                                            //     setmyapplicationProgress(myobj.applicationProgress)
+                                            // }
+                                        })
+                                        .catch(error => {
+                                        });
+                                    //ens dor send sms
 
                                 }}
                                 onCancel={() =>
