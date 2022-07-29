@@ -2483,467 +2483,467 @@ function FinalFilter() {
   }
   return (
     <div>
-    <Head>
-    <title>Search from 100K+ Study Abroad Programs @ CourseMentor™</title>
-    <meta name="description" content="CourseMentor™ - Study Abroad - Search the Best University and colleges Courses to study in foreign. Save upto 1000's USD, Apply for upcoming intakes now!" />
-    <meta property="og:title" content="Search from 100K+ Study Abroad Programs @ CourseMentor™" />
-    <meta property="og:description" content="CourseMentor™ - Study Abroad - Search the Best University and college Courses to study in foreign. Save upto 1000's USD, Apply for upcoming intakes now!" />
-    <meta property="og:image" content="og image" />
-    <link rel="icon"  href="/images/favicon.ico" />
-  </Head>
-    <div className="main-content">
+      <Head>
+        <title>Search from 100K+ Study Abroad Programs @ CourseMentor™</title>
+        <meta name="description" content="CourseMentor™ - Study Abroad - Search the Best University and colleges Courses to study in foreign. Save upto 1000's USD, Apply for upcoming intakes now!" />
+        <meta property="og:title" content="Search from 100K+ Study Abroad Programs @ CourseMentor™" />
+        <meta property="og:description" content="CourseMentor™ - Study Abroad - Search the Best University and college Courses to study in foreign. Save upto 1000's USD, Apply for upcoming intakes now!" />
+        <meta property="og:image" content="og image" />
+        <link rel="icon" href="/images/favicon.ico" />
+      </Head>
+      <div className="main-content">
 
-      {loader === "true" ?
-        <Loader />
-        : null}
+        {loader === "true" ?
+          <Loader />
+          : null}
 
-      {submitSuccess === 1 ? <div className="Show_success_bookmark">
-        <strong>Success!</strong> {successMessage}
-      </div> : null}
-      {submitSuccess === 1 ? <div className="Show_success_bookmark">
-        <strong>Success!</strong> {successMessage}
-      </div> : null}
-      {/*Full width header Start*/}
-      <div className="full-width-header">
-        <Header />
-      </div>
-      {/*Full width header End*/}
-      {/* Breadcrumbs Start */}
-      <div className="rs-breadcrumbs img1">
-        <div className="breadcrumbs-inner text-center">
-          <h1 className="page-title">{courseNumber} Courses in {universityNumber} universities found</h1>
-          <ul>
-            <li title="coursementor">
-
-              <a className="active" href="https://coursementor.com/">Home</a>
-            </li>
-            <li>Universities / Courses</li>
-          </ul>
+        {submitSuccess === 1 ? <div className="Show_success_bookmark">
+          <strong>Success!</strong> {successMessage}
+        </div> : null}
+        {submitSuccess === 1 ? <div className="Show_success_bookmark">
+          <strong>Success!</strong> {successMessage}
+        </div> : null}
+        {/*Full width header Start*/}
+        <div className="full-width-header">
+          <Header />
         </div>
-      </div>
-      {/* Breadcrumbs End */}
+        {/*Full width header End*/}
+        {/* Breadcrumbs Start */}
+        <div className="rs-breadcrumbs img1">
+          <div className="breadcrumbs-inner text-center">
+            <h1 className="page-title">{courseNumber} Courses in {universityNumber} universities found</h1>
+            <ul>
+              <li title="coursementor">
 
-      <div className="container-fluid">
-        <div className="row mb-3 mt-5">
-          {
-            mycourseSearchName !== null && mycourseSearchName !== "" ?
+                <a className="active" href="https://coursementor.com/">Home</a>
+              </li>
+              <li>Universities / Courses</li>
+            </ul>
+          </div>
+        </div>
+        {/* Breadcrumbs End */}
+
+        <div className="container-fluid">
+          <div className="row mb-3 mt-5">
+            {
+              mycourseSearchName !== null && mycourseSearchName !== "" ?
+                <div className="col-md-2" >
+                  <div className="alert alert-info fade in alert-dismissible show" style={{ marginTop: '18px' }}>
+                    <button type="button" className="close" data-dismiss="alert" aria-label="Close">
+                      <span aria-hidden="true" style={{ fontSize: '20px' }} onClick={() => deletecourseSearchName()}  >×</span>
+                    </button>  {mycourseSearchName}
+                  </div>
+                </div> :
+                null
+            }
+            {getmycountry !== null && getmycountry !== undefined ?
+              <>
+                {getmycountry.map((element, index) =>
+                (
+                  <div className="col-md-2" key={index}>
+                    <div className="alert alert-info fade in alert-dismissible show" style={{ marginTop: '18px' }}>
+                      <button type="button" className="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true" style={{ fontSize: '20px' }} onClick={() => deletecountry(element)}  >×</span>
+                      </button>  {element}
+                    </div>
+                  </div>
+                ))}
+
+              </> : null
+            }
+
+            {getmycourse !== "" && getmycourse !== null ?
               <div className="col-md-2" >
                 <div className="alert alert-info fade in alert-dismissible show" style={{ marginTop: '18px' }}>
                   <button type="button" className="close" data-dismiss="alert" aria-label="Close">
-                    <span aria-hidden="true" style={{ fontSize: '20px' }} onClick={() => deletecourseSearchName()}  >×</span>
-                  </button>  {mycourseSearchName}
+                    <span aria-hidden="true" style={{ fontSize: '20px' }} onClick={() => deletecourse()}  >×</span>
+                  </button>  {getmycourse}
                 </div>
               </div> :
               null
-          }
-          {getmycountry !== null && getmycountry !== undefined ?
-            <>
-              {getmycountry.map((element, index) =>
+            }
+
+            {getmyinterest !== null ?
+              <>  {getmyinterest.map((element, index) =>
               (
                 <div className="col-md-2" key={index}>
                   <div className="alert alert-info fade in alert-dismissible show" style={{ marginTop: '18px' }}>
                     <button type="button" className="close" data-dismiss="alert" aria-label="Close">
-                      <span aria-hidden="true" style={{ fontSize: '20px' }} onClick={() => deletecountry(element)}  >×</span>
+                      <span aria-hidden="true" style={{ fontSize: '20px' }} onClick={() => deleteinterest(element)}  >×</span>
                     </button>  {element}
                   </div>
                 </div>
-              ))}
+              ))}</> : null
+            }
 
-            </> : null
-          }
+            {getmyintake !== null ? <>
+              {
+                getmyintake.map((element, index) =>
+                (
+                  <div className="col-md-2" key={index}>
+                    <div className="alert alert-info fade in alert-dismissible show" style={{ marginTop: '18px' }}>
+                      <button type="button" className="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true" style={{ fontSize: '20px' }} onClick={() => deleteintake(element)}  >×</span>
+                      </button>  {element}
+                    </div>
+                  </div>
+                ))
+              }
+            </>
+              : null}
 
-          {getmycourse !== "" && getmycourse !== null ?
-            <div className="col-md-2" >
-              <div className="alert alert-info fade in alert-dismissible show" style={{ marginTop: '18px' }}>
-                <button type="button" className="close" data-dismiss="alert" aria-label="Close">
-                  <span aria-hidden="true" style={{ fontSize: '20px' }} onClick={() => deletecourse()}  >×</span>
-                </button>  {getmycourse}
-              </div>
-            </div> :
-            null
-          }
 
-          {getmyinterest !== null ?
-            <>  {getmyinterest.map((element, index) =>
-            (
-              <div className="col-md-2" key={index}>
+            {getmyenglish !== "" && getmyenglish !== null ?
+              <div className="col-md-2" >
                 <div className="alert alert-info fade in alert-dismissible show" style={{ marginTop: '18px' }}>
                   <button type="button" className="close" data-dismiss="alert" aria-label="Close">
-                    <span aria-hidden="true" style={{ fontSize: '20px' }} onClick={() => deleteinterest(element)}  >×</span>
-                  </button>  {element}
+                    <span aria-hidden="true" style={{ fontSize: '20px' }} onClick={() => deleteenglish()}  >×</span>
+                  </button>  {getmyenglish}
                 </div>
-              </div>
-            ))}</> : null
-          }
-
-          {getmyintake !== null ? <>
-            {
-              getmyintake.map((element, index) =>
-              (
-                <div className="col-md-2" key={index}>
-                  <div className="alert alert-info fade in alert-dismissible show" style={{ marginTop: '18px' }}>
-                    <button type="button" className="close" data-dismiss="alert" aria-label="Close">
-                      <span aria-hidden="true" style={{ fontSize: '20px' }} onClick={() => deleteintake(element)}  >×</span>
-                    </button>  {element}
-                  </div>
-                </div>
-              ))
+              </div> :
+              null
             }
-          </>
-            : null}
 
-
-          {getmyenglish !== "" && getmyenglish !== null ?
-            <div className="col-md-2" >
-              <div className="alert alert-info fade in alert-dismissible show" style={{ marginTop: '18px' }}>
-                <button type="button" className="close" data-dismiss="alert" aria-label="Close">
-                  <span aria-hidden="true" style={{ fontSize: '20px' }} onClick={() => deleteenglish()}  >×</span>
-                </button>  {getmyenglish}
-              </div>
-            </div> :
-            null
-          }
-
-        </div>
-        <div className="row mb-5">
-          <div className="col-md-3">
-            <section id="filterSection">
-              <div className="search-country">
-                <div id="accordion">
-                  <div className="card">
-                    <a className="card-link collapsed card-header" data-bs-toggle="collapse" href="#collapseOne">
-                      Country
-                    </a>
-                    <div id="collapseOne" className="collapse" data-bs-parent="#accordion">
-                      <div className="card-body">
-                        {/* start  for country */}
-                        {completeCountry.map((element, index) => (
-                          <div key={index}>
-                            <input type="checkbox" name="univeristyExam"
-                              value={element.name || ""}
-                              checked={!!element.following === true}
-                              onChange={handlecountry} /> {element.name}
-                          </div>
-                        ))}
-                        {/* end for country */}
-                      </div>
-                    </div>
-                  </div>
-                  <div className="card">
-                    <a className="card-header collapsed card-link" data-bs-toggle="collapse" href="#collapseThree">
-                      Course Level
-                    </a>
-                    <div id="collapseThree" className="collapse" data-bs-parent="#accordion">
-                      <div className="card-body">
-                        <select className="form-control" value={courseLevel}
-                          onChange={(e) => handlecourse(e.target.value)}
-                        >
-                          <option value="">Select Type</option>
-                          <option value="Bachelors">Bachelors</option>
-                          <option value="Masters">Masters</option>
-
-                        </select>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="card">
-                    <a className="card-header collapsed card-link" data-bs-toggle="collapse" href="#collapseTwo">
-                      Area of Interest
-                    </a>
-                    <div id="collapseTwo" className="collapse" data-bs-parent="#accordion">
-                      <div className="card-body">
-                        <form>
-                          <div className="form-group d-flex serch-from">
-                            <span className="btn btn-primary">
-                              <FontAwesomeIcon icon={faSearch} />
-                            </span>
-                            <input type="search" className="form-control" placeholder="Search" id="search" />
-                          </div>
-                        </form>
-                        {/* start  for country */}
-                        {completeAreaOfInterest.map((element, index) => (
-                          <div key={index}>
-                            <input type="checkbox" name="areaOfInterest"
-                              value={element.name || ""}
-                              checked={!!element.following === true}
-                              onChange={handleinterest} /> {element.name}
-                          </div>
-                        ))}
-                        {/* end for country */}
-                      </div>
-                    </div>
-                  </div>
-                  <div className="card">
-                    <a className="card-header collapsed card-link" data-bs-toggle="collapse" href="#collapse4">
-                      Intake
-                    </a>
-                    <div id="collapse4" className="collapse" data-bs-parent="#accordion">
-                      <div className="card-body">
-                        {/* start  for intake */}
-                        {completeIntake.map((element, index) => (
-                          <div key={index}>
-                            <input type="checkbox" name="univeristyExam"
-                              value={element.name || ""}
-                              checked={!!element.following === true}
-                              onChange={handleintake} /> {element.name}
-                          </div>
-                        ))}
-                        {/* end for intake */}
-                      </div>
-                    </div>
-                  </div>
-                  <div className="card">
-                    <a className="card-header collapsed card-link" data-bs-toggle="collapse" href="#collapse8">
-                      English Proficiency Exam
-                    </a>
-                    <div id="collapse8" className="collapse" data-bs-parent="#accordion">
-                      <div className="card-body">
-                        <form>
-                          <select className="form-control"
-                            value={englishProficiency}
-                            onChange={(e) => handleenglish(e.target.value)}
-
-                          >
-                            <option>Select</option>
-                            <option value="IELTS">IELTS</option>
-                            <option value="PTE">PTE</option>
-                            <option value="TOEFL">TOEFL</option>
-                            <option value="Duolingo">Duolingo</option>
-                            <option value="CPE">CPE</option>
-                            <option value="CAE">CAE</option>
-                            <option value="OET">OET</option>
-                          </select>
-                        </form>
-                      </div>
-                    </div>
-                  </div>
-
-
-
-
-
-                </div>
-              </div>
-              <div className="text-center">
-                <button type="button" className="btn website-btn talk-btn" onClick={() => handleApplyFilter()}>Apply Filter</button>
-              </div>
-            </section>
           </div>
-          <div className="col-md-9">
-            <div className="unver-coures-block search-country">
-              {/* Nav pills */}
-              <ul className="nav nav-pills" role="tablist">
-                <li className="nav-item">
-                  <a className="nav-link active" data-bs-toggle="pill" href="#home" onClick={() => clickUniversity()}>Universities ({universityNumber})</a>
-                </li>
-                <li className="nav-item">
-                  <a className="nav-link" data-bs-toggle="pill" href="#menu1" onClick={() => clickPill()}>Courses ({courseNumber})</a>
-                </li>
-              </ul>
-              {/* Tab panes */}
-              <div className="tab-content">
-                <div id="home" className=" tab-panea active"><br />
+          <div className="row mb-5">
+            <div className="col-md-3">
+              <section id="filterSection">
+                <div className="search-country">
+                  <div id="accordion">
+                    <div className="card">
+                      <a className="card-link collapsed card-header" data-bs-toggle="collapse" href="#collapseOne">
+                        Country
+                      </a>
+                      <div id="collapseOne" className="collapse" data-bs-parent="#accordion">
+                        <div className="card-body">
+                          {/* start  for country */}
+                          {completeCountry.map((element, index) => (
+                            <div key={index}>
+                              <input type="checkbox" name="univeristyExam"
+                                value={element.name || ""}
+                                checked={!!element.following === true}
+                                onChange={handlecountry} /> {element.name}
+                            </div>
+                          ))}
+                          {/* end for country */}
+                        </div>
+                      </div>
+                    </div>
+                    <div className="card">
+                      <a className="card-header collapsed card-link" data-bs-toggle="collapse" href="#collapseThree">
+                        Course Level
+                      </a>
+                      <div id="collapseThree" className="collapse" data-bs-parent="#accordion">
+                        <div className="card-body">
+                          <select className="form-control" value={courseLevel}
+                            onChange={(e) => handlecourse(e.target.value)}
+                          >
+                            <option value="">Select Type</option>
+                            <option value="Bachelors">Bachelors</option>
+                            <option value="Masters">Masters</option>
 
-                  <div className="universityCustomTabs">
-                    <div className="overviewblock">
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="card">
+                      <a className="card-header collapsed card-link" data-bs-toggle="collapse" href="#collapseTwo">
+                        Area of Interest
+                      </a>
+                      <div id="collapseTwo" className="collapse" data-bs-parent="#accordion">
+                        <div className="card-body">
+                          <form>
+                            <div className="form-group d-flex serch-from">
+                              <span className="btn btn-primary">
+                                <FontAwesomeIcon icon={faSearch} />
+                              </span>
+                              <input type="search" className="form-control" placeholder="Search" id="search" />
+                            </div>
+                          </form>
+                          {/* start  for country */}
+                          {completeAreaOfInterest.map((element, index) => (
+                            <div key={index}>
+                              <input type="checkbox" name="areaOfInterest"
+                                value={element.name || ""}
+                                checked={!!element.following === true}
+                                onChange={handleinterest} /> {element.name}
+                            </div>
+                          ))}
+                          {/* end for country */}
+                        </div>
+                      </div>
+                    </div>
+                    <div className="card">
+                      <a className="card-header collapsed card-link" data-bs-toggle="collapse" href="#collapse4">
+                        Intake
+                      </a>
+                      <div id="collapse4" className="collapse" data-bs-parent="#accordion">
+                        <div className="card-body">
+                          {/* start  for intake */}
+                          {completeIntake.map((element, index) => (
+                            <div key={index}>
+                              <input type="checkbox" name="univeristyExam"
+                                value={element.name || ""}
+                                checked={!!element.following === true}
+                                onChange={handleintake} /> {element.name}
+                            </div>
+                          ))}
+                          {/* end for intake */}
+                        </div>
+                      </div>
+                    </div>
+                    <div className="card">
+                      <a className="card-header collapsed card-link" data-bs-toggle="collapse" href="#collapse8">
+                        English Proficiency Exam
+                      </a>
+                      <div id="collapse8" className="collapse" data-bs-parent="#accordion">
+                        <div className="card-body">
+                          <form>
+                            <select className="form-control"
+                              value={englishProficiency}
+                              onChange={(e) => handleenglish(e.target.value)}
 
+                            >
+                              <option>Select</option>
+                              <option value="IELTS">IELTS</option>
+                              <option value="PTE">PTE</option>
+                              <option value="TOEFL">TOEFL</option>
+                              <option value="Duolingo">Duolingo</option>
+                              <option value="CPE">CPE</option>
+                              <option value="CAE">CAE</option>
+                              <option value="OET">OET</option>
+                            </select>
+                          </form>
+                        </div>
+                      </div>
                     </div>
 
 
-                    {showuniversity === "inline" ? <>
-                      <Search
+
+
+
+                  </div>
+                </div>
+                <div className="text-center">
+                  <button type="button" className="btn website-btn talk-btn" onClick={() => handleApplyFilter()}>Apply Filter</button>
+                </div>
+              </section>
+            </div>
+            <div className="col-md-9">
+              <div className="unver-coures-block search-country">
+                {/* Nav pills */}
+                <ul className="nav nav-pills" role="tablist">
+                  <li className="nav-item">
+                    <a className="nav-link active" data-bs-toggle="pill" href="#home" onClick={() => clickUniversity()}>Universities ({universityNumber})</a>
+                  </li>
+                  <li className="nav-item">
+                    <a className="nav-link" data-bs-toggle="pill" href="#menu1" onClick={() => clickPill()}>Courses ({courseNumber})</a>
+                  </li>
+                </ul>
+                {/* Tab panes */}
+                <div className="tab-content">
+                  <div id="home" className=" tab-panea active"><br />
+
+                    <div className="universityCustomTabs">
+                      <div className="overviewblock">
+
+                      </div>
+
+
+                      {showuniversity === "inline" ? <>
+                        <Search
+                          onSearch={value => {
+                            var trimValue = value.trim();
+                            setSearch(trimValue);
+                            setCurrentPage(1);
+                          }}
+                        />
+                        <div className="dreamuniversity mt-5">
+                          <h2><span className="icon">
+                            <FontAwesomeIcon icon={faStar} />
+
+                          </span>{universityNumber} Dream Universities</h2>
+
+                          <div className="row">
+                            {commentsData.map((element, index) =>
+                            (
+                              <div className="col-md-6" key={index}>
+                                <div className="uniBox mt-3">
+                                  <div className="head">
+                                    <div className="imgBox"><img src={element.myimage[0].logo} alt="logo" loading="lazy" /></div>
+                                    <div className="details">
+                                      <Link target="_blank" href={'/schools/' + element.myinformation[0].slug}
+                                      >
+                                        {element.myinformation[0].name}</Link>
+                                      <p>{element.myinformation[0].state}, {element.myinformation[0].country}</p>
+
+                                    </div>
+                                    <div className="bookmark  d-none d-sm-block">
+                                      <img onClick={() => handleStarClick("inactive", element._id, element.myinformation[0].name, element.myimage[0].logo, element.myinformation[0].slug)} alt=""
+                                        src="/images/starInactive.webp"
+                                        style={{
+                                          width: "33px",
+                                          height: "33px",
+                                          display: displayPrpoerty
+                                        }}
+                                      />
+                                    </div>
+                                  </div>
+                                  <div className="body">
+                                    <div className="leftSection">
+                                      <div className="data">
+                                        <FontAwesomeIcon icon={faUniversity} />
+
+                                        <div className="details">
+                                          <h4>{element.myinformation[0].type}</h4>
+                                          <p>University Type</p>
+                                        </div>
+                                      </div>
+                                      <div className="data">
+                                        <FontAwesomeIcon icon={faLaptop} />
+                                        <div className="details">
+                                          <h4>{element.myoverview[0].foundedYear}</h4>
+                                          <p>Established Since</p>
+                                        </div>
+                                      </div>
+                                      <div className="data">
+                                        <FontAwesomeIcon icon={faStar} />
+                                        <div className="details">
+                                          <h4> {element.myoverview[0].ranking} </h4>
+                                          <p>NA Ranking</p>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div className="rightSection">
+                                      <div className="data">
+                                        <Link target="_blank" href={'/schools/' + element.myinformation[0].slug}
+                                        ><a>
+                                            <FontAwesomeIcon icon={faCheckSquare} className="sidebar-faicon" />
+                                            Know More</a></Link></div>
+                                    </div>
+                                  </div>
+
+                                  <div className="foot">
+                                    {/* <button className="recommended"><span>
+                                   RECOMMENDED COURSES ({element.focusCount})
+                                 </span></button> */}
+                                    <div className="custom-shortlist d-flex d-sm-none">Tap to Shortlist<div className="condition_btn shortlist"><img src="https://images.leverageedu.com/assets/img/course-finder/Star.svg" className="no-icon" alt="" loading="lazy" /><img src="https://images.leverageedu.com/assets/img/course-finder/Star-filled.svg" className="yes-icon" alt="" loading="lazy" /></div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            ))}
+                          </div>
+
+                        </div>
+                        {/* start for pagination */}
+                        <Pagination
+                          total={totalItems}
+                          itemsPerPage={ITEMS_PER_PAGE}
+                          currentPage={currentPage}
+                          onPageChange={page => setCurrentPage(page)}
+                        />
+                      </>
+                        : null}
+                      {/* end for pagination */}
+                    </div>
+                  </div>
+                  <div id="menu1" className="tab-panea fade"><br />
+                    {showcourse === "inline" ? <>
+                      {/* start for pagination course */}
+                      <SearchCourse
                         onSearch={value => {
                           var trimValue = value.trim();
                           setSearch(trimValue);
                           setCurrentPage(1);
                         }}
                       />
-                      <div className="dreamuniversity mt-5">
-                        <h2><span className="icon">
-                          <FontAwesomeIcon icon={faStar} />
+                      {/* end for pagination course */}
+                      <div className="unv-coures">
+                        {commentsDataCourse.map((element, index) =>
+                        (
+                          <div className="courseBox mb-3" key={index}>
+                            <div className="courseData">
+                              <div className="head-title"><span className="title">{element.courseName} - {element.areaOfInterest}</span></div>
+                              <div className="university-details">
 
-                        </span>{universityNumber} Dream Universities</h2>
-
-                        <div className="row">
-                          {commentsData.map((element, index) =>
-                          (
-                            <div className="col-md-6" key={index}>
-                              <div className="uniBox mt-3">
-                                <div className="head">
-                                  <div className="imgBox"><img src={element.myimage[0].logo} alt="logo" loading="lazy" /></div>
-                                  <div className="details">
-                                    <Link target="_blank" href={'/schools/' + element.myinformation[0].slug}
-                                    >
-                                      {element.myinformation[0].name}</Link>
-                                    <p>{element.myinformation[0].state}, {element.myinformation[0].country}</p>
-
-                                  </div>
-                                  <div className="bookmark  d-none d-sm-block">
-                                    <img onClick={() => handleStarClick("inactive", element._id, element.myinformation[0].name, element.myimage[0].logo, element.myinformation[0].slug)} alt=""
-                                      src="/images/starInactive.webp"
-                                      style={{
-                                        width: "33px",
-                                        height: "33px",
-                                        display: displayPrpoerty
-                                      }}
-                                    />
+                                <img src={element.universities[0].myimage[0].logo}
+                                  className="uni-logo" alt={9} id={9} loading="lazy" />
+                                <div className="details">
+                                  <h5>{element.universities[0].information[0].name}</h5>
+                                  <p>{element.universities[0].information[0].state}, {element.universities[0].information[0].country}</p>
+                                </div>
+                              </div>
+                              <div className="facilities">
+                                <div className="data">
+                                  <span>
+                                    <FontAwesomeIcon icon={faCreditCard} />
+                                  </span>
+                                  <div className="dataDetails">
+                                    <h5>{element.currency + " " + element.tuitionFee}</h5>
+                                    <p> Tuition Fee </p>
                                   </div>
                                 </div>
-                                <div className="body">
-                                  <div className="leftSection">
-                                    <div className="data">
-                                      <FontAwesomeIcon icon={faUniversity} />
-
-                                      <div className="details">
-                                        <h4>{element.myinformation[0].type}</h4>
-                                        <p>University Type</p>
-                                      </div>
-                                    </div>
-                                    <div className="data">
-                                      <FontAwesomeIcon icon={faLaptop} />
-                                      <div className="details">
-                                        <h4>{element.myoverview[0].foundedYear}</h4>
-                                        <p>Established Since</p>
-                                      </div>
-                                    </div>
-                                    <div className="data">
-                                      <FontAwesomeIcon icon={faStar} />
-                                      <div className="details">
-                                        <h4> {element.myoverview[0].ranking} </h4>
-                                        <p>NA Ranking</p>
-                                      </div>
-                                    </div>
-                                  </div>
-                                  <div className="rightSection">
-                                    <div className="data">
-                                      <Link target="_blank" href={'/schools/' + element.myinformation[0].slug}
-                                      ><a>
-                                        <FontAwesomeIcon icon={faCheckSquare} />
-                                        Know More</a></Link></div>
+                                <div className="data">
+                                  <span>
+                                    <FontAwesomeIcon icon={faHistory} />
+                                  </span>
+                                  <div className="dataDetails">
+                                    <h5>{element.duration} Months</h5>
+                                    <p> Duration </p>
                                   </div>
                                 </div>
-
-                                <div className="foot">
-                                  {/* <button className="recommended"><span>
-                                   RECOMMENDED COURSES ({element.focusCount})
-                                 </span></button> */}
-                                  <div className="custom-shortlist d-flex d-sm-none">Tap to Shortlist<div className="condition_btn shortlist"><img src="https://images.leverageedu.com/assets/img/course-finder/Star.svg" className="no-icon" alt="" loading="lazy" /><img src="https://images.leverageedu.com/assets/img/course-finder/Star-filled.svg" className="yes-icon" alt="" loading="lazy" /></div>
+                                <div className="data" >
+                                  <span>
+                                    <FontAwesomeIcon icon={faHistory} />
+                                  </span>
+                                  <div className="dataDetails">
+                                    <h5>{element.month} </h5>
+                                    <p> Intake </p>
+                                  </div>
+                                </div>
+                                <div className="data" >
+                                  <span>
+                                    <FontAwesomeIcon icon={faHistory} />
+                                  </span>
+                                  <div className="dataDetails">
+                                    <h5>{element.english} </h5>
+                                    <p> English Proficiency </p>
                                   </div>
                                 </div>
                               </div>
-                            </div>
-                          ))}
-                        </div>
+                              <div className="action">
 
+
+                                <button onClick={() => handleApplyNow(element.universities[0]._id, element._id, element.month, "first",
+                                  element.universities[0].information[0].country, element.universities[0].information[0].name,
+                                  element.courseName)}>Apply Now
+
+                                </button>
+                              </div>
+
+
+                            </div>
+                          </div>
+                        ))}
                       </div>
-                      {/* start for pagination */}
+                      {/* start for pagination course */}
                       <Pagination
-                        total={totalItems}
+                        total={totalItemsCourse}
                         itemsPerPage={ITEMS_PER_PAGE}
                         currentPage={currentPage}
                         onPageChange={page => setCurrentPage(page)}
                       />
-                    </>
-                      : null}
-                    {/* end for pagination */}
+                      {/* end for pagination course */}
+                    </> : null}
                   </div>
-                </div>
-                <div id="menu1" className="tab-panea fade"><br />
-                  {showcourse === "inline" ? <>
-                    {/* start for pagination course */}
-                    <SearchCourse
-                      onSearch={value => {
-                        var trimValue = value.trim();
-                        setSearch(trimValue);
-                        setCurrentPage(1);
-                      }}
-                    />
-                    {/* end for pagination course */}
-                    <div className="unv-coures">
-                      {commentsDataCourse.map((element, index) =>
-                      (
-                        <div className="courseBox mb-3" key={index}>
-                          <div className="courseData">
-                            <div className="head-title"><span className="title">{element.courseName} - {element.areaOfInterest}</span></div>
-                            <div className="university-details">
-
-                              <img src={element.universities[0].myimage[0].logo}
-                                className="uni-logo" alt={9} id={9} loading="lazy" />
-                              <div className="details">
-                                <h5>{element.universities[0].information[0].name}</h5>
-                                <p>{element.universities[0].information[0].state}, {element.universities[0].information[0].country}</p>
-                              </div>
-                            </div>
-                            <div className="facilities">
-                              <div className="data">
-                                <span>
-                                  <FontAwesomeIcon icon={faCreditCard} />
-                                </span>
-                                <div className="dataDetails">
-                                  <h5>{element.currency + " " + element.tuitionFee}</h5>
-                                  <p> Tuition Fee </p>
-                                </div>
-                              </div>
-                              <div className="data">
-                                <span>
-                                  <FontAwesomeIcon icon={faHistory} />
-                                </span>
-                                <div className="dataDetails">
-                                  <h5>{element.duration} Months</h5>
-                                  <p> Duration </p>
-                                </div>
-                              </div>
-                              <div className="data" >
-                                <span>
-                                  <FontAwesomeIcon icon={faHistory} />
-                                </span>
-                                <div className="dataDetails">
-                                  <h5>{element.month} </h5>
-                                  <p> Intake </p>
-                                </div>
-                              </div>
-                              <div className="data" >
-                                <span>
-                                  <FontAwesomeIcon icon={faHistory} />
-                                </span>
-                                <div className="dataDetails">
-                                  <h5>{element.english} </h5>
-                                  <p> English Proficiency </p>
-                                </div>
-                              </div>
-                            </div>
-                            <div className="action">
-
-
-                              <button onClick={() => handleApplyNow(element.universities[0]._id, element._id, element.month, "first",
-                                element.universities[0].information[0].country, element.universities[0].information[0].name,
-                                element.courseName)}>Apply Now
-
-                              </button>
-                            </div>
-
-
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-                    {/* start for pagination course */}
-                    <Pagination
-                      total={totalItemsCourse}
-                      itemsPerPage={ITEMS_PER_PAGE}
-                      currentPage={currentPage}
-                      onPageChange={page => setCurrentPage(page)}
-                    />
-                    {/* end for pagination course */}
-                  </> : null}
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
 
-      <Footer />
+        <Footer />
       </div>
     </div>
   );
