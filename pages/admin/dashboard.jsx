@@ -929,7 +929,12 @@ export default function AdminStudentApplication() {
             email: mailId,
             myname: myname,
             loginUrl: loginUrl,
-            mybuildApplicationID:mybuildApplicationID
+            mybuildApplicationID:mybuildApplicationID,
+            applicationid:id,
+            studentId:mystudentID,
+            message:"Your Application is closed",
+            
+
 
         };
         axios.put(process.env.REACT_APP_SERVER_URL + 'admin/updateOrderAppClose/' + id, obj5, { headers: { 'Authorization': mounted } })
