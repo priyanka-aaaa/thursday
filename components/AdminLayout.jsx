@@ -102,19 +102,23 @@ const AdminLayout = () => {
                 </a>
                 <div id="collapseTwo" className="collapse user-collpase" data-bs-parent="#accordion" data-parent="#accordionSidebar" >
                   <div className="user-submenu">
-                    <Link href='/admin/all-registered-user'><a title="Student Applications" >
+                    <Link href='/admin/all-registered-user'><a title="All Registered Users" >
 
                       <span>All Registered Users</span>
                     </a></Link><br />
-                    <Link href='/admin/enquiry'><a title="Student Applications">
+                    <Link href='/admin/enquiry'><a title="Enquiry Pop-UP">
 
                       <span>Enquiry Pop-UP</span>
                     </a></Link><br />
-                    <Link href='/admin/counseling'><a title="Student Applications">
+                    <Link href='/admin/counseling'><a title="Counseling Form">
 
                       <span>Counseling Form</span>
                     </a></Link><br />
-                    <Link href='/admin/registered-user'><a title="Student Applications">
+                    <Link href='/admin/offline-visit'><a title="Offline Visit">
+
+                      <span>Offline Visit</span>
+                    </a></Link><br />
+                    <Link href='/admin/registered-user'><a title="Registered Students">
                       <span>Registered Students</span>
                     </a></Link>
                   </div>
