@@ -563,22 +563,6 @@ export default function AdminStudentApplication() {
                         setapplicationFee(myresults[0].appPrice)
                     }
 
-                    //end for course Id
-                    //    start for country Id
-
-
-                    // const url60 = process.env.REACT_APP_SERVER_URL + 'admin/countries/' + myresults[0].countryID;
-                    // fetch(url60, {
-                    //     method: 'GET',
-                    //     headers: { 'Authorization': mounted }
-                    // })
-                    //     .then(response => response.json())
-                    //     .then(data => {
-                    //         setuniversityApplication(data.adminCountry.countrySteps)
-                    //     })
-
-
-                    //end for country Id
                     //start for student details
                     var url8 = process.env.REACT_APP_SERVER_URL + 'admin/Orders/' + mystudentID;
                     axios.get(url8, { headers: { 'Authorization': mounted } })
