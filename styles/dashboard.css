@@ -13593,7 +13593,7 @@ li.statusBox.current-statAppClosed {
 @media screen and (max-width: 767px) {
     .studentLayout .navbar {
         left: 0 !important;
-        height: 120px;
+        height: 76px;
         display: flex;
         padding-top: 14px;
         align-items: flex-start;
@@ -13705,15 +13705,7 @@ li.statusBox.current-statAppClosed {
         left: 0 !important;
     }
 }
-@media screen and (max-width: 767px) {
-    .studentLayout .navbar {
-        left: 0 !important;
-        height: 120px;
-        display: flex;
-        padding-top: 14px;
-        align-items: flex-start;
-    }
-}
+
 @media screen and (max-width: 320px) {
     .studentLayout a.mobile-menu span {
         margin-right: 10px;
@@ -13738,4 +13730,25 @@ div#mySidenav {
 /* end for sidebar and navbar*/
 .sidecurrentMenu {
     background-color: #020080 !important;
+}
+.user-submenu{
+    padding: 0px 16px;
+    width: 93%;
+    color: #000 !important;
+    background-color: #fff;
+    border-left: 5px solid transparent;
+    border-left-width: 5px;
+    border-left-style: solid;
+    border-left-color: transparent;
+    float: left;
+    letter-spacing: 0.5px;
+    font-size: 14px;
+  
+    margin-left: 5px !important;
+}
+.user-submenu a{
+    color: #000;
+}
+div#user-collpase {
+    margin: 8px;
 }

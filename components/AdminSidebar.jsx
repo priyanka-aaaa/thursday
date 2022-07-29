@@ -92,7 +92,7 @@ const AdminSidebar = () => {
       </span>
       <hr className="sidebar-divider my-0" />
 
-      <li className="nav-item current-tab" onClick={() => handleCurrentClick("addStudent")}>
+      <li >
         <a className="nav-link collapsed" title="My Student" data-bs-toggle="collapse" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
           <i className="fas fa-user-tie"></i>
           <span> <FontAwesomeIcon icon={faUser} />

@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useMemo } from "react";
 import { TableHeader, Pagination, Search } from "../../components/admin/DataTable";
+import AdminLayout from '../../components/AdminLayout';
 import SweetAlert from 'react-bootstrap-sweetalert';
 import axios from 'axios';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -33,7 +34,7 @@ export default function Counseling() {
         { name: "Email", field: "email", sortable: true },
         { name: "Phone", field: "phone", sortable: false },
         { name: "Registration Date", field: "currentTime", sortable: false },
-       
+
         { name: "Action", field: "", sortable: false },
     ];
 
@@ -120,120 +121,116 @@ export default function Counseling() {
     }
 
     return (
-        <div id="page-top">
-            <div id="wrapper">
-                <AdminSidebar />
-                <div id="content-wrapper" className="d-flex flex-column">
-                    <div id="content">
-                        <AdminTopbar />
-                        <div className="container-fluid">
+        <>
+            <AdminLayout />
+            <div className="mainmain">
+                <div className="container-fluid">
 
-                            {submitSuccess === 1 ? <div className="Show_success_message">
-                                <strong>Success!</strong> {successMessage}
-                            </div> : null}
-                            {loader === "true" ?
-                                <Loader />
-                                : null}
-                            {showSweetAlert === "1" ? <SweetAlert
-                                warning
-                                showCancel
-                                confirmBtnText="Yes, delete it!"
-                                confirmBtnBsStyle="danger"
-                                title="Are you sure want to delete student? This action can’t be reversed. Press ‘yes’ to delete"
-                                onConfirm={(value) => {
-                                    setshowSweetAlert("0");
-                                    setmyloader("true")
-                                    axios.delete(process.env.REACT_APP_SERVER_URL + 'admin/registeredStudents/' + deleteId, { headers: { 'Authorization': mounted } })
-                                        .then(function (res) {
-                                            setmyloader("false")
-                                            if (res.data.success === true) {
-                                                setsuccessMessage("Student deleted")
-                                                setTimeout(() => setsubmitSuccess(""), 3000);
-                                                setsubmitSuccess(1)
-                                                myallStudents()
-                                            }
-                                        })
-                                        .catch(error => {
-                                        });
-                                }}
-                                onCancel={() =>
-                                    setshowSweetAlert("0")
-                                }
-                                focusCancelBtn>
-                            </SweetAlert>
-                                : null
-                            }
+                    {submitSuccess === 1 ? <div className="Show_success_message">
+                        <strong>Success!</strong> {successMessage}
+                    </div> : null}
+                    {loader === "true" ?
+                        <Loader />
+                        : null}
+                    {showSweetAlert === "1" ? <SweetAlert
+                        warning
+                        showCancel
+                        confirmBtnText="Yes, delete it!"
+                        confirmBtnBsStyle="danger"
+                        title="Are you sure want to delete student? This action can’t be reversed. Press ‘yes’ to delete"
+                        onConfirm={(value) => {
+                            setshowSweetAlert("0");
+                            setmyloader("true")
+                            axios.delete(process.env.REACT_APP_SERVER_URL + 'admin/registeredStudents/' + deleteId, { headers: { 'Authorization': mounted } })
+                                .then(function (res) {
+                                    setmyloader("false")
+                                    if (res.data.success === true) {
+                                        setsuccessMessage("Student deleted")
+                                        setTimeout(() => setsubmitSuccess(""), 3000);
+                                        setsubmitSuccess(1)
+                                        myallStudents()
+                                    }
+                                })
+                                .catch(error => {
+                                });
+                        }}
+                        onCancel={() =>
+                            setshowSweetAlert("0")
+                        }
+                        focusCancelBtn>
+                    </SweetAlert>
+                        : null
+                    }
 
-                            <div className="row">
-                                <div className="col-md-6">
-                                    <h3>Registered Students</h3>
-                                </div>
-                                <div className="col-md-6 text-right">
-                                    <div className="search-bar">
-                                        <Search
-                                            onSearch={value => {
-                                                var trimValue = value.trim();
-                                                setSearch(trimValue);
-                                                setCurrentPage(1);
-                                            }}
-                                        />
-                                    </div>
-                                </div>
+                    <div className="row">
+                        <div className="col-md-6">
+                            <h3>Registered Students</h3>
+                        </div>
+                        <div className="col-md-6 text-right">
+                            <div className="search-bar">
+                                <Search
+                                    onSearch={value => {
+                                        var trimValue = value.trim();
+                                        setSearch(trimValue);
+                                        setCurrentPage(1);
+                                    }}
+                                />
                             </div>
-                            <div className="row">
-                                <div className="col-xl-12 col-lg-12">
-
-                                    <div className="card shadow mb-4">
-                                        <div className=" mb-4">
-
-                                            <div className="table-responsive-sm">
-                                                <table className="table table-bordered">
-                                                    <TableHeader
-
-                                                        headers={tableHeaders}
-                                                        onSorting={(field, order) =>
-                                                            setSorting({ field, order })
-                                                        }
-                                                    />
-                                                    <tbody>
-                                                        {commentsData.map((object, i) => {
-                                                            return (
-                                                                <tr key={i}>
-                                                                    <td>{object.NO}</td>
-                                                                    <td>{object.buildStudentID}</td>
-                                                                    <td> {object.name}</td>
-                                                                    <td>{object.email}</td>
-                                                                    <td>{object.phone}</td>
-                                                                    <td>{object.currentTime || ""}</td>
-                                                                   
-
-                                                                    <td>
-
-                                                                        <button title="Delete" className="btn btn-danger vbtn" onClick={() => handleDeleteClick(object._id)}>
-                                                                            <FontAwesomeIcon icon={faTrash} />
-                                                                        </button>
-                                                                    </td>
-                                                                </tr>
-                                                            )
-                                                        })}
-                                                    </tbody>
-                                                </table>
-                                            </div>
-                                            <Pagination
-                                                total={totalItems}
-                                                itemsPerPage={ITEMS_PER_PAGE}
-                                                currentPage={currentPage}
-                                                onPageChange={page => setCurrentPage(page)}
-                                            />
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
                         </div>
                     </div>
+                    <div className="row">
+                        <div className="col-xl-12 col-lg-12">
+
+                            <div className="card shadow mb-4">
+                                <div className=" mb-4">
+
+                                    <div className="table-responsive-sm">
+                                        <table className="table table-bordered">
+                                            <TableHeader
+
+                                                headers={tableHeaders}
+                                                onSorting={(field, order) =>
+                                                    setSorting({ field, order })
+                                                }
+                                            />
+                                            <tbody>
+                                                {commentsData.map((object, i) => {
+                                                    return (
+                                                        <tr key={i}>
+                                                            <td>{object.NO}</td>
+                                                            <td>{object.buildStudentID}</td>
+                                                            <td> {object.name}</td>
+                                                            <td>{object.email}</td>
+                                                            <td>{object.phone}</td>
+                                                            <td>{object.currentTime || ""}</td>
+
+
+                                                            <td>
+
+                                                                <button title="Delete" className="btn btn-danger vbtn" onClick={() => handleDeleteClick(object._id)}>
+                                                                    <FontAwesomeIcon icon={faTrash} />
+                                                                </button>
+                                                            </td>
+                                                        </tr>
+                                                    )
+                                                })}
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <Pagination
+                                        total={totalItems}
+                                        itemsPerPage={ITEMS_PER_PAGE}
+                                        currentPage={currentPage}
+                                        onPageChange={page => setCurrentPage(page)}
+                                    />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
-        </div >
+        </>
+
     );
 }

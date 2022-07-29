@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useMemo } from "react";
 import { TableHeader, Pagination, Search } from "../../components/admin/DataTable";
+import AdminLayout from '../../components/AdminLayout';
 import SweetAlert from 'react-bootstrap-sweetalert';
 import axios from 'axios';
 // import '../../scss/adminAgent.scss';
@@ -151,12 +152,9 @@ export default function AdminUniversity() {
 
     }
     return (
-        <div id="page-top">
-            <div id="wrapper">
-                <AdminSidebar />
-                <div id="content-wrapper" className="d-flex flex-column">
-                    <div id="content">
-                        <AdminTopbar />
+        <>
+        <AdminLayout />
+        <div className="mainmain">
                         <div className="container-fluid">
                             <div className="d-sm-flex align-items-center justify-content-between mb-4">
 
@@ -299,8 +297,7 @@ export default function AdminUniversity() {
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
-        </div>
+                </>
+            
     );
 }

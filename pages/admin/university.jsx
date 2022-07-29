@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useMemo } from "react";
 import Link from 'next/link'
+import AdminLayout from '../../components/AdminLayout';
 import { TableHeader, Pagination, Search } from "../../components/admin/DataTable";
 import AdminTopbar from '../../components/AdminTopbar';
 import AdminSidebar from '../../components/AdminSidebar';
@@ -116,12 +117,9 @@ export default function AdminUniversity() {
         localStorage.removeItem("adminUniversityId");
     }
     return (
-        <div id="page-top">
-            <div id="wrapper">
-                <AdminSidebar />
-                <div id="content-wrapper" className="d-flex flex-column">
-                    <div id="content">
-                        <AdminTopbar />
+        <>
+        <AdminLayout />
+        <div className="mainmain">
                         <div className="container-fluid">
                             {submitSuccess === 1 ? <div className="Show_success_message">
                                 <strong>Success!</strong> {successMessage}
@@ -257,8 +255,7 @@ export default function AdminUniversity() {
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
-        </div>
+                </>
+            
     );
 }

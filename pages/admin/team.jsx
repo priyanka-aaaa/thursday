@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Modal, Button } from 'react-bootstrap';
+import AdminLayout from '../../components/AdminLayout';
 import axios from 'axios';
 import SweetAlert from 'react-bootstrap-sweetalert';
 import Loader from '../../components/Loader';
@@ -211,11 +212,9 @@ export default function AdminTeam() {
         alert("dfgd")
     }
     return (
-        <div id="page-top">
-            <div id="wrapper"><AdminSidebar />
-                <div id="content-wrapper" className="d-flex flex-column">
-                    <div id="content">
-                        <AdminTopbar />
+        <>
+        <AdminLayout />
+        <div className="mainmain">
                         <div className="container-fluid">
                             {loader === "true" ?
                                 <Loader />
@@ -451,8 +450,6 @@ export default function AdminTeam() {
                             </Modal>
                         </div>
                     </div>
-                </div>
-            </div>
-        </div>
+              </>
     );
 }
