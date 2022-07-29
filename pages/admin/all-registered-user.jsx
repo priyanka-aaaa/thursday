@@ -22,7 +22,7 @@ export default function AdminUniversity() {
     const [mounted, setMounted] = useState();
     const [data, setdata] = useState([]);
     const [comments, setComments] = useState([{
-        name: "", email: "", phone: "", buildStudentID: "", _id: "", agentName: ""
+        name: "", email: "", phone: "", buildStudentID: "", _id: "", agentName: "",source:""
     }])
     const [FormValues, setFormValues] = useState([{
         message: "", type: "", file: ""
@@ -153,7 +153,7 @@ export default function AdminUniversity() {
         { name: "Email", field: "email", sortable: true },
         { name: "Phone", field: "phone", sortable: false },
         { name: "Registration Date", field: "currentTime", sortable: false },
-        { name: "Agent Name", field: "agentName", sortable: false },
+        { name: "Source", field: "source", sortable: false },
         { name: "Action", field: "", sortable: false },
     ];
     // end for pagination
@@ -691,7 +691,7 @@ export default function AdminUniversity() {
                                                             <td>{object.email}</td>
                                                             <td>{object.phone}</td>
                                                             <td>{object.currentTime || ""}</td>
-                                                            <td>{object.agentName}</td>
+                                                            <td>{object.source}</td>
 
                                                             <td>
                                                                 <button title="View Student Application" className="btn btn-success"
