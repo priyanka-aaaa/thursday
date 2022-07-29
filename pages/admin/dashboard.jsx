@@ -850,7 +850,7 @@ export default function AdminStudentApplication() {
         }
         else {
             var mailId = myemail
-            var loginUrl = "https://abroad.coursementor.com/StudentLogin"
+            var loginUrl = "https://abroad.coursementor.com/login"
         }
         const obj = {
             applicationProgress: value1,
@@ -915,8 +915,21 @@ export default function AdminStudentApplication() {
         setshowModal(true)
     }
     function handleApplicationClosed() {
+        if (myagentEmail !== "") {
+            var mailId = myagentEmail
+            var loginUrl = "https://abroad.coursementor.com/agentlogin"
+        }
+        else {
+            var mailId = myemail
+            var loginUrl = "https://abroad.coursementor.com/login"
+        }
+
         const obj5 = {
             applicationClose: "yes",
+            email: mailId,
+            myname: myname,
+            loginUrl: loginUrl,
+            mybuildApplicationID:mybuildApplicationID
 
         };
         axios.put(process.env.REACT_APP_SERVER_URL + 'admin/updateOrderAppClose/' + id, obj5, { headers: { 'Authorization': mounted } })
