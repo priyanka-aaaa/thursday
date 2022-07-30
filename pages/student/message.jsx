@@ -82,7 +82,7 @@ export default function Message() {
         obj.append("msgfileName", selectedfileName);
         axios.post(process.env.REACT_APP_SERVER_URL + 'student/messages/', obj, { headers: { 'Authorization': mounted } })
             .then(function (res) {
-              
+
                 setmyloader("false")
                 setselectedfileName("")
                 setmsgFile("")
@@ -94,7 +94,7 @@ export default function Message() {
                     axios.get(process.env.REACT_APP_SERVER_URL + 'student/messages/' + studentId, { headers: { 'Authorization': mounted } })
                         .then(function (res) {
                             if (res.data.success === true) {
-                            
+
                                 var myresults = res.data.notifications;
                                 if (Object.keys(myresults).length === 0) {
                                 }
@@ -128,144 +128,145 @@ export default function Message() {
     }
     return (
         <>
-        <StudentLayout />
-        <div className="mainmain">
-        <div className="container-fluid">
-            {loader === "true" ?
-                <Loader />
-                : null}
-            {submitSuccess === 1 ? <div className="Show_success_message">
-                <strong>Success!</strong> {successMessage}
-            </div> : null}
-            <div className="d-sm-flex align-items-center justify-content-between mb-4">
-                <h1 className="h3 mb-0 text-gray-800">Message</h1>
-            </div>
-            <div className="row">
-                <div className="col-xl-12 col-lg-7">
-                    <div className="card shadow mb-4">
-                        <div className="row">
-                            <div className="col-md-12">
-                                <div className="chat-message msg_list">
-                                    <div className="row">
-                                        <div className="col-md-12">
-                                            {FormValues.map((element, index) => {
-                                                return (
-                                                    <div className="anw-block" key={index}>
-                                                        {element.type === 0 ?
-                                                            <div className="anw-block">
-                                                                <div className="row">
-                                                                    <div className="col-md-1">
-                                                                        <div className="us-img us-letter">
-                                                                            <h6>S</h6>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div className="col-md-11">
-                                                                        <div className="anw-content-rightblock  light-greenish">
-                                                                            <div className="des-title">
-                                                                                <h6><strong>Student:</strong> ({studentName}) Sent a Message</h6><span className="date-block">
-                                                                                    {element.messageTime}
-                                                                                </span>
+            <StudentLayout />
+            <div className="mainmain">
+                <div className="container-fluid">
+                {submitError === 1 ? <div className="Show_error_message">
+                            <strong></strong> File extension not supported
+                        </div> : null}
+                    {loader === "true" ?
+                        <Loader />
+                        : null}
+                    {submitSuccess === 1 ? <div className="Show_success_message">
+                        <strong>Success!</strong> {successMessage}
+                    </div> : null}
+                    <div className="d-sm-flex align-items-center justify-content-between mb-4">
+                        <h1 className="h3 mb-0 text-gray-800">Message</h1>
+                    </div>
+                    <div className="row">
+                        <div className="col-xl-12 col-lg-7">
+                            <div className="card shadow mb-4">
+                                <div className="row">
+                                    <div className="col-md-12">
+                                        <div className="chat-message msg_list">
+                                            <div className="row">
+                                                <div className="col-md-12">
+                                                    {FormValues.map((element, index) => {
+                                                        return (
+                                                            <div className="anw-block" key={index}>
+                                                                {element.type === 0 ?
+                                                                    <div className="anw-block">
+                                                                        <div className="row">
+                                                                            <div className="col-md-1">
+                                                                                <div className="us-img us-letter">
+                                                                                    <h6>S</h6>
+                                                                                </div>
                                                                             </div>
-                                                                            <div className="reply-content ">
-                                                                                <p>{element.message}</p>
-                                                                                {element.file !== "" ? <a className="appAttachment" href={"https://coursementor.com/uploadApi/download.php?file=" + element.file} >{element.msgfileName}</a>
-                                                                                    : null}
+                                                                            <div className="col-md-11">
+                                                                                <div className="anw-content-rightblock  light-greenish">
+                                                                                    <div className="des-title">
+                                                                                        <h6><strong>Student:</strong> ({studentName}) Sent a Message</h6><span className="date-block">
+                                                                                            {element.messageTime}
+                                                                                        </span>
+                                                                                    </div>
+                                                                                    <div className="reply-content ">
+                                                                                        <p>{element.message}</p>
+                                                                                        {element.file !== "" ? <a className="appAttachment" href={"https://coursementor.com/uploadApi/download.php?file=" + element.file} >{element.msgfileName}</a>
+                                                                                            : null}
+                                                                                    </div>
+                                                                                </div>
                                                                             </div>
                                                                         </div>
                                                                     </div>
-                                                                </div>
-                                                            </div>
-                                                            :
-                                                            <div className="row">
-                                                                <div className="col-md-1">
-                                                                    <div className="us-img us-letter">
-                                                                        <h6>A</h6>
-                                                                    </div>
-                                                                </div>
-                                                                <div className="col-md-11">
-                                                                    <div className="anw-content-rightblock  drak-blue">
-                                                                        <div className="des-title">
-                                                                            <h6><strong>Visa Team:</strong>(admin) Sent a Message </h6><span className="date-block"> {element.messageTime}</span>
+                                                                    :
+                                                                    <div className="row">
+                                                                        <div className="col-md-1">
+                                                                            <div className="us-img us-letter">
+                                                                                <h6>A</h6>
+                                                                            </div>
                                                                         </div>
-                                                                        <div className="reply-content ">
-                                                                            <p>{element.message}</p>
-                                                                            {element.file !== "" ? <a className="appAttachment" href={"https://coursementor.com/uploadApi/download.php?file=" + element.file} >{element.msgfileName}</a>
-                                                                                : null}
+                                                                        <div className="col-md-11">
+                                                                            <div className="anw-content-rightblock  drak-blue">
+                                                                                <div className="des-title">
+                                                                                    <h6><strong>Visa Team:</strong>(admin) Sent a Message </h6><span className="date-block"> {element.messageTime}</span>
+                                                                                </div>
+                                                                                <div className="reply-content ">
+                                                                                    <p>{element.message}</p>
+                                                                                    {element.file !== "" ? <a className="appAttachment" href={"https://coursementor.com/uploadApi/download.php?file=" + element.file} >{element.msgfileName}</a>
+                                                                                        : null}
+                                                                                </div>
+                                                                            </div>
                                                                         </div>
                                                                     </div>
-                                                                </div>
+                                                                }
                                                             </div>
-                                                        }
-                                                    </div>
-                                                )
-                                            })}
+                                                        )
+                                                    })}
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-                        <div className="row">
-                            <div className="col-md-12">
-                                <div className="msg-form">
-                                    <form onSubmit={handleFormSubmit}>
-                                        <div className="row">
-                                            <div className="col-md-12">
-                                                <div className="form-group">
-                                                    <label className="form-label">Message
-                                                        <span className="req-star">*</span></label>
-                                                    <textarea rows={5} cols={7} className="form-control" value={message || ""}
-                                                        onChange={(e) => setmessage(e.target.value)} required />
-                                                    <label className="form-label">Upload file
-                                                    </label>
-                                                    <Dropzone onDrop={(acceptedFiles) => {
-                                                      
-
-                                                        setmsgFile(acceptedFiles[0])
-
-                                                        setselectedfileName(acceptedFiles[0].name)
-                                                        var fileName = acceptedFiles[0].path;
-                                                        var fileExtension = fileName.split('.').pop();
-                                                        if (fileExtension === "pdf" || fileExtension === "doc" || fileExtension === "docx"
-                                                            || fileExtension === "jpeg" || fileExtension === "jpg" || fileExtension === "png"
-                                                        ) {
+                                <div className="row">
+                                    <div className="col-md-12">
+                                        <div className="msg-form">
+                                            <form onSubmit={handleFormSubmit}>
+                                                <div className="row">
+                                                    <div className="col-md-12">
+                                                        <div className="form-group">
+                                                            <label className="form-label">Message
+                                                                <span className="req-star">*</span></label>
+                                                            <textarea rows={5} cols={7} className="form-control" value={message || ""}
+                                                                onChange={(e) => setmessage(e.target.value)} required />
+                                                            <label className="form-label">Upload file <span className="msg-file-extenstions">(File extensions supported .pdf, .doc, .docx, .jpeg, .jpg, .png)</span>
+                                                            </label>
+                                                            <Dropzone onDrop={(acceptedFiles) => {
 
 
-                                                        }
-                                                        else {
 
-                                                            setTimeout(() => setsubmitError(""), 3000);
-                                                            setsubmitError(1)
-                                                        }
-                                                        setThumbnailFiles(acceptedFiles.map(file => Object.assign(file, {
-                                                            preview: URL.createObjectURL(file)
+                                                                var fileName = acceptedFiles[0].path;
+                                                                var fileExtension = fileName.split('.').pop();
+                                                                if (fileExtension === "pdf" || fileExtension === "doc" || fileExtension === "docx"
+                                                                    || fileExtension === "jpeg" || fileExtension === "jpg" || fileExtension === "png"
+                                                                ) {
+                                                                    setmsgFile(acceptedFiles[0])
+                                                                    setselectedfileName(acceptedFiles[0].name)
+                                                                }
+                                                                else {
 
-                                                        })));
-                                                    }} name="heroImage" multiple={false}>
-                                                        {({ getRootProps, getInputProps }) => (
-                                                            <div {...getRootProps({ className: 'dropzoneMsg' })}>
-                                                                <input {...getInputProps()} />
-                                                                <div style={{ fontSize: ".8rem" }}>
-                                                                    Upload/Drag & Drop here
-                                                                </div>
-                                                            </div>
-                                                        )}
-                                                    </Dropzone>
+                                                                    setTimeout(() => setsubmitError(""), 3000);
+                                                                    setsubmitError(1)
+                                                                }
+                                                                setThumbnailFiles(acceptedFiles.map(file => Object.assign(file, {
+                                                                    preview: URL.createObjectURL(file)
+
+                                                                })));
+                                                            }} name="heroImage" multiple={false}>
+                                                                {({ getRootProps, getInputProps }) => (
+                                                                    <div {...getRootProps({ className: 'dropzoneMsg' })}>
+                                                                        <input {...getInputProps()} />
+                                                                        <div style={{ fontSize: ".8rem" }}>
+                                                                            Upload/Drag & Drop here
+                                                                        </div>
+                                                                    </div>
+                                                                )}
+                                                            </Dropzone>
+                                                        </div>
+                                                        <span > {selectedfileName}</span>
+                                                        <span className="error-msg"> {messageError}</span>
+                                                    </div>
                                                 </div>
-                                                <span > {selectedfileName}</span>
-                                                <span className="error-msg"> {messageError}</span>
-                                            </div>
+                                                <button type="submit" className="btn-send-msg"><i className="fa fa-paper-plane" aria-hidden="true" style={{ marginRight: '6px' }} /> Send</button>
+                                            </form>
                                         </div>
-                                        <button type="submit" className="btn-send-msg"><i className="fa fa-paper-plane" aria-hidden="true" style={{ marginRight: '6px' }} /> Send</button>
-                                    </form>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        </div>
-            
+
         </>
     );
 }

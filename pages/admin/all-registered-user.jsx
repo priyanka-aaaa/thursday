@@ -22,7 +22,7 @@ export default function AdminUniversity() {
     const [mounted, setMounted] = useState();
     const [data, setdata] = useState([]);
     const [comments, setComments] = useState([{
-        name: "", email: "", phone: "", buildStudentID: "", _id: "", agentName: "",source:""
+        name: "", email: "", phone: "", buildStudentID: "", _id: "", agentName: "", source: ""
     }])
     const [FormValues, setFormValues] = useState([{
         message: "", type: "", file: ""
@@ -602,6 +602,7 @@ export default function AdminUniversity() {
                     {submitSuccess === 1 ? <div className="Show_success_message">
                         <strong>Success!</strong> {successMessage}
                     </div> : null}
+
                     {loader === "true" ?
                         <Loader />
                         : null}
@@ -725,6 +726,9 @@ export default function AdminUniversity() {
                     <div id="mySidenav" className="sidenav" style={{ width: firstviewWidth }}>
                         <section className="pcoded-main-containerx ">
                             <div className="pcoded-content">
+                                {submitError === 1 ? <div className="Show_error_message">
+                                    <strong></strong> File extension not supported
+                                </div> : null}
                                 <div className="container-fluid">
                                     <div className="row mt-3">
                                         <div className="col-md-12">
@@ -1679,21 +1683,19 @@ export default function AdminUniversity() {
                                                                                                                                     <span className="req-star">*</span></label>
                                                                                                                                 <textarea rows={5} cols={7} className="form-control" value={message}
                                                                                                                                     onChange={(e) => setmessage(e.target.value)} />
-                                                                                                                                <label className="form-label">Upload file
-                                                                                                                                </label>
+                                                                                                                                <label className="form-label">Upload file <span className="msg-file-extenstions">(File extensions supported .pdf, .doc, .docx, .jpeg, .jpg, .png)</span>
+                                                            </label>
                                                                                                                                 <Dropzone onDrop={(acceptedFiles) => {
 
-
-                                                                                                                                    setmsgFile(acceptedFiles[0])
-
-                                                                                                                                    setselectedfileName(acceptedFiles[0].name)
                                                                                                                                     var fileName = acceptedFiles[0].path;
                                                                                                                                     var fileExtension = fileName.split('.').pop();
                                                                                                                                     if (fileExtension === "pdf" || fileExtension === "doc" || fileExtension === "docx"
                                                                                                                                         || fileExtension === "jpeg" || fileExtension === "jpg" || fileExtension === "png"
                                                                                                                                     ) {
 
+                                                                                                                                        setmsgFile(acceptedFiles[0])
 
+                                                                                                                                        setselectedfileName(acceptedFiles[0].name)
                                                                                                                                     }
                                                                                                                                     else {
 
