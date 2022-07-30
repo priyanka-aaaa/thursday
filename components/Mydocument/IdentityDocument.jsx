@@ -116,7 +116,7 @@ export default function IdentityDocument() {
             setup("0")
         }
     }
-  
+
     function onDeleteHandle(value) {
 
         setdeleteId(value)
@@ -132,7 +132,7 @@ export default function IdentityDocument() {
                 {down === "0" ?
                     null
                     :
-                    <FontAwesomeIcon icon={faAngleDown}  className="sidebar-faicon"style={{
+                    <FontAwesomeIcon icon={faAngleDown} className="sidebar-faicon" style={{
                         position: "absolute",
                         fontWeight: 900,
                         fontFamily: 'Font Awesome 5 Free',
@@ -144,7 +144,7 @@ export default function IdentityDocument() {
                 {up === "0" ?
                     null
                     :
-                    <FontAwesomeIcon icon={faAngleUp} className="sidebar-faicon"   style={{
+                    <FontAwesomeIcon icon={faAngleUp} className="sidebar-faicon" style={{
                         position: "absolute",
                         fontWeight: 900,
                         fontFamily: 'Font Awesome 5 Free',
@@ -209,7 +209,7 @@ export default function IdentityDocument() {
                                             title="view document" type="button" className="btn btn-outline-primary" >View
                                         </a>
                                         :
-                                        <button  title="view document" type="button" className="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#myModalPassport1">
+                                        <button title="view document" type="button" className="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#myModalPassport1">
                                             View
                                         </button>
                                     }
@@ -302,7 +302,7 @@ export default function IdentityDocument() {
                                             title="view document" type="button" className="btn btn-outline-primary" >View
                                         </a>
                                         :
-                                        <button  title="view document" type="button" className="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#myModalPassport2">
+                                        <button title="view document" type="button" className="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#myModalPassport2">
                                             View
                                         </button>
                                     }
@@ -395,7 +395,7 @@ export default function IdentityDocument() {
                                             title="view document" type="button" className="btn btn-outline-primary" >View
                                         </a>
                                         :
-                                        <button  title="view document" type="button" className="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#myModalPassport3">
+                                        <button title="view document" type="button" className="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#myModalPassport3">
                                             View
                                         </button>
                                     }
