@@ -6,7 +6,7 @@ import Loader from '../components/Loader';
 //start for pagination
 import { Pagination, Search } from "../components/student/DataTable";
 import { PaginationCourse, SearchCourse } from "../components/student/DataTableCourse";
-
+import SweetAlert from 'react-bootstrap-sweetalert';
 // end for Pagination
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -2492,6 +2492,20 @@ function FinalFilter() {
         <link rel="icon" href="/images/favicon.ico" />
       </Head>
       <div className="main-content">
+        
+        {showSweetAlert === "1" ?
+
+          <SweetAlert
+            success
+            title="Success!"
+            onConfirm={(value) => {
+              setshowSweetAlert("0")
+            }}
+          >
+            You are successffully apply this course
+          </SweetAlert>
+          : null
+        }
 
         {loader === "true" ?
           <Loader />
@@ -2500,9 +2514,7 @@ function FinalFilter() {
         {submitSuccess === 1 ? <div className="Show_success_bookmark">
           <strong>Success!</strong> {successMessage}
         </div> : null}
-        {submitSuccess === 1 ? <div className="Show_success_bookmark">
-          <strong>Success!</strong> {successMessage}
-        </div> : null}
+
         {/*Full width header Start*/}
         <div className="full-width-header">
           <Header />
