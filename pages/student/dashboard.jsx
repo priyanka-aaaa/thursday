@@ -663,12 +663,23 @@ export default function Dashboard(location) {
                                 return (
                                     <div className="cardapp shadow mb-4 appblock" key={i}>
                                         <div className="row">
-                                            <div className="unv-name">
-                                                <span></span>
-                                                <h5><FontAwesomeIcon className="sidebar-faicon" icon={faAreaChart} />Current Application Process</h5>
-                                                {object.applicationClose === "yes" ?
-                                                    <div className="applicationclosed">Application Closed</div>
-                                                    : <>{object.applicationProgress}</>}
+                                            <div className="col-md-6 ">
+                                                <div className="unv-name">
+                                                    <span></span>
+                                                    <h5><FontAwesomeIcon className="sidebar-faicon" icon={faAreaChart} />Current Application Process</h5>
+                                                    {object.applicationClose === "yes" ?
+                                                        <div className="applicationclosed">Application Closed</div>
+                                                        : <>{object.applicationProgress}</>}
+                                                </div>
+                                            </div>
+                                            <div className="col-md-6 ">
+                                                <div className="unv-name">
+                                                    <span></span>
+                                                    <h5><FontAwesomeIcon className="sidebar-faicon" icon={faAreaChart} />Current Application Process</h5>
+                                                    {object.applicationClose === "yes" ?
+                                                        <div className="applicationclosed">Application Closed</div>
+                                                        : <>{object.applicationProgress}</>}
+                                                </div>
                                             </div>
                                         </div>
                                         <div className="row">
