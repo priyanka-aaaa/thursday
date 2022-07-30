@@ -13814,4 +13814,16 @@ button.btn.website-btn-evaluation.next.action-button {
     margin-bottom: 9px;
     padding: 10px 20px !important;
 }
+.applicationopen {
+    /* color: red; */
+    font-size: 20px;
+    font-weight: bold;
+    color: #008cff;
+}
+.applicationApproved {
+    /* color: red; */
+    font-size: 20px;
+    font-weight: bold;
+    color: #00ce7c;
+}
 /* end for student app */

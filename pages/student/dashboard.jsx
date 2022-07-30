@@ -662,26 +662,37 @@ export default function Dashboard(location) {
                             {data.map((object, i) => {
                                 return (
                                     <div className="cardapp shadow mb-4 appblock" key={i}>
-                                        <div className="row">
-                                            <div className="col-md-6 ">
-                                                <div className="unv-name">
-                                                    <span></span>
-                                                    <h5><FontAwesomeIcon className="sidebar-faicon" icon={faAreaChart} />Current Application Process</h5>
-                                                    {object.applicationClose === "yes" ?
-                                                        <div className="applicationclosed">Application Closed</div>
-                                                        : <>{object.applicationProgress}</>}
-                                                </div>
+                                        {object.applicationClose === "yes" ?
+                                            <div className="unv-name">
+                                                <span></span>
+                                                <h5><FontAwesomeIcon className="sidebar-faicon" icon={faAreaChart} />Current Application Process</h5>
+
+
+                                                <div className="applicationclosed">Application Closed</div>
                                             </div>
-                                            <div className="col-md-6 ">
-                                                <div className="unv-name">
-                                                    <span></span>
-                                                    <h5><FontAwesomeIcon className="sidebar-faicon" icon={faAreaChart} />Current Application Process</h5>
-                                                    {object.applicationClose === "yes" ?
-                                                        <div className="applicationclosed">Application Closed</div>
-                                                        : <>{object.applicationProgress}</>}
+
+                                            : <div className="row">
+                                                <div className="col-md-6 ">
+                                                    <div className="unv-name">
+                                                        <span></span>
+                                                        <h5><FontAwesomeIcon className="sidebar-faicon" icon={faAreaChart} />Current Application Process</h5>
+
+
+                                                        {object.applicationProgress}
+                                                    </div>
                                                 </div>
-                                            </div>
-                                        </div>
+                                                <div className="col-md-6 ">
+                                                    <div className="unv-name">
+                                                        <span></span>
+                                                        <h5><FontAwesomeIcon className="sidebar-faicon" icon={faAreaChart} /> Application Status</h5>
+                                                        {object.appStatus === "open" ?
+                                                            <div className="applicationopen">open: inprocess</div> : null}
+                                                        {object.appStatus === "close" ?
+                                                            <div className="applicationApproved">close: Visa appproved</div> : null}
+
+                                                    </div>
+                                                </div>
+                                            </div>}
                                         <div className="row">
                                             <div className="col-md-10 ">
                                                 <div className="unv-name">
