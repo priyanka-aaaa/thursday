@@ -245,7 +245,7 @@ export default function EnglishProficiencyDocument() {
                             : <div className="row pl-4 pr-4 mt-3">
                                 <div className="col-md-8">
                                     {toogleValues === "false" ?
-                                        <p>I haven't done any extra curricular activites</p>
+                                        <p>I haven't taken any English Proficiency Test</p>
                                         : null
                                     }
                                 </div>

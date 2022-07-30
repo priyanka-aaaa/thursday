@@ -226,7 +226,7 @@ export default function WorkExperienceDocument() {
                     <strong></strong> File extension not supported
                 </div> : null}
                 {submitError2 === 1 ? <div className="Show_error_message">
-                    <strong></strong> Please Enter Activity Name
+                    <strong></strong> Please Enter Name
                 </div> : null}
                 {showSweetAlert === "1" ? <SweetAlert
                     warning
@@ -318,7 +318,7 @@ export default function WorkExperienceDocument() {
                             : <div className="row pl-4 pr-4 mt-3">
                                 <div className="col-md-8">
                                     {toogleValues === "false" ?
-                                        <p>I haven't done any extra curricular activites</p>
+                                        <p>I don't have any work experience</p>
                                         : null
                                     }
                                 </div>

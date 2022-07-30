@@ -206,7 +206,7 @@ export default function ExtraCurricularDocument() {
                     <strong></strong> File extension not supported
                 </div> : null}
                 {submitError2 === 1 ? <div className="Show_error_message">
-                    <strong></strong> Please Enter Activity Name
+                    <strong></strong> Please Enter Curricular Activity Name
                 </div> : null}
                 {showSweetAlert === "1" ? <SweetAlert
                     warning
