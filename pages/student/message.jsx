@@ -79,6 +79,7 @@ export default function Message() {
         obj.append("studentID", studentId);
         obj.append("type", 0);
         obj.append("file", msgFile);
+        obj.append("msgfileName", selectedfileName);
         axios.post(process.env.REACT_APP_SERVER_URL + 'student/messages/', obj, { headers: { 'Authorization': mounted } })
             .then(function (res) {
               
@@ -167,7 +168,7 @@ export default function Message() {
                                                                             </div>
                                                                             <div className="reply-content ">
                                                                                 <p>{element.message}</p>
-                                                                                {element.file !== "" ? <a className="appAttachment" href={"https://coursementor.com/uploadApi/download.php?file=" + element.file} >download Attachment</a>
+                                                                                {element.file !== "" ? <a className="appAttachment" href={"https://coursementor.com/uploadApi/download.php?file=" + element.file} >{element.msgfileName}</a>
                                                                                     : null}
                                                                             </div>
                                                                         </div>
@@ -188,7 +189,7 @@ export default function Message() {
                                                                         </div>
                                                                         <div className="reply-content ">
                                                                             <p>{element.message}</p>
-                                                                            {element.file !== "" ? <a className="appAttachment" href={"https://coursementor.com/uploadApi/download.php?file=" + element.file} >download Attachment</a>
+                                                                            {element.file !== "" ? <a className="appAttachment" href={"https://coursementor.com/uploadApi/download.php?file=" + element.file} >{element.msgfileName}</a>
                                                                                 : null}
                                                                         </div>
                                                                     </div>

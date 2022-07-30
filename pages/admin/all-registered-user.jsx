@@ -234,6 +234,7 @@ export default function AdminUniversity() {
 
             const obj = new FormData();
             obj.append("file", msgFile);
+            obj.append("msgfileName", selectedfileName);
             obj.append("message", message);
             obj.append("studentID", mystudentID);
             obj.append("type", 0);
@@ -1631,7 +1632,7 @@ export default function AdminUniversity() {
                                                                                                                                                         </div>
                                                                                                                                                         <div className="reply-content ">
                                                                                                                                                             <p>{element.message}</p>
-                                                                                                                                                            {element.file !== "" ? <a className="appAttachment" href={"https://coursementor.com/uploadApi/download.php?file=" + element.file} target="_blank" rel="noreferrer" >download Attachment</a>
+                                                                                                                                                            {element.file !== "" ? <a className="appAttachment" href={"https://coursementor.com/uploadApi/download.php?file=" + element.file}  >{element.msgfileName}</a>
                                                                                                                                                                 : null}
                                                                                                                                                         </div>
                                                                                                                                                     </div>
@@ -1652,7 +1653,7 @@ export default function AdminUniversity() {
                                                                                                                                                     </div>
                                                                                                                                                     <div className="reply-content ">
                                                                                                                                                         <p>{element.message}</p>
-                                                                                                                                                        {element.file !== "" ? <a className="appAttachment" href={"https://coursementor.com/uploadApi/download.php?file=" + element.file} target="_blank" rel="noreferrer" >download Attachment</a>
+                                                                                                                                                        {element.file !== "" ? <a className="appAttachment" href={"https://coursementor.com/uploadApi/download.php?file=" + element.file}  >{element.msgfileName}</a>
                                                                                                                                                             : null}
                                                                                                                                                     </div>
                                                                                                                                                 </div>
