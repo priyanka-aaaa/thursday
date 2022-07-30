@@ -624,6 +624,7 @@ export default function About() {
     <>
       <StudentLayout />
       <div className="mainmain">
+      <div className="container-fluid">
 
         <div className="main-content">
 
@@ -1082,6 +1083,7 @@ export default function About() {
 
 
           </Modal>
+        </div>
         </div>
       </div>
     </>
