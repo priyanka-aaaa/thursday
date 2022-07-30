@@ -13755,3 +13755,22 @@ div#user-collpase {
 span.msg-file-extenstions {
     color: #00000057;
 }
+
+/* start for evaluation */
+
+
+button.btn.website-btn-evaluation.next.action-button {
+    font-size: 15px;
+    line-height: 1.5;
+    letter-spacing: 1.1px;
+    border: 2px solid rgba(253, 90, 10, 0);
+    background-color: #38a769;
+    border-radius: 3px;
+    padding: 12px 42px;
+    color: #fff;
+    font-weight: 700;
+    text-transform: uppercase;
+    display: inline-block;
+    border: 1px solid #38a769;
+}
+/* end for evaluation */
