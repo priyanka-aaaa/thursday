@@ -661,59 +661,45 @@ export default function Dashboard(location) {
                         <div className="col-xl-12 col-lg-7">
                             {data.map((object, i) => {
                                 return (
-                                    <div className="card shadow mb-4 appblock" key={i}>
+                                    <div className="cardapp shadow mb-4 appblock" key={i}>
                                         <div className="row">
-                                            <div className="col-md-10">
-
+                                            <div className="unv-name">
+                                                <span></span>
+                                                <h5><FontAwesomeIcon className="sidebar-faicon" icon={faAreaChart} />Current Application Process</h5>
+                                                {object.applicationClose === "yes" ?
+                                                    <div className="applicationclosed">Application Closed</div>
+                                                    : <>{object.applicationProgress}</>}
+                                            </div>
+                                        </div>
+                                        <div className="row">
+                                            <div className="col-md-10 ">
                                                 <div className="unv-name">
-                                                    <span><FontAwesomeIcon className="sidebar-faicon" icon={faUniversity} /></span>
-                                                    <h5>App ID</h5>
+                                                    <span></span>
+                                                    <h5><FontAwesomeIcon className="sidebar-faicon" icon={faUniversity} />App ID</h5>
                                                     <p>{object.buildApplicationID}</p>
                                                 </div>
                                                 <div className="unv-name">
-                                                    <span><FontAwesomeIcon className="sidebar-faicon" icon={faUniversity} /></span>
-                                                    <h5>University</h5>
+                                                    <span></span>
+                                                    <h5><FontAwesomeIcon className="sidebar-faicon" icon={faUniversity} />University</h5>
                                                     <p>{object.universityName}</p>
                                                 </div>
                                                 <div className="course-name">
-                                                    <span><FontAwesomeIcon className="sidebar-faicon" icon={faGraduationCap} /></span>
-                                                    <h5>Course</h5>
+                                                    <span></span>
+                                                    <h5><FontAwesomeIcon className="sidebar-faicon" icon={faGraduationCap} />Course</h5>
                                                     <p>{object.courseName}</p>
                                                 </div>
-
-                                                <div className="apply-process">
-                                                    <div className="row">
-                                                        <div className="col-md-6">
-                                                            <div className="unv-name">
-                                                                <span><FontAwesomeIcon className="sidebar-faicon" icon={faAreaChart} /></span>
-
-                                                                <h5>Session</h5>
-                                                                {object.session}
-                                                            </div>
-                                                        </div>
-                                                        <div className="col-md-6">
-                                                            <div className="unv-name">
-                                                                <span><FontAwesomeIcon className="sidebar-faicon" icon={faAreaChart} /></span>
-                                                                <h5>Current Application Process</h5>
-                                                                {object.applicationClose === "yes" ? <div className="profile-main"><div className="application-current-status">
-                                                                    <div className="applicationclosed">Application Closed</div>
-
-                                                                </div></div> : <>{object.applicationProgress}</>}
-
-
-                                                            </div>
-                                                        </div>
-
-                                                    </div>
+                                                <div className="unv-name">
+                                                    <span></span>
+                                                    <h5><FontAwesomeIcon className="sidebar-faicon" icon={faAreaChart} />Session</h5>
+                                                    {object.session}
                                                 </div>
+
                                             </div>
-                                            <div className="col-md-2">
-                                                <div className="btn-groups admin-btn">
-                                                    <button title="View Student Application" className="btn btn-success"
-                                                        onClick={() => handleView(object._id, object.courseID)}>View Application  </button>
-                                                    <Link href={'/student/document'}  ><button type="button" className="btn btn-primary" title="Upload Document">Upload Doc</button></Link>
-                                                </div>
-                                            </div>
+                                            <div className="col-md-2"><div className="btn-groups admin-btn">
+                                                <button title="View Student Application" className="btn btn-success"
+                                                    onClick={() => handleView(object._id, object.courseID)}>View Application  </button>
+                                                <Link href={'/student/document'}  ><button type="button" className="btn btn-primary" title="Upload Document">Upload Doc</button></Link>
+                                            </div></div>
                                         </div>
                                     </div>
                                 )
@@ -912,8 +898,8 @@ export default function Dashboard(location) {
                                                                                                                     <span className="req-star">*</span></label>
                                                                                                                 <textarea rows={5} cols={7} className="form-control" required
                                                                                                                     value={message} onChange={(e) => setmessage(e.target.value)} />
-                                                                                                               <label className="form-label">Upload file <span className="msg-file-extenstions">(File extensions supported .pdf, .doc, .docx, .jpeg, .jpg, .png)</span>
-                                                                                                                                </label>
+                                                                                                                <label className="form-label">Upload file <span className="msg-file-extenstions">(File extensions supported .pdf, .doc, .docx, .jpeg, .jpg, .png)</span>
+                                                                                                                </label>
                                                                                                                 <Dropzone onDrop={(acceptedFiles) => {
                                                                                                                     var fileName = acceptedFiles[0].path;
                                                                                                                     var fileExtension = fileName.split('.').pop();

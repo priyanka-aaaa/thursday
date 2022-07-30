@@ -12976,9 +12976,10 @@ h4.modal-title {
 
 .unv-name {
     float: left;
-    width: 25%;
+    /* width: 25%; */
     padding: 10px;
-    margin-right: 20px
+    margin-right: 20px;
+    
 }
 
 .course-name {
@@ -13391,13 +13392,10 @@ li.statusBox.current-statAppClosed {
     font-size: 19px;
     font-weight: bold;
 }
-.applicationclosed{
-    background-color: red !important;
-    color: #fff;
-    font-size: 19px;
+.applicationclosed {
+    color: red;
+    font-size: 20px;
     font-weight: bold;
-    padding: 10px 10px;
-    width: 182px;
 }
 /* start for sidebar and navbar*/
 .studentLayout nav.navbar.navbar-default.navbar-fixed-top {
@@ -13774,3 +13772,46 @@ button.btn.website-btn-evaluation.next.action-button {
     border: 1px solid #38a769;
 }
 /* end for evaluation */
+
+/* start for student app */
+@media screen and (max-width: 1024px){
+    .unv-name {
+        float: left;
+        /* width: 25%; */
+        padding: 0px 10px;
+        margin-right: 20px;
+        
+    }
+    .course-name {
+        width: 100%;
+        float: left;
+        padding: 0px 10px;
+        margin-right: 20px;
+    }
+}
+.unv-name .sidebar-faicon{
+    color: #1cc88a;
+}
+.admin-btn .btn-success {
+    width: 153px;
+    margin-left: 0;
+    
+    font-weight: 700;
+    color: #38a769 !important;
+    background-color: #fff;
+}
+.cardapp{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    box-shadow: 0 16px 32px rgb(0 0 0 / 4%), 0 4px 8px rgb(0 0 0 / 2%);
+    border-radius: 12px;
+    border: 0;
+    border-bottom: 1px solid #e6e6e6;
+    margin-bottom: 10px;
+    margin-bottom: 9px;
+    padding: 10px 20px !important;
+}
+/* end for student app */
