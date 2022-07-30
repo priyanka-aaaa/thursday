@@ -2175,7 +2175,7 @@ export default function AdminStudentApplication() {
                                                                                                                                                 <textarea rows={5} cols={7} className="form-control" value={message}
                                                                                                                                                     onChange={(e) => setmessage(e.target.value)} />
 
-                                                                                                                                                <label className="form-label">Upload file
+                                                                                                                                                <label className="form-label">Upload file <span className="msg-file-extenstions">(File extensions supported .pdf, .doc, .docx, .jpeg, .jpg, .png)</span>
                                                                                                                                                 </label>
                                                                                                                                                 <Dropzone onDrop={(acceptedFiles) => {
                                                                                                                                                     var fileName = acceptedFiles[0].path;

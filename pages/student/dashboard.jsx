@@ -696,8 +696,8 @@ export default function Dashboard(location) {
                                                                 <span><FontAwesomeIcon className="sidebar-faicon" icon={faAreaChart} /></span>
                                                                 <h5>Current Application Process</h5>
                                                                 {object.applicationClose === "yes" ? <div className="profile-main"><div className="application-current-status">
-                                                                   <div className="applicationclosed">Application Closed</div>
-                                                                  
+                                                                    <div className="applicationclosed">Application Closed</div>
+
                                                                 </div></div> : <>{object.applicationProgress}</>}
 
 
@@ -912,8 +912,8 @@ export default function Dashboard(location) {
                                                                                                                     <span className="req-star">*</span></label>
                                                                                                                 <textarea rows={5} cols={7} className="form-control" required
                                                                                                                     value={message} onChange={(e) => setmessage(e.target.value)} />
-                                                                                                                <label className="form-label">Upload file
-                                                                                                                </label>
+                                                                                                               <label className="form-label">Upload file <span className="msg-file-extenstions">(File extensions supported .pdf, .doc, .docx, .jpeg, .jpg, .png)</span>
+                                                                                                                                </label>
                                                                                                                 <Dropzone onDrop={(acceptedFiles) => {
                                                                                                                     var fileName = acceptedFiles[0].path;
                                                                                                                     var fileExtension = fileName.split('.').pop();
