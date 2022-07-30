@@ -57,8 +57,8 @@ const AdminLayout = () => {
     <div className="studentLayout">
       <nav className="navbar navbar-default navbar-fixed-top">
         <div className="brand">
-          <a href="https://www.codeavail.com/dashboard"></a>
-          <img src="/images/logo2.webp" alt="coursemetnor Logo" className="img-responsive logo-only-mobile" />
+          <Link href="https://coursementor.com/">
+          <img src="/images/logo2.webp" alt="coursemetnor Logo" className="img-responsive logo-only-mobile" /></Link>
         </div>
         <div id="navbar-menu">
           <ul className="nav">
@@ -87,9 +87,9 @@ const AdminLayout = () => {
       <div id="sidebar-nav" className={"sidebar mobile-show " + sidebarmobileShow} >
         <div className="sidebar-scroll">
           <div className="brand">
-            <a href="https://www.codeavail.com/dashboard">
+            <Link href="https://coursementor.com/">
 
-              <img src="/images/footerlogo.webp" alt="coursemetnor Logo" className="img-responsive only-desktop" /></a>
+              <img src="/images/footerlogo.webp" alt="coursemetnor Logo" className="img-responsive only-desktop" /></Link>
           </div>
 
           <nav>
