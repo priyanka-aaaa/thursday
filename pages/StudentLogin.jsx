@@ -114,12 +114,12 @@ export default function Studentlogin() {
 
                 <SweetAlert
                     success
-                    title="Send Link For Reset Password!"
+                    title="Password sent to your registered email."
                     onConfirm={(value) => {
                         setshowSweetAlert("0")
                     }}
                 >
-                    New password has been sent to your email. Please do not share this password with anyone.
+                    We have sent a new password to your email. Please check and login with the new password. Thank you
                 </SweetAlert>
                 : null
             }
