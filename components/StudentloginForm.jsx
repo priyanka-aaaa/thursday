@@ -245,6 +245,9 @@ export const StudentloginForm = () => {
 
 
                         <button type="submit" className="btn btn-primary" >Send Password </button>
+                        <p>Don't have an account? Click here to
+                            <Link href={'/studentregister'} className="" title="Register">
+                                Register</Link></p>
                     </form>
                 </div>
             </Modal>
