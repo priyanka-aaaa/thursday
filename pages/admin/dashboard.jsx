@@ -1071,7 +1071,7 @@ export default function AdminStudentApplication() {
                                         setTimeout(() => setsubmitSuccess(""), 3000);
                                         setsubmitSuccess(1)
                                         //start for fetch 
-                            
+
                                         axios.get(process.env.REACT_APP_SERVER_URL + 'admin/oneOrder/' + id, { headers: { 'Authorization': mounted } })
                                             .then(function (res) {
                                                 if (res.data.success === true) {
@@ -1085,7 +1085,7 @@ export default function AdminStudentApplication() {
                                         axios.get(process.env.REACT_APP_SERVER_URL + 'admin/msg/' + mystudentID + "/" + id, { headers: { 'Authorization': mounted } })
                                             .then(function (res) {
                                                 if (res.data.success === true) {
-                            
+
                                                     var myresults = res.data.notifications;
                                                     if (Object.keys(myresults).length === 0) {
                                                     }
@@ -2666,17 +2666,17 @@ export default function AdminStudentApplication() {
                         <Modal.Header closeButton>
                             <Modal.Title>Enter Message For Application Close</Modal.Title>
                         </Modal.Header>
-                        <form  onSubmit={handleAppMsg}>
-                        <div className="modal-body">
-                            <div className="form-group">
-                                <label className="form-label">Message
-                                    <span className="req-star">*</span></label>
-                                <textarea rows={5} cols={7} className="form-control" value={appClosemessage}
-                                    onChange={(e) => setappClosemessage(e.target.value)} required/>
-                                <button title="Send Message" type="submit" className="btn-send-msg">
-                                    <FontAwesomeIcon icon={faPaperPlane} /> Send</button>
+                        <form onSubmit={handleAppMsg}>
+                            <div className="modal-body">
+                                <div className="form-group">
+                                    <label className="form-label">Message
+                                        <span className="req-star">*</span></label>
+                                    <textarea rows={5} cols={7} className="form-control" value={appClosemessage}
+                                        onChange={(e) => setappClosemessage(e.target.value)} required />
+                                    <button title="Send Message" type="submit" className="btn-send-msg">
+                                        <FontAwesomeIcon icon={faPaperPlane} /> Send</button>
+                                </div>
                             </div>
-                        </div>
                         </form>
                     </Modal>
                     {/* end msg modal */}
