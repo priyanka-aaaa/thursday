@@ -197,6 +197,7 @@ export default function AdminStudentApplication() {
         { name: "University Name", field: "universityName", sortable: false },
         { name: "Course Name", field: "courseName", sortable: false },
         { name: "Date", field: "date", sortable: false },
+        { name: "Status", field: "appStatus", sortable: false },
 
         { name: "Action", field: "", sortable: false },
     ];
@@ -228,6 +229,9 @@ export default function AdminStudentApplication() {
 
 
                         var orderResult = data.orders
+                        console.log("orderResult")
+                        console.log(orderResult)
+
                         orderResult.forEach((item, i) => {
                             item.NO = i + 1;
                         });
@@ -1239,6 +1243,13 @@ export default function AdminStudentApplication() {
                                                             <td>{object.universityName}</td>
                                                             <td>{object.courseName}</td>
                                                             <td>{object.date}</td>
+                                                            <td>
+
+                                                                {object.appStatus === "open" ?
+                                                                    <div className="applicationopen">open: inprocess</div> : null}
+                                                                {object.appStatus === "close" ?
+                                                                    <div className="applicationApproved">close: Visa appproved</div> : null}
+                                                            </td>
 
                                                             {/* <td>{object.view}</td> */}
                                                             <td>
