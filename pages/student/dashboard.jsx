@@ -698,28 +698,25 @@ export default function Dashboard(location) {
                                                     </div>
                                                 </div>
                                             </div>}
+                                 
+                                        {/* // start vimal */}
                                         <div className="row">
                                             <div className="col-md-10 ">
-                                                <div className="unv-name">
-                                                    <span></span>
-                                                    <h5><FontAwesomeIcon className="sidebar-faicon" icon={faUniversity} />App ID</h5>
+                                                <div className="row stu-app">
+                                                    <div className="col-md-3 "> <h5><FontAwesomeIcon className="sidebar-faicon" icon={faUniversity} />App ID</h5>
                                                     <p>{object.buildApplicationID}</p>
-                                                </div>
-                                                <div className="unv-name">
-                                                    <span></span>
-                                                    <h5><FontAwesomeIcon className="sidebar-faicon" icon={faUniversity} />University</h5>
+                                                    </div>
+                                                    <div className="col-md-3 ">  <h5><FontAwesomeIcon className="sidebar-faicon" icon={faUniversity} />University</h5>
                                                     <p>{object.universityName}</p>
-                                                </div>
-                                                <div className="course-name">
-                                                    <span></span>
-                                                    <h5><FontAwesomeIcon className="sidebar-faicon" icon={faGraduationCap} />Course</h5>
+                                                    </div>
+                                                    <div className="col-md-3 ">    <h5><FontAwesomeIcon className="sidebar-faicon" icon={faGraduationCap} />Course</h5>
                                                     <p>{object.courseName}</p>
+                                                    </div>
+                                                    <div className="col-md-3 ">   <h5><FontAwesomeIcon className="sidebar-faicon" icon={faAreaChart} />Session</h5>
+                                                    <p>{object.session}</p>
+                                                    </div>
                                                 </div>
-                                                <div className="unv-name">
-                                                    <span></span>
-                                                    <h5><FontAwesomeIcon className="sidebar-faicon" icon={faAreaChart} />Session</h5>
-                                                    {object.session}
-                                                </div>
+
 
                                             </div>
                                             <div className="col-md-2"><div className="btn-groups admin-btn">
@@ -728,6 +725,7 @@ export default function Dashboard(location) {
                                                 <Link href={'/student/document'}  ><button type="button" className="btn btn-primary" title="Upload Document">Upload Doc</button></Link>
                                             </div></div>
                                         </div>
+                                        {/* // end vimal */}
                                     </div>
                                 )
                             })}
@@ -747,7 +745,7 @@ export default function Dashboard(location) {
 
                                         <div className="col-md-8">
                                             <div className="card">
-                                                <h5> 
+                                                <h5>
                                                     {myappStatus === "open" ?
                                                         <span className="applicationopen">open: inprocess</span> : null}
                                                     {myappStatus === "close" ?

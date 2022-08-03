@@ -13394,7 +13394,7 @@ li.statusBox.current-statAppClosed {
 }
 .applicationclosed {
     color: red;
-    font-size: 20px;
+    /* font-size: 20px; */
     font-weight: bold;
 }
 /* start for sidebar and navbar*/
@@ -13830,5 +13830,9 @@ button.btn.website-btn-evaluation.next.action-button {
     font-size: 20px;
     font-weight: bold;
     color: #00ce7c;
+}
+.stu-app .sidebar-faicon{
+    color: #1cc88a;
+    margin-right: 8px;
 }
 /* end for student app */
