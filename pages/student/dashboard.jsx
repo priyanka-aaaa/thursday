@@ -670,50 +670,50 @@ export default function Dashboard(location) {
                                         {object.applicationClose === "yes" ?
                                             <div className="unv-name">
                                                 <span></span>
-                                                <h5><FontAwesomeIcon className="sidebar-faicon" icon={faAreaChart} />Current Application Process</h5>
+                                                <h5><FontAwesomeIcon className="sidebar-faicon" icon={faAreaChart} />Current Application Process: <span className="applicationclosed"> (Application Closed)</span></h5>
 
 
-                                                <div className="applicationclosed">Application Closed</div>
+
                                             </div>
 
                                             : <div className="row">
                                                 <div className="col-md-6 ">
                                                     <div className="unv-name">
                                                         <span></span>
-                                                        <h5><FontAwesomeIcon className="sidebar-faicon" icon={faAreaChart} />Current Application Process</h5>
+                                                        <h5><FontAwesomeIcon className="sidebar-faicon" icon={faAreaChart} />Current Application Process:<span>({object.applicationProgress})</span> </h5>
 
 
-                                                        {object.applicationProgress}
+                                                       
                                                     </div>
                                                 </div>
                                                 <div className="col-md-6 ">
                                                     <div className="unv-name">
                                                         <span></span>
-                                                        <h5><FontAwesomeIcon className="sidebar-faicon" icon={faAreaChart} /> Application Status</h5>
-                                                        {object.appStatus === "open" ?
-                                                            <div className="applicationopen">open: inprocess</div> : null}
+                                                        <h5><FontAwesomeIcon className="sidebar-faicon" icon={faAreaChart} /> Application Status {object.appStatus === "open" ?
+                                                            <span className="applicationopen">open: inprocess</span> : null}
                                                         {object.appStatus === "close" ?
-                                                            <div className="applicationApproved">close: Visa appproved</div> : null}
+                                                            <span className="applicationApproved">close: Visa appproved</span> : null}</h5>
+                                                       
 
                                                     </div>
                                                 </div>
                                             </div>}
-                                 
+
                                         {/* // start vimal */}
                                         <div className="row">
                                             <div className="col-md-10 ">
                                                 <div className="row stu-app">
                                                     <div className="col-md-3 "> <h5><FontAwesomeIcon className="sidebar-faicon" icon={faUniversity} />App ID</h5>
-                                                    <p>{object.buildApplicationID}</p>
+                                                        <p>{object.buildApplicationID}</p>
                                                     </div>
                                                     <div className="col-md-3 ">  <h5><FontAwesomeIcon className="sidebar-faicon" icon={faUniversity} />University</h5>
-                                                    <p>{object.universityName}</p>
+                                                        <p>{object.universityName}</p>
                                                     </div>
                                                     <div className="col-md-3 ">    <h5><FontAwesomeIcon className="sidebar-faicon" icon={faGraduationCap} />Course</h5>
-                                                    <p>{object.courseName}</p>
+                                                        <p>{object.courseName}</p>
                                                     </div>
                                                     <div className="col-md-3 ">   <h5><FontAwesomeIcon className="sidebar-faicon" icon={faAreaChart} />Session</h5>
-                                                    <p>{object.session}</p>
+                                                        <p>{object.session}</p>
                                                     </div>
                                                 </div>
 

@@ -2466,7 +2466,7 @@ label.ant-radio-wrapper {
 }
 
 .unv-name span {
-    color: #1cc88a
+    color: #858796
 }
 
 .course-name span {
@@ -13819,20 +13819,19 @@ button.btn.website-btn-evaluation.next.action-button {
     margin-bottom: 9px;
     padding: 10px 20px !important;
 }
-.applicationopen {
-    /* color: red; */
-    font-size: 20px;
-    font-weight: bold;
-    color: #008cff;
-}
-.applicationApproved {
-    /* color: red; */
-    font-size: 20px;
-    font-weight: bold;
-    color: #00ce7c;
-}
+
+
 .stu-app .sidebar-faicon{
     color: #1cc88a;
     margin-right: 8px;
+}
+span.applicationclosed {
+    color: red;
+}
+span.applicationApproved {
+    color: #00ce7c;
+}
+span.applicationopen {
+    color: #008cff;
 }
 /* end for student app */
