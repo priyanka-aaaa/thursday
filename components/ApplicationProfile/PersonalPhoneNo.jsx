@@ -67,7 +67,9 @@ export default function PersonalPhoneNo() {
             
                 setmyloader("false")
                 if (res.data.success === true) {
-                    alert("sucesws")
+                    setsuccessMessage("Phone Number Updated")
+                    setTimeout(() => setsubmitSuccess(""), 3000);
+                    setsubmitSuccess(1)
                 }
             })
             .catch(error => {
