@@ -983,8 +983,9 @@ export default function AdminStudentApplication() {
                         showCancel
                         confirmBtnText="Yes, Confirm it!"
                         confirmBtnBsStyle="danger"
-                        title="Are you sure want to update application status?"
+                        title="Are you sure want to close this application?"
                         onConfirm={(value) => {
+                            setmyloader("true")
                             if (myagentEmail !== "") {
                                 var mailId = myagentEmail
                                 var loginUrl = "https://abroad.coursementor.com/agentlogin"
@@ -1258,7 +1259,7 @@ export default function AdminStudentApplication() {
                                                                         <div className="card">
                                                                             <div id="collapseOne" className="collapse show" data-bs-parent="#accordion" style={{}}>
                                                                                 <div className="card-body">
-                                                                                    {loader}
+                                                                                 
                                                                                     <h5>Application Information</h5>
                                                                                     <hr />
 
