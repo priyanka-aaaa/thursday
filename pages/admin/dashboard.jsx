@@ -28,9 +28,11 @@ export default function AdminStudentApplication() {
     const [myagentEmail, setmyagentEmail] = useState("");
     const [deleteId, setdeleteId] = useState("");
     const [myapplicationClose, setmyapplicationClose] = useState("");
+    const [myappStatus, setmyappStatus] = useState("");
+
     const [mycountryName, setmycountryName] = useState("");
 
-
+    
     const [myindexValue, setmyindexValue] = useState();
     const [mypaid, setmypaid] = useState("");
     const [myfamilyResult, setmyfamilyResult] = useState("");
@@ -520,6 +522,7 @@ export default function AdminStudentApplication() {
                     setmycountryID(myresults[0].countryID)
                     setmyapplicationProgressStep(myresults[0].applicationProgressStep)
                     setmyapplicationProgress(myresults[0].applicationProgress)
+                    setmyappStatus(myresults[0].appStatus)
                     setmycourseName(myresults[0].courseName)
 
                     setmyuniversityName(myresults[0].universityName)
@@ -1243,7 +1246,7 @@ export default function AdminStudentApplication() {
                                                             <td>{object.universityName}</td>
                                                             <td>{object.courseName}</td>
                                                             <td>{object.date}</td>
-                                                            <td> 
+                                                            <td>
 
                                                                 {object.appStatus === "open" ?
                                                                     <div className="applicationopen">open: inprocess</div> : null}
@@ -1306,6 +1309,10 @@ export default function AdminStudentApplication() {
                                                                 <div className="admin">
                                                                     <div id="accordion">
                                                                         <div className="card-header app">
+                                                                            {myappStatus === "open" ?
+                                                                                <div className="applicationopen">open: inprocess</div> : null}
+                                                                            {myappStatus === "close" ?
+                                                                                <div className="applicationApproved">close: Visa appproved</div> : null}
                                                                             <div className="row">
                                                                                 <div className="col-md-4">
                                                                                     <h5>Application ID <span title="Application ID" className="badge badge-info">{mybuildStudentID + "-" + mybuildApplicationID}</span></h5>
