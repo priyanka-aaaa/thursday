@@ -59,6 +59,9 @@ export default function Dashboard(location) {
     const [myapplicationProgressStep, setmyapplicationProgressStep] = useState();
     const [mybuildApplicationID, setmybuildApplicationID] = useState();
     const [mycountry, setmycountry] = useState();
+    const [myappStatus, setmyappStatus] = useState();
+
+
     const [mycountryID, setmycountryID] = useState();
     const [mycourseName, setmycourseName] = useState();
     const [mysession, setmysession] = useState();
@@ -466,6 +469,7 @@ export default function Dashboard(location) {
                     var myresult = res.data.studentOrder
                     setmyapplicationClose(myresult.applicationClose)
                     setmycourseID(myresult.courseID)
+
                     // setcourseID(myresult.courseID)
 
                     // start for application fee
@@ -514,6 +518,7 @@ export default function Dashboard(location) {
                     setmycountry(myresult.country)
                     setmycountryID(myresult.countryID)
                     setmycourseName(myresult.courseName)
+                    setmyappStatus(myresult.appStatus)
 
 
                     setmysession(myresult.session)
@@ -742,6 +747,12 @@ export default function Dashboard(location) {
 
                                         <div className="col-md-8">
                                             <div className="card">
+                                                <h5> 
+                                                    {myappStatus === "open" ?
+                                                        <span className="applicationopen">open: inprocess</span> : null}
+                                                    {myappStatus === "close" ?
+                                                        <span className="applicationApproved">close: Visa appproved</span> : null}
+                                                </h5>
                                                 <span className="msgRefresh" onClick={() => handleApplicationRefresh()}>
                                                     <FontAwesomeIcon className="sidebar-faicon" icon={faRedo} />
                                                     Refresh
