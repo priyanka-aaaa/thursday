@@ -13834,4 +13834,10 @@ span.applicationApproved {
 span.applicationopen {
     color: #008cff;
 }
+.applicationApproved {
+    color: #00ce7c;
+}
+.applicationopen {
+    color: #008cff;
+}
 /* end for student app */
