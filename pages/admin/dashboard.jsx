@@ -21,10 +21,15 @@ export default function AdminStudentApplication() {
     }])
     // const { state1 } = useLocation();
     //start for set extenstion
+
+    const [mychecked, setmychecked] = useState(false);
+
     const [myagentName, setmyagentName] = useState("");
     const [myagentEmail, setmyagentEmail] = useState("");
     const [deleteId, setdeleteId] = useState("");
     const [myapplicationClose, setmyapplicationClose] = useState("");
+    const [mycountryName, setmycountryName] = useState("");
+
 
     const [myindexValue, setmyindexValue] = useState();
     const [mypaid, setmypaid] = useState("");
@@ -1029,9 +1034,10 @@ export default function AdminStudentApplication() {
                             //ens dor send sms
 
                         }}
-                        onCancel={() =>
+                        onCancel={(value) => {
+                            setmychecked(false)
                             setshowSweetAlert("0")
-                        }
+                        }}
                         focusCancelBtn
                     >
                     </SweetAlert>
@@ -2390,7 +2396,7 @@ export default function AdminStudentApplication() {
                                                                                             <>
 
                                                                                                 {i === Number(myapplicationProgressStep) + Number(1) ? <li className="state-comp"><input type="checkbox"
-                                                                                                    onChange={() => clickCheckboxHandler(object, i, myemail)}
+                                                                                                    onChange={() => clickCheckboxHandler(object, i, myemail)} checked={mychecked}
 
                                                                                                 />{object}<span className="status-completed">
 
