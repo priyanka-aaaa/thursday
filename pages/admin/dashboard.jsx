@@ -32,7 +32,7 @@ export default function AdminStudentApplication() {
 
     const [mycountryName, setmycountryName] = useState("");
 
-    
+
     const [myindexValue, setmyindexValue] = useState();
     const [mypaid, setmypaid] = useState("");
     const [myfamilyResult, setmyfamilyResult] = useState("");
@@ -360,8 +360,9 @@ export default function AdminStudentApplication() {
     }
     function handleView(id) {
 
-        //start all empty
         setmyloader("true")
+        //start all empty
+
         setfirstviewWidth("90%");
         setsecondviewWidth("0px")
         setmyfamilyResult("")
@@ -494,6 +495,7 @@ export default function AdminStudentApplication() {
         var url80 = process.env.REACT_APP_SERVER_URL + 'admin/oneOrder/' + id;
         axios.get(url80, { headers: { 'Authorization': mounted } })
             .then(function (res) {
+                setmyloader("false")
                 if (res.data.success === true) {
                     var myresults = res.data.orders
                     setmyapplicationClose(myresults[0].applicationClose)
@@ -761,7 +763,7 @@ export default function AdminStudentApplication() {
         };
         axios.put(process.env.REACT_APP_SERVER_URL + 'admin/orderView/' + id, obj2, { headers: { 'Authorization': mounted } })
             .then(function (res) {
-                setmyloader("false")
+                // setmyloader("false")
                 if (res.data.success === true) {
                     const url = process.env.REACT_APP_SERVER_URL + 'admin/OrdersAll';
                     fetch(url, {
@@ -782,8 +784,9 @@ export default function AdminStudentApplication() {
             .catch(error => {
             });
         //end for order update
-        setmyloader("false")
+
     }
+
 
     function handleFormSubmit(event) {
         event.preventDefault();
@@ -926,82 +929,7 @@ export default function AdminStudentApplication() {
     function handleApplicationClosed() {
 
         setshowAppCloseModal(true)
-        return
-        if (myagentEmail !== "") {
-            var mailId = myagentEmail
-            var loginUrl = "https://abroad.coursementor.com/agentlogin"
-        }
-        else {
-            var mailId = myemail
-            var loginUrl = "https://abroad.coursementor.com/login"
-        }
 
-        const obj5 = {
-            applicationClose: "yes",
-            email: mailId,
-            myname: myname,
-            loginUrl: loginUrl,
-            mybuildApplicationID: mybuildApplicationID,
-            applicationid: id,
-            studentId: mystudentID,
-            message: "Your Application is closed",
-
-
-
-        };
-        axios.put(process.env.REACT_APP_SERVER_URL + 'admin/updateOrderAppClose/' + id, obj5, { headers: { 'Authorization': mounted } })
-            .then(function (res) {
-                setmyloader("false")
-                if (res.data.success === true) {
-                    setsuccessMessage("Application Close")
-                    setTimeout(() => setsubmitSuccess(""), 3000);
-                    setsubmitSuccess(1)
-                    //start for fetch 
-
-                    axios.get(process.env.REACT_APP_SERVER_URL + 'admin/oneOrder/' + id, { headers: { 'Authorization': mounted } })
-                        .then(function (res) {
-                            if (res.data.success === true) {
-                                var myresults = res.data.orders
-                                setmyapplicationClose(myresults[0].applicationClose)
-                                var studentDetails = myresults[0].studentDetail[0]
-                            }
-                        })
-                        .catch(error => {
-                        });
-                    axios.get(process.env.REACT_APP_SERVER_URL + 'admin/msg/' + mystudentID + "/" + id, { headers: { 'Authorization': mounted } })
-                        .then(function (res) {
-                            if (res.data.success === true) {
-
-                                var myresults = res.data.notifications;
-                                if (Object.keys(myresults).length === 0) {
-                                }
-                                const newArr = myresults.map(obj => {
-                                    var myd = obj.messageTime
-                                    const d = new Date(myd)
-                                    var date = d.getDate()
-                                    var month = d.getMonth() + 1;
-                                    var year = d.getFullYear();
-                                    var month = d.toLocaleString('default', { month: 'long' })
-                                    var options = {
-                                        hour: 'numeric',
-                                        minute: 'numeric',
-                                        hour12: true
-                                    };
-                                    var timerr = new Intl.DateTimeFormat('en-US', options).format(d)
-                                    var completeTime = month + " " + date + ",  " + year + ", " + timerr
-                                    return { ...obj, messageTime: completeTime };
-                                    return obj;
-                                });
-                                setFormValues(newArr)
-                            }
-                        })
-                        .catch(error => {
-                        });
-                    //end for fetch
-                }
-            })
-            .catch(error => {
-            });
     } return (
         <>
             <AdminLayout />
@@ -1330,7 +1258,7 @@ export default function AdminStudentApplication() {
                                                                         <div className="card">
                                                                             <div id="collapseOne" className="collapse show" data-bs-parent="#accordion" style={{}}>
                                                                                 <div className="card-body">
-
+                                                                                    {loader}
                                                                                     <h5>Application Information</h5>
                                                                                     <hr />
 
