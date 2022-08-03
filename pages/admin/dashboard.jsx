@@ -1243,7 +1243,7 @@ export default function AdminStudentApplication() {
                                                             <td>{object.universityName}</td>
                                                             <td>{object.courseName}</td>
                                                             <td>{object.date}</td>
-                                                            <td>
+                                                            <td> 
 
                                                                 {object.appStatus === "open" ?
                                                                     <div className="applicationopen">open: inprocess</div> : null}
