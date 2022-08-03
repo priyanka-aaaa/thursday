@@ -37,6 +37,7 @@ export default function AdminStudentApplication() {
     const [myactivityResult, setmyactivityResult] = useState("");
     const [myrecommendationResult, setmyrecommendationResult] = useState("");
 
+    const [showSweetAlertAppClose, setshowSweetAlertAppClose] = useState("");
 
 
 
@@ -116,6 +117,8 @@ export default function AdminStudentApplication() {
     const [mybuildStudentID, setmybuildStudentID] = useState("");
     const [viewDocumentValue, setviewDocumentValue] = useState("");
     const [showModal, setshowModal] = useState(false);
+    const [showAppCloseModal, setshowAppCloseModal] = useState();
+
     const [myapplicationProgressStep, setmyapplicationProgressStep] = useState("");
     const [myapplicationProgress, setmyapplicationProgress] = useState("");
     const [FormFamilyValues, setFormFamilyValues] = useState([{
@@ -160,6 +163,8 @@ export default function AdminStudentApplication() {
         message: "", type: "", file: ""
     }])
     const [message, setmessage] = useState("");
+    const [appClosemessage, setappClosemessage] = useState("");
+
     const [mycountryID, setmycountryID] = useState("");
     //start for document show
 
@@ -269,6 +274,9 @@ export default function AdminStudentApplication() {
     }
     function close() {
         setshowModal(false)
+    }
+    function Appclose() {
+        setshowAppCloseModal(false)
     }
     function handleRefresh() {
         setrefreshMsg(["refresh"]);
@@ -898,7 +906,15 @@ export default function AdminStudentApplication() {
         setmyindexValue(value)
         setshowModal(true)
     }
+    function handleAppMsg(event) {
+        event.preventDefault();
+        setshowAppCloseModal(false)
+        setshowSweetAlertAppClose("1")
+    }
     function handleApplicationClosed() {
+
+        setshowAppCloseModal(true)
+        return
         if (myagentEmail !== "") {
             var mailId = myagentEmail
             var loginUrl = "https://abroad.coursementor.com/agentlogin"
@@ -1007,14 +1023,6 @@ export default function AdminStudentApplication() {
                             axios.post('https://coursementor.com/uploadApi/sms.php', obj2phone, { headers: { 'Authorization': mounted } })
                                 .then(function (res) {
 
-                                    // if (res.data.success === true) {
-                                    //     setsuccessMessage("Application Step Updated")
-                                    //     setTimeout(() => setsubmitSuccess(""), 3000);
-                                    //     setsubmitSuccess(1)
-
-                                    //     setmyapplicationProgressStep(myobj.applicationProgressStep)
-                                    //     setmyapplicationProgress(myobj.applicationProgress)
-                                    // }
                                 })
                                 .catch(error => {
                                 });
@@ -1023,6 +1031,95 @@ export default function AdminStudentApplication() {
                         }}
                         onCancel={() =>
                             setshowSweetAlert("0")
+                        }
+                        focusCancelBtn
+                    >
+                    </SweetAlert>
+                        : null
+                    }
+                    {showSweetAlertAppClose === "1" ? <SweetAlert
+                        warning
+                        showCancel
+                        confirmBtnText="Yes, Confirm it!"
+                        confirmBtnBsStyle="danger"
+                        title="Are you sure want to update application status?"
+                        onConfirm={(value) => {
+                            if (myagentEmail !== "") {
+                                var mailId = myagentEmail
+                                var loginUrl = "https://abroad.coursementor.com/agentlogin"
+                            }
+                            else {
+                                var mailId = myemail
+                                var loginUrl = "https://abroad.coursementor.com/login"
+                            }
+                            const obj5 = {
+                                applicationClose: "yes",
+                                email: mailId,
+                                myname: myname,
+                                loginUrl: loginUrl,
+                                mybuildApplicationID: mybuildApplicationID,
+                                applicationid: id,
+                                studentId: mystudentID,
+                                message: appClosemessage,
+                            };
+                            axios.put(process.env.REACT_APP_SERVER_URL + 'admin/updateOrderAppClose/' + id, obj5, { headers: { 'Authorization': mounted } })
+                                .then(function (res) {
+                                    setmyloader("false")
+                                    setshowSweetAlertAppClose("0")
+                                    if (res.data.success === true) {
+                                        setsuccessMessage("Application Close")
+                                        setTimeout(() => setsubmitSuccess(""), 3000);
+                                        setsubmitSuccess(1)
+                                        //start for fetch 
+                            
+                                        axios.get(process.env.REACT_APP_SERVER_URL + 'admin/oneOrder/' + id, { headers: { 'Authorization': mounted } })
+                                            .then(function (res) {
+                                                if (res.data.success === true) {
+                                                    var myresults = res.data.orders
+                                                    setmyapplicationClose(myresults[0].applicationClose)
+                                                    var studentDetails = myresults[0].studentDetail[0]
+                                                }
+                                            })
+                                            .catch(error => {
+                                            });
+                                        axios.get(process.env.REACT_APP_SERVER_URL + 'admin/msg/' + mystudentID + "/" + id, { headers: { 'Authorization': mounted } })
+                                            .then(function (res) {
+                                                if (res.data.success === true) {
+                            
+                                                    var myresults = res.data.notifications;
+                                                    if (Object.keys(myresults).length === 0) {
+                                                    }
+                                                    const newArr = myresults.map(obj => {
+                                                        var myd = obj.messageTime
+                                                        const d = new Date(myd)
+                                                        var date = d.getDate()
+                                                        var month = d.getMonth() + 1;
+                                                        var year = d.getFullYear();
+                                                        var month = d.toLocaleString('default', { month: 'long' })
+                                                        var options = {
+                                                            hour: 'numeric',
+                                                            minute: 'numeric',
+                                                            hour12: true
+                                                        };
+                                                        var timerr = new Intl.DateTimeFormat('en-US', options).format(d)
+                                                        var completeTime = month + " " + date + ",  " + year + ", " + timerr
+                                                        return { ...obj, messageTime: completeTime };
+                                                        return obj;
+                                                    });
+                                                    setFormValues(newArr)
+                                                }
+                                            })
+                                            .catch(error => {
+                                            });
+                                        //end for fetch
+                                    }
+                                })
+                                .catch(error => {
+                                });
+
+                        }}
+                        onCancel={() =>
+                            setshowSweetAlertAppClose("0")
                         }
                         focusCancelBtn
                     >
@@ -2561,6 +2658,28 @@ export default function AdminStudentApplication() {
                             }
                         </div>
                     </Modal>
+                    {/* start msg modal */}
+                    <Modal className="modal-container"
+                        show={showAppCloseModal}
+                        onHide={() => Appclose()}
+                        animation={true}>
+                        <Modal.Header closeButton>
+                            <Modal.Title>Enter Message For Application Close</Modal.Title>
+                        </Modal.Header>
+                        <form  onSubmit={handleAppMsg}>
+                        <div className="modal-body">
+                            <div className="form-group">
+                                <label className="form-label">Message
+                                    <span className="req-star">*</span></label>
+                                <textarea rows={5} cols={7} className="form-control" value={appClosemessage}
+                                    onChange={(e) => setappClosemessage(e.target.value)} required/>
+                                <button title="Send Message" type="submit" className="btn-send-msg">
+                                    <FontAwesomeIcon icon={faPaperPlane} /> Send</button>
+                            </div>
+                        </div>
+                        </form>
+                    </Modal>
+                    {/* end msg modal */}
                 </div >
             </div >  </>
     );
