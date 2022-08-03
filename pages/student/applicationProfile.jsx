@@ -10,6 +10,8 @@ import TestScoreProfile from '../../components/ApplicationProfile/TestScoreProfi
 import WorkExperienceProfile from '../../components/ApplicationProfile/WorkExperienceProfile';
 import ExtraCurricultarActivityProfile from '../../components/ApplicationProfile/ExtraCurricultarActivityProfile';
 import RecommendationProfile from '../../components/ApplicationProfile/RecommendationProfile';
+import PersonalPhoneNo from '../../components/ApplicationProfile/PersonalPhoneNo';
+
 // import '../../scss/studentApplicationProfile.scss';
 export default function ApplicationProfile() {
     return (
@@ -28,7 +30,7 @@ export default function ApplicationProfile() {
                                     <TestScoreProfile />
                                     <WorkExperienceProfile />
                                     <ExtraCurricultarActivityProfile />
-                                    <RecommendationProfile />
+                                    <PersonalPhoneNo />
                                 </div>
                             </div>
                         </div>
